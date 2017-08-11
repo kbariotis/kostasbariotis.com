@@ -1,0 +1,174 @@
+.blog {
+    margin-top: 80px;
+    .home-template & {
+        margin-top: 100px;
+    }
+    @media(max-width: 768px) {
+        margin-top: 50px;
+    }
+    .newer-posts {
+        float: left;
+        font-size: 0.8em;
+        @media(max-width: 768px) {
+            display: block;
+            float: none;
+            margin-bottom: 20px;
+        }
+    }
+    .older-posts {
+        float: right;
+        font-size: 0.8em;
+        @media(max-width: 768px) {
+            display: block;
+            float: none;
+            margin-top: 20px;
+        }
+    }
+    .separator {
+        height: 2px;
+        background: #4d71b7;
+        width: 100%;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        display: block;
+        background: linear-gradient(to right, #e52f45 0%, #e52f45 25%, #b42b3e 25%, #b42b3e 50%, #8ab2ff 50%, #8ab2ff 75%, #4d71b7 75%, #4d71b7 100%);
+    }
+    .header {
+        color: $red;
+        font-size: 1.5em;
+        font-weight: 700;
+        @media(max-width: 768px) {
+            text-align: left;
+        }
+    }
+    .posts {
+        .post {
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .post-title {
+            font-size: 0.9em;
+            color: $lightblue;
+            margin-bottom: 5px;
+        }
+        time {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .post-excerpt {
+            margin-top: 20px;
+        }
+        .post-meta .tags {
+            color: rgba(255, 255, 255, 0.5);
+        }
+    }
+    article.main-post {
+        margin-top: 50px;
+        color: rgba(255, 255, 255, 0.8);
+        img {
+            max-width: 100%;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: $lightblue;
+        }
+        blockquote {
+            color: rgba(255, 255, 255, 0.5);
+            border-left-color: $purple;
+        }
+        p {
+            padding-bottom: 20px;
+        }
+        .post-footer {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            font-size: 1.2em;
+            .share-buttons {
+                li {
+                    @media (max-width: 768px) {
+                        display: block;
+                        line-height: 40px;
+                    }
+                }
+            }
+            .share-twitter {
+                color: #00aced;
+                @media (max-width: 768px) {
+                    background-color: #00aced;
+                    color: #fff;
+                    padding: 5px;
+                    width: 100%;
+                    display: block;
+                }
+            }
+            .share-facebook {
+                color: #3b5998;
+                @media (max-width: 768px) {
+                    background-color: #3b5998;
+                    color: #fff;
+                    padding: 5px;
+                    width: 100%;
+                    display: block;
+                }
+            }
+            .share-google-plus {
+                color: #dd4b39;
+                @media (max-width: 768px) {
+                    background-color: #dd4b39;
+                    color: #fff;
+                    padding: 5px;
+                    width: 100%;
+                    display: block;
+                }
+            }
+        }
+    }
+    .post-meta {
+        .author-avatar img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-top: -20px;
+            border: 3px solid white;
+        }
+        .tags {
+            @media (max-width: 768px) {
+                text-align: left;
+            }
+        }
+        .tags li {
+            font-size: 0.8em;
+            margin: 5px 5px;
+            border: 2px solid $blue;
+            text-align: center;
+            border-radius: 100px / 100px;
+            a {
+                color: $blue;
+                display: block;
+                width: auto;
+                height: 30px;
+                line-height: 27px;
+                padding: 2px 20px;
+            }
+            a:hover,
+            a:active {
+                text-decoration: none;
+            }
+            &:hover {
+                background: $lightblue;
+                a {
+                    color: $darkpurple;
+                }
+            }
+        }
+    }
+}
+
+.tags-collection {
+    .tag-meta {
+        margin-bottom: 50px;
+    }
+}

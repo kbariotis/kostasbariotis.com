@@ -1,0 +1,42 @@
+html,
+body {
+    background-color: $background;
+    color: #fff;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5em;
+    font-size: 18px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-weight: 700;
+    font-family: 'Roboto Slab', serif;
+}
+
+a {
+    color: $lightblue;
+    &:active,
+    &:hover {
+        color: $red;
+    }
+}
+
+.nopadding {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+
+.main-content {
+    margin: 0 0 100px 0;
+}

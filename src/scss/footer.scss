@@ -1,0 +1,66 @@
+@import "variables";
+
+.footer {
+    background: $darkpurple;
+    color: $lightpurple;
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    padding: 65px 0;
+
+    .separator {
+        color:#3B4B7D;
+        margin:0 5px;
+        font-size:0.8em;
+    }
+    a {
+        text-decoration: none;
+    }
+}
+
+.footer-social {
+    background: $darkerpurple;
+    padding: $vpadding * 2 0;
+    color: $darkpurple;
+    font-size: 0.9em;
+    a {
+        color: $lightpurple;
+        text-decoration: none;
+        &:active,
+        &:hover {
+            color: $lightblue;
+        }
+    }
+    ul.social {
+        font-size: 0.5em;
+        text-align: center;
+        padding: 0;
+        a {
+            color: $lightblue;
+            text-decoration: none;
+        }
+        li {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            font-size: 3em;
+            text-align: center;
+            line-height: 40px;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            margin: 10px;
+            transition: all .1s ease;
+            &:hover,
+            &:focus {
+                background-color: $darkpurple;
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                transform: rotate(360deg);
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

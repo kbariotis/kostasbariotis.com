@@ -1,0 +1,124 @@
+.navbar-default {
+    background: $background;
+    .image-placeholder {
+        height: 360px;
+        margin-bottom: -50px;
+        background-image: url('./../assets/images/header_index.jpg');
+        background-size: 100%;
+        /* http://colorzilla.com/gradient-editor/#7db9e8+0,221931+99&0+0,1+100 */
+        background-image: -moz-linear-gradient(top, rgba(125, 185, 232, 0) 0%, rgba(34, 25, 49, 1) 100%), url('./../assets/images/header_index.jpg');
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(125, 185, 232, 0)), color-stop(100%, rgba(34, 25, 49, 1))), url('./../assets/images/header_index.jpg');
+        background-image: -webkit-linear-gradient(top, rgba(125, 185, 232, 0) 0%, rgba(34, 25, 49, 1) 100%), url('./../assets/images/header_index.jpg');
+        background-image: -o-linear-gradient(top, rgba(125, 185, 232, 0) 0%, rgba(34, 25, 49, 1) 100%), url('./../assets/images/header_index.jpg');
+        background-image: -ms-linear-gradient(top, rgba(125, 185, 232, 0) 0%, rgba(34, 25, 49, 1) 100%), url('./../assets/images/header_index.jpg');
+        background-image: linear-gradient(to bottom, rgba(125, 185, 232, 0) 0%, rgba(34, 25, 49, 1) 100%), url('./../assets/images/header_index.jpg');
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#007db9e8', endColorstr='#221931', GradientType=0);
+        @media (min-width: 1500px) {
+            height: 320px;
+        }
+        @media (max-width: 1500px) {
+            height: 260px;
+        }
+        @media (max-width: 1200px) {
+            height: 160px;
+        }
+        @media (max-width: 768px) {
+            height: 80px;
+        }
+    }
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: $red;
+}
+
+.navbar-header {
+    color: #fff;
+    @media(max-width: 768px) {
+        text-align: center;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    p {
+        font-size: 0.9em;
+        max-width: 750px;
+        line-height: 1.4em;
+        @media(max-width: 1024px) {
+            max-width: 500px;
+        }
+        @media(max-width: 768px) {
+            padding: 0 30px;
+            max-width: 100%;
+        }
+    }
+    .header-logo {
+        @media(max-width: 1200px) {
+            height: 150px;
+        }
+        @media(max-width: 768px) {
+            float: none;
+        }
+        img {
+            width: 100px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            margin-right: 25px;
+            @media(max-width: 768px) {
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+    height: auto;
+    padding: 10px 15px;
+}
+
+.navbar {
+    border: none;
+    margin-bottom: 0;
+}
+
+.nav > li > a {
+    @media(max-width: 768px) {
+        padding: 10px 30px;
+        text-align: right;
+    }
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #8ab2ff;
+    line-height: 120px;
+    font-size: 0.9em;
+    font-weight: bold;
+    font-weight: 700;
+    @media(max-width: 768px) {
+        line-height: 40px;
+    }
+}
+
+.navbar-collapse {
+    overflow: hidden;
+}
+
+.navbar-toggle {
+    border: 0;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background: none;
+}
+
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+    border: 0;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: $lightblue;
+}
