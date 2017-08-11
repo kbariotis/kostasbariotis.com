@@ -1,12 +1,10 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import dateformat from "dateformat";
+import dateformat from 'dateformat';
 import GatsbyLink from 'gatsby-link';
 import Menu from '../components/Menu';
 
-import {
-  ShareButtons
-} from "react-share";
+import { ShareButtons } from 'react-share';
 import ReactDisqusThread from 'react-disqus-thread';
 
 const {
@@ -17,7 +15,7 @@ const {
   RedditShareButton,
 } = ShareButtons;
 
-const avatarImg = require("./../assets/images/avatar.jpg");
+const avatarImg = require('./../assets/images/avatar.jpg');
 
 export default function Template({ data, pathContext }) {
   const { markdownRemark: post } = data;
@@ -25,32 +23,51 @@ export default function Template({ data, pathContext }) {
   return (
     <div>
       <Helmet title={`Gatsby Blog - ${post.frontmatter.title}`} />
-      <Menu/>
+      <Menu />
       <main className="blog container" role="main">
         <div className="medium-8 medium-offset-2">
           <header className="header post-head ">
-            <h1 className="post-title">{post.frontmatter.title}</h1>
+            <h1 className="post-title">
+              {post.frontmatter.title}
+            </h1>
           </header>
           <section className="post-meta">
             <div className="row">
               <div className="large-4">
                 <ul className="list-inline">
                   <li>
-                    <GatsbyLink to="/" className="author-avatar" itemProp="name">
+                    <GatsbyLink
+                      to="/"
+                      className="author-avatar"
+                      itemProp="name"
+                    >
                       <img src={avatarImg} alt="Kostas Bariotis" />
                     </GatsbyLink>
                   </li>
                   <li>
-                    <div className="author-name">
-                      Kostas Bariotis
-                    </div>
-                    <time className="post-date" dateTime={dateformat(post.frontmatter.date, 'isoDateTime')}>{dateformat(post.frontmatter.date, 'd mmmm yyyy')}</time>
+                    <div className="author-name">Kostas Bariotis</div>
+                    <time
+                      className="post-date"
+                      dateTime={dateformat(
+                        post.frontmatter.date,
+                        'isoDateTime'
+                      )}
+                    >
+                      {dateformat(post.frontmatter.date, 'd mmmm yyyy')}
+                    </time>
                   </li>
                 </ul>
               </div>
               <div className="large-8">
                 <ul className="tags list-inline text-right">
-                  {post.frontmatter.tags && post.frontmatter.tags.split(', ').map(tag => (<li><a href={`/tag/${tag}`}>{tag}</a></li>))}
+                  {post.frontmatter.tags &&
+                    post.frontmatter.tags.split(', ').map(tag =>
+                      <li>
+                        <a href={`/tag/${tag}`}>
+                          {tag}
+                        </a>
+                      </li>
+                    )}
                 </ul>
               </div>
             </div>
@@ -58,17 +75,19 @@ export default function Template({ data, pathContext }) {
           <div className="separator">
             <div className="first-level">
               <div className="second-level">
-                <div className="third-level"></div>
+                <div className="third-level" />
               </div>
             </div>
           </div>
           <article className="main-post {{post_class}}">
-            <section className="post-content" dangerouslySetInnerHTML={{ __html: post.html }}>
-            </section>
+            <section
+              className="post-content"
+              dangerouslySetInnerHTML={{ __html: post.html }}
+            />
             <div className="separator">
               <div className="first-level">
                 <div className="second-level">
-                  <div className="third-level"></div>
+                  <div className="third-level" />
                 </div>
               </div>
             </div>
@@ -121,7 +140,7 @@ export default function Template({ data, pathContext }) {
         </div>
       </main>
     </div>
-  )
+  );
 }
 
 export const pageQuery = graphql`

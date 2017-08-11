@@ -1,29 +1,39 @@
-import React from "react"
+import React from 'react';
 import GatsbyLink from 'gatsby-link';
 
 const avatarImage = require('./../assets/images/avatar.jpg');
 
-const MenuWithLogo = (props) => (
+const MenuWithLogo = props =>
   <nav className="navbar navbar-default">
-    <div className="image-placeholder"></div>
+    <div className="image-placeholder" />
     <div className="container">
       <div className="navbar-header hidden-xs">
         <GatsbyLink to="/" className="navbar-brand header-logo" itemProp="name">
-          <img className="header-avatar" src={avatarImage} alt="Kostas Bariotis" />
+          <img
+            className="header-avatar"
+            src={avatarImage}
+            alt="Kostas Bariotis"
+          />
         </GatsbyLink>
         <h1>Kostas Bariotis</h1>
         <p>
-          I'm Kostas Bariotis, a web developer, a proud wanderer and a passionate doer. My mission is to write clean
-          and efficient code, to solve problems on the web and to learn something more.
+          I'm Kostas Bariotis, a web developer, a proud wanderer and a
+          passionate doer. My mission is to write clean and efficient code, to
+          solve problems on the web and to learn something more.
         </p>
       </div>
 
       <div className="navbar-header">
-        <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu">
+        <button
+          type="button"
+          className="navbar-toggle collapsed"
+          data-toggle="collapse"
+          data-target="#main-menu"
+        >
           <span className="sr-only">Toggle navigation</span>
-          <span className="icon-bar"></span>
-          <span className="icon-bar"></span>
-          <span className="icon-bar"></span>
+          <span className="icon-bar" />
+          <span className="icon-bar" />
+          <span className="icon-bar" />
         </button>
       </div>
       <div className="collapse navbar-collapse" id="main-menu">
@@ -39,16 +49,20 @@ const MenuWithLogo = (props) => (
 
       <div className="navbar-header visible-xs">
         <GatsbyLink to="/" className="navbar-brand header-logo" itemProp="name">
-          <img className="header-avatar" src={avatarImage} alt="Kostas Bariotis" />
+          <img
+            className="header-avatar"
+            src={avatarImage}
+            alt="Kostas Bariotis"
+          />
         </GatsbyLink>
         <h1>Kostas Bariotis</h1>
         <p>
-          I'm Kostas Bariotis, a web developer, a proud wanderer and a passionate doer. My mission is to write clean
-          and efficient code, to solve problems on the web and to learn something more.
+          I'm Kostas Bariotis, a web developer, a proud wanderer and a
+          passionate doer. My mission is to write clean and efficient code, to
+          solve problems on the web and to learn something more.
         </p>
       </div>
     </div>
-  </nav>
-)
+  </nav>;
 
-export default MenuWithLogo
+export default MenuWithLogo;

@@ -1,16 +1,21 @@
-import React from "react"
+import React from 'react';
 import GatsbyLink from 'gatsby-link';
 
-const Menu = (props) => (
+const Menu = props =>
   <nav className="navbar navbar-default">
-    <div className="image-placeholder"></div>
+    <div className="image-placeholder" />
     <div className="container">
       <div className="navbar-header">
-        <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu">
+        <button
+          type="button"
+          className="navbar-toggle collapsed"
+          data-toggle="collapse"
+          data-target="#main-menu"
+        >
           <span className="sr-only">Toggle navigation</span>
-          <span className="icon-bar"></span>
-          <span className="icon-bar"></span>
-          <span className="icon-bar"></span>
+          <span className="icon-bar" />
+          <span className="icon-bar" />
+          <span className="icon-bar" />
         </button>
       </div>
       <div className="collapse navbar-collapse" id="main-menu">
@@ -24,7 +29,6 @@ const Menu = (props) => (
         </ul>
       </div>
     </div>
-  </nav>
-)
+  </nav>;
 
-export default Menu
+export default Menu;

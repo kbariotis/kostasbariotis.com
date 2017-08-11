@@ -1,7 +1,5 @@
-import React from "react"
+import React from 'react';
 
-const Separator = (props) => (
-  <div className="separator"></div>
-)
+const Separator = props => <div className="separator" />;
 
-export default Separator
+export default Separator;
