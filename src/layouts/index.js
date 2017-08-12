@@ -139,9 +139,9 @@ export default class Template extends React.Component {
             href="http://kostasbariotis.com/rss/"
           />
         </Helmet>
-        <div>
+        <section className="main-content">
           {this.props.children()}
-        </div>
+        </section>
         <Footer />
       </div>
     );
