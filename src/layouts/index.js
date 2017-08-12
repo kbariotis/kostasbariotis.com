@@ -116,7 +116,7 @@ export default class Template extends React.Component {
             rel="alternate"
             type="application/rss+xml"
             title="Kostas Bariotis"
-            href="http://kostasbariotis.com/rss/"
+            href="https://kostasbariotis.com/rss.xml"
           />
         </Helmet>
         <MetaTags

@@ -1,9 +1,9 @@
 module.exports = {
-  pathPrefix: '/kostasbariotis.com',
+  pathPrefix: '/',
   siteMetadata: {
     author: 'Kostas Bariotis!',
     title: `Kostas Bariotis' Blog`,
-    siteUrl: `https://kbariotis.github.io`,
+    siteUrl: `https://kostasbariotis.com`,
     description: `I'm Kostas Bariotis, a web developer, a proud wanderer and a passionate doer. My mission is to write clean and efficient code, to solve problems on the web and to learn something more.`
   },
   plugins: [
