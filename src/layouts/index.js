@@ -99,6 +99,9 @@ export default class Template extends React.Component {
             rel="manifest"
             href={`${__PATH_PREFIX__}/favicon/manifest.json`}
           />
+
+          <link rel="icon" href={`${__PATH_PREFIX__}/favicon/favicon.ico`} type="image/x-icon" />
+
           <meta name="msapplication-TileColor" content="#603cba" />
           <meta
             name="msapplication-TileImage"
