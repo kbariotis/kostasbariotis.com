@@ -1,24 +1,35 @@
 import React from 'react';
 import Head from 'react-helmet';
 import GatsbyLink from 'gatsby-link';
+import Helmet from 'react-helmet';
+import LazyLoad from 'react-lazyload';
 
 import Separator from './../components/Separator';
 import Menu from './../components/Menu';
-import AvatarImg from './../assets/images/avatar.jpg';
+import AvatarImg from './../../assets/images/avatar.jpg';
 
 export default function About() {
   return (
     <div>
+      <Helmet
+        title="Kostas Bariotis"
+        meta={[
+          { name: 'description', content: 'Sample' },
+          { name: 'keywords', content: 'sample, something' },
+        ]}
+      />
       <Menu />
       <section className="blog container about">
         <div className="medium-8 medium-offset-2">
           <header className="header">
             <div className="row text-center">
-              <img
-                className="header-avatar"
-                src={AvatarImg}
-                alt="Kostas Bariotis"
-              />
+              <LazyLoad height={250}>
+                <img
+                  className="header-avatar"
+                  src={AvatarImg}
+                  alt="Kostas Bariotis"
+                />
+              </LazyLoad>
               <h1>Hey, I'm Kostas. Nice having you here.</h1>
             </div>
           </header>
@@ -53,8 +64,7 @@ export default function About() {
                     public speaking
                   </a>{' '}
                   talking a lot about tech stuff and also talking with others on
-                  my{' '}
-                  <a href="http://devastation.tv">podcast</a>.{' '}
+                  my <a href="http://devastation.tv">podcast</a>.{' '}
                   <a href="http://stargento.com">Stargento</a> is one of my side
                   projects, an online PHP/Magento sandbox. You can find more
                   code samples and my contributions on

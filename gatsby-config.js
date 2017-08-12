@@ -1,9 +1,9 @@
 module.exports = {
+  pathPrefix: '/kostasbariotis.com',
   siteMetadata: {
     author: 'Kostas Bariotis!',
     title: `Kostas Bariotis' Blog`,
-    siteUrl: `https://kostasbariotis.com`,
-    pathPrefix: '/'
+    siteUrl: `https://kbariotis.github.io`,
   },
   plugins: [
     'gatsby-plugin-catch-links',

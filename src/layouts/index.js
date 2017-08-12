@@ -4,6 +4,7 @@ import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 
 import '../scss/boot.scss';
+// import 'bootstrap-sass/assets/javascripts/bootstrap/collapse.js';
 
 import Footer from '../components/Footer';
 
@@ -79,8 +80,8 @@ export default class Template extends React.Component {
           <link
             rel="icon"
             type="image/png"
-            href={`${__PATH_PREFIX__}/favicon/favicon-32x32.png`}
-            sizes="32x32"
+            href={`${__PATH_PREFIX__}/favicon/favicon-36x36.png`}
+            sizes="36x36"
           />
           <link
             rel="icon"
@@ -93,12 +94,6 @@ export default class Template extends React.Component {
             type="image/png"
             href={`${__PATH_PREFIX__}/favicon/favicon-96x96.png`}
             sizes="96x96"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            href={`${__PATH_PREFIX__}/favicon/favicon-16x16.png`}
-            sizes="16x16"
           />
           <link
             rel="manifest"

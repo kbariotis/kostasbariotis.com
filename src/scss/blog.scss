@@ -42,14 +42,14 @@
         }
     }
     .posts {
-        .post {
-            margin-bottom: 40px;
-            color: rgba(255, 255, 255, 0.8);
-        }
         .post-title {
             font-size: 0.9em;
             color: $lightblue;
             margin-bottom: 5px;
+        }
+        .post {
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.8);
         }
         time {
             color: rgba(255, 255, 255, 0.5);
@@ -185,4 +185,31 @@
 
 code {
     background: none;
+}
+
+.blog-section {
+    margin-top: 50px;
+
+    .header {
+        margin-bottom: 25px;
+    }
+
+    .text-right {
+        @media(max-width: $desktop-width) {
+            text-align: left;
+        }
+    }
+}
+
+.navigate-link:active,
+.navigate-link:focus,
+.navigate-link {
+    font-size: 22px;
+    font-weight: bold;
+    color: #8ab2ff;
+    margin-bottom: 5px;
+}
+
+.navigate-desc {
+    margin-top: 25px;
 }

@@ -26,19 +26,19 @@ But to make the recruiter to visit my page, I had to go through her mailbox firs
 This is the final version of it because I had to do some revises after I sent it a few times.
 
 > Dear Mr/Ms,
-
+>
 > I am Kostas Bariotis, a software developer and a passionate doer. I am sending you my regards from sunny Thessaloniki, Greece. Have you ever been? Take a look, I am sure you will fall in love with the amazing beaches of Chalkidiki.
-
+>
 > I am currently looking for a product and a team that I would be a great fit in. I stumbled upon your job description and I would really love it to talk more with you guys. I have been working with Node.js for the past three years. (**This is where I explain why I would be a good fit for that particular position**)
-
+>
 > I am obsessed with clean and efficient code. I am interested in designing software architectures, APIs and databases to serve the rest of an application. I am a full stack developer yet I love taking a specific field in my hands and getting the juice out of it. I am interested in being a part of a team that builds great software. I have spent the last two years with the [Goodvid.io](https://goodvid.io) team to serve e-commerce sites with curated product videos.
-
+>
 > My blog is my personal playground, I am also doing a lot of public speaking talking a lot about tech stuff and also talking with others on my podcast. Stargento and [GitYeller](https://gityeller.com) are two of my side projects. You can find more code samples and my contributions on [Github](https://github.com/kbariotis). Along with some folks, we are organizing the local [Nodejs meetup](https://www.meetup.com/Thessaloniki-Node-js-Meetup/) and [Devit Conf](http://devitconf.org), the biggest web development conference in northern Greece. We are also known as [SKGTech](https://skgtech.io).
-
+>
 > Last, but not least, I love reading books, mainly science fiction, traveling and attending conferences and meetups, snowboarding and staying fit. Calisthenics class is my latest activity that takes a lot of my time.
-
+>
 > I would love it if we could arrange a talk and talk more about how I could potentially be a fit for your team. Please, consult my resume or see the links below.
-
+>
 > Thank you so much and have a nice day. :)
 
 ## Where did I look?

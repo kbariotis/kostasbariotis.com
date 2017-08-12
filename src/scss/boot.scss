@@ -29,7 +29,20 @@ $font-size-base: 16px;
 /**
 * FONTS
 */
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700|Roboto+Slab:300,400,700');
+@font-face {
+  font-family: 'Roboto';
+  src: url('./../../assets/fonts/Roboto/Roboto-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  src: url('./../../assets/fonts/Roboto_Slab/RobotoSlab-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @import "entypo";
 @import "mixins";
 @import "main";

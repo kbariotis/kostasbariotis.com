@@ -12,7 +12,7 @@ The context of the callback that we are passing to `addEventListener` is the sam
 
 Lets see an example:
 
-```
+```js
 let element = document.createElement('button');
 
 let callback = function (e) {
@@ -26,7 +26,7 @@ element.dispatchEvent(new Event('click'));
 
 In the example above, the assertion inside the callback is always going to be true. Great? Great. But that's not the case. Consider something like this:
 
-```
+```js
 let Button = function () {
   this.el = document.createElement('button');
   this.addEvents();
@@ -45,7 +45,7 @@ Great! I am trying to model my Button element and I need the event handlers to b
 
 Now let's try to remove the attached handler.
 
-```
+```js
 let Button = function () {
 
   this.el = document.createElement('button');
@@ -69,7 +69,7 @@ The above won't work. Meaning that the `removeEventListener` won't actually remo
 
 So what do we do when we need to remove our attached event handlers at some point at runtime? Meet `handleEvent`, the default function that JavaScript looks for when tries to find a handler that has been attached to an event.
 
-```
+```js
 let Button = function () {
 
   this.el = document.createElement('button');
@@ -103,7 +103,7 @@ This way we are able to remove the event listeners while `this` inside `clickHan
 
 Another possible solution would be to keep a reference to the binded function and then remove that.
 
-```
+```js
 let Button = function () {
 
   this.el = document.createElement('button');

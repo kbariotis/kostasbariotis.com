@@ -33,7 +33,7 @@ const Posts = ({ posts }) =>
             </p>
           </section>
           <footer className="post-meta">
-            <CommaSeparatedTags tags={post.frontmatter.tags}/>
+            <CommaSeparatedTags tags={post.frontmatter.tags} />
           </footer>
         </article>
       )}

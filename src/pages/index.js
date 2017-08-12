@@ -1,6 +1,7 @@
 import React from 'react';
 import GatsbyLink from 'gatsby-link';
 import dateformat from 'dateformat';
+import Helmet from 'react-helmet';
 
 import Link from '../components/Link';
 import Separator from './../components/Separator';
@@ -12,6 +13,13 @@ export default function Index({ data }) {
   posts = posts.map(post => post.node);
   return (
     <section className="main-content">
+      <Helmet
+        title="Kostas Bariotis"
+        meta={[
+          { name: 'description', content: 'Sample' },
+          { name: 'keywords', content: 'sample, something' },
+        ]}
+      />
       <MenuWithLogo />
       <section className="blog container">
         <div className="medium-8 medium-offset-2">

@@ -1,7 +1,8 @@
 import React from 'react';
 import GatsbyLink from 'gatsby-link';
+import LazyLoad from 'react-lazyload';
 
-const avatarImage = require('./../assets/images/avatar.jpg');
+import avatarImage from './../../assets/images/avatar.jpg';
 
 const MenuWithLogo = props =>
   <nav className="navbar navbar-default">
@@ -9,11 +10,13 @@ const MenuWithLogo = props =>
     <div className="container">
       <div className="navbar-header hidden-xs">
         <GatsbyLink to="/" className="navbar-brand header-logo" itemProp="name">
-          <img
-            className="header-avatar"
-            src={avatarImage}
-            alt="Kostas Bariotis"
-          />
+          <LazyLoad height={250}>
+            <img
+              className="header-avatar"
+              src={avatarImage}
+              alt="Kostas Bariotis"
+            />
+          </LazyLoad>
         </GatsbyLink>
         <h1>Kostas Bariotis</h1>
         <p>
