@@ -11,7 +11,7 @@ export default function Index({ data }) {
   let { edges: posts } = data.allMarkdownRemark;
   posts = posts.map(post => post.node);
   return (
-    <section className="main-content">
+    <div>
       <MenuWithLogo />
       <section className="blog container">
         <div className="medium-8 medium-offset-2">
@@ -30,7 +30,7 @@ export default function Index({ data }) {
           </div>
         </div>
       </section>
-    </section>
+    </div>
   );
 }
 
