@@ -2,7 +2,7 @@ import React from 'react';
 import GatsbyLink from 'gatsby-link';
 import LazyLoad from 'react-lazyload';
 
-import avatarImage from './../../assets/images/avatar.jpg';
+import avatarImage from './../../static/images/avatar.jpg';
 
 const MenuWithLogo = props =>
   <nav className="navbar navbar-default">

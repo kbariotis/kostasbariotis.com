@@ -138,7 +138,7 @@ module.exports = {
     'index-page': `${__dirname}/source/js/index-page.js`
   },
   output: {
-    path: "/path.join(__dirname, './assets/'),"
+    path: "/path.join(__dirname, ../static/'),"
     publicpath: "/'/',"
     filename: 'js/[name].js',
   },
@@ -208,11 +208,11 @@ All we need now is to include them into our layout file.
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{page.title || site.title}}</title>
-  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href../static/css/main.css">
 </head>
 <body>
 {{ content }}
-<script src="/assets/js/entry.js"></script>
+<script src../static/js/entry.js"></script>
 </body>
 </html>
 ```

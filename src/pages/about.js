@@ -6,7 +6,7 @@ import LazyLoad from 'react-lazyload';
 
 import Separator from './../components/Separator';
 import Menu from './../components/Menu';
-import AvatarImg from './../../assets/images/avatar.jpg';
+import AvatarImg from './../../static/images/avatar.jpg';
 
 export default function About() {
   return (

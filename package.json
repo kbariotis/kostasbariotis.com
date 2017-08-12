@@ -31,7 +31,7 @@
   },
   "scripts": {
     "build": "rimraf public/ && gatsby build",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy": "rimraf public/ && gatsby build --prefix-paths && gh-pages -d public",
     "develop": "gatsby develop",
     "preserve": "npm run build",
     "serve": "gatsby serve",

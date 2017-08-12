@@ -16,18 +16,18 @@ So, like a true hacker, I am using SASS to build my CSS files and my main file l
 ```scss
 $bootstrap-sass-asset-helper: true;
 
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/variables";
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins";
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/normalize";
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/print";
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/scaffolding";
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/type";
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/grid";
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/forms";
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/buttons";
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/utilities";
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
+@import "~bootstrap-sa../static/stylesheets/bootstrap/variables";
+@import "~bootstrap-sa../static/stylesheets/bootstrap/mixins";
+@import "~bootstrap-sa../static/stylesheets/bootstrap/normalize";
+@import "~bootstrap-sa../static/stylesheets/bootstrap/print";
+@import "~bootstrap-sa../static/stylesheets/bootstrap/glyphicons";
+@import "~bootstrap-sa../static/stylesheets/bootstrap/scaffolding";
+@import "~bootstrap-sa../static/stylesheets/bootstrap/type";
+@import "~bootstrap-sa../static/stylesheets/bootstrap/grid";
+@import "~bootstrap-sa../static/stylesheets/bootstrap/forms";
+@import "~bootstrap-sa../static/stylesheets/bootstrap/buttons";
+@import "~bootstrap-sa../static/stylesheets/bootstrap/utilities";
+@import "~bootstrap-sa../static/stylesheets/bootstrap/responsive-utilities";
 ```
 
 I am using [webpack](https://webpack.js.org) to parse the files. Here's an example configuration of [webpack along with Bootstrap](https://github.com/kbariotis/webpack-patterns).
@@ -80,7 +80,7 @@ Yeap, much cleaner, readable and domain oriented. Now let's tie this together wi
 }
 ```
 
-We either extend a Bootstrap's class or using it's [mixins](https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_grid.scss).
+We either extend a Bootstrap's class or using it's [mixins](https://github.com/twbs/bootstrap-sass/blob/mast../static/stylesheets/bootstrap/mixins/_grid.scss).
 
 Now only our CSS knows about Bootstrap. HTML doesn't care. Bootstrap can be anyone of your favorite CSS frameworks.
 

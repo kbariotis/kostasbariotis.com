@@ -4,9 +4,10 @@ import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 
 import '../scss/boot.scss';
-// import 'bootstrap-sass/assets/javascripts/bootstrap/collapse.js';
+// import 'bootstrap-sa../static/javascripts/bootstrap/collapse.js';
 
 import Footer from '../components/Footer';
+import MetaTags from '../components/MetaTags';
 
 export default class Template extends React.Component {
   static propTypes = {
@@ -97,38 +98,19 @@ export default class Template extends React.Component {
           />
           <link
             rel="manifest"
-            href={`${__PATH_PREFIX__}/favicon/manifest.json`}
+            href={`${__PATH_PREFIX__}/manifest.json`}
           />
-
-          <link rel="icon" href={`${__PATH_PREFIX__}/favicon/favicon.ico`} type="image/x-icon" />
-
-          <meta name="msapplication-TileColor" content="#603cba" />
+          <link
+            rel="icon"
+            href={`${__PATH_PREFIX__}/favicon/favicon.ico`}
+            type="image/x-icon"
+          />
+          <meta
+            name="msapplication-TileColor"
+            content="#603cba" />
           <meta
             name="msapplication-TileImage"
             content={`${__PATH_PREFIX__}/favicon/mstile-144x144.png`}
-          />
-          <meta property="og:site_name" content="Kostas Bariotis" />
-          <meta property="og:type" content="website" />
-          <meta property="og:title" content="Kostas Bariotis" />
-          <meta
-            property="og:description"
-            content="I&#x27;m Kostas Bariotis, a web developer, a proud wanderer and a passionate doer. My mission is to write clean and efficient code, to solve problems on the web and to learn something more."
-          />
-          <meta property="og:url" content="http://kostasbariotis.com/" />
-          <meta
-            property="og:image"
-            content={`${__PATH_PREFIX__}/images/header_index.jpg`}
-          />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Kostas Bariotis" />
-          <meta
-            name="twitter:description"
-            content="I&#x27;m Kostas Bariotis, a web developer, a proud wanderer and a passionate doer. My mission is to write clean and efficient code, to solve problems on the web and to learn something more."
-          />
-          <meta name="twitter:url" content="http://kostasbariotis.com/" />
-          <meta
-            name="twitter:image"
-            content={`${__PATH_PREFIX__}/images/header_index.jpg`}
           />
           <link
             rel="alternate"
@@ -137,6 +119,12 @@ export default class Template extends React.Component {
             href="http://kostasbariotis.com/rss/"
           />
         </Helmet>
+        <MetaTags
+          title="Kostas Bariotis"
+          path="/"
+          tags="webdev, programming, javascript"
+          description="I'm Kostas Bariotis, a web developer, a proud wanderer and a passionate doer. My mission is to write clean and efficient code, to solve problems on the web and to learn something more."
+        />
         <section className="main-content">
           {this.props.children()}
         </section>

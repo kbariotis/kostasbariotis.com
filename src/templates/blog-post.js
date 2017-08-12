@@ -10,8 +10,9 @@ import Menu from '../components/Menu';
 import BulletListTags from '../components/BulletListTags';
 import NavigateLink from '../components/NavigateLink';
 import Separator from '../components/Separator';
+import MetaTags from '../components/MetaTags';
 
-import avatarImg from './../../assets/images/avatar.jpg';
+import avatarImg from './../../static/images/avatar.jpg';
 
 const {
   FacebookShareButton,
@@ -29,9 +30,11 @@ export default function Template({ data, pathContext }) {
 
   return (
     <div>
-      <Helmet
+      <MetaTags
         title={`${post.frontmatter.title} - Kostas Bariotis`}
-        meta={[{ name: 'description', content: post.excerpt }]}
+        description={post.excerpt}
+        tags={post.frontmatter.tags}
+        path={post.frontmatter.path}
       />
       <Menu />
       <main className="blog container" role="main">

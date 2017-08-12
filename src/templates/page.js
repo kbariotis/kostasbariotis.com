@@ -6,11 +6,18 @@ import Pagination from '../components/Pagination';
 import Posts from '../components/Posts';
 import Separator from '../components/Separator';
 import MenuWithLogo from '../components/MenuWithLogo';
+import MetaTags from '../components/MetaTags';
 
 export default function Pages({ pathContext }) {
   const { posts, page, pagesSum } = pathContext;
   return (
     <section className="main-content">
+      <MetaTags
+        title="Kostas Bariotis"
+        path={`/page/${page}`}
+        tags="webdev, programming, javascript"
+        description="I'm Kostas Bariotis, a web developer, a proud wanderer and a passionate doer. My mission is to write clean and efficient code, to solve problems on the web and to learn something more."
+      />
       <MenuWithLogo />
       <section className="blog container">
         <div className="medium-8 medium-offset-2">

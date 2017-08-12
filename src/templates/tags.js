@@ -6,12 +6,19 @@ import Posts from '../components/Posts';
 import MenuWithLogo from '../components/MenuWithLogo';
 import Pagination from '../components/TagsPagination';
 import Separator from '../components/Separator';
+import MetaTags from '../components/MetaTags';
 
 export default function Tags({ pathContext }) {
   const { posts, tag, pagesSum, page } = pathContext;
 
   return (
     <section className="main-content">
+      <MetaTags
+        title={`${tag} - Kostas Bariotis`}
+        description={`All posts about ${tag}`}
+        tags={tag}
+        path={`/tag/${tag}`}
+      />
       <MenuWithLogo />
       <section className="blog container tags-collection">
         <div className="medium-8 medium-offset-2">
