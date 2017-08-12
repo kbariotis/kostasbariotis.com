@@ -80,7 +80,7 @@ const Footer = props =>
       </ul>
       <div className="text-center">
         Copyright {new Date().getFullYear()}{' '}
-        <a href="{{@blog.url}}" title="Kostasbariotis.com Home">
+        <a href="https://kostasbariotis.com" title="Kostas Bariotis Blog">
           Kostas Bariotis
         </a>{' '}
         <span className="separator"> • </span> Design by{' '}

@@ -20,6 +20,9 @@ const avatarImg = require('./../assets/images/avatar.jpg');
 export default function Template({ data, pathContext }) {
   const { markdownRemark: post } = data;
   const { next, prev } = pathContext;
+
+  const fullUrl = `https://kostasbariotis.com${post.frontmatter.path}`;
+
   return (
     <div>
       <Helmet title={`Gatsby Blog - ${post.frontmatter.title}`} />
@@ -97,26 +100,26 @@ export default function Template({ data, pathContext }) {
                   <li>
                     <b>Share this post on</b>
                   </li>
-                  {/* <li className="link-twitter">
-                    <TwitterShareButton url={window.location.href} title={post.frontmatter.title} via="kbariotis" className="share-twitter">
+                  <li className="link-twitter">
+                    <TwitterShareButton url={fullUrl} title={post.frontmatter.title} via="kbariotis" className="share-twitter">
                       <span>Twitter</span>
                     </TwitterShareButton>
                   </li>
                   <li className="link-facebook">
-                    <FacebookShareButton url={window.location.href} title={post.frontmatter.title} description={post.excerpt} className="share-facebook">
+                    <FacebookShareButton url={fullUrl} title={post.frontmatter.title} description={post.excerpt} className="share-facebook">
                       <span>Facebook</span>
                     </FacebookShareButton>
                   </li>
                   <li className="link-google-plus">
-                    <GooglePlusShareButton url={window.location.href} className="share-google-plus">
+                    <GooglePlusShareButton url={fullUrl} className="share-google-plus">
                       <span>Google+</span>
                     </GooglePlusShareButton>
                   </li>
                   <li className="link-reddit" title={post.frontmatter.title}>
-                    <RedditShareButton url={window.location.href} className="share-reddit">
+                    <RedditShareButton url={fullUrl} className="share-reddit">
                       <span>Reddit</span>
                     </RedditShareButton>
-                  </li> */}
+                  </li>
                 </ul>
               </section>
             </footer>
@@ -135,7 +138,12 @@ export default function Template({ data, pathContext }) {
             <header className="header">
               <h2>Comments</h2>
             </header>
-            <ReactDisqusThread shortname="kostasbariotis" />
+            <ReactDisqusThread
+              shortname="kostasbariotis"
+              identifier={post.frontmatter.path.slice(1)}
+              title={post.frontmatter.title}
+              url={fullUrl}
+              />
           </article>
         </div>
       </main>

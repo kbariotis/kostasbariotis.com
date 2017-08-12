@@ -15,19 +15,20 @@ Prefer using the latest version of the package you want instead of the wildcard(
 
 Instead of writing
 
-<pre><code>...
-
+```json
 &quot;require&quot;: {
 
     &quot;monolog/monolog&quot;:&quot;1.*&quot;
 
 }
 
-...</code></pre>
+...
+```
 
 write
 
-<pre><code>...
+```json
+...
 
 &quot;require&quot;: {
 
@@ -35,7 +36,9 @@ write
 
 }
 
-...</code></pre>
+...
+
+```
 
 &nbsp;
 

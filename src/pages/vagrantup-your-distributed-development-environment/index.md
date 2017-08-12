@@ -15,15 +15,19 @@ So i present to you <a title="Vagrant" href="http://www.vagrantup.com/" target=
 Vagrant is a nice middleware between you and <a title="VirtualBox" href="https://www.virtualbox.org/" target="_blank">VirtualBox</a>. It provides all the tools you need to set up your development environment almost everywhere and almost immediately.
 
 Consider this. You are working on an online service that is deployed on a hosting machine somewhere. You can’t develop your newly features on the production server and also you don’t want an FTP connection to work. You need everything local. You want also to have an exact same machine, as your remote machine, to work with. With the same exact libraries and the corresponding versions of these. After you have <a title="Download Vagrant" href="http://downloads.vagrantup.com/" target="_blank">download </a>Vagrant:
-<p style="padding-left:30px;"><pre><code> $  vagrant init precise32 &lt;a href=&quot;http://files.vagrantup.com/precise32.bo&quot;&gt;http://files.vagrantup.com/precise32.bo&lt;/a&gt;</code></pre>
 
-</p>
-<p style="padding-left:30px;"><pre><code> $ vagrant up</code></pre>
+```bash
+$  vagrant init precise32 &lt;a href=&quot;http://files.vagrantup.com/precise32.bo&quot;&gt;http://files.vagrantup.com/precise32.bo&lt;/a&gt;
+```
 
-</p>
-<p style="padding-left:30px;"><pre><code> $ vagrant ssh</code></pre>
+```bash
+$ vagrant up
+```
 
-</p>
+```bash
+ $ vagrant ssh
+```
+
 Just setup your Linux box with all the services, libraries and stuff you need. Edit the .VagrantFile, by first checking the <a title="Vagrant Docs" href="http://docs.vagrantup.com/v2/getting-started/index.html" target="_blank">docs</a>. You can make all the cool stuff like port forwarding and shared folders on your hosting machine.
 
 Now you need to share this box with your colleagues so you can work on the same exact machine.Vagrant let’s you create packages. Those packages are just some configuration files you can even upload to <a title="Github" href="http://www.github.com/" target="_blank">Github </a>and let others grab them.

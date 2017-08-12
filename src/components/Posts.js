@@ -2,13 +2,15 @@ import React from 'react';
 import GatsbyLink from 'gatsby-link';
 import dateformat from 'dateformat';
 
+import CommaSeparatedTags from './CommaSeparatedTags';
+
 const Posts = ({ posts }) =>
   <div>
     {posts
       .filter(post => post.frontmatter.title.length > 0)
       .filter(post => !post.frontmatter.draft)
       .map((post, index) =>
-        <article className="dsa" key={index}>
+        <article className="post" key={index}>
           <header className="header post-head">
             <h1 className="post-title">
               <GatsbyLink to={post.frontmatter.path}>
@@ -31,15 +33,7 @@ const Posts = ({ posts }) =>
             </p>
           </section>
           <footer className="post-meta">
-            <div className="tags">
-              Talking about:{' '}
-              {post.frontmatter.tags &&
-                post.frontmatter.tags.split(', ').map(tag =>
-                  <a href={`/tag/${tag}/`}>
-                    {tag},{' '}
-                  </a>
-                )}
-            </div>
+            <CommaSeparatedTags tags={post.frontmatter.tags}/>
           </footer>
         </article>
       )}

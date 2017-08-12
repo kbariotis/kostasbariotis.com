@@ -53,8 +53,8 @@ export default function About() {
                     public speaking
                   </a>{' '}
                   talking a lot about tech stuff and also talking with others on
-                  my
-                  <a href="http://devastation.tv">podcast</a>.
+                  my{' '}
+                  <a href="http://devastation.tv">podcast</a>.{' '}
                   <a href="http://stargento.com">Stargento</a> is one of my side
                   projects, an online PHP/Magento sandbox. You can find more
                   code samples and my contributions on
@@ -63,11 +63,11 @@ export default function About() {
                   <a href="www.meetup.com/Thessaloniki-Node-js-Meetup/">
                     Nodejs meetup
                   </a>{' '}
-                  and
+                  and{' '}
                   <a href="http://devit.org" target="_blank">
                     DEVit Conf
                   </a>, the biggest web development conference in northern
-                  Greece. We are also known as
+                  Greece. We are also known as{' '}
                   <a href="http://skgtech.io" target="_blank">
                     SKGtech
                   </a>.
@@ -125,7 +125,7 @@ export default function About() {
                   <div className="medium-2 bio-date">2013</div>
                   <div className="medium-10 text-right">
                     Started working with <a href="http://dtek.gr">DTek</a>. A
-                    lot of nice projects born from there like
+                    lot of nice projects born from there like{' '}
                     <a href="http://carfinder.gr">Carfinder.gr</a> and{' '}
                     <a href="http://viralcontestapp.com">Viral Contest App</a>
                   </div>

@@ -25,7 +25,9 @@ Your choice will affect your development a lot down the road, so think wisely.
 
 Now on the code side, we will use Mongoose to shape our models. Here's the most simple one.
 
-<pre><code class="language-javascript">var mongoose     = require('mongoose');
+```js
+
+var mongoose     = require('mongoose');
 var Schema     = mongoose.Schema;
 
 var CitySchema   = new Schema({
@@ -36,11 +38,13 @@ var CitySchema   = new Schema({
   }
 });
 
-module.exports = mongoose.model('City', CitySchema);</code></pre>
+module.exports = mongoose.model('City', CitySchema);
+```
 
 Now we can start populating our DB like this
 
-<pre><code class="language-javascript">var City = require('./app/models/city');
+```js
+var City = require('./app/models/city');
 
 var cityModel     = new City(); 
 cityModel.name = req.body.name; 
@@ -51,11 +55,14 @@ cityModel.save(function (err) {
     res.send(err);
 
   res.json({});
-});</code></pre>
+});
+```
 
 And now on the fun part
 
-<pre><code class="language-javascript">var distance = 1000 / 6371;
+```js
+
+var distance = 1000 / 6371;
 
 var query = City.findOne({'geo': {
   $near: [
@@ -80,7 +87,8 @@ query.exec(function (err, city) {
     res.json(city);
  }
 
-});</code></pre>
+});
+```
 
 Our distance is in radians metric system and you can find more on how to calculate it <a title="Convert to radians" href="http://docs.mongodb.org/manual/tutorial/calculate-distances-using-spherical-geometry-with-2d-geospatial-indexes/" target="_blank">here</a>.
 

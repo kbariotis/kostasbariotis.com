@@ -8,7 +8,7 @@ tags: recursion, javascript, node.js
 
 Recursion is one of the initial courses we take in every CS university, with the most used example being the Fibonacci sequence:
 
-<pre><code class="javascript">
+```js
 let recursive = (n) => {
   if(n <= 2) {
     return 1
@@ -16,13 +16,13 @@ let recursive = (n) => {
     return recursive(n - 1) + recursive(n - 2);
   }
 };
-</code></pre>
+```
 
 This works great in most of the languages we've been taught, but with asynchronous environments such as Node.js, things are getting tricky. Using asynchronous functions, we need to wait for the function to end before call the next iteration of the recursion.
 
 Say we need to recursively delete an item and all of it's children from a connected list.
 
-<pre><code class="javascript">
+```js
 let recursivelyDelete = (id) => {
   db.items.findOne(id, (err, item) => {
     if(err) {
@@ -42,14 +42,15 @@ let recursivelyDelete = (id) => {
     }
   }
 }
-</code></pre>
+```
 
 You can find all different recursion patterns for Node.js [here](http://metaduck.com/01-asynchronous-iteration-patterns.html).
 
 This is all good but you can see how easily can lead to a callback hell. What if we had to do some checks before the deletion? Or update something else? What about a tree structure with multiple children?
 
 Fortunately, we can use [Promises](https://www.promisejs.org/). Let's rewrite.
-<pre><code class="javascript">
+
+```js
 let recursivelyDelete = (id) => {
   let item
   return findOne(id)
@@ -92,13 +93,13 @@ let findOne = (id) => {
       }
   })
 }
-</code></pre>
+```
 
 We can see how it's better written and can easily scale and more functions can be added.
 
 Here's a more complicated example. Say we need to handle the deletion of a category in a tree. Given an ID, we have to check if the category exists and if there are dependent blog posts connected with that category. Only then, we have to run the same process for it's children and for their children. Delete all or reject. Deletion must go after the checks of all children, just like the above example.
 
-<pre><code class="javascript">
+```js
 let handleDeletion = (id) => {
   findOne(id)
     .then((item) => {
@@ -183,7 +184,8 @@ let remove = (id) => {
   })
 }
 
-</code></pre>
+```
 <br/>
-*Examples are written in [ES6](http://es6-features.org) with the [Promises API](https://www.promisejs.org/) which you can run using the latest [Node.js](https://nodejs.org/en/) v4 build*
+
+**Examples are written in [ES6](http://es6-features.org) with the [Promises API](https://www.promisejs.org/) which you can run using the latest [Node.js](https://nodejs.org/en/) v4 build**
 <br/>

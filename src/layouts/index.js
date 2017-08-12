@@ -109,9 +109,6 @@ export default class Template extends React.Component {
             name="msapplication-TileImage"
             content={`${__PATH_PREFIX__}/favicon/mstile-144x144.png`}
           />
-          <link rel="canonical" href="http://kostasbariotis.com/" />
-          <meta name="referrer" content="no-referrer-when-downgrade" />
-          <link rel="next" href="http://kostasbariotis.com/page/2/" />
           <meta property="og:site_name" content="Kostas Bariotis" />
           <meta property="og:type" content="website" />
           <meta property="og:title" content="Kostas Bariotis" />

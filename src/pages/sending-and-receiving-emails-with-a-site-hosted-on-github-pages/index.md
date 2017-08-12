@@ -19,7 +19,7 @@ So here's a simple solution that involves having your site hosted on GitHub Page
 ## Receiving emails
 For receiving emails, Namecheap has this great [email forwarding feature](https://www.namecheap.com/support/knowledgebase/article.aspx/308/76/how-can-i-set-up-free-email-forwarding-for-my-domain) that allows you to forward an incoming email to your domain in an external email. So I put my personal Gmail email there and I am able to receive emails.
 
-![](./images/Screen-Shot-2016-10-30-at-18-09-54.png)
+![Hello](./images/Screen-Shot-2016-10-30-at-18-09-54.png)
 
 ## Sending emails
 Now Mailchimp allows you to [add a custom domain](http://kb.mailchimp.com/accounts/email-authentication/set-up-custom-domain-authentication-dkim-and-spf) to be able to send emails that originated from that domain. You need to verify this domain before you're able to send emails, so all you have to do is add a few records in your DNS settings and you are good to go. These are the instructions from Mailchimp.

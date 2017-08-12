@@ -63,7 +63,7 @@ Migration systems are providing a few standard things in order to make your migr
 ### Write a migration
 Usually, we want to define two standard methods for a migration script. The function to run when we are migrating and the function when we are rolling back:
 
-```
+```js
 'use strict';
 
 var Promise = require('bluebird');
@@ -96,12 +96,12 @@ We have to be able to run a specific migration or run all migrations we have wri
 E.g. on a fresh environment we must run all migrations in order to bring the newly created database to its current state, as it currently lies in production.
 
 To run all migrations:
-```
+```js
 umzug.up().then(...);
 ```
 
 or to run up to a particular migration:
-```
+```js
 umzug.up({ to: 'migration-filename' }).then(...);
 ```
 ### Rollback a migration
@@ -110,23 +110,23 @@ In case we need to rollback our application back in a previous state that also i
 
 Just like `up`, but running `down` instead:
 To revert all migrations:
-```
+```js
 umzug.down().then(...);
 ```
 or to revert down to a particular migration:
-```
+```js
 umzug.down({ to: 'migration-filename' }).then(...);
 ```
 
 ### Automating
 umzug doesn't come with a CLI out of the box, but it doesn't take much to write one yourself.
 After I wrote mine, it's just a matter of:
-```
+```bash
 node scripts/migrate
 ```
 to run all migrations in fresh environments.
 
-```
+```bash
 node scripts/migrate [up|down] {version}
 ```
 to go to that particular migration. This will run on every instance of our application at boot time, so if there is a pending migration, it will run it.

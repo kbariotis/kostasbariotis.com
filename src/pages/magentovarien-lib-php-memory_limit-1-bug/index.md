@@ -15,7 +15,8 @@ A lot of resources on the Internet says that you have to increase your PHP's mem
 I followed the stacktrace and i found this (lib/Varien/Image/Adapter/Gd2.php):
 
 
-<pre><code>protected function _isMemoryLimitReached()
+```php
+protected function _isMemoryLimitReached()
 {
   $limit = $this-&gt;_convertToByte(ini_get('memory_limit'));
   $size = getimagesize($this-&gt;_fileName);
@@ -33,7 +34,8 @@ protected function _convertToByte($memoryValue)
     return (int)$memoryValue * 1024;
   }
   return (int)$memoryValue;
-}</code></pre>
+}
+```
 
 
 There you have it. The author here doesn't check for when memory_limit is set to -1. Instead he assumes that it will be always set to form of XXM or XXKB.

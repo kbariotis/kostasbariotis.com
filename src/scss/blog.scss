@@ -104,6 +104,16 @@
                     display: block;
                 }
             }
+            .share-reddit {
+                color: #ff5700;
+                @media (max-width: 768px) {
+                    background-color: #ff5700;
+                    color: #fff;
+                    padding: 5px;
+                    width: 100%;
+                    display: block;
+                }
+            }
             .share-facebook {
                 color: #3b5998;
                 @media (max-width: 768px) {
@@ -171,4 +181,8 @@
     .tag-meta {
         margin-bottom: 50px;
     }
+}
+
+code {
+    background: none;
 }
