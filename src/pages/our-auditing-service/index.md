@@ -1,8 +1,7 @@
 ---
 title: "Our auditing service"
 path: "/our-auditing-service"
-date: "1970-01-01T00:00:00.000Z"
-date_updated:   2015-11-12T19:20:56.000Z
+date: "2015-11-15T00:00:00.000Z"
 draft: true
 ---
 

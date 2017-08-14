@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-const MetaTags = ({ title, description, path, tags }) =>
+const MetaTags = ({ title, description, path, tags, noIndex }) =>
   <div>
     <Helmet
       title={title}
@@ -10,6 +10,10 @@ const MetaTags = ({ title, description, path, tags }) =>
         { name: 'keywords', content: tags },
       ]}
     >
+      {noIndex &&
+        <meta name="robots" content="noindex"/>
+      }
+
       <meta property="og:site_name" content="Kostas Bariotis" />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />

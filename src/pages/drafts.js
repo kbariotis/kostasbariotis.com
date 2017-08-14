@@ -15,15 +15,20 @@ export default function Index({ data }) {
   return (
     <div>
       <MetaTags
-        title={title}
+        title={`My drafts - ${title}`}
         path="/"
         tags="webdev, programming, javascript"
         description={description}
+        noIndex={true}
       />
       <MenuWithLogo />
       <section className="blog container">
         <div className="medium-8 medium-offset-2">
-          <header className="header">Latest Posts</header>
+          <header className="header">Drafts</header>
+          <p>Here are my drafts, currently working on either
+            abandoned them for some reason. You can read them
+            and comment them on them if you think you can help me.
+          </p>
           <Separator />
           <div className="posts">
             <Posts posts={posts} />
@@ -43,7 +48,7 @@ export default function Index({ data }) {
 }
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query DraftsQuery {
     site {
       siteMetadata {
         title
@@ -53,7 +58,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       limit: 5,
-      filter: { frontmatter: { draft: { ne: true } } }
+      filter: { frontmatter: { draft: { eq: true } } }
     ) {
       edges {
         node {

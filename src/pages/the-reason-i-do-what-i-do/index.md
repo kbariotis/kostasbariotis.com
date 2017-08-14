@@ -1,8 +1,7 @@
 ---
 title: "The reason I do what I do"
 path: "/the-reason-i-do-what-i-do"
-date: "1970-01-01T00:00:00.000Z"
-date_updated:   2016-01-03T13:31:50.000Z
+date: "2016-10-20T00:00:00.000Z"
 draft: true
 ---
 

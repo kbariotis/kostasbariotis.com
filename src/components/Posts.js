@@ -8,12 +8,11 @@ const Posts = ({ posts }) =>
   <div>
     {posts
       .filter(post => post.frontmatter.title.length > 0)
-      .filter(post => !post.frontmatter.draft)
       .map((post, index) =>
         <article className="post" key={index}>
           <header className="header post-head">
             <h1 className="post-title">
-              <GatsbyLink to={post.frontmatter.path}>
+              <GatsbyLink to={post.frontmatter.draft ? `/drafts${post.frontmatter.path}` : post.frontmatter.path}>
                 {post.frontmatter.title}
               </GatsbyLink>
             </h1>
@@ -27,7 +26,7 @@ const Posts = ({ posts }) =>
           <section className="post-excerpt">
             <p>
               {post.excerpt}{' '}
-              <GatsbyLink className="read-more" to={post.frontmatter.path}>
+              <GatsbyLink to={post.frontmatter.draft ? `/drafts${post.frontmatter.path}` : post.frontmatter.path}>
                 &raquo;
               </GatsbyLink>
             </p>

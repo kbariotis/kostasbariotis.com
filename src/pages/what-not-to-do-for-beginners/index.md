@@ -1,7 +1,7 @@
 ---
 title: "What not to do for beginners"
-path: "//what-not-to-do-for-beginners"
-date: "1970-01-01T00:00:00.000Z"
+path: "/what-not-to-do-for-beginners"
+date: "2015-10-10T00:00:00.000Z"
 draft: true
 ---
 

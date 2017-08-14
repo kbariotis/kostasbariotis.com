@@ -1,8 +1,7 @@
 ---
 title: "(Untitled)"
 path: "/untitled-4"
-date: "1970-01-01T00:00:00.000Z"
-date_updated:   2017-06-05T06:45:48.000Z
+date: "2017-06-01T00:00:00.000Z"
 draft: true
 ---
 

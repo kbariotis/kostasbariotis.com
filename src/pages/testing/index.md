@@ -1,8 +1,7 @@
 ---
 title: "Testing Software Systems"
 path: "/testing"
-date: "1970-01-01T00:00:00.000Z"
-date_updated:   2016-01-10T07:48:32.000Z
+date: "2016-05-01T00:00:00.000Z"
 draft: true
 ---
 

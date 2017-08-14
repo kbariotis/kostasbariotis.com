@@ -24,17 +24,19 @@ const {
 
 export default function Template({ data, pathContext }) {
   const { markdownRemark: post } = data;
+  const { title, siteUrl } = data.site.siteMetadata;
   const { next, prev } = pathContext;
 
-  const fullUrl = `https://kostasbariotis.com${post.frontmatter.path}`;
+  const fullUrl = `${siteUrl}${post.frontmatter.path}`;
 
   return (
     <div>
       <MetaTags
-        title={`${post.frontmatter.title} - Kostas Bariotis`}
+        title={`${post.frontmatter.title} - ${title}`}
         description={post.excerpt}
         tags={post.frontmatter.tags}
         path={post.frontmatter.path}
+        noIndex={post.frontmatter.draft}
       />
       <Menu />
       <main className="blog container" role="main">
@@ -88,42 +90,48 @@ export default function Template({ data, pathContext }) {
             <footer className="post-footer">
               <section className="share text-center">
                 <ul className="share-buttons list-inline">
-                  <li>
-                    <b>Share this post on</b>
-                  </li>
-                  <li className="link-twitter">
-                    <TwitterShareButton
-                      url={fullUrl}
-                      title={post.frontmatter.title}
-                      via="kbariotis"
-                      className="share-twitter"
-                    >
-                      <span>Twitter</span>
-                    </TwitterShareButton>
-                  </li>
-                  <li className="link-facebook">
-                    <FacebookShareButton
-                      url={fullUrl}
-                      title={post.frontmatter.title}
-                      description={post.excerpt}
-                      className="share-facebook"
-                    >
-                      <span>Facebook</span>
-                    </FacebookShareButton>
-                  </li>
-                  <li className="link-google-plus">
-                    <GooglePlusShareButton
-                      url={fullUrl}
-                      className="share-google-plus"
-                    >
-                      <span>Google+</span>
-                    </GooglePlusShareButton>
-                  </li>
-                  <li className="link-reddit" title={post.frontmatter.title}>
-                    <RedditShareButton url={fullUrl} className="share-reddit">
-                      <span>Reddit</span>
-                    </RedditShareButton>
-                  </li>
+                  {post.frontmatter.draft ? (
+                    <div>
+                      <li>
+                        <b>Share this post on</b>
+                      </li>
+                      <li className="link-twitter">
+                        <TwitterShareButton
+                          url={fullUrl}
+                          title={post.frontmatter.title}
+                          via="kbariotis"
+                          className="share-twitter"
+                        >
+                          <span>Twitter</span>
+                        </TwitterShareButton>
+                      </li>
+                      <li className="link-facebook">
+                        <FacebookShareButton
+                          url={fullUrl}
+                          title={post.frontmatter.title}
+                          description={post.excerpt}
+                          className="share-facebook"
+                        >
+                          <span>Facebook</span>
+                        </FacebookShareButton>
+                      </li>
+                      <li className="link-google-plus">
+                        <GooglePlusShareButton
+                          url={fullUrl}
+                          className="share-google-plus"
+                        >
+                          <span>Google+</span>
+                        </GooglePlusShareButton>
+                      </li>
+                      <li className="link-reddit" title={post.frontmatter.title}>
+                        <RedditShareButton url={fullUrl} className="share-reddit">
+                          <span>Reddit</span>
+                        </RedditShareButton>
+                      </li>
+                    </div>
+                  ) : (
+                    <small>This is a draft post, thus sharing is disabled. Please do not share untill is ready for prime time.</small>
+                  )}
                 </ul>
               </section>
             </footer>
@@ -161,8 +169,14 @@ export default function Template({ data, pathContext }) {
 }
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query BlogPostByPath($refPath: String!) {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
+    markdownRemark(frontmatter: { path: { eq: $refPath } }) {
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")

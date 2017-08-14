@@ -1,8 +1,7 @@
 ---
 title: "UI thread free"
 path: "/ui-thread-free"
-date: "1970-01-01T00:00:00.000Z"
-date_updated:   2015-12-05T10:34:56.000Z
+date: "2015-10-15T00:00:00.000Z"
 draft: true
 ---
 

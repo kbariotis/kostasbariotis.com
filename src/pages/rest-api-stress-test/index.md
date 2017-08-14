@@ -1,8 +1,7 @@
 ---
 title: "REST API Stress Test"
 path: "/rest-api-stress-test"
-date: "1970-01-01T00:00:00.000Z"
-date_updated:   2016-03-27T11:20:13.000Z
+date: "2016-11-01T00:00:00.000Z"
 draft: true
 ---
 
