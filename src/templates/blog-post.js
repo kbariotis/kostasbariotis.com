@@ -174,6 +174,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         description
+        siteUrl
       }
     }
     markdownRemark(frontmatter: { path: { eq: $refPath } }) {

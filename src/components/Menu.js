@@ -21,10 +21,10 @@ const Menu = props =>
       <div className="collapse navbar-collapse" id="main-menu">
         <ul className="nav navbar-nav navbar-right">
           <li>
-            <GatsbyLink to="/">HOME</GatsbyLink>
+            <GatsbyLink to="/">Home</GatsbyLink>
           </li>
           <li>
-            <GatsbyLink to="/about">ABOUT</GatsbyLink>
+            <GatsbyLink to="/about">About</GatsbyLink>
           </li>
         </ul>
       </div>

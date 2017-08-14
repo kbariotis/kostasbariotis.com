@@ -211,5 +211,9 @@ code {
 }
 
 .navigate-desc {
-    margin-top: 25px;
+    margin-top: $vpadding;
+}
+
+.drafts-description {
+    margin-bottom: $vpadding * 2;
 }

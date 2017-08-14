@@ -4,7 +4,7 @@ import dateformat from 'dateformat';
 
 import Link from '../components/Link';
 import Separator from './../components/Separator';
-import MenuWithLogo from './../components/MenuWithLogo';
+import Menu from './../components/Menu';
 import Posts from './../components/Posts';
 import MetaTags from './../components/MetaTags';
 
@@ -21,11 +21,11 @@ export default function Index({ data }) {
         description={description}
         noIndex={true}
       />
-      <MenuWithLogo />
+      <Menu />
       <section className="blog container">
         <div className="medium-8 medium-offset-2">
           <header className="header">Drafts</header>
-          <p>Here are my drafts, currently working on either
+          <p className="drafts-description">Here are my drafts, currently working on either
             abandoned them for some reason. You can read them
             and comment them on them if you think you can help me.
           </p>
