@@ -2,6 +2,7 @@
 title: "Modern static site generation"
 draft: true
 path: "/moderl-static-site-generation"
+date: "2017-08-14T00:00:00.000Z"
 ---
 
 Static site generation is just another form of caching your content. Think of when you are caching the home page of a Wordpress site and you are serving the cached content on every visitor. The thing though is that in many cases, there is no need for a system like Wordpress at all. My personal site contains a list of blog posts and static information  about me that I am updating it once in a while. Commends are being hosted on Disquss. There is absolutely no need for a system like Wordpress or even a system like Ghost which I have  been using for the last 3 years. While it served me well all this time, I really got tired of updating it, ssh-ing to the server, doing migrations and doing other ops required by such a stack. While there are also options of hosting in the cloud, pretty much the will be paid and fairly enough, they deserve it for doing such a job.
@@ -13,9 +14,9 @@ But really, do I need a system like that? Not at all. I would also argue that no
 Jekyll, Hexo, Hugo. They do one thing and they do it extremely well. I've build tone of sites using Jekyll hosted either on GitHub either somewhere else. They all work pretty much the same way
 
 * You describe your content in some common templating language (JADE, Handlebars, etc)
-* While in development, start a local web server and add "watchers" that will listen 
+* While in development, start a local web server and add "watchers" that will listen
 for content changes and re-render the site
-* Finally, you render the whole site in static HTML and deploy. The generator will combine your 
+* Finally, you render the whole site in static HTML and deploy. The generator will combine your
 files and produce a well formed HTML content.
 
 For client side functionality, you have to keep the client side logic separated from the backend. Much like in an architecture where Wordpress is involved. So, pretty much nothing is changed. Literally, the difference from having a cached version of wordpress and content generated with Jekyll is none.
@@ -24,7 +25,7 @@ For client side functionality, you have to keep the client side logic separated 
 
 React.js! Aw yeah! We've heard about it! It's dominating the Web, but for a reason really. There are really so many reasons React.js have gained such a hype. Many of the techniques we will discuss here can be easily applied with other frameworks and libraries but Reacts can play so nicely with them.
 
-There is this function called Server Side Rendering where you can produce static HTML content directly from a tree of React.js components. That content will still contains the required React.js specific anotations needed so when the same tree will be loaded on the client, on top of the previously produced content, will know exactly what it has to render and what not to render. From there, the client side logic can take the lead. So, once the user visits a site, the server will directly respond with the static HTML. Once it's loaded in the user's browser and the user navigates in another route, 
+There is this function called Server Side Rendering where you can produce static HTML content directly from a tree of React.js components. That content will still contains the required React.js specific anotations needed so when the same tree will be loaded on the client, on top of the previously produced content, will know exactly what it has to render and what not to render. From there, the client side logic can take the lead. So, once the user visits a site, the server will directly respond with the static HTML. Once it's loaded in the user's browser and the user navigates in another route,
 the client side logic will respond and will render the new page, instead of contacting the server again. That's really a game changer.
 
 So let's see the new list:
@@ -49,5 +50,5 @@ At the time that I started following them, all of them were in a very early stag
 
 ## What exactly am I looking at?
 
-Take a look [here](https://github.com/kbariotis/kostasbariotis.com). 
+Take a look [here](https://github.com/kbariotis/kostasbariotis.com).
 
