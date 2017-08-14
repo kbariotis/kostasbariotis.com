@@ -4,9 +4,12 @@ import dateformat from 'dateformat';
 
 import Link from '../components/Link';
 import Separator from './../components/Separator';
-import MenuWithLogo from './../components/MenuWithLogo';
+import Menu from './../components/Menu';
 import Posts from './../components/Posts';
 import MetaTags from './../components/MetaTags';
+import LazyLoad from 'react-lazyload';
+
+import avatarImage from './../../static/images/avatar.jpg';
 
 export default function Index({ data }) {
   let { edges: posts } = data.allMarkdownRemark;
@@ -20,9 +23,26 @@ export default function Index({ data }) {
         tags="webdev, programming, javascript"
         description={description}
       />
-      <MenuWithLogo />
+      <Menu />
       <section className="blog container">
         <div className="medium-8 medium-offset-2">
+          <div className="blog-header">
+            <GatsbyLink to="/" className="blog-header__link" itemProp="name">
+              <LazyLoad height={250}>
+                <img
+                  className="header-avatar blog-header__img"
+                  src={avatarImage}
+                  alt="Kostas Bariotis"
+                />
+              </LazyLoad>
+            </GatsbyLink>
+            <h1>Kostas Bariotis</h1>
+            <p>
+              I'm Kostas Bariotis, a web developer, a proud wanderer and a
+              passionate doer. My mission is to write clean and efficient code, to
+              solve problems on the web and to learn something more.
+            </p>
+          </div>
           <header className="header">Latest Posts</header>
           <Separator />
           <div className="posts">

@@ -1,6 +1,6 @@
 ---
 title: "William Petri's Answer on Quora : Where can i find developers willing to join my startup"
-path: "//william-petris-answer-on-quora-where-can-i-find-developers-willing-to-join-my-startup"
+path: "/william-petris-answer-on-quora-where-can-i-find-developers-willing-to-join-my-startup"
 date: "2014-09-02T14:56:00.000Z"
 ---
 

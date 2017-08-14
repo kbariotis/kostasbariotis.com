@@ -1,6 +1,6 @@
 ---
 title: "Valiation : The most awesome validation engine ever created for PHP"
-path: "//valiation-the-most-awesome-validation-engine-ever-created-for-php"
+path: "/valiation-the-most-awesome-validation-engine-ever-created-for-php"
 date: "2014-10-08T16:02:59.000Z"
 tags: php, validation, oop
 ---

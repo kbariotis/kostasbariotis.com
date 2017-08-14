@@ -89,50 +89,48 @@ export default function Template({ data, pathContext }) {
             <Separator />
             <footer className="post-footer">
               <section className="share text-center">
-                <ul className="share-buttons list-inline">
-                  {post.frontmatter.draft ? (
-                    <div>
-                      <li>
-                        <b>Share this post on</b>
-                      </li>
-                      <li className="link-twitter">
-                        <TwitterShareButton
-                          url={fullUrl}
-                          title={post.frontmatter.title}
-                          via="kbariotis"
-                          className="share-twitter"
-                        >
-                          <span>Twitter</span>
-                        </TwitterShareButton>
-                      </li>
-                      <li className="link-facebook">
-                        <FacebookShareButton
-                          url={fullUrl}
-                          title={post.frontmatter.title}
-                          description={post.excerpt}
-                          className="share-facebook"
-                        >
-                          <span>Facebook</span>
-                        </FacebookShareButton>
-                      </li>
-                      <li className="link-google-plus">
-                        <GooglePlusShareButton
-                          url={fullUrl}
-                          className="share-google-plus"
-                        >
-                          <span>Google+</span>
-                        </GooglePlusShareButton>
-                      </li>
-                      <li className="link-reddit" title={post.frontmatter.title}>
-                        <RedditShareButton url={fullUrl} className="share-reddit">
-                          <span>Reddit</span>
-                        </RedditShareButton>
-                      </li>
-                    </div>
-                  ) : (
-                    <small>This is a draft post, thus sharing is disabled. Please do not share untill is ready for prime time.</small>
-                  )}
-                </ul>
+                {!post.frontmatter.draft ? (
+                  <ul className="share-buttons list-inline">
+                    <li>
+                      <b>Share this post on</b>
+                    </li>
+                    <li className="link-twitter">
+                      <TwitterShareButton
+                        url={fullUrl}
+                        title={post.frontmatter.title}
+                        via="kbariotis"
+                        className="share-twitter"
+                      >
+                        <span>Twitter</span>
+                      </TwitterShareButton>
+                    </li>
+                    <li className="link-facebook">
+                      <FacebookShareButton
+                        url={fullUrl}
+                        title={post.frontmatter.title}
+                        description={post.excerpt}
+                        className="share-facebook"
+                      >
+                        <span>Facebook</span>
+                      </FacebookShareButton>
+                    </li>
+                    <li className="link-google-plus">
+                      <GooglePlusShareButton
+                        url={fullUrl}
+                        className="share-google-plus"
+                      >
+                        <span>Google+</span>
+                      </GooglePlusShareButton>
+                    </li>
+                    <li className="link-reddit" title={post.frontmatter.title}>
+                      <RedditShareButton url={fullUrl} className="share-reddit">
+                        <span>Reddit</span>
+                      </RedditShareButton>
+                    </li>
+                  </ul>
+                ) : (
+                  <small>This is a draft post, thus sharing is disabled. Please do not share untill is ready for prime time.</small>
+                )}
               </section>
             </footer>
 
@@ -184,6 +182,7 @@ export const pageQuery = graphql`
         path
         tags
         title
+        draft
       }
     }
   }

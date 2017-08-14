@@ -1,6 +1,6 @@
 ---
 title: "VagrantUp : your distributed development environment"
-path: "//vagrantup-your-distributed-development-environment"
+path: "/vagrantup-your-distributed-development-environment"
 date: "2013-08-31T07:12:09.000Z"
 date_updated:   2013-08-31T07:12:09.000Z
 ---

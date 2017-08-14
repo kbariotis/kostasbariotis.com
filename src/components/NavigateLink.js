@@ -5,7 +5,7 @@ import dateformat from 'dateformat';
 const NavigateLink = ({ post }) =>
   post &&
   <div>
-    <GatsbyLink className="navigate-link" to={post.frontmatter.path}>
+    <GatsbyLink className="navigate-link" to={post.frontmatter.draft ? `/drafts${post.frontmatter.path}` : post.frontmatter.path}>
       {post.frontmatter.title}
     </GatsbyLink>
     <div>

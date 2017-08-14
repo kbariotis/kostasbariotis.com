@@ -3,7 +3,7 @@ import GatsbyLink from 'gatsby-link';
 
 import Link from '../components/Link';
 import Posts from '../components/Posts';
-import MenuWithLogo from '../components/MenuWithLogo';
+import Menu from '../components/Menu';
 import Pagination from '../components/TagsPagination';
 import Separator from '../components/Separator';
 import MetaTags from '../components/MetaTags';
@@ -19,7 +19,7 @@ export default function Tags({ pathContext }) {
         tags={tag}
         path={`/tag/${tag}`}
       />
-      <MenuWithLogo />
+      <Menu />
       <section className="blog container tags-collection">
         <div className="medium-8 medium-offset-2">
           <header className="header">

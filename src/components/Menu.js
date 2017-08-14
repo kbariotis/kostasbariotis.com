@@ -3,7 +3,7 @@ import GatsbyLink from 'gatsby-link';
 
 const Menu = props =>
   <nav className="navbar navbar-default">
-    <div className="image-placeholder" />
+    {/* <div className="image-placeholder" /> */}
     <div className="container">
       <div className="navbar-header">
         <button

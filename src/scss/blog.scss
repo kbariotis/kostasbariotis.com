@@ -217,3 +217,32 @@ code {
 .drafts-description {
     margin-bottom: $vpadding * 2;
 }
+
+.blog-header {
+    display: block;
+    margin-bottom: $vpadding * 4;
+}
+
+.blog-header__link {
+    font-size: 1.5em;
+    height: auto;
+    padding: 10px 15px;
+    float: left;
+
+    @media(max-width: 1200px) {
+        height: 150px;
+    }
+    @media(max-width: 768px) {
+        float: none;
+    }
+}
+
+.blog-header__img {
+    width: 100px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    margin-right: 25px;
+    @media(max-width: 768px) {
+        margin: 0 auto;
+    }
+}
