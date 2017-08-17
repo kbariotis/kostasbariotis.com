@@ -93,6 +93,9 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     })
 };
 
+/**
+ * Create pages for tags
+ */
 const createTagPages = (createPage, edges) => {
   const tagTemplate = path.resolve(`src/templates/tags.js`);
   const posts = {};
@@ -136,6 +139,9 @@ function paginate(array, page_size, page_number) {
   return array.slice(0).slice(page_number * page_size, (page_number + 1) * page_size);
 }
 
+/**
+ * Create pagination for posts
+ */
 const createPagination = (createPage, edges, pathPrefix) => {
   const pageTemplate = path.resolve(`src/templates/page.js`);
 
@@ -155,5 +161,4 @@ const createPagination = (createPage, edges, pathPrefix) => {
       }
     })
   }
-
 };
