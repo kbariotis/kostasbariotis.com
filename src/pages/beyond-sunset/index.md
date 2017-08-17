@@ -1,6 +1,6 @@
 ---
 title: "Beyond sunset"
-path: "/beyond-sunset"
+path: "/beyond-sunset/"
 date: "2015-12-27T11:27:02.000Z"
 date_updated:   2015-12-30T08:51:58.000Z
 ---

@@ -1,6 +1,6 @@
 ---
 title: "How to keep up on SEO"
-path: "/how-to-keep-up-on-seo"
+path: "/how-to-keep-up-on-seo/"
 date: "2015-01-26T19:35:21.000Z"
 date_updated:   2015-01-26T19:43:03.000Z
 tags: seo, google, page rank

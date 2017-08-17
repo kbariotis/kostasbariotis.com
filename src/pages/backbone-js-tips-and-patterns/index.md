@@ -1,6 +1,6 @@
 ---
 title: "Backbone.js Tips And Patterns"
-path: "/backbone-js-tips-and-patterns"
+path: "/backbone-js-tips-and-patterns/"
 date: "2013-08-20T14:45:30.000Z"
 date_updated:   2013-08-20T14:45:30.000Z
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Testing Software Systems"
-path: "/testing"
+path: "/drafts/testing/"
 date: "2016-05-01T00:00:00.000Z"
 draft: true
 ---

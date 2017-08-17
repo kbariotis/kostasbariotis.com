@@ -1,6 +1,6 @@
 ---
 title: "Composer hangs while installing/updating dependencies"
-path: "/composer-hangs-while-installingupdating-dependencies"
+path: "/composer-hangs-while-installingupdating-dependencies/"
 date: "2014-08-09T07:22:26.000Z"
 date_updated:   2014-08-09T07:22:26.000Z
 ---

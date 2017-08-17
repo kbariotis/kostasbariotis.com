@@ -1,6 +1,6 @@
 ---
 title: "Common Concurrency Problems"
-path: "/common-concurrency-problems"
+path: "/common-concurrency-problems/"
 date: "2015-03-15T13:59:03.000Z"
 date_updated:   2015-03-15T14:00:29.000Z
 tags: concurrency, dijkstra

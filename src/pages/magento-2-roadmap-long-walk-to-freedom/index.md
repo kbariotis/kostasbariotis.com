@@ -1,6 +1,6 @@
 ---
 title: "Magento 2 Roadmap : Long walk to freedom"
-path: "/magento-2-roadmap-long-walk-to-freedom"
+path: "/magento-2-roadmap-long-walk-to-freedom/"
 date: "2014-09-06T07:07:26.000Z"
 date_updated:   2014-09-06T07:07:26.000Z
 ---

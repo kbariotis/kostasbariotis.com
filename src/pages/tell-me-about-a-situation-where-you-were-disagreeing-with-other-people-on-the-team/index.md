@@ -1,6 +1,6 @@
 ---
 title: "Tell me about a situation where you were disagreeing with other people on the team"
-path: "/tell-me-about-a-situation-where-you-were-disagreeing-with-other-people-on-the-team"
+path: "/drafts/tell-me-about-a-situation-where-you-were-disagreeing-with-other-people-on-the-team/"
 date: "2016-11-24T13:47:24.000Z"
 draft: true
 ---

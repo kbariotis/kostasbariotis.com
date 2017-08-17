@@ -1,6 +1,6 @@
 ---
 title: "Making a REST API discoverable"
-path: "/making-a-rest-api-discoverable"
+path: "/making-a-rest-api-discoverable/"
 date: "2015-08-24T14:39:27.000Z"
 date_updated:   2015-08-24T14:45:08.000Z
 tags: rest, api

@@ -1,6 +1,6 @@
 ---
 title: "Be prepared to scale your team"
-path: "/scaling-your-team"
+path: "/scaling-your-team/"
 date: "2015-09-10T17:33:38.000Z"
 date_updated:   2015-09-11T08:26:20.000Z
 tags: team, dev, scale, workplace

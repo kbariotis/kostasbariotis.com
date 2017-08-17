@@ -1,6 +1,6 @@
 ---
 title: "The Keys to Scaling Yourself as a Technology Leader"
-path: "/the-keys-to-scaling-yourself-as-a-technology-leader"
+path: "/the-keys-to-scaling-yourself-as-a-technology-leader/"
 date: "2016-03-30T09:24:53.000Z"
 date_updated:   2016-03-30T09:24:53.000Z
 tags: Management, team

@@ -1,6 +1,6 @@
 ---
 title: "Automated GUI Testing Solutions"
-path: "/automated-gui-testing-solutions"
+path: "/automated-gui-testing-solutions/"
 date: "2016-01-08T06:03:02.000Z"
 date_updated:   2016-05-14T15:40:03.000Z
 tags: GUI, javascript, Testing, node.js

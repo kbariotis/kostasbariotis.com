@@ -1,6 +1,6 @@
 ---
 title: "Action, Inspiration, Motivation"
-path: "/inspiration-motivation-action"
+path: "/inspiration-motivation-action/"
 date: "2015-09-30T07:03:28.000Z"
 date_updated:   2015-10-04T14:57:58.000Z
 tags: inspiration, motivation

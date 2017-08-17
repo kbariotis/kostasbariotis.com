@@ -1,6 +1,6 @@
 ---
 title: "removeEventListener and this"
-path: "/removeeventlistener-and-this"
+path: "/removeeventlistener-and-this/"
 date: "2017-01-17T14:46:20.000Z"
 date_updated:   2017-01-19T11:04:25.000Z
 tags: javascript, DOM

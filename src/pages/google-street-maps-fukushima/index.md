@@ -1,6 +1,6 @@
 ---
 title: "Google Street Maps στις γειτονίες της Fukushima"
-path: "/google-street-maps-fukushima"
+path: "/google-street-maps-fukushima/"
 date: "2013-03-28T06:29:57.000Z"
 date_updated:   2013-03-28T06:29:57.000Z
 ---

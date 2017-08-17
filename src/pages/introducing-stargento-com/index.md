@@ -1,6 +1,6 @@
 ---
 title: "Introducing Stargento.com"
-path: "/introducing-stargento-com"
+path: "/introducing-stargento-com/"
 date: "2014-09-24T16:16:00.000Z"
 date_updated:   2014-11-19T17:10:41.000Z
 tags: stargento.com, magento

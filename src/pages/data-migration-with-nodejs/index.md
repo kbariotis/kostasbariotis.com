@@ -1,6 +1,6 @@
 ---
 title: "Database Migrations with Nodejs"
-path: "/data-migration-with-nodejs"
+path: "/data-migration-with-nodejs/"
 date: "2016-05-14T15:19:51.000Z"
 date_updated:   2016-05-15T17:00:12.000Z
 tags: Database, CI, node.js

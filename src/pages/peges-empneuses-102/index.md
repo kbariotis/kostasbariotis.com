@@ -1,6 +1,6 @@
 ---
 title: "Πηγες Εμπνευσης 102: Περι σκουπιδιων ο λογος"
-path: "/peges-empneuses-102"
+path: "/peges-empneuses-102/"
 date: "2013-04-08T16:58:21.000Z"
 date_updated:   2013-04-08T16:58:21.000Z
 ---

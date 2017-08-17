@@ -1,6 +1,6 @@
 ---
 title: "I don't know what I'm doing"
-path: "/dont-know-what-im-doing"
+path: "/dont-know-what-im-doing/"
 date: "2015-10-11T10:01:17.000Z"
 date_updated:   2015-10-11T10:02:40.000Z
 tags: programming

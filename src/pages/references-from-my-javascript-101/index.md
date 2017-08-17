@@ -1,6 +1,6 @@
 ---
 title: "References from my Javascript 101"
-path: "/references-from-my-javascript-101"
+path: "/references-from-my-javascript-101/"
 date: "2015-05-01T15:33:19.000Z"
 date_updated:   2016-05-14T15:40:54.000Z
 tags: javascript, skgnodejs, meetup, node.js

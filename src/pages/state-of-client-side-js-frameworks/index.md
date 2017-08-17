@@ -1,6 +1,6 @@
 ---
 title: "The road to Client Side Javascript"
-path: "/state-of-client-side-js-frameworks"
+path: "/state-of-client-side-js-frameworks/"
 date: "2015-09-19T09:54:54.000Z"
 date_updated:   2015-09-20T07:15:08.000Z
 tags: javascript, client-side, frameworks

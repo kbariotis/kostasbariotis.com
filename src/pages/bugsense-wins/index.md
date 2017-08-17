@@ -1,6 +1,6 @@
 ---
 title: "Bugsense και η... αμείλικτη αφοσίωση!"
-path: "/bugsense-wins"
+path: "/bugsense-wins/"
 date: "2013-09-17T04:57:58.000Z"
 date_updated:   2013-09-17T04:57:58.000Z
 ---

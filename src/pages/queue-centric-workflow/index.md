@@ -1,6 +1,6 @@
 ---
 title: "Queue-Centric Workflow"
-path: "/queue-centric-workflow"
+path: "/queue-centric-workflow/"
 date: "2015-12-06T13:33:15.000Z"
 date_updated:   2015-12-12T13:14:25.000Z
 tags: Microservices, node.js, AWS, QCW

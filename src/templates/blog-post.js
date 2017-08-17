@@ -5,6 +5,7 @@ import GatsbyLink from 'gatsby-link';
 import { ShareButtons } from 'react-share';
 import ReactDisqusThread from 'react-disqus-thread';
 import LazyLoad from 'react-lazyload';
+import uuidv5 from 'uuid/v5';
 
 import Menu from '../components/Menu';
 import BulletListTags from '../components/BulletListTags';
@@ -153,7 +154,7 @@ export default function Template({ data, pathContext }) {
               {isProduction &&
                 <ReactDisqusThread
                   shortname="kostasbariotis"
-                  identifier={post.frontmatter.path.slice(1)}
+                  identifier={uuidv5(fullUrl, uuidv5.URL)}
                   title={post.frontmatter.title}
                   url={fullUrl}
                 />}

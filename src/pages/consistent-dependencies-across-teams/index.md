@@ -1,6 +1,6 @@
 ---
 title: "Consistent dependencies across teams"
-path: "/consistent-dependencies-across-teams"
+path: "/consistent-dependencies-across-teams/"
 date: "2015-06-26T18:29:20.000Z"
 date_updated:   2016-05-14T15:40:39.000Z
 tags: npm, shrinkwrap, team, node.js

@@ -1,6 +1,6 @@
 ---
 title: "Isolated Unit Tests with Sinonjs"
-path: "/isolated-unit-tests-with-sinonjs"
+path: "/isolated-unit-tests-with-sinonjs/"
 date: "2016-03-05T21:02:37.000Z"
 date_updated:   2017-01-16T19:59:41.000Z
 tags: TDD, javascript, node.js

@@ -1,6 +1,6 @@
 ---
 title: "Writing a custom CSS framework"
-path: "/writing-a-custom-css-framework"
+path: "/writing-a-custom-css-framework/"
 date: "2017-04-04T09:40:42.000Z"
 tags: CSS, Bootstrap
 ---

@@ -1,6 +1,6 @@
 ---
 title: "REST API Error Handling with Express.js"
-path: "/rest-api-error-handling-with-express-js"
+path: "/rest-api-error-handling-with-express-js/"
 date: "2015-05-22T16:35:17.000Z"
 date_updated:   2015-12-13T13:35:25.000Z
 tags: node.js, rest, express.js, api

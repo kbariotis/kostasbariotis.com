@@ -1,6 +1,6 @@
 ---
 title: "Live the dream"
-path: "/live-the-dream"
+path: "/live-the-dream/"
 date: "2016-05-02T15:24:54.000Z"
 date_updated:   2016-05-03T09:15:36.000Z
 tags: dev life, inspiration

@@ -1,6 +1,6 @@
 ---
 title: "User Stories as in User Stories"
-path: "/user-stories"
+path: "/user-stories/"
 date: "2015-10-22T17:03:09.000Z"
 date_updated:   2015-10-22T17:03:09.000Z
 ---

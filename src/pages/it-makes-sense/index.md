@@ -1,6 +1,6 @@
 ---
 title: "It makes sense"
-path: "/it-makes-sense"
+path: "/it-makes-sense/"
 date: "2015-07-15T18:38:24.000Z"
 date_updated:   2015-07-15T18:38:24.000Z
 ---

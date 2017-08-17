@@ -1,6 +1,6 @@
 ---
 title: "JWT: The modern way of authenticating"
-path: "/jwt-the-modern-way-of-authenticating"
+path: "/jwt-the-modern-way-of-authenticating/"
 date: "2015-01-08T18:51:28.000Z"
 date_updated:   2015-01-08T19:20:16.000Z
 tags: jwt, rest, apis, authentication, spa

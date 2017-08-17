@@ -1,6 +1,6 @@
 ---
 title: "GitYeller.com is my latest weekend project"
-path: "/gityeller-com-weekend-project"
+path: "/gityeller-com-weekend-project/"
 date: "2017-03-01T08:49:08.000Z"
 date_updated:   2017-03-01T09:02:18.000Z
 tags: node.js, mongodb

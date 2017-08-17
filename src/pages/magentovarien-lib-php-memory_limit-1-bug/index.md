@@ -1,6 +1,6 @@
 ---
 title: "Magento(Varien lib) & PHP memory_limit -1 bug"
-path: "/magentovarien-lib-php-memory_limit-1-bug"
+path: "/magentovarien-lib-php-memory_limit-1-bug/"
 date: "2014-08-30T13:21:24.000Z"
 date_updated:   2015-12-13T13:37:29.000Z
 tags: magento

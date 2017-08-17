@@ -1,6 +1,6 @@
 ---
 title: "Mongoose objects and the IN operator"
-path: "/mongoose-objects-and-the-in-operator"
+path: "/mongoose-objects-and-the-in-operator/"
 date: "2015-08-31T17:51:38.000Z"
 date_updated:   2015-08-31T17:54:44.000Z
 tags: mongodb, mongoose

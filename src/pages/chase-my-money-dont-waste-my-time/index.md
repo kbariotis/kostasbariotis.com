@@ -1,6 +1,6 @@
 ---
 title: "Chase my money. Don’t waste my time."
-path: "/chase-my-money-dont-waste-my-time"
+path: "/chase-my-money-dont-waste-my-time/"
 date: "2013-09-30T18:02:16.000Z"
 date_updated:   2013-09-30T18:02:16.000Z
 ---

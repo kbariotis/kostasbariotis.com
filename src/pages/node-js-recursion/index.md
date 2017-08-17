@@ -1,6 +1,6 @@
 ---
 title: "Node.js & Recursion"
-path: "/node-js-recursion"
+path: "/node-js-recursion/"
 date: "2015-10-01T13:54:36.000Z"
 date_updated:   2016-05-14T15:40:16.000Z
 tags: recursion, javascript, node.js

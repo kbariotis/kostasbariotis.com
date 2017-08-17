@@ -48,11 +48,12 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       /**
        * Separate published posts and and drafts
        */
-      const posts = result.data.allMarkdownRemark.edges.filter(post => !post.node.frontmatter.draft);
-      const drafts = result.data.allMarkdownRemark.edges.filter(post => post.node.frontmatter.draft);
+      const posts = result.data.allMarkdownRemark.edges;
+      const published = posts.filter(post => !post.node.frontmatter.draft);
+      const drafts = posts.filter(post => post.node.frontmatter.draft);
 
-      createTagPages(createPage, posts);
-      createPagination(createPage, posts, `/page`);
+      createTagPages(createPage, published);
+      createPagination(createPage, published, `/page`);
       createPagination(createPage, drafts, `/drafts/page`);
 
       /**
@@ -63,23 +64,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         const next = index === posts.length - 1 ? false : posts[index + 1].node;
         createPage({
           path: node.frontmatter.path,
-          refPath: node.frontmatter.path,
-          component: blogPostTemplate,
-          context: {
-            prev,
-            next
-          }
-        });
-      });
-
-      /**
-       * Create pages for each markdown file.
-       */
-      drafts.forEach(({ node }, index) => {
-        const prev = index === 0 ? false : drafts[index - 1].node;
-        const next = index === drafts.length - 1 ? false : drafts[index + 1].node;
-        createPage({
-          path: `/drafts${node.frontmatter.path}`,
           refPath: node.frontmatter.path,
           component: blogPostTemplate,
           context: {

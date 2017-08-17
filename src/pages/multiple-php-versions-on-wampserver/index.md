@@ -1,6 +1,6 @@
 ---
 title: "Multiple PHP versions on Wampserver"
-path: "/multiple-php-versions-on-wampserver"
+path: "/multiple-php-versions-on-wampserver/"
 date: "2014-08-02T07:16:20.000Z"
 date_updated:   2015-07-16T16:12:02.000Z
 ---

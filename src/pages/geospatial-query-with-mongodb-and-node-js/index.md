@@ -1,6 +1,6 @@
 ---
 title: "Geospatial Query with MongoDB and Node.js"
-path: "/geospatial-query-with-mongodb-and-node-js"
+path: "/geospatial-query-with-mongodb-and-node-js/"
 date: "2014-10-30T18:16:00.000Z"
 date_updated:   2015-07-16T16:14:43.000Z
 tags: node.js, mongodb, wearetech.io

@@ -1,6 +1,6 @@
 ---
 title: "Are you the best in the room?"
-path: "/are-you-the-best-in-the-room"
+path: "/are-you-the-best-in-the-room/"
 date: "2015-07-11T15:07:57.000Z"
 date_updated:   2015-07-11T15:10:05.000Z
 ---

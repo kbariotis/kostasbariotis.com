@@ -1,6 +1,6 @@
 ---
 title: "Jekyll + webpack = ❤️"
-path: "/jekyll-webpack"
+path: "/drafts/jekyll-webpack/"
 date: "2017-02-25T00:00:00.000Z"
 draft: true
 ---

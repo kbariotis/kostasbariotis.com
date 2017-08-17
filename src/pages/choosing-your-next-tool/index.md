@@ -1,6 +1,6 @@
 ---
 title: "Choosing your next best tool"
-path: "/choosing-your-next-tool"
+path: "/choosing-your-next-tool/"
 date: "2015-02-24T17:34:25.000Z"
 date_updated:   2015-02-24T18:57:21.000Z
 tags: dev life, tools, medium

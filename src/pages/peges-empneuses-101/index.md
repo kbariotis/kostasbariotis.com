@@ -1,6 +1,6 @@
 ---
 title: "Πηγές Έμπνευσης 101"
-path: "/peges-empneuses-101"
+path: "/peges-empneuses-101/"
 date: "2013-03-21T13:59:40.000Z"
 date_updated:   2013-03-21T13:59:40.000Z
 ---

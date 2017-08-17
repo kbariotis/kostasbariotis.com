@@ -1,6 +1,6 @@
 ---
 title: "And another end"
-path: "/and-another-end"
+path: "/drafts/and-another-end/"
 date: "2016-12-25T00:00:00.000Z"
 draft: true
 ---

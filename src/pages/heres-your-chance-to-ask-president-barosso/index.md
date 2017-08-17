@@ -1,6 +1,6 @@
 ---
 title: "Here's your chance to ask President Barosso"
-path: "/heres-your-chance-to-ask-president-barosso"
+path: "/heres-your-chance-to-ask-president-barosso/"
 date: "2013-09-09T17:33:39.000Z"
 date_updated:   2013-09-09T17:33:39.000Z
 ---

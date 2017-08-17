@@ -1,6 +1,6 @@
 ---
 title: "Hands on React.js"
-path: "/hands-on-react-js"
+path: "/hands-on-react-js/"
 date: "2015-03-29T17:25:06.000Z"
 date_updated:   2016-05-14T15:41:06.000Z
 tags: reactjs, javascript, node.js

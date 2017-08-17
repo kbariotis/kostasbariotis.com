@@ -1,6 +1,6 @@
 ---
 title: "Environment based application configuration using Webpack"
-path: "/environment-based-application-configuration-using-webpack"
+path: "/environment-based-application-configuration-using-webpack/"
 date: "2017-05-14T09:47:37.000Z"
 date_updated:   2017-05-14T11:35:09.000Z
 tags: webpack
@@ -178,7 +178,7 @@ module.exports = {
   ],
   output: {
     filename: 'app.bundle.js',
-    path: "/path.join(__dirname, 'dist')"
+    path: "/path.join(__dirname, 'dist')/"
   }
 }
 ```

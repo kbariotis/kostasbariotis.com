@@ -1,6 +1,6 @@
 ---
 title: "The reason I do what I do"
-path: "/the-reason-i-do-what-i-do"
+path: "/drafts/the-reason-i-do-what-i-do/"
 date: "2016-10-20T00:00:00.000Z"
 draft: true
 ---

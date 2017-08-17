@@ -1,6 +1,6 @@
 ---
 title: "The Configuration Service"
-path: "/the-configuration-service"
+path: "/the-configuration-service/"
 date: "2015-11-13T18:51:34.000Z"
 date_updated:   2015-11-14T20:05:04.000Z
 tags: Microservices

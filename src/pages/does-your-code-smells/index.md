@@ -1,6 +1,6 @@
 ---
 title: "Does your code smells?"
-path: "/does-your-code-smells"
+path: "/does-your-code-smells/"
 date: "2014-08-25T04:00:57.000Z"
 date_updated:   2014-08-25T04:00:57.000Z
 ---

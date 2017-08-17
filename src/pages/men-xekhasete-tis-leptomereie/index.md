@@ -1,6 +1,6 @@
 ---
 title: "Μην ξεχάσετε τις λεπτομέρειες..."
-path: "/men-xekhasete-tis-leptomereie"
+path: "/men-xekhasete-tis-leptomereie/"
 date: "2013-09-24T03:15:31.000Z"
 date_updated:   2013-09-24T03:15:31.000Z
 ---

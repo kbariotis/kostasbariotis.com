@@ -1,6 +1,6 @@
 ---
 title: "How I failed landing a remote position"
-path: "/how-i-failed-landing-a-remote-position"
+path: "/how-i-failed-landing-a-remote-position/"
 date: "2017-07-07T17:43:00.000Z"
 tags: interviews, job, engineers
 ---

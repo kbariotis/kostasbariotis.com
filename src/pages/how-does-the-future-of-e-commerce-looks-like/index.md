@@ -1,6 +1,6 @@
 ---
 title: "How does the future of e-commerce looks like?"
-path: "/how-does-the-future-of-e-commerce-looks-like"
+path: "/drafts/how-does-the-future-of-e-commerce-looks-like/"
 date: "2014-09-09T19:08:50.000Z"
 draft: true
 ---

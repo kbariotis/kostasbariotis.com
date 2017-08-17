@@ -1,6 +1,6 @@
 ---
 title: "Nodejs hosting"
-path: "/nodejs-hosting"
+path: "/drafts/nodejs-hosting/"
 date: "2015-05-23T00:00:00.000Z"
 draft: true
 ---

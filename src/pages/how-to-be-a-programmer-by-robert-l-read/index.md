@@ -1,6 +1,6 @@
 ---
 title: "How To Be A Programmer by Robert L Read"
-path: "/how-to-be-a-programmer-by-robert-l-read"
+path: "/how-to-be-a-programmer-by-robert-l-read/"
 date: "2014-10-25T10:54:21.000Z"
 date_updated:   2015-02-15T21:12:42.000Z
 tags: clean code, code, programmers, debugging

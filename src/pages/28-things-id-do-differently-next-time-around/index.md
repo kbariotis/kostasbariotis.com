@@ -1,6 +1,6 @@
 ---
 title: "28 things I’d do differently next time around"
-path: "/28-things-id-do-differently-next-time-around"
+path: "/28-things-id-do-differently-next-time-around/"
 date: "2015-12-30T03:49:16.408Z"
 tags: Startups
 ---

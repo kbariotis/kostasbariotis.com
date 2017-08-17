@@ -1,6 +1,6 @@
 ---
 title: "UI thread free"
-path: "/ui-thread-free"
+path: "/drafts/ui-thread-free/"
 date: "2015-10-15T00:00:00.000Z"
 draft: true
 ---

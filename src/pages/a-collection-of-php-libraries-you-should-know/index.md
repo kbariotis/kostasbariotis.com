@@ -1,6 +1,6 @@
 ---
 title: "A collection of PHP libraries you should know"
-path: "/a-collection-of-php-libraries-you-should-know"
+path: "/a-collection-of-php-libraries-you-should-know/"
 date: "2014-08-22T14:33:27.000Z"
 ---
 

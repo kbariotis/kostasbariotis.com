@@ -1,6 +1,6 @@
 ---
 title: "Simplicity is the key after all..."
-path: "/simplicity-is-the-key-after-all"
+path: "/simplicity-is-the-key-after-all/"
 date: "2013-09-02T16:02:09.000Z"
 date_updated:   2013-09-02T16:02:09.000Z
 ---

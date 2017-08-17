@@ -1,6 +1,6 @@
 ---
 title: "Still watching TV news show??"
-path: "/still-watching-tv-news-show"
+path: "/still-watching-tv-news-show/"
 date: "2013-03-19T15:48:37.000Z"
 date_updated:   2013-03-19T15:48:37.000Z
 ---

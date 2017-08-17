@@ -1,6 +1,6 @@
 ---
 title: "Add configuration file to your PHP Projects"
-path: "/add-configuration-file-to-your-php-projects"
+path: "/add-configuration-file-to-your-php-projects/"
 date: "2014-08-31T10:01:38.000Z"
 date_updated:   2015-12-13T13:37:41.000Z
 tags: php

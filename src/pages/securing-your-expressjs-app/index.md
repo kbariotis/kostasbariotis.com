@@ -1,6 +1,6 @@
 ---
 title: "securing your Expressjs app"
-path: "/securing-your-expressjs-app"
+path: "/drafts/securing-your-expressjs-app/"
 date: "2015-09-10T00:00:00.000Z"
 draft: true
 ---

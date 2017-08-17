@@ -1,6 +1,6 @@
 ---
 title: "Maintaining a Magento code base"
-path: "/maintaining-a-magento-code-base"
+path: "/maintaining-a-magento-code-base/"
 date: "2014-09-08T17:23:58.000Z"
 date_updated:   2014-11-19T17:11:02.000Z
 tags: magento, code base, e-commerce

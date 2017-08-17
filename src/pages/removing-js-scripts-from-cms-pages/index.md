@@ -1,6 +1,6 @@
 ---
 title: "Removing JS from Magento CMS Pages"
-path: "/removing-js-scripts-from-cms-pages"
+path: "/removing-js-scripts-from-cms-pages/"
 date: "2014-12-14T18:12:56.000Z"
 date_updated:   2014-12-14T19:24:34.000Z
 tags: magento, prototype.js, cms, load time, performance

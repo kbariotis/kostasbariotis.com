@@ -1,6 +1,6 @@
 ---
 title: "What i've missed over vacations"
-path: "/what-ive-missed-over-vacations"
+path: "/what-ive-missed-over-vacations/"
 date: "2013-08-19T11:33:41.000Z"
 ---
 

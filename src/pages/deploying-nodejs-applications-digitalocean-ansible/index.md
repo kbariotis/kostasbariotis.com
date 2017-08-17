@@ -1,6 +1,6 @@
 ---
 title: "Deploying Node.js Applications on DigitalOcean using Ansible"
-path: "/deploying-nodejs-applications-digitalocean-ansible"
+path: "/deploying-nodejs-applications-digitalocean-ansible/"
 date: "2016-12-15T09:35:03.000Z"
 date_updated:   2017-01-03T10:56:53.000Z
 ---

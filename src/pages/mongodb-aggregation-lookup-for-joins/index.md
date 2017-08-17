@@ -1,6 +1,6 @@
 ---
 title: "MongoDB Aggregation: $lookup for JOINs"
-path: "/mongodb-aggregation-lookup-for-joins"
+path: "/mongodb-aggregation-lookup-for-joins/"
 date: "2016-01-28T17:15:54.000Z"
 date_updated:   2016-01-28T17:16:36.000Z
 tags: mongodb

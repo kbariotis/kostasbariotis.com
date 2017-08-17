@@ -1,6 +1,6 @@
 ---
 title: "Go canonical import paths & Github forks"
-path: "/go-canonical-import-paths-github-forks"
+path: "/go-canonical-import-paths-github-forks/"
 date: "2016-02-27T15:49:31.000Z"
 date_updated:   2016-11-20T13:29:42.000Z
 tags: Golang, Github
