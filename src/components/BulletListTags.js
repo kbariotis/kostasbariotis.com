@@ -1,7 +1,7 @@
 import React from 'react';
 import GatsbyLink from 'gatsby-link';
 
-const CommaSeparatedTags = ({ tags }) =>
+const CommaSeparatedTags = ({ tags, draft }) =>
   <ul className="tags list-inline text-right">
     {tags &&
       tags.split(', ').map((tag, index) =>
@@ -11,6 +11,13 @@ const CommaSeparatedTags = ({ tags }) =>
           </GatsbyLink>
         </li>
       )}
+    {draft &&
+      <li className="draft-tag">
+        <GatsbyLink to={`/drafts`}>
+          Draft
+        </GatsbyLink>
+      </li>
+    }
   </ul>;
 
 export default CommaSeparatedTags;

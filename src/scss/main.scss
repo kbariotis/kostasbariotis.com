@@ -9,7 +9,7 @@ body {
 
     background: $background;
     background-image: url('./../../static/images/header_index.jpg');
-    background-size: 100% 250px;
+    background-size: 100% 300px;
     /* http://colorzilla.com/gradient-editor/#7db9e8+0,221931+99&0+0,1+100 */
     background-image: -moz-linear-gradient(top, rgba(125, 185, 232, 0) 0%, rgba(34, 25, 49, 1) 100%), url('./../../static/images/header_index.jpg');
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(125, 185, 232, 0)), color-stop(100%, rgba(34, 25, 49, 1))), url('./../../static/images/header_index.jpg');
@@ -21,10 +21,10 @@ body {
     background-repeat: no-repeat;
 
     @include mobile {
-        background-size: 100% 100px;
+        background-size: 100% 125px;
     }
     @include tablet {
-        background-size: 100% 125px;
+        background-size: 100% 200px;
     }
 }
 

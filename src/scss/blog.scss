@@ -182,6 +182,18 @@
                     color: $darkpurple;
                 }
             }
+            &.draft-tag {
+                border-color: $red;
+                a {
+                    color: $red;
+                }
+                &:hover {
+                    background: $red;
+                    a {
+                        color: white;
+                    }
+                }
+            }
         }
     }
 }

@@ -1,7 +1,7 @@
 ---
 title: "Modern static site generation"
 draft: true
-path: "/moderl-static-site-generation"
+path: "/modern-static-site-generation"
 date: "2017-08-14T00:00:00.000Z"
 ---
 

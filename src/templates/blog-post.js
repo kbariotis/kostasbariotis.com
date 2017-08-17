@@ -77,7 +77,7 @@ export default function Template({ data, pathContext }) {
                 </ul>
               </div>
               <div className="large-8">
-                <BulletListTags tags={post.frontmatter.tags} />
+                <BulletListTags tags={post.frontmatter.tags} draft={post.frontmatter.draft} />
               </div>
             </div>
           </section>

@@ -25,18 +25,21 @@ export default function Index({ data }) {
       <section className="blog container">
         <div className="medium-8 medium-offset-2">
           <header className="header">Drafts</header>
-          <p className="drafts-description">Here are my drafts, currently working on either
-            abandoned them for some reason. You can read them
-            and comment them on them if you think you can help me.
+          <p className="drafts-description">
+            These are the draft posts either I'm currently working on either
+            I have abandoned them for some reason. You can read them
+            and comment them on them if you think you can help me complete them.
+            It will be fun to write an article together. I will also include you
+            as a co-author.
           </p>
           <Separator />
           <div className="posts">
             <Posts posts={posts} />
             <Separator />
             <article className="post text-right">
-              <header className="header post-head">
+              <header className="post-head">
                 <h3 className="post-title">
-                  <Link to="/page/2">Older Posts &gt;</Link>
+                  <Link to="/drafts/page/2">Older Posts &gt;</Link>
                 </h3>
               </header>
             </article>
