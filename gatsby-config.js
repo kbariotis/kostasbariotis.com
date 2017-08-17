@@ -21,16 +21,16 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-images',
-            options: {
-              linkImagesToOriginal: false
-            }
-          },
-          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: 'language-',
             },
+          },
+          {
+            resolve: 'gatsby-remark-responsive-image',
+            options: {
+              linkImagesToOriginal: true
+            }
           },
         ]
       }
