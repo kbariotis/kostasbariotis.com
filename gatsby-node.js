@@ -150,6 +150,8 @@ const createPagination = (createPage, edges, pathPrefix) => {
         posts: paginate(edges, pageSize, page).map(({node}) => node),
         page,
         pagesSum,
+        prevPath: (page - 1) > 0 ? `${pathPrefix}/${page - 1}` : null,
+        nextPath: (page + 1) < pagesSum ? `${pathPrefix}/${page + 1}` : null,
       }
     })
   }
