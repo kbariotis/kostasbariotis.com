@@ -13,11 +13,7 @@ const Posts = ({ posts }) =>
           <header className="post-head">
             <h1 className="post-title">
               <GatsbyLink
-                to={
-                  post.frontmatter.draft
-                    ? `/drafts${post.frontmatter.path}`
-                    : post.frontmatter.path
-                }
+                to={post.frontmatter.path}
               >
                 {post.frontmatter.title}
               </GatsbyLink>
@@ -33,11 +29,7 @@ const Posts = ({ posts }) =>
             <p>
               {post.excerpt}{' '}
               <GatsbyLink
-                to={
-                  post.frontmatter.draft
-                    ? `/drafts${post.frontmatter.path}`
-                    : post.frontmatter.path
-                }
+                to={post.frontmatter.path}
               >
                 &raquo;
               </GatsbyLink>

@@ -7,11 +7,7 @@ const NavigateLink = ({ post }) =>
   <div>
     <GatsbyLink
       className="navigate-link"
-      to={
-        post.frontmatter.draft
-          ? `/drafts${post.frontmatter.path}`
-          : post.frontmatter.path
-      }
+      to={post.frontmatter.path}
     >
       {post.frontmatter.title}
     </GatsbyLink>
