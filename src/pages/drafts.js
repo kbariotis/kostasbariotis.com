@@ -28,7 +28,7 @@ export default function Index({ data }) {
           <p className="drafts-description">
             These are the draft posts either I'm currently working on either
             I have abandoned them for some reason. You can read them
-            and comment them on them if you think you can help me complete them.
+            and comment on them if you think you can help me complete them.
             It will be fun to write an article together. I will also include you
             as a co-author.
           </p>
