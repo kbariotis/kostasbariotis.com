@@ -41,19 +41,11 @@ export default function About({ data }) {
               <div className="medium-2 about-section-title">INTRO</div>
               <div className="medium-10">
                 <p>
-                  I am a web developer, a proud wanderer and a passionate doer.
-                  I am sending you my regards from sunny Thessaloniki, Greece.
-                  Have you ever been? Take a look, I am sure you will fall in
-                  love with the amazing beaches of Chalkidiki.
-                </p>
-                <p>
-                  I am a JavaScript kind of dude who's obsessed with clean and
-                  efficient code. I am interested in designing software
-                  architectures, APIs and databases to serve the rest of an
-                  application. I am calling myself a full stack developer but I
+                  I design software architectures, APIs and databases to serve the
+                  rest of an application. I am a full stack engineer but I
                   love taking a specific field in my hands and getting the juice
-                  out of it. I am interested in being a part of a team that
-                  builds great software. I get things done.
+                  out of it. I am always interested in being a part of a team that
+                  builds great software and getting things done.
                 </p>
                 <p>
                   I like things like Node.js, Express.js, React.js, Webpack,
@@ -61,34 +53,42 @@ export default function About({ data }) {
                   whole lot more.
                 </p>
                 <p>
-                  This blog is my personal playground, I am also doing a lot of{' '}
-                  <a href="http://slides.com/kostasbariotis">
-                    public speaking
-                  </a>{' '}
-                  talking a lot about tech stuff and also talking with others on
-                  my <a href="http://devastation.tv">podcast</a>.{' '}
-                  <a href="http://stargento.com">Stargento</a> is one of my side
-                  projects, an online PHP/Magento sandbox. You can find more
-                  code samples and my contributions on
-                  <a href="https://github.com/kbariotis" />Github. Along with
-                  some folks, we are organizing the local{' '}
-                  <a href="www.meetup.com/Thessaloniki-Node-js-Meetup/">
-                    Nodejs meetup
-                  </a>{' '}
-                  and{' '}
-                  <a href="http://devit.org" target="_blank">
-                    DEVit Conf
-                  </a>, the biggest web development conference in northern
-                  Greece. We are also known as{' '}
-                  <a href="http://skgtech.io" target="_blank">
-                    SKGtech
-                  </a>.
+                  I like{' '}
+                  <a href="http://slides.com/kostasbariotis">speaking</a> to meetups
+                  and conferences about things that tried and also talking with others on my
+                  {' '}<a href="http://devastation.tv">podcast</a>. I created
+                  {' '}<a href="https://janitr.net">Janitr</a> and
+                  {' '}<a href="http://gityeller.com">GitYeller</a> You can find more code samples and my contributions on
+                  {' '}<a href="https://github.com/kbariotis">Github</a>. Along with
+                  some folks, we are organizing the local
+                  {' '}<a href="www.meetup.com/Thessaloniki-Node-js-Meetup/">Nodejs meetup</a> and
+                  {' '}<a href="http://devit.org" target="_blank">DEVit Conf</a>, the
+                  biggest web development conference in northern Greece. We are also known as
+                  {' '}<a href="http://skgtech.io" target="_blank">SKGtech</a>.
+                </p>
+                <p>
+                  This site is being generated using Gatsby.js and you can find the source on
+                   {' '}<a href="https://github.com/kbariotis/kostasbariotis.com">{' '}GitHub</a>.
+                </p>
+                <p>
+                  I am currently living in Thessaloniki, Greece.
+                  Have you ever been? Take a look, I am sure you will fall in
+                  love with the amazing beaches of Chalkidiki.
                 </p>
               </div>
             </div>
             <div className="row about-section">
               <div className="medium-2 about-section-title">BIO</div>
               <div className="medium-10">
+                <div className="row">
+                  <div className="medium-2 bio-date">2017</div>
+                  <div className="medium-10 text-right">
+                    Released{' '}
+                    <a href="https://janitr.net">
+                      Janitr.net
+                    </a>
+                  </div>
+                </div>
                 <div className="row">
                   <div className="medium-2 bio-date">2016</div>
                   <div className="medium-10 text-right">
@@ -202,27 +202,27 @@ export default function About({ data }) {
                 <div className="row">
                   <div className="medium-4">
                     <a
-                      href="https://github.com/kbariotis/throw.js"
+                      href="https://janitr.net"
                       target="_blank"
                     >
-                      Throw.js
+                      Janitr
                     </a>
                   </div>
                   <div className="medium-8 text-right">
-                    HTTP Error collection to use in your next REST API
+                    A Slack bot that welcomes news members on your team
                   </div>
                 </div>
                 <div className="row">
                   <div className="medium-4">
                     <a
-                      href="https://github.com/kbariotis/meanimum"
+                      href="https://gityeller.com"
                       target="_blank"
                     >
-                      MEANimum
+                      GitYeller
                     </a>
                   </div>
                   <div className="medium-8 text-right">
-                    Meanimum is my Mongo/Express/Angular/Node Boilerplate
+                    Subscribe to your favorite GitHub repository and get notified by email for new issues with specific labels.
                   </div>
                 </div>
                 <div className="row">
@@ -234,32 +234,6 @@ export default function About({ data }) {
                   <div className="medium-8 text-right">
                     PHP sandbox powered up with the latest Magento installation
                     to test your Magento skills
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="medium-4">
-                    <a
-                      href="https://github.com/kbariotis/documer"
-                      target="_blank"
-                    >
-                      Documer
-                    </a>
-                  </div>
-                  <div className="medium-8 text-right">
-                    Bayes algorithm implementation with PHP
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="medium-4">
-                    <a
-                      href="https://github.com/kbariotis/feedly-api"
-                      target="_blank"
-                    >
-                      Feedly-Api
-                    </a>
-                  </div>
-                  <div className="medium-8 text-right">
-                    PHP wrapper around Feedly's REST API
                   </div>
                 </div>
               </div>

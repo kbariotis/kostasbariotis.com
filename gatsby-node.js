@@ -6,8 +6,6 @@ const path = require('path');
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
 
-  const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
-
   /**
    * Fetch our posts
    */
@@ -40,47 +38,51 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       }
     }
   }`)
-    .then(result => {
-      if (result.errors) {
-        return Promise.reject(result.errors)
-      }
-
-      /**
-       * Separate published posts and and drafts
-       */
-      const posts = result.data.allMarkdownRemark.edges;
-      const published = posts.filter(post => !post.node.frontmatter.draft);
-      const drafts = posts.filter(post => post.node.frontmatter.draft);
-
-      createTagPages(createPage, published);
-      createPagination(createPage, published, `/page`);
-      createPagination(createPage, drafts, `/drafts/page`);
-
-      /**
-       * Create pages for each markdown file.
-       */
-      posts.forEach(({ node }, index) => {
-        const prev = index === 0 ? false : posts[index - 1].node;
-        const next = index === posts.length - 1 ? false : posts[index + 1].node;
-        createPage({
-          path: node.frontmatter.path,
-          refPath: node.frontmatter.path,
-          component: blogPostTemplate,
-          context: {
-            prev,
-            next
-          }
-        });
-      });
-
-      return drafts;
-    })
+    .then(result => generateContent(createPage, result))
 };
+
+function generateContent(createPage, graphqlResults) {
+  if (graphqlResults.errors) {
+    return Promise.reject(graphqlResults.errors)
+  }
+
+  const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
+
+  /**
+   * Separate published posts and and drafts
+   */
+  const posts = graphqlResults.data.allMarkdownRemark.edges;
+  const published = posts.filter(post => !post.node.frontmatter.draft);
+  const drafts = posts.filter(post => post.node.frontmatter.draft);
+
+  createTagPages(createPage, published);
+  createPagination(createPage, published, `/page`);
+  createPagination(createPage, drafts, `/drafts/page`);
+
+  /**
+   * Create pages for each markdown file.
+   */
+  posts.forEach(({ node }, index) => {
+    const prev = index === 0 ? false : posts[index - 1].node;
+    const next = index === posts.length - 1 ? false : posts[index + 1].node;
+    createPage({
+      path: node.frontmatter.path,
+      refPath: node.frontmatter.path,
+      component: blogPostTemplate,
+      context: {
+        prev,
+        next
+      }
+    });
+  });
+
+  return drafts;
+}
 
 /**
  * Create pages for tags
  */
-const createTagPages = (createPage, edges) => {
+function createTagPages (createPage, edges) {
   const tagTemplate = path.resolve(`src/templates/tags.js`);
   const posts = {};
 
@@ -118,15 +120,10 @@ const createTagPages = (createPage, edges) => {
     });
 };
 
-function paginate(array, page_size, page_number) {
-  --page_number; // because pages logically start with 1, but technically with 0
-  return array.slice(0).slice(page_number * page_size, (page_number + 1) * page_size);
-}
-
 /**
  * Create pagination for posts
  */
-const createPagination = (createPage, edges, pathPrefix) => {
+function createPagination (createPage, edges, pathPrefix) {
   const pageTemplate = path.resolve(`src/templates/page.js`);
 
   const pageSize = 5;
@@ -146,3 +143,8 @@ const createPagination = (createPage, edges, pathPrefix) => {
     })
   }
 };
+
+function paginate(array, page_size, page_number) {
+  --page_number; // because pages logically start with 1, but technically with 0
+  return array.slice(0).slice(page_number * page_size, (page_number + 1) * page_size);
+}
