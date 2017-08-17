@@ -19,6 +19,13 @@ body {
     background-image: linear-gradient(to bottom, rgba(125, 185, 232, 0) 0%, rgba(34, 25, 49, 1) 100%), url('./../../static/images/header_index.jpg');
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#007db9e8', endColorstr='#221931', GradientType=0);
     background-repeat: no-repeat;
+
+    @include mobile {
+        background-size: 100% 100px;
+    }
+    @include tablet {
+        background-size: 100% 125px;
+    }
 }
 
 h1,
@@ -57,4 +64,10 @@ a {
 .not-found-section {
     text-align: center;
     margin-top: 50px;
+}
+
+.header {
+    color: $red;
+    font-size: 1.5em;
+    font-weight: 700;
 }

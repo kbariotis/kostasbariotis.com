@@ -33,19 +33,28 @@
         display: block;
         background: linear-gradient(to right, #e52f45 0%, #e52f45 25%, #b42b3e 25%, #b42b3e 50%, #8ab2ff 50%, #8ab2ff 75%, #4d71b7 75%, #4d71b7 100%);
     }
-    .header {
-        color: $red;
-        font-size: 1.5em;
-        font-weight: 700;
-        @media(max-width: 768px) {
-            text-align: left;
+
+    .post {
+        .post-title {
+            color: $red;
+            font-size: 2.6em;
+            font-weight: 700;
+            margin-bottom: 2 * $vpadding;
+            @media(max-width: 768px) {
+                text-align: left;
+            }
         }
     }
     .posts {
         .post-title {
-            font-size: 0.9em;
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 2 * $vpadding;
             color: $lightblue;
             margin-bottom: 5px;
+            @media(max-width: 768px) {
+                text-align: left;
+            }
         }
         .post {
             margin-bottom: 40px;
@@ -178,6 +187,9 @@
 }
 
 .tags-collection {
+    .tag-title {
+        color: $red;
+    }
     .tag-meta {
         margin-bottom: 50px;
     }

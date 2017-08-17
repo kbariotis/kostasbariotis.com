@@ -27,6 +27,7 @@ export default function Template({ data, pathContext }) {
   const { title, siteUrl } = data.site.siteMetadata;
   const { next, prev } = pathContext;
 
+  const isProduction = process.env.NODE_ENV === 'production';
   const fullUrl = `${siteUrl}${post.frontmatter.path}`;
 
   return (
@@ -40,8 +41,8 @@ export default function Template({ data, pathContext }) {
       />
       <Menu />
       <main className="blog container" role="main">
-        <div className="medium-8 medium-offset-2">
-          <header className="header post-head ">
+        <div className="medium-8 medium-offset-2 post">
+          <header className="post-head">
             <h1 className="post-title">
               {post.frontmatter.title}
             </h1>
@@ -138,26 +139,19 @@ export default function Template({ data, pathContext }) {
               <header className="header">
                 <h2>Comments</h2>
               </header>
-              <ReactDisqusThread
+              {isProduction && <ReactDisqusThread
                 shortname="kostasbariotis"
                 identifier={post.frontmatter.path.slice(1)}
                 title={post.frontmatter.title}
                 url={fullUrl}
-              />
+              />}
             </section>
 
             <section className="blog-section">
               <header className="header">
-                <h2>Navigate</h2>
+                <h2>Read Next</h2>
               </header>
-              <div className="row">
-                <div className="large-6">
-                  <NavigateLink post={prev} />
-                </div>
-                <div className="large-6 text-right">
-                  <NavigateLink post={next} />
-                </div>
-              </div>
+              <NavigateLink post={next} />
             </section>
           </article>
         </div>

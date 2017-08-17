@@ -49,7 +49,7 @@ export default function Index({ data }) {
             <Posts posts={posts} />
             <Separator />
             <article className="post text-right">
-              <header className="header post-head">
+              <header className="post-head">
                 <h3 className="post-title">
                   <Link to="/page/2">Older Posts &gt;</Link>
                 </h3>

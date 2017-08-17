@@ -1,32 +1,5 @@
 .navbar-default {
-    // background: $background;
     background: none;
-    .image-placeholder {
-        height: 360px;
-        margin-bottom: -50px;
-        background-image: url('./../../static/images/header_index.jpg');
-        background-size: 100%;
-        /* http://colorzilla.com/gradient-editor/#7db9e8+0,221931+99&0+0,1+100 */
-        background-image: -moz-linear-gradient(top, rgba(125, 185, 232, 0) 0%, rgba(34, 25, 49, 1) 100%), url('./../../static/images/header_index.jpg');
-        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(125, 185, 232, 0)), color-stop(100%, rgba(34, 25, 49, 1))), url('./../../static/images/header_index.jpg');
-        background-image: -webkit-linear-gradient(top, rgba(125, 185, 232, 0) 0%, rgba(34, 25, 49, 1) 100%), url('./../../static/images/header_index.jpg');
-        background-image: -o-linear-gradient(top, rgba(125, 185, 232, 0) 0%, rgba(34, 25, 49, 1) 100%), url('./../../static/images/header_index.jpg');
-        background-image: -ms-linear-gradient(top, rgba(125, 185, 232, 0) 0%, rgba(34, 25, 49, 1) 100%), url('./../../static/images/header_index.jpg');
-        background-image: linear-gradient(to bottom, rgba(125, 185, 232, 0) 0%, rgba(34, 25, 49, 1) 100%), url('./../../static/images/header_index.jpg');
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#007db9e8', endColorstr='#221931', GradientType=0);
-        @media (min-width: 1500px) {
-            height: 320px;
-        }
-        @media (max-width: 1500px) {
-            height: 260px;
-        }
-        @media (max-width: 1200px) {
-            height: 160px;
-        }
-        @media (max-width: 768px) {
-            height: 80px;
-        }
-    }
 }
 
 .navbar-default .navbar-nav > li > a:hover,

@@ -10,7 +10,7 @@ const Posts = ({ posts }) =>
       .filter(post => post.frontmatter.title.length > 0)
       .map((post, index) =>
         <article className="post" key={index}>
-          <header className="header post-head">
+          <header className="post-head">
             <h1 className="post-title">
               <GatsbyLink to={post.frontmatter.draft ? `/drafts${post.frontmatter.path}` : post.frontmatter.path}>
                 {post.frontmatter.title}

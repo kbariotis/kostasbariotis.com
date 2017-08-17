@@ -11,7 +11,7 @@ const NavigateLink = ({ post }) =>
     <div>
       {dateformat(post.frontmatter.date, 'd mmmm yyyy')}
     </div>
-    <p className="navigate-desc">{`${post.excerpt.slice(0, 100)}...`}</p>
+    <p className="navigate-desc">{`${post.excerpt}`}</p>
   </div>;
 
 export default NavigateLink;
