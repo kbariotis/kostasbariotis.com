@@ -26,11 +26,11 @@ export default function Index({ data }) {
         <div className="medium-8 medium-offset-2">
           <header className="header">Drafts</header>
           <p className="drafts-description">
-            These are the draft posts either I'm currently working on either
-            I have abandoned them for some reason. You can read them
-            and comment on them if you think you can help me complete them.
-            It will be fun to write an article together. I will also include you
-            as a co-author.
+            These are the draft posts either I'm currently working on either I
+            have abandoned them for some reason. You can read them and comment
+            on them if you think you can help me complete them. It will be fun
+            to write an article together. I will also include you as a
+            co-author.
           </p>
           <Separator />
           <div className="posts">
@@ -60,7 +60,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 5,
+      limit: 5
       filter: { frontmatter: { draft: { eq: true } } }
     ) {
       edges {

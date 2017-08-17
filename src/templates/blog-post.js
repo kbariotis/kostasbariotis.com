@@ -77,7 +77,10 @@ export default function Template({ data, pathContext }) {
                 </ul>
               </div>
               <div className="large-8">
-                <BulletListTags tags={post.frontmatter.tags} draft={post.frontmatter.draft} />
+                <BulletListTags
+                  tags={post.frontmatter.tags}
+                  draft={post.frontmatter.draft}
+                />
               </div>
             </div>
           </section>
@@ -90,48 +93,55 @@ export default function Template({ data, pathContext }) {
             <Separator />
             <footer className="post-footer">
               <section className="share text-center">
-                {!post.frontmatter.draft ? (
-                  <ul className="share-buttons list-inline">
-                    <li>
-                      <b>Share this post on</b>
-                    </li>
-                    <li className="link-twitter">
-                      <TwitterShareButton
-                        url={fullUrl}
+                {!post.frontmatter.draft
+                  ? <ul className="share-buttons list-inline">
+                      <li>
+                        <b>Share this post on</b>
+                      </li>
+                      <li className="link-twitter">
+                        <TwitterShareButton
+                          url={fullUrl}
+                          title={post.frontmatter.title}
+                          via="kbariotis"
+                          className="share-twitter"
+                        >
+                          <span>Twitter</span>
+                        </TwitterShareButton>
+                      </li>
+                      <li className="link-facebook">
+                        <FacebookShareButton
+                          url={fullUrl}
+                          title={post.frontmatter.title}
+                          description={post.excerpt}
+                          className="share-facebook"
+                        >
+                          <span>Facebook</span>
+                        </FacebookShareButton>
+                      </li>
+                      <li className="link-google-plus">
+                        <GooglePlusShareButton
+                          url={fullUrl}
+                          className="share-google-plus"
+                        >
+                          <span>Google+</span>
+                        </GooglePlusShareButton>
+                      </li>
+                      <li
+                        className="link-reddit"
                         title={post.frontmatter.title}
-                        via="kbariotis"
-                        className="share-twitter"
                       >
-                        <span>Twitter</span>
-                      </TwitterShareButton>
-                    </li>
-                    <li className="link-facebook">
-                      <FacebookShareButton
-                        url={fullUrl}
-                        title={post.frontmatter.title}
-                        description={post.excerpt}
-                        className="share-facebook"
-                      >
-                        <span>Facebook</span>
-                      </FacebookShareButton>
-                    </li>
-                    <li className="link-google-plus">
-                      <GooglePlusShareButton
-                        url={fullUrl}
-                        className="share-google-plus"
-                      >
-                        <span>Google+</span>
-                      </GooglePlusShareButton>
-                    </li>
-                    <li className="link-reddit" title={post.frontmatter.title}>
-                      <RedditShareButton url={fullUrl} className="share-reddit">
-                        <span>Reddit</span>
-                      </RedditShareButton>
-                    </li>
-                  </ul>
-                ) : (
-                  <small>This is a draft post, thus sharing is disabled. Please do not share untill is ready for prime time.</small>
-                )}
+                        <RedditShareButton
+                          url={fullUrl}
+                          className="share-reddit"
+                        >
+                          <span>Reddit</span>
+                        </RedditShareButton>
+                      </li>
+                    </ul>
+                  : <small>
+                      This is a draft post, thus sharing is disabled. Please do
+                      not share untill is ready for prime time.
+                    </small>}
               </section>
             </footer>
 
@@ -139,12 +149,13 @@ export default function Template({ data, pathContext }) {
               <header className="header">
                 <h2>Comments</h2>
               </header>
-              {isProduction && <ReactDisqusThread
-                shortname="kostasbariotis"
-                identifier={post.frontmatter.path.slice(1)}
-                title={post.frontmatter.title}
-                url={fullUrl}
-              />}
+              {isProduction &&
+                <ReactDisqusThread
+                  shortname="kostasbariotis"
+                  identifier={post.frontmatter.path.slice(1)}
+                  title={post.frontmatter.title}
+                  url={fullUrl}
+                />}
             </section>
 
             <section className="blog-section">

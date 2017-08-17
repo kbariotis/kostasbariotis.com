@@ -6,17 +6,18 @@ import LazyLoad from 'react-lazyload';
 
 import Separator from './../components/Separator';
 import Menu from './../components/Menu';
+import MetaTags from './../components/MetaTags';
 import AvatarImg from './../../static/images/avatar.jpg';
 
-export default function About() {
+export default function About({ data }) {
+  const { title, description } = data.site.siteMetadata;
   return (
     <div>
-      <Helmet
-        title="Kostas Bariotis"
-        meta={[
-          { name: 'description', content: 'Sample' },
-          { name: 'keywords', content: 'sample, something' },
-        ]}
+      <MetaTags
+        title={`About - ${title}`}
+        path="/about"
+        tags="webdev, programming, javascript"
+        description={description}
       />
       <Menu />
       <section className="blog container about">
@@ -300,3 +301,15 @@ export default function About() {
     </div>
   );
 }
+
+export const aboutPageQuery = graphql`
+  query AboutPageSiteMetadata {
+    site {
+      siteMetadata {
+        title
+        description
+        siteUrl
+      }
+    }
+  }
+`;

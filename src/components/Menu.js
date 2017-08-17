@@ -2,20 +2,20 @@ import React from 'react';
 import GatsbyLink from 'gatsby-link';
 
 class Menu extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
 
     this.state = {
       menuOpened: false,
-    }
+    };
   }
 
-  handleClick () {
+  handleClick() {
     this.setState({
       menuOpened: !this.state.menuOpened,
-    })
+    });
   }
-  render () {
+  render() {
     return (
       <nav className="navbar navbar-default">
         {/* <div className="image-placeholder" /> */}
@@ -33,7 +33,12 @@ class Menu extends React.Component {
                 <span className="icon-bar" />
               </button>
             </div>
-            <div className={`collapse navbar-collapse ${this.state.menuOpened ? 'in' : ''}`} id="main-menu">
+            <div
+              className={`collapse navbar-collapse ${this.state.menuOpened
+                ? 'in'
+                : ''}`}
+              id="main-menu"
+            >
               <ul className="nav navbar-nav navbar-right">
                 <li>
                   <GatsbyLink to="/">Home</GatsbyLink>
@@ -46,7 +51,7 @@ class Menu extends React.Component {
           </div>
         </div>
       </nav>
-    )
+    );
   }
 }
 export default Menu;

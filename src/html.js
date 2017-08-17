@@ -32,8 +32,7 @@ export default class HTML extends React.Component {
           {this.props.headComponents}
           {css}
         </head>
-        <body
-          itemScope itemType="http://schema.org/WebPage">
+        <body itemScope itemType="http://schema.org/WebPage">
           <div
             id="___gatsby"
             dangerouslySetInnerHTML={{ __html: this.props.body }}

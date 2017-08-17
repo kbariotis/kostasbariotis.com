@@ -8,28 +8,51 @@ import Separator from '../components/Separator';
 import Menu from '../components/Menu';
 import MetaTags from '../components/MetaTags';
 
-export default function Pages({ pathContext }) {
+export default function Pages({ pathContext, data }) {
+  const { title, description } = data.site.siteMetadata;
   const { posts, page, pagesSum, prevPath, nextPath } = pathContext;
   return (
     <section className="main-content">
       <MetaTags
-        title="Kostas Bariotis"
+        title={`Page ${page} - ${title}`}
         path={`/page/${page}`}
         tags="webdev, programming, javascript"
-        description="I'm Kostas Bariotis, a web developer, a proud wanderer and a passionate doer. My mission is to write clean and efficient code, to solve problems on the web and to learn something more."
+        description={description}
       />
       <Menu />
       <section className="blog container">
         <div className="medium-8 medium-offset-2">
           <div className="posts">
-            <Pagination page={page} pagesSum={pagesSum} prevPath={prevPath} nextPath={nextPath}/>
+            <Pagination
+              page={page}
+              pagesSum={pagesSum}
+              prevPath={prevPath}
+              nextPath={nextPath}
+            />
             <Separator />
             <Posts posts={posts} />
             <Separator />
-            <Pagination page={page} pagesSum={pagesSum} prevPath={prevPath} nextPath={nextPath} />
+            <Pagination
+              page={page}
+              pagesSum={pagesSum}
+              prevPath={prevPath}
+              nextPath={nextPath}
+            />
           </div>
         </div>
       </section>
     </section>
   );
 }
+
+export const pagesQuery = graphql`
+  query PagesSiteMetadata {
+    site {
+      siteMetadata {
+        title
+        description
+        siteUrl
+      }
+    }
+  }
+`;

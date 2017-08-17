@@ -10,9 +10,7 @@ const MetaTags = ({ title, description, path, tags, noIndex }) =>
         { name: 'keywords', content: tags },
       ]}
     >
-      {noIndex &&
-        <meta name="robots" content="noindex"/>
-      }
+      {noIndex && <meta name="robots" content="noindex" />}
 
       <meta property="og:site_name" content="Kostas Bariotis" />
       <meta property="og:type" content="website" />

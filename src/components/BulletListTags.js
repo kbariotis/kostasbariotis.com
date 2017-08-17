@@ -13,11 +13,8 @@ const CommaSeparatedTags = ({ tags, draft }) =>
       )}
     {draft &&
       <li className="draft-tag">
-        <GatsbyLink to={`/drafts`}>
-          Draft
-        </GatsbyLink>
-      </li>
-    }
+        <GatsbyLink to={`/drafts`}>Draft</GatsbyLink>
+      </li>}
   </ul>;
 
 export default CommaSeparatedTags;

@@ -39,8 +39,8 @@ export default function Index({ data }) {
             <h1>Kostas Bariotis</h1>
             <p>
               I'm Kostas Bariotis, a web developer, a proud wanderer and a
-              passionate doer. My mission is to write clean and efficient code, to
-              solve problems on the web and to learn something more.
+              passionate doer. My mission is to write clean and efficient code,
+              to solve problems on the web and to learn something more.
             </p>
           </div>
           <header className="header">Latest Posts</header>
@@ -73,7 +73,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 5,
+      limit: 5
       filter: { frontmatter: { draft: { ne: true } } }
     ) {
       edges {

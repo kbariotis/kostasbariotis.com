@@ -8,14 +8,15 @@ import Pagination from '../components/TagsPagination';
 import Separator from '../components/Separator';
 import MetaTags from '../components/MetaTags';
 
-export default function Tags({ pathContext }) {
+export default function Tags({ pathContext, data }) {
+  const { title } = data.site.siteMetadata;
   const { posts, tag, pagesSum, page } = pathContext;
 
   return (
     <section className="main-content">
       <MetaTags
-        title={`${tag} - Kostas Bariotis`}
-        description={`All posts about ${tag}`}
+        title={`${tag} - ${title}`}
+        description={`All posts talking about ${tag}`}
         tags={tag}
         path={`/tag/${tag}`}
       />
@@ -43,3 +44,15 @@ export default function Tags({ pathContext }) {
     </section>
   );
 }
+
+export const tagsQuery = graphql`
+  query TagsSiteMetadata {
+    site {
+      siteMetadata {
+        title
+        description
+        siteUrl
+      }
+    }
+  }
+`;

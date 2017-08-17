@@ -12,7 +12,13 @@ const Posts = ({ posts }) =>
         <article className="post" key={index}>
           <header className="post-head">
             <h1 className="post-title">
-              <GatsbyLink to={post.frontmatter.draft ? `/drafts${post.frontmatter.path}` : post.frontmatter.path}>
+              <GatsbyLink
+                to={
+                  post.frontmatter.draft
+                    ? `/drafts${post.frontmatter.path}`
+                    : post.frontmatter.path
+                }
+              >
                 {post.frontmatter.title}
               </GatsbyLink>
             </h1>
@@ -26,7 +32,13 @@ const Posts = ({ posts }) =>
           <section className="post-excerpt">
             <p>
               {post.excerpt}{' '}
-              <GatsbyLink to={post.frontmatter.draft ? `/drafts${post.frontmatter.path}` : post.frontmatter.path}>
+              <GatsbyLink
+                to={
+                  post.frontmatter.draft
+                    ? `/drafts${post.frontmatter.path}`
+                    : post.frontmatter.path
+                }
+              >
                 &raquo;
               </GatsbyLink>
             </p>
