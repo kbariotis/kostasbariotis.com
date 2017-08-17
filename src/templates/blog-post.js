@@ -37,6 +37,7 @@ export default function Template({ data, pathContext }) {
         description={post.excerpt}
         tags={post.frontmatter.tags}
         path={post.frontmatter.path}
+        siteUrl={siteUrl}
         noIndex={post.frontmatter.draft}
       />
       <Menu />
@@ -182,6 +183,7 @@ export const pageQuery = graphql`
     }
     markdownRemark(frontmatter: { path: { eq: $refPath } }) {
       html
+      excerpt
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path

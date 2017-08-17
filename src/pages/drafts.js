@@ -10,13 +10,14 @@ import MetaTags from './../components/MetaTags';
 
 export default function Index({ data }) {
   let { edges: posts } = data.allMarkdownRemark;
-  let { description, title } = data.site.siteMetadata;
+  let { description, title, siteUrl } = data.site.siteMetadata;
   posts = posts.map(post => post.node);
   return (
     <div>
       <MetaTags
         title={`My drafts - ${title}`}
-        path="/"
+        path={`/drafts`}
+        siteUrl={siteUrl}
         tags="webdev, programming, javascript"
         description={description}
         noIndex={true}

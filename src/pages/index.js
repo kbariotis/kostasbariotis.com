@@ -13,13 +13,14 @@ import avatarImage from './../../static/images/avatar.jpg';
 
 export default function Index({ data }) {
   let { edges: posts } = data.allMarkdownRemark;
-  let { description, title } = data.site.siteMetadata;
+  let { description, title, siteUrl } = data.site.siteMetadata;
   posts = posts.map(post => post.node);
   return (
     <div>
       <MetaTags
         title={title}
-        path="/"
+        path={``}
+        siteUrl={siteUrl}
         tags="webdev, programming, javascript"
         description={description}
       />

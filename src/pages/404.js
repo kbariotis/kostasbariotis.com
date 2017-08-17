@@ -19,6 +19,7 @@ export default () =>
     <Helmet
       title="Not found - Kostas Bariotis"
       meta={[{ name: 'description', content: 'Not found' }]}
+      noIndex={true}
     />
     <Menu />
     <section className="blog container about">

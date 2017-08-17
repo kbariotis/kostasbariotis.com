@@ -10,12 +10,13 @@ import MetaTags from './../components/MetaTags';
 import AvatarImg from './../../static/images/avatar.jpg';
 
 export default function About({ data }) {
-  const { title, description } = data.site.siteMetadata;
+  const { title, description, siteUrl } = data.site.siteMetadata;
   return (
     <div>
       <MetaTags
         title={`About - ${title}`}
-        path="/about"
+        path={`/about`}
+        siteUrl={siteUrl}
         tags="webdev, programming, javascript"
         description={description}
       />

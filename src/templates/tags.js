@@ -9,7 +9,7 @@ import Separator from '../components/Separator';
 import MetaTags from '../components/MetaTags';
 
 export default function Tags({ pathContext, data }) {
-  const { title } = data.site.siteMetadata;
+  const { title, siteUrl } = data.site.siteMetadata;
   const { posts, tag, pagesSum, page } = pathContext;
 
   return (
@@ -18,6 +18,7 @@ export default function Tags({ pathContext, data }) {
         title={`${tag} - ${title}`}
         description={`All posts talking about ${tag}`}
         tags={tag}
+        siteUrl={siteUrl}
         path={`/tag/${tag}`}
       />
       <Menu />
