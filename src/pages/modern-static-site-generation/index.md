@@ -5,23 +5,23 @@ path: "/drafts/modern-static-site-generation/"
 date: "2017-08-14T00:00:00.000Z"
 ---
 
-In this post I will talk about static site generators, how they have involved and why I switched from a [Ghost](https://ghost.org) powered site to [Gatsby.js](https://gatsbyjs.org), a modern static site generator.
+In this post, I will talk about static site generators. How they have involved and why I switched from a [Ghost](https://ghost.org) powered site to [Gatsby.js](https://gatsbyjs.org), a modern static site generator.
 
 ## Static site generators as we know them
 
-Jekyll, Hexo, Hugo. They do one thing and they do it extremely well. I've build a ton of sites using Jekyll hosted either on GitHub either somewhere else. They all work pretty much the same way:
+[Jekyll](http://jekyllrb.com), [Hexo](https://hexo.io), [Hugo](https://gohugo.io/). They do one thing and they do it well. I've built a ton of sites using Jekyll hosted either on GitHub either somewhere else. They all work pretty much the same way:
 
-* You describe your content in some common templating language (JADE, Handlebars, etc)
+* You describe your content in some common templating language ([Pug](pugjs.org), [Handlebars](http://handlebarsjs.com), etc)
 * While in development, start a local web server and add file "watchers" that will listen for content changes and re-render the site
 * Finally, you render the whole site in static HTML and deploy. The generator will combine your files and produce a well formed HTML content.
 
-For client side functionality, you have to keep the client side logic separated from the backend. Much like in an architecture where Wordpress is involved. So, pretty much nothing is changing. Literally, the difference from having a cached version of wordpress and content generated with Jekyll is none.
+A caveat here is that you have to keep the client side logic separated from the backend. Much like in an architecture where Wordpress is involved. So, pretty much nothing is changing. The difference from having a cached version of Wordpress and content generated with Jekyll is none.
 
 ## Enter the new world order
 
-React.js! Aw yeah! We've heard about it! It's dominating the Web, but for a reason really. There are really so many reasons React.js have gained such a hype. Many of the techniques we will discuss here can be easily applied with other frameworks and libraries but React.js can play so nicely with them.
+[React.js](https://facebook.github.io/react/)! Awww yeah! We've heard about it! It's dominating the Web, but for a reason. There are so many reasons React.js have gained such a hype. Many of the techniques we will discuss here can be easily applied to other frameworks and libraries but React.js can play so nicely with them.
 
-There is this function called Server Side Rendering where you can produce static HTML content directly from a tree of React.js components. That content will still contains the required React.js specific anotations needed so when the same tree will be loaded on the client, on top of the previously produced content, will know exactly what has to be rendered and what not to. From there, the client side logic can take the lead. Once the user visits a site, the server will directly respond with the static HTML. Once it's loaded in the user's browser and the user navigates in another route, the client side logic will respond and will render the new page, instead of contacting the server again. The same codebase will be used for the backend as also for the frontend. And that's really a game changer.
+There is this function called [Server Side Rendering](https://facebook.github.io/react/docs/react-dom-server.html) where you can produce static HTML content directly from a tree of React.js components. That HTML content will contain the required React.js specific annotations so when the same tree will be loaded on the client, on top of the previously produced content, will know exactly what has to be rendered and what not to. From there, the client side logic can take the lead. Once the user visits a site, the server will respond with the static HTML. Once it's loaded in the user's browser and the user navigates in another route, the client side logic will respond and will render the new page, instead of contacting the server again. The same codebase will be used for the backend as also for the frontend. And that's a game changer.
 
 So let's see the new list:
 
@@ -29,9 +29,9 @@ So let's see the new list:
 * On development time, write code like a boss (hot reloading, modularized code, webpack plugins, etc...)
 * Use React.js SSR API to produce the static content to be served on the backend, as well as the frontend side assets to be used on the visitor's browser
 
-## Wait, what? Just like that?
+## Wait, what? Like that?
 
-Yeah, I know. I made it look so easy. It's really not. There is the need for a strong abstraction that will track your links across your components, parse content written in another format, like blog posts written in Markdown, generate code that will not bloat the client and will efficiently server the content to the user.
+Yeah, I know. I made it look so easy. It's not. There is the need for a strong abstraction that will track your links across your components, parse content written in another format, like blog posts written in Markdown, generate code that will not bloat the client and will efficiently serve the content to the user.
 
 Thankfully, there are a few projects that took the initiative and they are doing a great job so far. At the time of reading this, this site will already be served by GitHub pages and the content you will see once you view the source it's been generated by [Gatsby.js](https://gatsbyjs.org).
 
@@ -41,33 +41,33 @@ I have been following those projects for quite a few time now. Here's my list:
 * [Phenomic](https://phenomic.io)
 * [nextein](https://nextein.now.sh)
 
-At the time that I started following them, all of them were in a very early stage and none of them could generate my site's content the way I wanted and in the same way as my previous one so to not lose paths and certain functionalities. I wanted to make the generated site, exactly like the old one in terms of the user experience. Once Gatsby.js hitted major version 1, I started using it and the result..., you are looking at it!
+At the time that I started following them, all of them were in a very early stage and none of them could generate my site's content the way I wanted and in the same way as my previous one so to not lose paths and certain functionalities. I wanted to make the generated site, exactly like the old one in terms of the user experience. Once Gatsby.js hit major version 1, I started using it and the result..., you are looking at it!
 
 ## What exactly am I looking at?
 First, if you navigate around my site, you will notice that the browser doesn't fully re-renders the site. Gatsby will generate a JSON file for each route, so the browser can request only that file and React.js will render only the appropriate components. (Previously, I was using a technique called [pjax](https://github.com/kbariotis/kostasbariotis.com__ghost-theme/blob/master/src/js/app.js#L11) to create the same effect. While it looked the same, it was more hack-ish.)
 
-Second, you can take a look at the [source code](https://github.com/kbariotis/kostasbariotis.com). While you need some knowledge of how Gatsby works, let me give you a sense of how this site is being generated. You can find all my blog posts and the main pages(`/`, `/about`, `/drafts`) of this site at [`/src/pages`](https://github.com/kbariotis/kostasbariotis.com/tree/master/src/pages). Common components can be found at [`/src/components`](https://github.com/kbariotis/kostasbariotis.com/tree/master/src/pages). At [`/gatsby-node.js`](https://github.com/kbariotis/kostasbariotis.com/tree/master/src/pages) you can find the route it takes in order to render the site. First, it loads all posts using the GraphQL api which queries all `.md` files. Then it creates a page for each one, using the [`/src/templates/blog-post.js`](https://github.com/kbariotis/kostasbariotis.com/tree/master/src/pages) template and before that it creates a page, with pagination, for all posts and tags again using the appropriate template file.
+Second, you can take a look at the [source code](https://github.com/kbariotis/kostasbariotis.com). While you need some knowledge of how Gatsby works, let me give you a sense of how this site is being generated. You can find all my blog posts and the main pages(`/`, `/about`, `/drafts`) of this site at [`/src/pages`](https://github.com/kbariotis/kostasbariotis.com/tree/master/src/pages). Common components can be found at [`/src/components`](https://github.com/kbariotis/kostasbariotis.com/tree/master/src/components). At [`/gatsby-node.js`](https://github.com/kbariotis/kostasbariotis.com/tree/master/src/gatsby-node.js) you can find the route it takes in order to render the site. First, it loads all posts using the GraphQL api which queries all `.md` files. Then it creates a page for each one, using the [`/src/templates/blog-post.js`](https://github.com/kbariotis/kostasbariotis.com/tree/master/src/templates/blog-post.js) template and before that it creates a page, with pagination, for all posts and tags again using the appropriate template file.
 
 On development, Gatsby will generate all of these in memory and fire up a development server that I can use to preview my site.
 
-You can try it your self by cloning the [source code](https://github.com/kbariotis/kostasbariotis.com) and after installing dependencies:
+You can try it your self by cloning the [source code](https://github.com/kbariotis/kostasbariotis.com) and after installing dependencies, hit:
 
-* Hit `npm run develop` to fire up the development server
-* Hit `npm run build` to build the site (check the `/public` folder after its done)
+* `npm run develop` to fire up the development server
+* `npm run build` to build the site (check the `/public` folder after its done)
 
 ## An alternative to HTML caching
 
 Static site generation can be seen as another form of caching your content. Think of when you are caching the home page of a Wordpress powered site and you are serving the cached content to every visitor. The thing though is that in many cases, there is no need for a system like Wordpress at all.
 
-My personal site contains a list of blog posts and static information about me that I am updating it once in a while. Comments are being hosted on [Disqus](https://disqus.com). There is absolutely no need for a system like Wordpress or even a system like [Ghost](https://ghost.org) which I have been using for the last 3 years. While it served me well all this time, I really got tired of updating it, ssh-ing to the server, doing migrations and doing other ops required by such a stack. While there are also options of hosting in the cloud, pretty much they will be paid and fairly enough, they deserve it for doing such a job.
+My personal site contains a list of blog posts and static information about me that I am updating it once in a while. Comments are being hosted on [Disqus](https://disqus.com). There is absolutely no need for a system like Wordpress or even a system like [Ghost](https://ghost.org) which I have been using for the last 3 years. While it served me well all this time, I really got tired of updating it, ssh-ing to the server, doing migrations and doing other ops required by such a stack. While there are also options for hosting in the cloud, pretty much they will be paid and fairly enough, they deserve it for doing such a job.
 
-But really, do I need a system like that? Not at all. And while we all know how much important that Wordpress' Admin UI is to maintain our content, I would argue that we can separate the backend from the frontend and have lots of new features built in automatically. Imagine that instead of having [memcached](https://memcached.org/) caching your HTML in front of your WordPress site, you trigger a hook each time your database changes that will re-generate the frontend using [Gatsby](https://www.gatsbyjs.org/packages/gatsby-source-wordpress/). Yes, Gatsby supports multiple backend sources to load your content. Instead of storing them inside your VCS like me, you can as well load them directly from your Wordpress's MySQL database.
+But do I need a system like that? Not at all. And while we all know how much important that Wordpress' Admin UI is to maintain our content, I would argue that we can separate the backend from the frontend and have lots of new features built in automatically. Imagine that instead of having [memcached](https://memcached.org/) caching your HTML in front of your WordPress site, you trigger a hook each time your database changes that will re-generate the frontend using [Gatsby](https://www.gatsbyjs.org/packages/gatsby-source-wordpress/). Yes, Gatsby supports multiple backend sources to load your content. Instead of storing them inside your VCS like me, you can as well load them from your Wordpress's MySQL database.
 
-So to conclude, modern static generators will allow us to:
+To conclude, modern static generators will allow us to:
 
 * serve static content without maintaining complex stacks
 * keep a clear separation between the backend and the frontend
 * have cool features like client side routing and hot reload on development, out of the box
 * reuse the same code that is being used to generate the backend content at our visitors' browsers
 
-Hope that you will experiment with Gatsby and you will let me know of what you think.
+Hope that you will experiment with Gatsby and you will let me know what you think.
