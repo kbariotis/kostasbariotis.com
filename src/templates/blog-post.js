@@ -113,8 +113,6 @@ export default function Template({ data, pathContext }) {
                       <li className="link-facebook">
                         <FacebookShareButton
                           url={fullUrl}
-                          title={post.frontmatter.title}
-                          description={post.excerpt}
                           className="share-facebook"
                         >
                           <span>Facebook</span>
