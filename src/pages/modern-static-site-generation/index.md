@@ -2,6 +2,7 @@
 title: "Modern static site generation"
 path: "/modern-static-site-generation/"
 date: "2017-08-18T00:00:00.000Z"
+tags: Node.js, Reactjs, Javascript
 ---
 
 In this post, I will talk about static site generators. How they have involved and why I switched from a [Ghost](https://ghost.org) powered site to [Gatsby.js](https://gatsbyjs.org), a modern static site generator.
