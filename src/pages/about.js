@@ -2,7 +2,6 @@ import React from 'react';
 import Head from 'react-helmet';
 import GatsbyLink from 'gatsby-link';
 import Helmet from 'react-helmet';
-import LazyLoad from 'react-lazyload';
 
 import Separator from './../components/Separator';
 import Menu from './../components/Menu';
@@ -25,13 +24,11 @@ export default function About({ data }) {
         <div className="medium-8 medium-offset-2">
           <header className="header">
             <div className="row text-center">
-              <LazyLoad height={250}>
-                <img
-                  className="header-avatar"
-                  src={AvatarImg}
-                  alt="Kostas Bariotis"
-                />
-              </LazyLoad>
+              <img
+                className="header-avatar"
+                src={AvatarImg}
+                alt="Kostas Bariotis"
+              />
               <h1>Hey, I'm Kostas. Nice having you here.</h1>
             </div>
           </header>

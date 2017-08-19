@@ -7,7 +7,6 @@ import Separator from './../components/Separator';
 import Menu from './../components/Menu';
 import Posts from './../components/Posts';
 import MetaTags from './../components/MetaTags';
-import LazyLoad from 'react-lazyload';
 
 import avatarImage from './../../static/images/avatar.jpg';
 
@@ -29,13 +28,11 @@ export default function Index({ data }) {
         <div className="medium-8 medium-offset-2">
           <div className="blog-header">
             <GatsbyLink to="/" className="blog-header__link" itemProp="name">
-              <LazyLoad height={250}>
-                <img
-                  className="header-avatar blog-header__img"
-                  src={avatarImage}
-                  alt="Kostas Bariotis"
-                />
-              </LazyLoad>
+              <img
+                className="header-avatar blog-header__img"
+                src={avatarImage}
+                alt="Kostas Bariotis"
+              />
             </GatsbyLink>
             <h1>Kostas Bariotis</h1>
             <p>

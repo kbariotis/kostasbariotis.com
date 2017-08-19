@@ -4,7 +4,6 @@ import dateformat from 'dateformat';
 import GatsbyLink from 'gatsby-link';
 import { ShareButtons } from 'react-share';
 import ReactDisqusThread from 'react-disqus-thread';
-import LazyLoad from 'react-lazyload';
 import uuidv5 from 'uuid/v5';
 
 import Menu from '../components/Menu';
@@ -59,9 +58,7 @@ export default function Template({ data, pathContext }) {
                       className="author-avatar"
                       itemProp="name"
                     >
-                      <LazyLoad height={250}>
-                        <img src={avatarImg} alt="Kostas Bariotis" />
-                      </LazyLoad>
+                      <img src={avatarImg} alt="Kostas Bariotis" />
                     </GatsbyLink>
                   </li>
                   <li>
