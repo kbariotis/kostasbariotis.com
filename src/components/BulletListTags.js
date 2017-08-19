@@ -1,7 +1,8 @@
 import React from 'react';
 import GatsbyLink from 'gatsby-link';
+import PropTypes from 'prop-types';
 
-const CommaSeparatedTags = ({ tags, draft }) =>
+const BulletListTags = ({ tags, draft }) =>
   <ul className="tags list-inline text-right">
     {tags &&
       tags.split(', ').map((tag, index) =>
@@ -17,4 +18,9 @@ const CommaSeparatedTags = ({ tags, draft }) =>
       </li>}
   </ul>;
 
-export default CommaSeparatedTags;
+BulletListTags.propTypes = {
+  tags: PropTypes.string,
+  draft: PropTypes.bool
+};
+
+export default BulletListTags;

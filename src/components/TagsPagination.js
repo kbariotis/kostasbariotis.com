@@ -1,5 +1,6 @@
 import React from 'react';
 import GatsbyLink from 'gatsby-link';
+import PropTypes from 'prop-types';
 
 const Pagination = ({ tag, page, pagesSum }) =>
   <header className="header extra-pagination inner text-center">
@@ -25,5 +26,11 @@ const Pagination = ({ tag, page, pagesSum }) =>
         </GatsbyLink>}
     </nav>
   </header>;
+
+Pagination.propTypes = {
+  tags: PropTypes.string,
+  page: PropTypes.number,
+  pagesSum: PropTypes.number,
+};
 
 export default Pagination;

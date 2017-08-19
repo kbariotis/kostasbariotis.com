@@ -1,7 +1,6 @@
 import React from 'react';
 import GatsbyLink from 'gatsby-link';
 
-import Link from '../components/Link';
 import Posts from '../components/Posts';
 import Menu from '../components/Menu';
 import Pagination from '../components/TagsPagination';

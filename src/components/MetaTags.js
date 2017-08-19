@@ -1,5 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import PropTypes from 'prop-types';
 
 import AvatarImg from './../../static/images/avatar.jpg';
 
@@ -33,5 +34,14 @@ const MetaTags = ({ title, description, path, tags, noIndex, siteUrl }) =>
       />
     </Helmet>
   </div>;
+
+MetaTags.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  path: PropTypes.string,
+  tags: PropTypes.string,
+  noIndex: PropTypes.bool,
+  siteUrl: PropTypes.string
+};
 
 export default MetaTags;

@@ -1,7 +1,7 @@
 import React from 'react';
 import GatsbyLink from 'gatsby-link';
 
-const Footer = props =>
+const Footer = () =>
   <div>
     <footer className="footer">
       <div className="container">

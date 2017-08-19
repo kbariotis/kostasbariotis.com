@@ -1,6 +1,7 @@
 import React from 'react';
 import GatsbyLink from 'gatsby-link';
 import dateformat from 'dateformat';
+import PropTypes from 'prop-types';
 
 import CommaSeparatedTags from './CommaSeparatedTags';
 
@@ -41,5 +42,9 @@ const Posts = ({ posts }) =>
         </article>
       )}
   </div>;
+
+Posts.propTypes = {
+  posts: PropTypes.arrayOf(PropTypes.object)
+};
 
 export default Posts;

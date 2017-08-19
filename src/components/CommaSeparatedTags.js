@@ -1,5 +1,6 @@
 import React from 'react';
 import GatsbyLink from 'gatsby-link';
+import PropTypes from 'prop-types';
 
 const CommaSeparatedTags = ({ tags }) =>
   <div className="tags">
@@ -14,5 +15,9 @@ const CommaSeparatedTags = ({ tags }) =>
         </span>
       )}
   </div>;
+
+CommaSeparatedTags.propTypes = {
+  tags: PropTypes.string
+};
 
 export default CommaSeparatedTags;

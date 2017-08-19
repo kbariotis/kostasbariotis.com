@@ -1,7 +1,6 @@
 import React from 'react';
 import GatsbyLink from 'gatsby-link';
 
-import Link from '../components/Link';
 import Pagination from '../components/Pagination';
 import Posts from '../components/Posts';
 import Separator from '../components/Separator';
