@@ -20,7 +20,7 @@
     "gatsby-remark-copy-linked-files": "^1.5.1",
     "gatsby-remark-images": "^1.2.0",
     "gatsby-remark-prismjs": "^1.2.0",
-    "gatsby-remark-responsive-image": "^1.0.0-beta.5-alpha.fb30fcd6",
+    "gatsby-remark-responsive-image": "next",
     "gatsby-source-filesystem": "^1.0.1",
     "gatsby-transformer-remark": "^1.1.0",
     "gh-pages": "^0.12.0",
@@ -32,13 +32,16 @@
     "uuid": "^3.1.0"
   },
   "scripts": {
-    "build": "rimraf public/ && gatsby build",
-    "deploy": "rimraf public/ && gatsby build --prefix-paths && gh-pages -d public",
+    "build": "gatsby build",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "develop": "gatsby develop",
     "preserve": "npm run build",
     "serve": "gatsby serve",
     "start": "npm run develop",
     "format": "prettier --trailing-comma es5 --single-quote --write \"src/**/*.js\"",
     "test": "echo \"Should probably write some tests!\""
+  },
+  "dependencies": {
+    "gatsby-cli": "^1.1.3"
   }
 }
