@@ -44,10 +44,14 @@ class Menu extends React.Component {
                   <GatsbyLink to="/">Home</GatsbyLink>
                 </li>
                 <li>
-                  <GatsbyLink to="/about">About</GatsbyLink>
+                  <GatsbyLink activeStyle={{
+                    color: '#e52f45'
+                  }} to="/about">About</GatsbyLink>
                 </li>
                 <li>
-                  <GatsbyLink to="/contact">Contact</GatsbyLink>
+                  <GatsbyLink activeStyle={{
+                    color: '#e52f45'
+                  }} to="/contact">Contact</GatsbyLink>
                 </li>
               </ul>
             </div>
