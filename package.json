@@ -27,10 +27,10 @@
     "prettier": "^1.6.1",
     "prop-types": "^15.5.10",
     "react-disqus-thread": "^0.4.0",
+    "react-router-scroll": "github:ytase/react-router-scroll#build",
     "react-share": "^1.16.0",
     "rimraf": "^2.6.2",
-    "uuid": "^3.1.0",
-    "react-router-scroll": "github:ytase/react-router-scroll#build"
+    "uuid": "^3.1.0"
   },
   "scripts": {
     "build": "gatsby build",
