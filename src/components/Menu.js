@@ -46,6 +46,9 @@ class Menu extends React.Component {
                 <li>
                   <GatsbyLink to="/about">About</GatsbyLink>
                 </li>
+                <li>
+                  <GatsbyLink to="/contact">Contact</GatsbyLink>
+                </li>
               </ul>
             </div>
           </div>

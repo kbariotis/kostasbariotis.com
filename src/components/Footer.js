@@ -24,7 +24,13 @@ const Footer = () =>
             >
               more about me
             </GatsbyLink>{' '}
-            or get in touch.
+            or <GatsbyLink
+              className="footer-link"
+              to="/contact"
+              title="Contact Kostas"
+            >
+            get in touch
+            </GatsbyLink>.
           </div>
         </div>
       </div>
@@ -71,7 +77,7 @@ const Footer = () =>
         <li>
           <a
             target="_blank"
-            href="mailto:konmpar@gmail.com"
+            href="mailto:konmpar@gmail.com?subject=Hi!"
             title="konmpar@gmail.com"
           >
             <i className="icon-mail" />
