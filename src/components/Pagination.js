@@ -5,15 +5,15 @@ import PropTypes from 'prop-types';
 const Pagination = ({ prevPath, nextPath, page, pagesSum }) =>
   <header className="header extra-pagination inner text-center">
     <nav className="pagination" role="navigation">
-      {prevPath &&
+      {prevPath ?
         <GatsbyLink className="newer-posts" to={prevPath}>
           <span aria-hidden="true">←</span> Newer Posts
-        </GatsbyLink>}
+        </GatsbyLink> : <div className="newer-posts">No more pages</div>}
       <span className="page-number">{`Page ${page} of ${pagesSum}`}</span>
-      {nextPath &&
+      {nextPath ?
         <GatsbyLink className="older-posts" to={nextPath}>
           Older Posts <span aria-hidden="true">→</span>
-        </GatsbyLink>}
+        </GatsbyLink> : <div className="older-posts">No more pages</div>}
     </nav>
   </header>;
 
