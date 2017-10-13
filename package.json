@@ -34,8 +34,8 @@
     "gatsby-cli": "^1.1.7"
   },
   "scripts": {
-    "build": "gatsby build",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "build": "gatsby build --prefix-paths",
+    "deploy": "gh-pages -d public",
     "develop": "gatsby develop",
     "preserve": "npm run build",
     "serve": "gatsby serve",
