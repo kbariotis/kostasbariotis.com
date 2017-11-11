@@ -1,8 +1,7 @@
 ---
 title: "Serverless Demystified"
 path: "/serverless-demystified/"
-date: "2017-10-31T18:51:34.000Z"
-draft: true
+date: "2017-11-11T18:51:34.000Z"
 tags: Serverless, AWS
 ---
 
@@ -24,11 +23,13 @@ It is a rather confusing term, but don't let it fool you. You will still have to
 ## What is serverless
 From setting up a load balancer, ensuring that your platform can perform good at scale and setting up the build server for your CI/CD process, the infrastructure part of software development is one big chapter.
 
-Serverless is the state where all of the above are abstracted away and hidden behind an API and you can manage them through an API.
+Serverless is the state where all of the above are abstracted away and hidden behind APIs that you can manage them through.
+
+The diagram below illustrates how serverless is the evolution of Platform as a Service providers such as Heroku.
 
 ![Serverless diagram](./serverless.png)
 
-The Function as a Service that we are hearing a lot, and usually comes in conjuction with the serverless term, is just a language runtime hidden behind an API. With AWS Lambda, e.g. what I can do is to make a POST request on their API with some Node.js source code and it will return me a UID that I can use to on another POST request to run it. That's it. No cluster setup, no ports binding. It's just takes my code and runs it.
+The Function as a Service that we are hearing a lot, and usually comes in conjuction with the serverless term, is just a language runtime hidden behind an API. With AWS Lambda, e.g. what I can do is to make a POST request on their API with some Node.js source code and it will return me a UID that I can use on another POST request to run it. That's it. No cluster setup, no ports binding. It's just takes my code and runs it.
 
 Serverless hides its roots in the microservices architectures were bigger and complex systems are being broken out in multiple isolated services. The goal is to abstract away complex parts of our codebase from the other developers and let them interact with those through an API.
 
@@ -67,4 +68,6 @@ Serverless is an amazing technology, or a mindset if you will. Major providers s
 
 I'am not sure if it will transform the way we structure and develop our architectures, but it's certainly a very interesting field to explore.
 
-Thank you for your time. I will continue on writing about various serverless topics that I have found interesting and challenging on my journey, so stay tuned.
+I will continue writing about various serverless topics that I have found interesting and challenging on my journey.
+
+Leave me a comment about the part about serverless that confuses the most.

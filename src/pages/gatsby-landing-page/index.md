@@ -1,19 +1,18 @@
 ---
-title: "How to create an SEO friendly and performant landing page with Gatsby.js"
+title: "Create an SEO friendly and performant landing page with Gatsby.js"
 path: "/gatsby-landing-page/"
 date: "2017-10-30T18:16:00.000Z"
 draft: true
 tags: Javascript, gatsby.js, react.js, SSR
 ---
 
-On this post, I will go through the process of creating a landing page using Gatsby.js
-and BootstrapCSS framework. I use the same process for all my projects and products and
-I can certainly say that it works like a charm every time.
+On this post, I will go through the process of creating a landing page using Gatsby.js and BootstrapCSS framework. I use the same process for all my projects and products and I can certainly say that it works like a charm every time.
 
-Gatsby.js will allow us to describe our page's functionality and appearence with
-React.js and take full advantage of React's ecosystem. Using BootstrapCSS we will be able
-create fast prototypes for our various components we are going to need for our page. For
-start, we will use a ready made template found free over the Web.
+Gatsby.js will allow us to describe our page's functionality and appearence with React.js and take full advantage of React's ecosystem. Using BootstrapCSS we will be able create fast prototypes for our various components we are going to need for our page. For start, we will use a ready made template found free over the Web.
+
+For a quick introduction to Gatsby and it's benefits, I wrote an article recently that you may be find interesting.
+
+This tutorial requires basic knowledge of the React.js framework and ofcourse HTML/CSS. Node.js and npm must be installed on your system.
 
 Let's start.
 
@@ -95,7 +94,7 @@ You will also notice that there are some `<img>` tags pointing to static assets.
 
 So we will turn this:
 
-```html
+```HTML
 <!-- old index.html file -->
 ...
 <a href="#"><img src="assets/img/app-store.png" height="50" alt=""></a>
@@ -103,7 +102,7 @@ So we will turn this:
 ```
 
 into this:
-```javascript
+```JSX
 // src/index.js
 ...
 const appStoreImg = require('../assets/images/app-store.png)
@@ -111,9 +110,11 @@ const appStoreImg = require('../assets/images/app-store.png)
 
 ...
 render() {
-  ...
-  <a href="#"><img src={appStoreImg} height="50" alt=""></a>
-  ...
+  <div>
+    {/* ... */}
+    <a href="#"><img src={appStoreImg} height="50" alt=""></a>
+    {/* ... */}
+  </div>
 }
 ```
 
@@ -156,4 +157,81 @@ Notice how we selectively add the Bootstrap modules we want and how we override 
 Now in our `scss/custom.scss` we will paste the styles from the template (remeber to fix any url paths errors). CSS is valid SCSS so it should be functioning as before and we can extend it by adding SCSS mixins and variables. That's up to us.
 
 ## Multiple pages
+Besides everything else, Gatsby does it great when it comes to multiple pages of our site. To demonstrate this behavior, we will break our landing page into two pages and extract the pricing section to another page.
+
+You will find the different sections of the landing page at `src/pages/index.js`. We will create another file, `src/page/pricing.js` and extract the pricing and the testimonials section right there.
+
+Navigate over at `localhost:8000/pricing` and you will notice that we are missing our header and footer. But we don't have to keep them on every page so we will extract them from the index page and move them to our `layouts/index.js` file.
+
+I don't want the form to be on every page too, so I am going to do some modifications that you will find over at the repository of this project.
+
+Notice also the use of `Link` component. Gatsby uses this component to track your pages and the transitions, in order to be able to smooth client side navigation.
+
 ## Contact form
+Now that our page has some visual form and we are happy with the result, we can start adding some functionalities. To start with, we will make the subscription form on the header functional!
+
+Since our index page is just a React component, we can just start adding functionality as we know. Let's add an event to fire once the Subscribe button is clicked and send the email to our server.
+
+```JSX
+...
+class IndexPage extends React.Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      email: '',
+    }
+  }
+
+  handleEmailChange({value}) {
+    /**
+     * Validate User's input first
+     */
+    this.setState({
+      email: value
+    })
+  }
+
+  handleSubscribeClick() {
+    /**
+     * Email is in the state,
+     * send it directly to your server
+     */
+  }
+
+  render () {
+    return (
+      <div>
+        {/* ... */}
+      </div>
+    )
+  }
+}
+```
+
+and the form inside `render`
+
+```HTML
+...
+<form role="form" action="register.php" method="post" enctype="plain">
+  <input
+    type="email"
+    name="email"
+    className="subscribe-input"
+    placeholder="Enter your e-mail address..."
+    required
+    onChange={({target}) => this.handleEmailChange(target)}
+  />
+  <button
+    className='btn btn-conf btn-green'
+    type="submit"
+    onClick={() => this.handleSubscribeClick()}>
+    Start your free trial
+  </button>
+</form>
+...
+```
+
+## The end
+Gatsby is an amazing static site generator that hides a lot of gems. You may find it's API complicated, but after
