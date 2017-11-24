@@ -21,7 +21,7 @@ export default function Pages({ pathContext, data }) {
       />
       <Menu />
       <section className="blog container">
-        <div className="medium-8 medium-offset-2">
+        <div className="medium-9 medium-offset-1">
           <div className="posts">
             <Pagination
               page={page}

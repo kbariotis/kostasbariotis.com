@@ -20,7 +20,7 @@ class Menu extends React.Component {
       <nav className="navbar navbar-default">
         {/* <div className="image-placeholder" /> */}
         <div className="container">
-          <div className="medium-8 medium-offset-2">
+          <div className="medium-9 medium-offset-1">
             <div className="navbar-header">
               <button
                 type="button"

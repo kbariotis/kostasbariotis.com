@@ -6,7 +6,7 @@ const Footer = () =>
     <footer className="footer">
       <div className="container">
         <div className="row">
-          <div className="medium-8 medium-offset-2 text-center">
+          <div className="medium-9 medium-offset-1 text-center">
             I'm{' '}
             <GatsbyLink
               className="footer-link"
