@@ -3,7 +3,6 @@ title: "Async/await - A thorough example"
 path: "/async-await-a-thorough-example/"
 date: "2017-11-24T09:40:42.000Z"
 tags: Node.js, AsyncAwait
-draft: true
 ---
 
 With the eighth (8) version of Node.js becoming an LTS, I think that this is a good time to consider switching to it and enjoy the awesome new [async/await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) feature that will help us move away to an even more readable and synchronous flow. Promises served us well for the past 2 or so years but they came with frustration as well.
@@ -31,9 +30,9 @@ function loginController (req, res, err) {
   BPromise.try(() => validateUserInput(req))
     .then(() => fetchUserByEmail(email))
     .then(fetchedUser => user = fetchedUser)
-    .then(() => comparePasswords(user.password, req.password))
-    .then(() => markLoggedInTimestamp(user.iserId))
-    .then(() => sendEmail(user.iserId))
+    .then(() => comparePasswords(req.password, user.password))
+    .then(() => markLoggedInTimestamp(user.userId))
+    .then(() => sendEmail(user.userId))
     .then(() => generateJWT(user))
     .then(token => res.json({ success: true, token }))
     .catch(WrongCredentialsError, () => res.json({ success: false, error: 'Invalid email and/or password' }))
@@ -79,9 +78,19 @@ function fetchUserByEmail(email) {
  * @returns {Void}
  */
 function comparePasswords(inputPwd, storedPwd) {
-  if (inputPwd !== storedPwd) {
+  if (hashPassword(inputPwd) !== storedPwd) {
     throw new WrongCredentialsError();
   }
+}
+
+/**
+ * Hash password
+ *
+ * @param {String} password
+ * @returns {String}
+ */
+function hashPassword(password) {
+  return password;
 }
 
 /**
@@ -129,7 +138,7 @@ let user;
 /* ... */
   .then(fetchedUser => user = fetchedUser)
   /* ... */
-  .then(() => sendEmail(user.iserId))
+  .then(() => sendEmail(user.userId))
   /* ... */
 ```
 Notice here how I am making a global inside the function, in order to use the User object on various calls in my Promise chain. A possible overcome would be to make my functions always return the User object, but that would a) make my functions make no sense at all and b) tightly couple my functions with this particular Promise chain so I couldn't use them in other places.
@@ -144,6 +153,8 @@ A Promise chain must start from a Promise, but the `validateUserInput` function 
 
 ### Bluebird
 I am using Bluebird a lot. And that's because without it my code would be even more bloated with Promise returns here and there. Bluebird makes a good use of DRY so I don't have to. I could make all my functions, even those that doesn't do async stuff, return a Promise but that would mean that I had to "wait" for them, which means even more noise.
+
+But, Bluebird is just another dependency that can possibly break my code on its next release. We don't want that.
 
 ## Async/Await version
 Let's now see the same code, but written with async/await and compare it with the above.
@@ -175,7 +186,7 @@ async function loginController(req, res, err) {
 
     const user = await fetchUserByEmail(email);
 
-    if (user.password !== req.password) {
+    if (user.password !== hashPassword(req.password)) {
       res.json({ success: false, error: 'Invalid email and/or password' })
     }
 
@@ -211,6 +222,16 @@ function fetchUserByEmail(email) {
     password: 'DUMMY_PASSWORD_HASH'
   }
   return new BPromise(resolve => resolve(user));
+}
+
+/**
+ * Hash password
+ *
+ * @param {String} password
+ * @returns {String}
+ */
+function hashPassword(password) {
+  return password;
 }
 
 /**
