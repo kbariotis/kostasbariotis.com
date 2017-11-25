@@ -34,7 +34,8 @@ function loginController (req, res, err) {
     .then(() => comparePasswords(user.password, req.password))
     .then(() => markLoggedInTimestamp(user.iserId))
     .then(() => sendEmail(user.iserId))
-    .then(() => res.json({ success: true }))
+    .then(() => generateJWT(user))
+    .then(token => res.json({ success: true, token }))
     .catch(WrongCredentialsError, () => res.json({ success: false, error: 'Invalid email and/or password' }))
     .catch(EmailError, DBConnectionError, () => res.json({ success: false, error: 'Unexpected error, please try again' }))
     .catch(() => res.json({ success: false }))
@@ -57,8 +58,8 @@ function validateUserInput(input) {
  * Compare two password
  *
  * @param {String} inputPwd
- * @throws {WrongCredentialsError}
  * @param {String} storedPwd
+ * @throws {WrongCredentialsError}
  * @returns {Void}
  */
 function comparePasswords(inputPwd, storedPwd) {
@@ -104,6 +105,19 @@ function markLoggedInTimestamp(userId) {
 function sendEmail(userId) {
   return new BPromise((resolve, reject) => resolve());
 }
+
+/**
+ * Generate a JWT token to send to the client
+ *
+ * @param {Object} user
+ * @returns {BPromise<String>}
+ */
+function generateJWT(user) {
+  const token = 'DUMMY_JWT_TOKEN';
+
+  return new BPromise((resolve, reject) => resolve(token));
+}
+
 ```
 
 So a few notes here:
@@ -164,10 +178,11 @@ async function loginController(req, res, err) {
     }
 
     await markLoggedInTimestamp(user.userId);
-
     await sendEmail(user.userId);
 
-    res.json({ success: true });
+    const token = await generateJWT(user);
+
+    res.json({ success: true, token });
 
   } catch (err) {
     if (err instanceof WrongCredentialsError) {
@@ -243,6 +258,18 @@ function markLoggedInTimestamp(userId) {
  */
 function sendEmail(userId) {
   return new BPromise((resolve, reject) => resolve());
+}
+
+/**
+ * Generate a JWT token to send to the client
+ *
+ * @param {Object} user
+ * @returns {BPromise<String>}
+ */
+function generateJWT(user) {
+  const token = 'DUMMY_JWT_TOKEN';
+
+  return new BPromise((resolve, reject) => resolve(token));
 }
 ```
 
