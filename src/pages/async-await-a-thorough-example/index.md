@@ -2,7 +2,7 @@
 title: "Async/await - A thorough example"
 path: "/async-await-a-thorough-example/"
 date: "2017-11-24T09:40:42.000Z"
-tags: Node.js, Async/Await
+tags: Node.js, AsyncAwait
 draft: true
 ---
 
