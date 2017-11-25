@@ -23,7 +23,7 @@ export default function Index({ data }) {
       />
       <Menu />
       <section className="blog container">
-        <div className="medium-9 medium-offset-1">
+        <div className="large-9 large-offset-1">
           <header className="header">Drafts</header>
           <p className="drafts-description">
             These are the draft posts either I'm currently working on either I

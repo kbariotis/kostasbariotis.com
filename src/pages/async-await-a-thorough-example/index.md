@@ -44,6 +44,7 @@ function loginController (req, res, err) {
  * Validate input from Request
  *
  * @param {Object} input
+ * @throws {WrongCredentialsError}
  * @returns {Void}
  */
 function validateUserInput(input) {
@@ -56,6 +57,7 @@ function validateUserInput(input) {
  * Compare two password
  *
  * @param {String} inputPwd
+ * @throws {WrongCredentialsError}
  * @param {String} storedPwd
  * @returns {Void}
  */
@@ -182,6 +184,7 @@ async function loginController(req, res, err) {
  * Validate input from Request
  *
  * @param {Object} input
+ * @throws {WrongCredentialsError}
  * @returns {BPromise}
  */
 function validateUserInput(input) {
@@ -199,6 +202,7 @@ function validateUserInput(input) {
  *
  * @param {String} inputPwd
  * @param {String} storedPwd
+ * @throws {WrongCredentialsError}
  * @returns {BPromise}
  */
 function comparePasswords(inputPwd, storedPwd) {
@@ -252,7 +256,7 @@ function sendEmail(userId) {
 Yay!
 
 ### No function wide assignments
-Now all our functions are called in the same block, without being passe in a `then` function. We don't have to do unneeded assignments and keep global variables.
+Now all our functions are called in the same block, without being passed in a `then` function. We don't have to do unneeded assignments and keep global variables.
 
 ### No unessecary Promise returns
 Previously `validateInput` and `comparePasswords` can now live inside the main block. I wouldn't write unit tests on them neither I would use them somewhere else in my codebase, so I don't have to put them in separate functions. Less functions, less code.
@@ -263,6 +267,6 @@ Less code means easier to read and argue about.
 ## Conclussion
 We should always strive to refine and improve our codebases. Async/await can bring a lot of improvements and help us write more readable code, easier to argue about and to spot bugs. In case, you have to use still Promises, check out a [wonderfull piece by Dr. Axel Rauschmayer](http://2ality.com/2017/08/promise-callback-data-flow.html) for more Promises and Async/Await patterns.
 
-Node.js 8 is now in LTS mode, so you have no reasons to upgrade and use the shiny new features of Javascript.
+Node.js 8 is now in LTS mode, so you have no reasons not to upgrade and miss the shiny new features of Javascript.
 
-Let me know what you think in the comments below and share this article with someone you know it would be helpfull to her. 🤝
+Let me know what you think in the comments below and share this article with someone you know it would be helpfull to. 🤝

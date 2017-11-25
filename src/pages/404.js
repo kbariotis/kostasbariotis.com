@@ -23,7 +23,7 @@ export default () =>
     />
     <Menu />
     <section className="blog container about">
-      <div className="medium-9 medium-offset-1">
+      <div className="large-9 large-offset-1">
         <header className="header">
           <div className="row text-center">
             <h1>AW NO! The page you are trying to access is not here.</h1>

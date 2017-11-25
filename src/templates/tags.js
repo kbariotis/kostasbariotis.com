@@ -22,7 +22,7 @@ export default function Tags({ pathContext, data }) {
       />
       <Menu />
       <section className="blog container tags-collection">
-        <div className="medium-9 medium-offset-1">
+        <div className="large-9 large-offset-1">
           <header className="header">
             <h1 className="tag-title tag-page-title">
               {tag}
