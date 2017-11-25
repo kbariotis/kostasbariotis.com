@@ -81,7 +81,7 @@ function fetchUserByEmail(email) {
     email: 'konmpar@gmail.com',
     password: 'DUMMY_PASSWORD_HASH'
   }
-  return new BPromise((resolve, reject) => resolve(user));
+  return new BPromise(resolve => resolve(user));
 }
 
 /**
@@ -92,7 +92,7 @@ function fetchUserByEmail(email) {
  * @returns {BPromise}
  */
 function markLoggedInTimestamp(userId) {
-  return new BPromise((resolve, reject) => resolve());
+  return new BPromise(resolve => resolve());
 }
 
 /**
@@ -103,7 +103,7 @@ function markLoggedInTimestamp(userId) {
  * @returns {BPromise}
  */
 function sendEmail(userId) {
-  return new BPromise((resolve, reject) => resolve());
+  return new BPromise(resolve => resolve());
 }
 
 /**
@@ -115,7 +115,7 @@ function sendEmail(userId) {
 function generateJWT(user) {
   const token = 'DUMMY_JWT_TOKEN';
 
-  return new BPromise((resolve, reject) => resolve(token));
+  return new BPromise(resolve => resolve(token));
 }
 
 ```
@@ -235,7 +235,7 @@ function fetchUserByEmail(email) {
     email: 'konmpar@gmail.com',
     password: 'DUMMY_PASSWORD_HASH'
   }
-  return new BPromise((resolve, reject) => resolve(user));
+  return new BPromise(resolve => resolve(user));
 }
 
 /**
@@ -246,7 +246,7 @@ function fetchUserByEmail(email) {
  * @returns {BPromise}
  */
 function markLoggedInTimestamp(userId) {
-  return new BPromise((resolve, reject) => resolve());
+  return new BPromise(resolve => resolve());
 }
 
 /**
@@ -257,7 +257,7 @@ function markLoggedInTimestamp(userId) {
  * @returns {BPromise}
  */
 function sendEmail(userId) {
-  return new BPromise((resolve, reject) => resolve());
+  return new BPromise(resolve => resolve());
 }
 
 /**
@@ -269,7 +269,7 @@ function sendEmail(userId) {
 function generateJWT(user) {
   const token = 'DUMMY_JWT_TOKEN';
 
-  return new BPromise((resolve, reject) => resolve(token));
+  return new BPromise(resolve => resolve(token));
 }
 ```
 
