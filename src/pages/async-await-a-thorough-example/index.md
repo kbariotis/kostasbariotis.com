@@ -160,8 +160,6 @@ But, Bluebird is just another dependency that can possibly break my code on its 
 Let's now see the same code, but written with async/await and compare it with the above.
 
 ```Javascript
-const BPromise = require('bluebird');
-
 const { WrongCredentialsError, DBConnectionError, EmailError } = require('./../errors');
 
 /**
@@ -213,7 +211,7 @@ async function loginController(req, res, err) {
  *
  * @throws WrongCredentialsError
  * @throws DBConnectionError
- * @returns {BPromise}
+ * @returns {Promise}
  */
 function fetchUserByEmail(email) {
   const user = {
@@ -221,7 +219,7 @@ function fetchUserByEmail(email) {
     email: 'konmpar@gmail.com',
     password: 'DUMMY_PASSWORD_HASH'
   }
-  return new BPromise(resolve => resolve(user));
+  return new Promise(resolve => resolve(user));
 }
 
 /**
@@ -239,10 +237,10 @@ function hashPassword(password) {
  *
  * @param {String} userId
  * @throws DBConnectionError
- * @returns {BPromise}
+ * @returns {Promise}
  */
 function markLoggedInTimestamp(userId) {
-  return new BPromise(resolve => resolve());
+  return new Promise(resolve => resolve());
 }
 
 /**
@@ -250,22 +248,22 @@ function markLoggedInTimestamp(userId) {
  *
  * @param {String} userId
  * @throws EmailError
- * @returns {BPromise}
+ * @returns {Promise}
  */
 function sendEmail(userId) {
-  return new BPromise(resolve => resolve());
+  return new Promise(resolve => resolve());
 }
 
 /**
  * Generate a JWT token to send to the client
  *
  * @param {Object} user
- * @returns {BPromise<String>}
+ * @returns {Promise<String>}
  */
 function generateJWT(user) {
   const token = 'DUMMY_JWT_TOKEN';
 
-  return new BPromise(resolve => resolve(token));
+  return new Promise(resolve => resolve(token));
 }
 ```
 
@@ -279,6 +277,9 @@ Previously declared functions `validateInput` and `comparePasswords` can now liv
 
 ### Readable code
 Less code means easier to read and argue about.
+
+### No Bluebird dependency
+Bluebird is now not needed since we can return native Promise objects. Previously, I was using `catch` with specific error type and `try` which are Bluebird specific.
 
 ## Conclussion
 We should always strive to refine and improve our codebases. Async/await can bring a lot of improvements and help us write more readable code, easier to argue about and to spot bugs. In case, you have to use still Promises, check out a [wonderfull piece by Dr. Axel Rauschmayer](http://2ality.com/2017/08/promise-callback-data-flow.html) for more Promises and Async/Await patterns.
