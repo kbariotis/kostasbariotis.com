@@ -50,7 +50,7 @@ export default function Template({ data, pathContext }) {
           </header>
           <section className="post-meta">
             <div className="row">
-              <div className="large-4">
+              <div className="medium-4">
                 <ul className="list-inline">
                   <li>
                     <GatsbyLink
@@ -75,7 +75,7 @@ export default function Template({ data, pathContext }) {
                   </li>
                 </ul>
               </div>
-              <div className="large-8">
+              <div className="medium-8">
                 <BulletListTags
                   tags={post.frontmatter.tags}
                   draft={post.frontmatter.draft}
