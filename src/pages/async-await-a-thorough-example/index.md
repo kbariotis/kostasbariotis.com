@@ -24,7 +24,7 @@ const { WrongCredentialsError, DBConnectionError, EmailError } = require('./../e
 loginController({}, { json: response => console.log(response) }, null)
 
 function loginController (req, res, err) {
-  const {email, password} = req;
+  const { email, password } = req;
 
   let user;
 
@@ -55,20 +55,6 @@ function validateUserInput(input) {
 }
 
 /**
- * Compare two password
- *
- * @param {String} inputPwd
- * @param {String} storedPwd
- * @throws {WrongCredentialsError}
- * @returns {Void}
- */
-function comparePasswords(inputPwd, storedPwd) {
-  if (inputPwd !== storedPwd) {
-    throw new WrongCredentialsError();
-  }
-}
-
-/**
  * Fetch a User from the DB by Email
  *
  * @throws WrongCredentialsError
@@ -82,6 +68,20 @@ function fetchUserByEmail(email) {
     password: 'DUMMY_PASSWORD_HASH'
   }
   return new BPromise(resolve => resolve(user));
+}
+
+/**
+ * Compare two password
+ *
+ * @param {String} inputPwd
+ * @param {String} storedPwd
+ * @throws {WrongCredentialsError}
+ * @returns {Void}
+ */
+function comparePasswords(inputPwd, storedPwd) {
+  if (inputPwd !== storedPwd) {
+    throw new WrongCredentialsError();
+  }
 }
 
 /**
@@ -122,7 +122,7 @@ function generateJWT(user) {
 
 So a few notes here:
 
-### Function wide assignment
+### Outer scope variables
 ```Javascript
 let user;
 
@@ -144,7 +144,7 @@ A Promise chain must start from a Promise, but the `validateUserInput` function 
 I am using Bluebird a lot. And that's because without it my code would be even more bloated with Promise returns here and there. Bluebird makes a good use of DRY so I don't have to. I could make all my functions, even those that doesn't do async stuff, return a Promise but that would mean that I had to "wait" for them, which means even more noise.
 
 ## Async/Await version
-Let's now see the same code, but written with async/await and compare it with the above. I will paste the same code, but only with the controller changed, so you don't have to read the whole file again.
+Let's now see the same code, but written with async/await and compare it with the above.
 
 ```Javascript
 const BPromise = require('bluebird');
@@ -164,7 +164,7 @@ loginController({}, { json: response => console.log(response) }, null)
  * @returns {Void}
  */
 async function loginController(req, res, err) {
-  const {email, password} = req.email;
+  const { email, password } = req.email;
 
   try {
     if (!email || !password) {
@@ -192,33 +192,6 @@ async function loginController(req, res, err) {
     } else {
       res.json({ success: false })
     }
-  }
-}
-
-/**
- * Validate input from Request
- *
- * @param {Object} input
- * @throws {WrongCredentialsError}
- * @returns {Void}
- */
-function validateUserInput(input) {
-  if (!input.email || !input.password) {
-    throw new WrongCredentialsError();
-  }
-}
-
-/**
- * Compare two password
- *
- * @param {String} inputPwd
- * @param {String} storedPwd
- * @throws {WrongCredentialsError}
- * @returns {Void}
- */
-function comparePasswords(inputPwd, storedPwd) {
-  if (inputPwd !== storedPwd) {
-    throw new WrongCredentialsError();
   }
 }
 
@@ -275,8 +248,8 @@ function generateJWT(user) {
 
 Yay!
 
-### No function wide assignments
-Now all our functions are called in the same block, without being passed in a `then` function. We don't have to do unneeded assignments and keep global variables.
+### No outer scope variables
+Now all our functions are called in the same block thus the same scope, without being passed in a `then` function. We don't have to do unneeded assignments and keep global variables.
 
 ### No unessecary Promise returns
 Previously `validateInput` and `comparePasswords` can now live inside the main block. I wouldn't write unit tests on them neither I would use them somewhere else in my codebase, so I don't have to put them in separate functions. Less functions, less code.
