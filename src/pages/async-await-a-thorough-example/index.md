@@ -128,7 +128,9 @@ let user;
 
 /* ... */
   .then(fetchedUser => user = fetchedUser)
-/* ... */
+  /* ... */
+  .then(() => sendEmail(user.iserId))
+  /* ... */
 ```
 Notice here how I am making a global inside the function, in order to use the User object on various calls in my Promise chain. A possible overcome would be to make my functions always return the User object, but that would a) make my functions make no sense at all and b) tightly couple my functions with this particular Promise chain so I couldn't use them in other places.
 
@@ -252,7 +254,7 @@ Yay!
 Now all our functions are called in the same block thus the same scope, without being passed in a `then` function. We don't have to do unneeded assignments and keep global variables.
 
 ### No unessecary Promise returns
-Previously `validateInput` and `comparePasswords` can now live inside the main block. I wouldn't write unit tests on them neither I would use them somewhere else in my codebase, so I don't have to put them in separate functions. Less functions, less code.
+Previously declared functions `validateInput` and `comparePasswords` can now live inside the main block. I wouldn't write unit tests on them neither I would use them somewhere else in my codebase, so I don't have to put them in separate functions. Less functions, less code.
 
 ### Readable code
 Less code means easier to read and argue about.
