@@ -185,16 +185,12 @@ async function loginController(req, res, err) {
  *
  * @param {Object} input
  * @throws {WrongCredentialsError}
- * @returns {BPromise}
+ * @returns {Void}
  */
 function validateUserInput(input) {
-  return new BPromise(resolve => {
-    if (!input.email || !input.password) {
-      throw new WrongCredentialsError();
-    }
-
-    resolve();
-  });
+  if (!input.email || !input.password) {
+    throw new WrongCredentialsError();
+  }
 }
 
 /**
@@ -203,15 +199,12 @@ function validateUserInput(input) {
  * @param {String} inputPwd
  * @param {String} storedPwd
  * @throws {WrongCredentialsError}
- * @returns {BPromise}
+ * @returns {Void}
  */
 function comparePasswords(inputPwd, storedPwd) {
-  return new BPromise(resolve => {
-    if (inputPwd !== storedPwd) {
-      throw new WrongCredentialsError();
-    }
-    resolve();
-  })
+  if (inputPwd !== storedPwd) {
+    throw new WrongCredentialsError();
+  }
 }
 
 /**
