@@ -186,14 +186,14 @@ async function loginController(req, res, err) {
 
     if (user.password !== hashPassword(req.password)) {
       res.json({ success: false, error: 'Invalid email and/or password' })
+    } else {
+      await markLoggedInTimestamp(user.userId);
+      await sendEmail(user.userId);
+
+      const token = await generateJWT(user);
+
+      res.json({ success: true, token });
     }
-
-    await markLoggedInTimestamp(user.userId);
-    await sendEmail(user.userId);
-
-    const token = await generateJWT(user);
-
-    res.json({ success: true, token });
 
   } catch (err) {
     if (err instanceof WrongCredentialsError) {
