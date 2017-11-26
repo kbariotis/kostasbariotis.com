@@ -24,7 +24,7 @@ export default function Index({ data }) {
       />
       <Menu />
       <section className="blog container">
-        <div className="large-9 large-offset-1">
+        <div className="medium-8 medium-offset-2 large-10 large-offset-1">
           <div className="blog-header">
             <GatsbyLink to="/" className="blog-header__link" itemProp="name">
               <img

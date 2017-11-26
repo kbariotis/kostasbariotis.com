@@ -21,7 +21,7 @@ export default function About({ data }) {
       />
       <Menu />
       <section className="blog container about">
-        <div className="large-9 large-offset-1">
+        <div className="medium-8 medium-offset-2 large-10 large-offset-1">
           <header className="header">
             <div className="row text-center">
               <img

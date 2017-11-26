@@ -42,7 +42,7 @@ export default function Template({ data, pathContext }) {
       />
       <Menu />
       <main className="blog container" role="main">
-        <div className="large-9 large-offset-1 post">
+        <div className="medium-8 medium-offset-2 large-10 large-offset-1 post">
           <header className="post-head">
             <h1 className="post-title">
               {post.frontmatter.title}
