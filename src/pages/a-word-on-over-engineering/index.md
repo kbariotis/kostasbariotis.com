@@ -7,7 +7,7 @@ draft: true
 
 Let's have a word on premature optimization, on other words, over engineering.
 
-The problem with premature optimization is when you are trying to forecast the future. When being biased by what you believe will happen when in reality the requirements are quite different. As a result, you end up spending time on something that is going to merely be needed and you could just spend less time producing the same outcome.
+The problem with premature optimization is when you are trying to forecast the future. When being biased by what you believe will happen when in reality the requirements are quite different. As a result, you end up spending time on something that is merely going to be needed and you could just spend less time producing the same outcome.
 
 Consider the requirement:
 
@@ -25,7 +25,7 @@ Yes, a Kubernetes cluster built on AWS will serve the requirements quite good. B
 
 As engineers, we tend to look for the absolute perfect solution on every subject. Quite a few times, that's not the matter. Instead of setting that Kubernetes cluster, spend half of the time to setup the smallest VM and spend the rest of the time to the rest of the backlog.
 
-Think wisely and most importantly, think in the long term. Can you be sure that the thing you spend most of your time on will serve best your interests five years from now? How can you spend your time on something that will allow you to have more free time in the long term?
+Think wisely and most importantly, think in the long term. Can you be sure that the thing you spend most of your time on will best serve your interests five years from now? How can you spend your time on something that will allow you to have more free time in the long term?
 
 What was the biggest premature optimization you did in your career?
 
