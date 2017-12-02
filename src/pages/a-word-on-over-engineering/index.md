@@ -28,3 +28,5 @@ As engineers, we tend to look for the absolute perfect solution on every subject
 Think wisely and most importantly, think in the long term. Can you be sure that the thing you spend most of your time on will serve best your interests five years from now? How can you spend your time on something that will allow you to have more free time in the long term?
 
 What was the biggest premature optimization you did in your career?
+
+**Did you know about the common [cognitive biases of programmers?](https://hackernoon.com/cognitive-biases-in-programming-5e937707c27b)**
