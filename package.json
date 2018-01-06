@@ -31,7 +31,8 @@
     "react-share": "^1.16.0",
     "rimraf": "^2.6.2",
     "uuid": "^3.1.0",
-    "gatsby-cli": "^1.1.7"
+    "gatsby-cli": "^1.1.7",
+    "gatsby-remark-autolink-headers": "^1.4.11"
   },
   "scripts": {
     "build": "gatsby build --prefix-paths",

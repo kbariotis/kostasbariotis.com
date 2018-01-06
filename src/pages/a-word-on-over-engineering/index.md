@@ -5,6 +5,13 @@ date: "2017-12-02"
 draft: true
 ---
 
+
+## Define the problem
+ask and seek for answers
+## Know your options
+research the hell out
+## Execute and measure
+
 Let's have a word on premature optimization, on other words, over engineering.
 
 The problem with premature optimization is when you are trying to forecast the future. When being biased by what you believe will happen when in reality the requirements are quite different. As a result, you end up spending time on something that is merely going to be needed and you could just spend less time producing the same outcome.
