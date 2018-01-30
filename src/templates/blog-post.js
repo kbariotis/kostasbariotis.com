@@ -169,7 +169,7 @@ export default function Template({ data, pathContext }) {
 }
 
 export const pageQuery = graphql`
-  query BlogPostByPath($refPath: String!) {
+  query BlogPostByPath($path: String!) {
     site {
       siteMetadata {
         title
@@ -177,7 +177,7 @@ export const pageQuery = graphql`
         siteUrl
       }
     }
-    markdownRemark(frontmatter: { path: { eq: $refPath } }) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       excerpt
       frontmatter {

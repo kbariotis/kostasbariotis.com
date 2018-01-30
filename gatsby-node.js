@@ -65,9 +65,9 @@ function generateContent(createPage, graphqlResults) {
   posts.forEach(({ node }, index) => {
     const prev = index === 0 ? false : posts[index - 1].node;
     const next = index === posts.length - 1 ? false : posts[index + 1].node;
+
     createPage({
       path: node.frontmatter.path,
-      refPath: node.frontmatter.path,
       component: blogPostTemplate,
       context: {
         prev,
