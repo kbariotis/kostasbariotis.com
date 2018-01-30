@@ -170,6 +170,15 @@ module.exports = {
                 });
               });
             },
+            setup: ({ query: { site: { siteMetadata } } }) => {
+              return {
+                title: siteMetadata.title,
+                description: siteMetadata.description,
+                feed_url: siteMetadata.siteUrl + `/blog/rss.xml`,
+                site_url: siteMetadata.siteUrl,
+                generator: `GatsbyJS`,
+              }
+            },
             query: `
             {
               allMarkdownRemark(
