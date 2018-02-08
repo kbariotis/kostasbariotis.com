@@ -77,7 +77,9 @@ Now that our configuration is in place, let's run it and see how it goes. Add th
 }
 ```
 
-If everything went ok, you will see a bunch of errors on your console but you will also notice that Pretter formatted your code! Now you have some work to do. First of all, run your tests and/or do some manual testing to ensure that everything works as before. Then, inspect the errors in your console and make sure your happy with them. Remember that they won't stay there forever. The styleguide can be change and adopt, so don't waste time figuring out particular edge cases.
+If everything went good, you will see a bunch of errors on your console but you will also notice that Prettier formatted your code!
+
+Now you have some work to do. First of all, run your tests and/or do some manual testing to ensure that everything works as before. Then, inspect the errors in your console and make sure you're happy with them. Remember that they won't stay there forever. The styleguide can change and adopt, so don't waste time figuring out particular edge cases.
 
 Once you are done, commit all of your changes cause that will be the last time you commited code with errors in your codebase.
 
