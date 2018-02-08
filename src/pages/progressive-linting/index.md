@@ -1,18 +1,18 @@
 ---
-title: "Linting your project, progressively"
+title: "Progressive JavaScript Linting"
 path: "/progressive-linting/"
 date: "2018-01-31"
 tags: JavaScript, Linting
 draft: true
 ---
 
-Linting and auto formatting are two well known processes among JavaScript developers, although due to the lack of a standard tool, lots of folks are not aware of them.
+Linting is a well known process among JavaScript developers, although due to the lack of a standard tool, lots of folks are not aware of it.
 
 Plenty of times, I was faced with a new JavaScript codebase that was missing proper styleguide and rules. The coding style was varying across the project, unused or implicit globals variables and unused required dependencies were lying everywhere.
 
 On this post, I will share my plan on how to add a proper toolchain and a process to a codebase that has none but doing it in a controlled and progressive way.
 
-I will use [ESLint](https://eslint.org) and [Prettier](https://prettier.io) with the recommended set of rules. ESLint has come a long way and there is massive adoption by the community with lots of plugins. Prettier, well it's prettier than the `fix mode` of ESLint.
+With the term linting I am refering to both doing a code analysis for potential issues and applying auto formating and fixing of these issues where ever that's possible. I will use [ESLint](https://eslint.org) and [Prettier](https://prettier.io) with the recommended set of rules. ESLint has come a long way and there is massive adoption by the community with lots of plugins. Prettier ... well it's prettier than the [fix mode of ESLint](https://eslint.org/docs/user-guide/command-line-interface#--fix).
 
 ## The problem
 The first thing that came to my mind when I first faced with the situation was to stop everything and work exlusively on adding a linter and fixing and refactoring the whole codebase. I immediately drop that option.
@@ -50,7 +50,6 @@ Then add your `.eslintrc` file with contents. This is just an example setup I ha
     "ecmaVersion": 6
   },
   "rules": {
-    "no-console": "error",
     "prettier/prettier": [
       "warn",
       {
@@ -62,6 +61,8 @@ Then add your `.eslintrc` file with contents. This is just an example setup I ha
   }
 }
 ```
+
+The configuration applies the recommended by ESLint set of rules and also the Prettier plugin which will both override ESLint's formatting rules and also run Prettier whenever ESLint is run. Then we override Prettier's default rules to match our preferences.
 
 Now that our configuration is in place, let's run it and see how it goes. Add this your `package.json` (we will use it later) and run `npm run lint`.
 
