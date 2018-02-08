@@ -6,18 +6,16 @@ tags: JavaScript, Linting
 draft: true
 ---
 
-Linting and auto formatting are two well known processes among JavaScript developers, although by not being built-in the language, lots of folks are not aware of them.
+Linting and auto formatting are two well known processes among JavaScript developers, although due to the lack of a standard tool, lots of folks are not aware of them.
 
 Plenty of times, I was faced with a new JavaScript codebase that was missing proper styleguide and rules. The coding style was varying across the project, unused or implicit globals variables and unused required dependencies were lying everywhere.
 
-On this post, I will share my plan on how to add a proper toolchain and process to a codebase that has none but doing it in a controlled and progressive way.
+On this post, I will share my plan on how to add a proper toolchain and a process to a codebase that has none but doing it in a controlled and progressive way.
 
-This post will also provide an example configuration of ESLint with Prettier.
-
-<!-- ESLint have a `fix mode` and can also be integrated with Prettier. So by running your linter, you can also take auto formatting. -->
+I will use [ESLint](https://eslint.org) and [Prettier](https://prettier.io) with the recommended set of rules. ESLint has come a long way and there is massive adoption by the community with lots of plugins. Prettier, well it's prettier than the `fix mode` of ESLint.
 
 ## The problem
-The first thing that I imagine, most of developers would think after facing a problem like this, would be to stop everything and work exlusively on adding a linter and fixing and refactoring the whole codebase. That's not how I would go about this.
+The first thing that came to my mind when I first faced with the situation was to stop everything and work exlusively on adding a linter and fixing and refactoring the whole codebase. I immediately drop that option.
 
 While refactoring is fun (at least for me), no one really likes doing it for a long period of time, let alone the fact that we can't stop releasing features to customers regardless. The bigger the codebase, the longer will take to restructure it as a whole.
 
@@ -25,14 +23,14 @@ But even if we had the luxury to do it, major changes in a codebase may lead to 
 
 > ...Since each refactoring is small, it's less likely to go wrong. The system is also kept fully working after each small refactoring, reducing the chances that a system can get seriously broken during the restructuring.
 
-In a similar position that I was a few months ago and with that statement [by Martin Fowler](https://refactoring.com/) in my mind, I proposed to start fixing the code progressively, linting and refactoring only the affected code on every feature branch each of our team member was working on.
+With that statement [by Martin Fowler](https://refactoring.com/) in my mind, I proposed to start fixing the code progressively, refactoring only the affected code on every feature branch each of our team member was working on.
 
 This way we would have total control over the changes that would break our code and we would fix them before they were released.
 
 ## The plan
-Simple. We will first have to discuss and agree (if in a team) on the styleguide we want to follow and the put a configuration file for our tools to follow.
+Simple. We will first have to discuss and agree (if in a team) on the styleguide we want to follow and then put a configuration file for our tools to follow.
 
-Then we want to run the process once and let the formatter fix the easy stylish parts (missing spaces, semicolons, etc..) in places that no human intervention would be required.
+Then we want to run the process once and let the formatter fix the easy stylish parts (missing spaces, semicolons, etc..) hoping that no human intervention would be required for those changes.
 
 The last part will be to setup a pre-commit git hook that will trigger the linting and refuse to commit if it didn't pass. This way we would be sure that no "bad" code enters the codebase.
 
@@ -110,10 +108,11 @@ Then modify your `package.json`:
 }
 ```
 
-Husky will add the `precommit` script as a precommit hook to Git. Every time you are going to commit a bunch of files will run the `lint-staged` which in turn will list all the currently staged files and run ESLint with every each of them. If once fails, the hook will fail.
+[Husky](https://github.com/typicode/husky) will add the `precommit` script as a precommit hook to Git. Every time you are going to commit a bunch of files will run the [lint-staged](https://github.com/okonet/lint-staged) which in turn will list all the currently staged files and run ESLint with every each of them. If once fails, the hook will fail.
 
 Now try to modify a file and commit it. Husky will run the precommit hook only for the file that you tried to modify. You won't be able to commit unless the linter say so.
 
+## The results
 The plan worked great and after a few weeks the whole codebase changed radically. We weren't bothering with formatting our code while writting it and we could be sure on every commit that we didn't forget to initialize a variable before using it.
 
 What would you do in a similar position?
