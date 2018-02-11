@@ -5,16 +5,16 @@ date: "2018-02-11"
 tags: JavaScript, Linting
 ---
 
-Linting is a well known process among JavaScript developers, although due to the lack of a standard tool, lots of folks are not aware of it.
+Linting and auto-formatting are a well known process among JavaScript developers, although due to the lack of a standard tool, lots of folks are not aware of it. While a linter analyzes your code and warns you for potential issues, a formatter can auto format it based on your preferences.
+
+![ESLint Output example](./eslint-example.png)
 
 Plenty of times, I had to deal with a JavaScript codebase that was missing proper styleguide and rules. The coding style was varying across the project, unused or implicit globals variables and unused required dependencies were lying everywhere.
 
-On this post, I will share my plan on how to add a proper toolchain and a process to a codebase that has none but doing it in a controlled and progressive way.
-
-With the term linting I am refering to both doing a code analysis for potential issues and applying auto formating and fixing of these issues where ever that's possible. I will use [ESLint](https://eslint.org) and [Prettier](https://prettier.io) with the recommended set of rules. ESLint has come a long way and there is massive adoption by the community with lots of plugins. Prettier ... well it's prettier than the [fix mode of ESLint](https://eslint.org/docs/user-guide/command-line-interface#--fix).
+On this post, I will share my plan on how to add a proper toolchain and a process to a codebase that has none but doing it in a controlled and progressive way. I will use [ESLint](https://eslint.org) as the linter and [Prettier](https://prettier.io) as the formatter (but as a plugin to ESLint) with the recommended set of rules. ESLint has come a long way and there is massive adoption by the community with lots of plugins. Prettier ... well it's prettier than the [fix mode of ESLint](https://eslint.org/docs/user-guide/command-line-interface#--fix).
 
 ## The problem
-The first thing that came to my mind when I first faced a situation was to stop everything and work exclusively on adding a linter and fixing and refactoring the whole codebase. I immediately drop that option.
+The first thing that came to my mind when I first faced a situation was to stop everything and work exclusively on adding a linter and fixing and refactoring the whole codebase. I immediately dropped that option.
 
 While refactoring is fun (at least for me), no one really likes doing it for a long period of time, let alone the fact that we can't stop releasing features to customers regardless. The bigger the codebase, the longer will take to restructure it as a whole.
 
@@ -79,7 +79,7 @@ Now that our configuration is in place, let's run it and see how it goes. Add th
 
 If everything went well, you will see a bunch of errors on your console but you will also notice that Prettier formatted your code!
 
-Now you have some work to do. First of all, run your tests and/or do some manual testing to ensure that everything works as before. Then, inspect the errors in your console and make sure you're happy with them. Remember that they won't stay there forever. The styleguide can change and adopt, so don't waste time figuring out particular edge cases.
+Now you have some work to do. First of all, run your tests and/or do some manual testing to ensure that everything works as before. Then, inspect the errors in your console and make sure you're happy with them. Remember that they won't stay there forever. The styleguide can change and adapt, so don't waste time figuring out particular edge cases.
 
 Once you are done, commit all of your changes cause that will be the last time you commited code with errors in your codebase.
 
