@@ -1,9 +1,8 @@
 ---
 title: "Progressive JavaScript Linting"
 path: "/progressive-javascript-linting/"
-date: "2018-01-31"
+date: "2018-02-11"
 tags: JavaScript, Linting
-draft: true
 ---
 
 Linting is a well known process among JavaScript developers, although due to the lack of a standard tool, lots of folks are not aware of it.
