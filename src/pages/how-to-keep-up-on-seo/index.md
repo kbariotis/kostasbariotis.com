@@ -3,7 +3,7 @@ title: "How to keep up on SEO"
 path: "/how-to-keep-up-on-seo/"
 date: "2015-01-26T19:35:21.000Z"
 date_updated:   2015-01-26T19:43:03.000Z
-tags: seo, google, page rank
+tags: seo, google, pagerank
 ---
 
 I am certainly not a SEO expert. Neverthless, I am developing web sites and I have to be able to deliver after all a SEO optimized web site.

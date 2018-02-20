@@ -3,7 +3,7 @@ title: "How To Be A Programmer by Robert L Read"
 path: "/how-to-be-a-programmer-by-robert-l-read/"
 date: "2014-10-25T10:54:21.000Z"
 date_updated:   2015-02-15T21:12:42.000Z
-tags: clean code, code, programmers, debugging
+tags: cleancode, code, programmers, debugging
 ---
 
 Recently, my colleague <a title="Yannis Rizos on Twitter.com" href="http://twitter.com/yrizos" target="_blank">Yannis Rizos</a>, tweeted me about a <a href="http://samizdat.mines.edu/howto/HowToBeAProgrammer.html" target="_blank" title="How to Be a Programmer">book</a>. Its title was somehow offensive and didn't look quite interesting at first.

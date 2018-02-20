@@ -1,9 +1,11 @@
 ---
-title: "Tell me about a situation where you were disagreeing with other people on the team"
-path: "/drafts/tell-me-about-a-situation-where-you-were-disagreeing-with-other-people-on-the-team/"
+title: "Disagree and commit"
+path: "/drafts/disagree-and-commit/"
 date: "2016-11-24T13:47:24.000Z"
 draft: true
 ---
+
+Tell me about a situation where you were disagreeing with other people on the team
 
 1) Knowing how to communicate effectively
 valid arguments

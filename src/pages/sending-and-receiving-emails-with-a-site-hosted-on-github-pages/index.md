@@ -3,7 +3,7 @@ title: "Sending and receiving emails when on GitHub Pages"
 path: "/sending-and-receiving-emails-with-a-site-hosted-on-github-pages/"
 date: "2016-10-30T14:28:37.000Z"
 date_updated:   2017-04-05T12:41:40.000Z
-tags: Github, Github Pages
+tags: Github, GithubPages
 ---
 
 If you, like me, like to host simple little sites of yours on GitHub Pages, I am sure you have already reached the moment when you wanted to send emails from that site but you didn't know how to. This is how I did it.
