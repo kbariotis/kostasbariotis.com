@@ -11,7 +11,14 @@ import MetaTags from './../components/MetaTags';
 export default function Contact({ data }) {
   return (
     <div>
-      <MetaTags title={`Contact`} description={''} />
+      <MetaTags
+        siteUrl={data.site.siteMetadata.siteUrl}
+        path={'/contact'}
+        title={`Contact`}
+        description={'In need for a Web Developer? Search no more.'}
+        noIndex={false}
+        tags=""
+      />
       <Menu />
       <section className="blog container about">
         <div className="medium-8 medium-offset-2 large-10 large-offset-1">
@@ -71,6 +78,11 @@ Contact.propTypes = {
 
 export const contactPageQuery = graphql`
   query ContactPageSiteMetadata {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
     file(relativePath: { eq: "avatar.jpg" }) {
       childImageSharp {
         sizes {

@@ -15,7 +15,16 @@ export default function Drafts({ data }) {
   posts = posts.map(post => post.node);
   return (
     <div>
-      <MetaTags title={`My drafts`} siteUrl={siteUrl} description={''} noIndex={true} />
+      <MetaTags
+        siteUrl={siteUrl}
+        path={'/drafts'}
+        title={`My drafts`}
+        tags=""
+        description={
+          'These are the draft posts either I am currently working on either I have abandoned them for some reason. You can read them and comment on them if you think you can help me complete them.'
+        }
+        noIndex={true}
+      />
       <Menu />
       <section className="blog container">
         <div className="medium-8 medium-offset-2 large-10 large-offset-1">

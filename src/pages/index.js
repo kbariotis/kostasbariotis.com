@@ -12,11 +12,18 @@ import MetaTags from './../components/MetaTags';
 
 export default function Index({ data }) {
   let { edges: posts } = data.allMarkdownRemark;
-  let { description } = data.site.siteMetadata;
+  let { siteUrl, description, author } = data.site.siteMetadata;
   posts = posts.map(post => post.node);
   return (
     <div>
-      <MetaTags title={'Home'} description={description} />
+      <MetaTags
+        noIndex={false}
+        tags=""
+        title={'Home'}
+        description={description}
+        siteUrl={siteUrl}
+        path={'/'}
+      />
       <Menu />
       <section className="blog container">
         <div className="medium-8 medium-offset-2 large-10 large-offset-1">
@@ -24,16 +31,12 @@ export default function Index({ data }) {
             <GatsbyLink to="/" className="blog-header__link" itemProp="name">
               <Img
                 className="header-avatar blog-header__img"
-                alt="Kostas Bariotis"
+                alt={author}
                 sizes={data.file.childImageSharp.sizes}
               />
             </GatsbyLink>
-            <h1>Kostas Bariotis</h1>
-            <p>
-              I am Kostas Bariotis, a web developer, a proud wanderer and a passionate doer. My
-              mission is to write clean and efficient code, to solve problems on the web and to
-              learn something more.
-            </p>
+            <h1>{author}</h1>
+            <p>{description}</p>
           </div>
           <header className="header">Latest Posts</header>
           <Separator />
@@ -70,6 +73,8 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         description
+        siteUrl
+        author
       }
     }
     allMarkdownRemark(

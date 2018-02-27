@@ -11,7 +11,14 @@ import MetaTags from './../components/MetaTags';
 export default function About({ data }) {
   return (
     <div>
-      <MetaTags title={`About`} path={`/about`} description={''} />
+      <MetaTags
+        siteUrl={data.site.siteMetadata.siteUrl}
+        title={`About`}
+        path={`/about`}
+        description={'Hey, I am Kostas. Nice having you here.'}
+        noIndex={false}
+        tags=""
+      />
       <Menu />
       <section className="blog container about">
         <div className="medium-8 medium-offset-2 large-10 large-offset-1">
@@ -38,23 +45,23 @@ export default function About({ data }) {
                 </p>
                 <p>
                   I like <a href="http://slides.com/kostasbariotis">speaking</a> to meetups and
-                  conferences about things that tried and also talking with others on my
-                  <a href="http://devastation.tv">podcast</a>. I created
-                  <a href="https://janitr.net">Janitr</a> and
+                  conferences about things that tried and also talking with others on my{' '}
+                  <a href="http://devastation.tv">podcast</a>. I created{' '}
+                  <a href="https://janitr.net">Janitr</a> and{' '}
                   <a href="http://gityeller.com">GitYeller</a> You can find more code samples and my
                   contributions on <a href="https://github.com/kbariotis">Github</a>. Along with
-                  some folks, we are organizing the local
-                  <a href="www.meetup.com/Thessaloniki-Node-js-Meetup/">Nodejs meetup</a> and
+                  some folks, we are organizing the local{' '}
+                  <a href="www.meetup.com/Thessaloniki-Node-js-Meetup/">Nodejs meetup</a> and{' '}
                   <a rel="noopener noreferrer" href="http://devit.org" target="_blank">
                     DEVit Conf
                   </a>, the biggest web development conference in northern Greece. We are also known
-                  as
+                  as{' '}
                   <a rel="noopener noreferrer" href="http://skgtech.io" target="_blank">
                     SKGtech
                   </a>.
                 </p>
                 <p>
-                  This site is being generated using Gatsby.js and you can find the source on
+                  This site is being generated using Gatsby.js and you can find the source on{' '}
                   <a href="https://github.com/kbariotis/kostasbariotis.com"> GitHub</a>.
                 </p>
                 <p>
@@ -75,7 +82,7 @@ export default function About({ data }) {
                 <div className="row">
                   <div className="medium-2 bio-date">2016</div>
                   <div className="medium-10 text-right">
-                    Started the first ever
+                    Started the first ever{' '}
                     <a href="http://devastation.tv">Podcast for greek developers</a>
                   </div>
                 </div>
@@ -88,10 +95,10 @@ export default function About({ data }) {
                 <div className="row">
                   <div className="medium-2 bio-date">2014</div>
                   <div className="medium-10 text-right">
-                    Won the first place at
+                    Won the first place at{' '}
                     <a href="http://www.startuplive.org/events/thessaloniki-1/">
                       Thessaloniki Startup Live
-                    </a>
+                    </a>{' '}
                     with the <a href="http://tunedeck.navideck.com/">Tunedeck Team</a>
                   </div>
                 </div>
@@ -116,7 +123,7 @@ export default function About({ data }) {
                   <div className="medium-2 bio-date">2013</div>
                   <div className="medium-10 text-right">
                     Started working with <a href="http://dtek.gr">DTek</a>. A lot of nice projects
-                    born from there like <a href="http://carfinder.gr">Carfinder.gr</a> and
+                    born from there like <a href="http://carfinder.gr">Carfinder.gr</a> and{' '}
                     <a href="http://viralcontestapp.com">Viral Contest App</a>
                   </div>
                 </div>
@@ -129,7 +136,7 @@ export default function About({ data }) {
                 <div className="row">
                   <div className="medium-2 bio-date">2012</div>
                   <div className="medium-10 text-right">
-                    Graduated from
+                    Graduated from{' '}
                     <a href="http://it.teithe.gr">
                       A.T.E.I. Thessalonikis with the BsC of Computer Science
                     </a>
@@ -252,6 +259,11 @@ About.propTypes = {
 
 export const aboutPageQuery = graphql`
   query AboutPageSiteMetadata {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
     file(relativePath: { eq: "avatar.jpg" }) {
       childImageSharp {
         sizes {

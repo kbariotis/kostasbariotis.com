@@ -21,6 +21,7 @@ export default function Tags({ pathContext, data }) {
         tags={tag}
         siteUrl={siteUrl}
         path={`/tag/${tag}`}
+        noIndex={false}
       />
       <Menu />
       <section className="blog container tags-collection">
