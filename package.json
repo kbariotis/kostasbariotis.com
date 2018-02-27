@@ -37,6 +37,14 @@
     "uuid": "^3.2.1"
   },
   "scripts": {
+    "build": "gatsby build --prefix-paths",
+    "deploy": "gh-pages -d public",
+    "develop": "gatsby develop",
+    "preserve": "npm run build",
+    "serve": "gatsby serve",
+    "start": "npm run develop",
+    "lint": "./node_modules/.bin/eslint --fix src/**/*.js gatsby-config.js gatsby-browser.js gatsby-node.js",
+    "test": "echo \"Should probably write some tests!\"",
     "precommit": "lint-staged"
   },
   "dependencies": {
