@@ -1,5 +1,6 @@
 import React from 'react';
 import GatsbyLink from 'gatsby-link';
+import Img from 'gatsby-image';
 import dateformat from 'dateformat';
 
 import Separator from './../components/Separator';
@@ -7,19 +8,14 @@ import Menu from './../components/Menu';
 import Posts from './../components/Posts';
 import MetaTags from './../components/MetaTags';
 
-import avatarImage from './../../static/images/avatar.jpg';
-
 export default function Index({ data }) {
   let { edges: posts } = data.allMarkdownRemark;
-  let { description, title, siteUrl } = data.site.siteMetadata;
+  let { description } = data.site.siteMetadata;
   posts = posts.map(post => post.node);
   return (
     <div>
       <MetaTags
-        title={title}
-        path={``}
-        siteUrl={siteUrl}
-        tags="webdev, programming, javascript"
+        title={'Home'}
         description={description}
       />
       <Menu />
@@ -27,11 +23,7 @@ export default function Index({ data }) {
         <div className="medium-8 medium-offset-2 large-10 large-offset-1">
           <div className="blog-header">
             <GatsbyLink to="/" className="blog-header__link" itemProp="name">
-              <img
-                className="header-avatar blog-header__img"
-                src={avatarImage}
-                alt="Kostas Bariotis"
-              />
+              <Img className="header-avatar blog-header__img" alt="Kostas Bariotis" sizes={data.file.childImageSharp.sizes} />
             </GatsbyLink>
             <h1>Kostas Bariotis</h1>
             <p>
@@ -61,11 +53,16 @@ export default function Index({ data }) {
 
 export const pageQuery = graphql`
   query IndexQuery {
+    file(relativePath: { eq: "avatar.jpg" }) {
+      childImageSharp {
+        sizes {
+          ...GatsbyImageSharpSizes_withWebp
+        }
+      }
+    }
     site {
       siteMetadata {
-        title
         description
-        siteUrl
       }
     }
     allMarkdownRemark(

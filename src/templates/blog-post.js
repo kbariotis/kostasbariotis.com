@@ -5,14 +5,13 @@ import GatsbyLink from 'gatsby-link';
 import { ShareButtons } from 'react-share';
 import ReactDisqusThread from 'react-disqus-thread';
 import uuidv5 from 'uuid/v5';
+import Img from "gatsby-image";
 
 import Menu from '../components/Menu';
 import BulletListTags from '../components/BulletListTags';
 import NavigateLink from '../components/NavigateLink';
 import Separator from '../components/Separator';
 import MetaTags from '../components/MetaTags';
-
-import avatarImg from './../../static/images/avatar.jpg';
 
 const {
   FacebookShareButton,
@@ -24,7 +23,7 @@ const {
 
 export default function Template({ data, pathContext }) {
   const { markdownRemark: post } = data;
-  const { title, siteUrl } = data.site.siteMetadata;
+  const { siteUrl } = data.site.siteMetadata;
   const { next, prev } = pathContext;
 
   const isProduction = process.env.NODE_ENV === 'production';
@@ -33,7 +32,7 @@ export default function Template({ data, pathContext }) {
   return (
     <div>
       <MetaTags
-        title={`${post.frontmatter.title} - ${title}`}
+        title={`${post.frontmatter.title}`}
         description={post.excerpt}
         tags={post.frontmatter.tags}
         path={post.frontmatter.path}
@@ -58,7 +57,7 @@ export default function Template({ data, pathContext }) {
                       className="author-avatar"
                       itemProp="name"
                     >
-                      <img src={avatarImg} alt="Kostas Bariotis" />
+                      <Img sizes={data.file.childImageSharp.sizes} />
                     </GatsbyLink>
                   </li>
                   <li>
@@ -170,6 +169,13 @@ export default function Template({ data, pathContext }) {
 
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
+    file(relativePath: { eq: "avatar.jpg" }) {
+      childImageSharp {
+        sizes {
+          ...GatsbyImageSharpSizes_withWebp
+        }
+      }
+    }
     site {
       siteMetadata {
         title

@@ -16,7 +16,7 @@
     "gatsby-plugin-nprogress": "^1.0.11",
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-sass": "^1.0.16",
-    "gatsby-plugin-sharp": "^1.6.27",
+    "gatsby-plugin-sharp": "^1.6.35",
     "gatsby-plugin-sitemap": "^1.2.11",
     "gatsby-remark-autolink-headers": "^1.4.11",
     "gatsby-remark-copy-linked-files": "^1.5.25",
@@ -45,6 +45,10 @@
     "test": "echo \"Should probably write some tests!\""
   },
   "dependencies": {
+    "gatsby-image": "^1.0.39",
+    "gatsby-remark-emoji": "0.0.1",
+    "gatsby-remark-external-links": "0.0.4",
+    "gatsby-transformer-sharp": "^1.6.21",
     "npm": "^5.6.0"
   }
 }

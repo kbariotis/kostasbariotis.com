@@ -8,6 +8,7 @@
     header {
         color: $red;
         .header-avatar {
+            display: inline-block;
             width: 150px;
             height: 150px;
             border-radius: 50%;

@@ -1,34 +1,27 @@
 import React from 'react';
 import Head from 'react-helmet';
 import GatsbyLink from 'gatsby-link';
+import Img from 'gatsby-image';
 import Helmet from 'react-helmet';
 
 import Separator from './../components/Separator';
 import Menu from './../components/Menu';
 import MetaTags from './../components/MetaTags';
-import AvatarImg from './../../static/images/avatar.jpg';
 
 export default function About({ data }) {
-  const { title, description, siteUrl } = data.site.siteMetadata;
   return (
     <div>
       <MetaTags
-        title={`About - ${title}`}
+        title={`About`}
         path={`/about`}
-        siteUrl={siteUrl}
-        tags="webdev, programming, javascript"
-        description={description}
+        description={''}
       />
       <Menu />
       <section className="blog container about">
         <div className="medium-8 medium-offset-2 large-10 large-offset-1">
           <header className="header">
             <div className="row text-center">
-              <img
-                className="header-avatar"
-                src={AvatarImg}
-                alt="Kostas Bariotis"
-              />
+              <Img sizes={data.file.childImageSharp.sizes} className="header-avatar"/>
               <h1>Hey, I'm Kostas. Nice having you here.</h1>
             </div>
           </header>
@@ -276,11 +269,11 @@ export default function About({ data }) {
 
 export const aboutPageQuery = graphql`
   query AboutPageSiteMetadata {
-    site {
-      siteMetadata {
-        title
-        description
-        siteUrl
+    file(relativePath: { eq: "avatar.jpg" }) {
+      childImageSharp {
+        sizes {
+          ...GatsbyImageSharpSizes_withWebp
+        }
       }
     }
   }
