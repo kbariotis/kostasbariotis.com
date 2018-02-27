@@ -74,6 +74,20 @@ export default function About({ data }) {
               <div className="medium-2 about-section-title">BIO</div>
               <div className="medium-10">
                 <div className="row">
+                  <div className="medium-2 bio-date">2018</div>
+                  <div className="medium-10 text-right">
+                    Started working with <a href="https://geekbot.io">Geekbot</a>, a fully remote
+                    company with a mission to change the way we do standup meetings.
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="medium-2 bio-date">2017</div>
+                  <div className="medium-10 text-right">
+                    Started working with <a href="https://quotelier.com">Quotelier</a>. A amazing
+                    product on the hospitality industry.
+                  </div>
+                </div>
+                <div className="row">
                   <div className="medium-2 bio-date">2017</div>
                   <div className="medium-10 text-right">
                     Released <a href="https://janitr.net">Janitr.net</a>
