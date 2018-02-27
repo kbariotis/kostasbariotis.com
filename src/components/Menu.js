@@ -34,26 +34,44 @@ class Menu extends React.Component {
               </button>
             </div>
             <div
-              className={`collapse navbar-collapse ${this.state.menuOpened
-                ? 'in'
-                : ''}`}
+              className={`collapse navbar-collapse ${
+                this.state.menuOpened ? 'in' : ''
+              }`}
               id="main-menu"
             >
               <ul className="nav navbar-nav navbar-right">
                 <li>
-                  <GatsbyLink exact activeStyle={{
-                    color: '#e52f45'
-                  }} to="/">Home</GatsbyLink>
+                  <GatsbyLink
+                    exact
+                    activeStyle={{
+                      color: '#e52f45',
+                    }}
+                    to="/"
+                  >
+                    Home
+                  </GatsbyLink>
                 </li>
                 <li>
-                  <GatsbyLink exact activeStyle={{
-                    color: '#e52f45'
-                  }} to="/about">About</GatsbyLink>
+                  <GatsbyLink
+                    exact
+                    activeStyle={{
+                      color: '#e52f45',
+                    }}
+                    to="/about"
+                  >
+                    About
+                  </GatsbyLink>
                 </li>
                 <li>
-                  <GatsbyLink exact activeStyle={{
-                    color: '#e52f45'
-                  }} to="/contact">Contact</GatsbyLink>
+                  <GatsbyLink
+                    exact
+                    activeStyle={{
+                      color: '#e52f45',
+                    }}
+                    to="/contact"
+                  >
+                    Contact
+                  </GatsbyLink>
                 </li>
               </ul>
             </div>

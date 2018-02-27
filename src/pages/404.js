@@ -14,7 +14,7 @@ function tweet() {
   return false;
 }
 
-export default () =>
+export default () => (
   <div>
     <Helmet
       title="Not found - Kostas Bariotis"
@@ -40,4 +40,5 @@ export default () =>
         </p>
       </div>
     </section>
-  </div>;
+  </div>
+);

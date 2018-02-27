@@ -13,10 +13,7 @@ export default function IndexLayout({ children, data }) {
 
   return (
     <div>
-      <Helmet
-        titleTemplate={`%s - ${title}`}
-        defaultTitle={title}
-      >
+      <Helmet titleTemplate={`%s - ${title}`} defaultTitle={title}>
         <meta name="description" content={description} />
         <html lang="en" /> {/* this is valid react-helmet usage! */}
         <meta charSet="utf-8" />
@@ -24,9 +21,7 @@ export default function IndexLayout({ children, data }) {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="HandheldFriendly" content="True" />
       </Helmet>
-      <section className="main-content">
-        {children()}
-      </section>
+      <section className="main-content">{children()}</section>
       <Footer />
     </div>
   );
@@ -34,7 +29,7 @@ export default function IndexLayout({ children, data }) {
 
 IndexLayout.propTypes = {
   children: PropTypes.func,
-  data: PropTypes.object
+  data: PropTypes.object,
 };
 
 export const pageQuery = graphql`

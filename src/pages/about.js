@@ -11,17 +11,16 @@ import MetaTags from './../components/MetaTags';
 export default function About({ data }) {
   return (
     <div>
-      <MetaTags
-        title={`About`}
-        path={`/about`}
-        description={''}
-      />
+      <MetaTags title={`About`} path={`/about`} description={''} />
       <Menu />
       <section className="blog container about">
         <div className="medium-8 medium-offset-2 large-10 large-offset-1">
           <header className="header">
             <div className="row text-center">
-              <Img sizes={data.file.childImageSharp.sizes} className="header-avatar"/>
+              <Img
+                sizes={data.file.childImageSharp.sizes}
+                className="header-avatar"
+              />
               <h1>Hey, I'm Kostas. Nice having you here.</h1>
             </div>
           </header>
@@ -31,11 +30,11 @@ export default function About({ data }) {
               <div className="medium-2 about-section-title">INTRO</div>
               <div className="medium-10">
                 <p>
-                  I design software architectures, APIs and databases to serve the
-                  rest of an application. I am a full stack engineer but I
+                  I design software architectures, APIs and databases to serve
+                  the rest of an application. I am a full stack engineer but I
                   love taking a specific field in my hands and getting the juice
-                  out of it. I am always interested in being a part of a team that
-                  builds great software and getting things done.
+                  out of it. I am always interested in being a part of a team
+                  that builds great software and getting things done.
                 </p>
                 <p>
                   I like things like Node.js, Express.js, React.js, Webpack,
@@ -43,27 +42,39 @@ export default function About({ data }) {
                   whole lot more.
                 </p>
                 <p>
-                  I like{' '}
-                  <a href="http://slides.com/kostasbariotis">speaking</a> to meetups
-                  and conferences about things that tried and also talking with others on my
-                  {' '}<a href="http://devastation.tv">podcast</a>. I created
-                  {' '}<a href="https://janitr.net">Janitr</a> and
-                  {' '}<a href="http://gityeller.com">GitYeller</a> You can find more code samples and my contributions on
-                  {' '}<a href="https://github.com/kbariotis">Github</a>. Along with
-                  some folks, we are organizing the local
-                  {' '}<a href="www.meetup.com/Thessaloniki-Node-js-Meetup/">Nodejs meetup</a> and
-                  {' '}<a href="http://devit.org" target="_blank">DEVit Conf</a>, the
-                  biggest web development conference in northern Greece. We are also known as
-                  {' '}<a href="http://skgtech.io" target="_blank">SKGtech</a>.
+                  I like <a href="http://slides.com/kostasbariotis">speaking</a>{' '}
+                  to meetups and conferences about things that tried and also
+                  talking with others on my{' '}
+                  <a href="http://devastation.tv">podcast</a>. I created{' '}
+                  <a href="https://janitr.net">Janitr</a> and{' '}
+                  <a href="http://gityeller.com">GitYeller</a> You can find more
+                  code samples and my contributions on{' '}
+                  <a href="https://github.com/kbariotis">Github</a>. Along with
+                  some folks, we are organizing the local{' '}
+                  <a href="www.meetup.com/Thessaloniki-Node-js-Meetup/">
+                    Nodejs meetup
+                  </a>{' '}
+                  and{' '}
+                  <a href="http://devit.org" target="_blank">
+                    DEVit Conf
+                  </a>, the biggest web development conference in northern
+                  Greece. We are also known as{' '}
+                  <a href="http://skgtech.io" target="_blank">
+                    SKGtech
+                  </a>.
                 </p>
                 <p>
-                  This site is being generated using Gatsby.js and you can find the source on
-                   {' '}<a href="https://github.com/kbariotis/kostasbariotis.com">{' '}GitHub</a>.
+                  This site is being generated using Gatsby.js and you can find
+                  the source on{' '}
+                  <a href="https://github.com/kbariotis/kostasbariotis.com">
+                    {' '}
+                    GitHub
+                  </a>.
                 </p>
                 <p>
-                  I am currently living in Thessaloniki, Greece.
-                  Have you ever been? Take a look, I am sure you will fall in
-                  love with the amazing beaches of Chalkidiki.
+                  I am currently living in Thessaloniki, Greece. Have you ever
+                  been? Take a look, I am sure you will fall in love with the
+                  amazing beaches of Chalkidiki.
                 </p>
               </div>
             </div>
@@ -73,10 +84,7 @@ export default function About({ data }) {
                 <div className="row">
                   <div className="medium-2 bio-date">2017</div>
                   <div className="medium-10 text-right">
-                    Released{' '}
-                    <a href="https://janitr.net">
-                      Janitr.net
-                    </a>
+                    Released <a href="https://janitr.net">Janitr.net</a>
                   </div>
                 </div>
                 <div className="row">
@@ -191,10 +199,7 @@ export default function About({ data }) {
               <div className="medium-10">
                 <div className="row">
                   <div className="medium-4">
-                    <a
-                      href="https://janitr.net"
-                      target="_blank"
-                    >
+                    <a href="https://janitr.net" target="_blank">
                       Janitr
                     </a>
                   </div>
@@ -204,15 +209,13 @@ export default function About({ data }) {
                 </div>
                 <div className="row">
                   <div className="medium-4">
-                    <a
-                      href="https://gityeller.com"
-                      target="_blank"
-                    >
+                    <a href="https://gityeller.com" target="_blank">
                       GitYeller
                     </a>
                   </div>
                   <div className="medium-8 text-right">
-                    Subscribe to your favorite GitHub repository and get notified by email for new issues with specific labels.
+                    Subscribe to your favorite GitHub repository and get
+                    notified by email for new issues with specific labels.
                   </div>
                 </div>
                 <div className="row">

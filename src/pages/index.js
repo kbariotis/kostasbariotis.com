@@ -14,16 +14,17 @@ export default function Index({ data }) {
   posts = posts.map(post => post.node);
   return (
     <div>
-      <MetaTags
-        title={'Home'}
-        description={description}
-      />
+      <MetaTags title={'Home'} description={description} />
       <Menu />
       <section className="blog container">
         <div className="medium-8 medium-offset-2 large-10 large-offset-1">
           <div className="blog-header">
             <GatsbyLink to="/" className="blog-header__link" itemProp="name">
-              <Img className="header-avatar blog-header__img" alt="Kostas Bariotis" sizes={data.file.childImageSharp.sizes} />
+              <Img
+                className="header-avatar blog-header__img"
+                alt="Kostas Bariotis"
+                sizes={data.file.childImageSharp.sizes}
+              />
             </GatsbyLink>
             <h1>Kostas Bariotis</h1>
             <p>

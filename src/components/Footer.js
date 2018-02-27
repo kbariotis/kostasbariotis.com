@@ -1,7 +1,7 @@
 import React from 'react';
 import GatsbyLink from 'gatsby-link';
 
-const Footer = () =>
+const Footer = () => (
   <div>
     <footer className="footer">
       <div className="container">
@@ -24,12 +24,13 @@ const Footer = () =>
             >
               more about me
             </GatsbyLink>{' '}
-            or <GatsbyLink
+            or{' '}
+            <GatsbyLink
               className="footer-link"
               to="/contact"
               title="Contact Kostas"
             >
-            get in touch
+              get in touch
             </GatsbyLink>.
           </div>
         </div>
@@ -95,6 +96,7 @@ const Footer = () =>
         </a>
       </div>
     </footer>
-  </div>;
+  </div>
+);
 
 export default Footer;

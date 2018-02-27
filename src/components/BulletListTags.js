@@ -2,25 +2,25 @@ import React from 'react';
 import GatsbyLink from 'gatsby-link';
 import PropTypes from 'prop-types';
 
-const BulletListTags = ({ tags, draft }) =>
+const BulletListTags = ({ tags, draft }) => (
   <ul className="tags list-inline text-right">
     {tags &&
-      tags.split(', ').map((tag, index) =>
+      tags.split(', ').map((tag, index) => (
         <li key={index}>
-          <GatsbyLink to={`/tag/${tag}`}>
-            {tag}
-          </GatsbyLink>
+          <GatsbyLink to={`/tag/${tag}`}>{tag}</GatsbyLink>
         </li>
-      )}
-    {draft &&
+      ))}
+    {draft && (
       <li className="draft-tag">
         <GatsbyLink to={`/drafts`}>Draft</GatsbyLink>
-      </li>}
-  </ul>;
+      </li>
+    )}
+  </ul>
+);
 
 BulletListTags.propTypes = {
   tags: PropTypes.string,
-  draft: PropTypes.bool
+  draft: PropTypes.bool,
 };
 
 export default BulletListTags;

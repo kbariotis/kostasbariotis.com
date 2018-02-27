@@ -34,7 +34,7 @@ MetaTags.propTypes = {
   path: PropTypes.string,
   tags: PropTypes.string,
   noIndex: PropTypes.bool,
-  siteUrl: PropTypes.string
+  siteUrl: PropTypes.string,
 };
 
 export default MetaTags;

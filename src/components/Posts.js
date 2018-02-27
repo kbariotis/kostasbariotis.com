@@ -5,17 +5,15 @@ import PropTypes from 'prop-types';
 
 import CommaSeparatedTags from './CommaSeparatedTags';
 
-const Posts = ({ posts }) =>
+const Posts = ({ posts }) => (
   <div>
     {posts
       .filter(post => post.frontmatter.title.length > 0)
-      .map((post, index) =>
+      .map((post, index) => (
         <article className="post" key={index}>
           <header className="post-head">
             <h1 className="post-title">
-              <GatsbyLink
-                to={post.frontmatter.path}
-              >
+              <GatsbyLink to={post.frontmatter.path}>
                 {post.frontmatter.title}
               </GatsbyLink>
             </h1>
@@ -29,22 +27,19 @@ const Posts = ({ posts }) =>
           <section className="post-excerpt">
             <p>
               {post.excerpt}{' '}
-              <GatsbyLink
-                to={post.frontmatter.path}
-              >
-                &raquo;
-              </GatsbyLink>
+              <GatsbyLink to={post.frontmatter.path}>&raquo;</GatsbyLink>
             </p>
           </section>
           <footer className="post-meta">
             <CommaSeparatedTags tags={post.frontmatter.tags} />
           </footer>
         </article>
-      )}
-  </div>;
+      ))}
+  </div>
+);
 
 Posts.propTypes = {
-  posts: PropTypes.arrayOf(PropTypes.object)
+  posts: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default Posts;

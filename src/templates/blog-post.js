@@ -5,7 +5,7 @@ import GatsbyLink from 'gatsby-link';
 import { ShareButtons } from 'react-share';
 import ReactDisqusThread from 'react-disqus-thread';
 import uuidv5 from 'uuid/v5';
-import Img from "gatsby-image";
+import Img from 'gatsby-image';
 
 import Menu from '../components/Menu';
 import BulletListTags from '../components/BulletListTags';
@@ -43,9 +43,7 @@ export default function Template({ data, pathContext }) {
       <main className="blog container" role="main">
         <div className="medium-8 medium-offset-2 large-10 large-offset-1 post">
           <header className="post-head">
-            <h1 className="post-title">
-              {post.frontmatter.title}
-            </h1>
+            <h1 className="post-title">{post.frontmatter.title}</h1>
           </header>
           <section className="post-meta">
             <div className="row">
@@ -91,53 +89,49 @@ export default function Template({ data, pathContext }) {
             <Separator />
             <footer className="post-footer">
               <section className="share text-center">
-                {!post.frontmatter.draft
-                  ? <ul className="share-buttons list-inline">
-                      <li>
-                        <b>Share this post on</b>
-                      </li>
-                      <li className="link-twitter">
-                        <TwitterShareButton
-                          url={fullUrl}
-                          title={post.frontmatter.title}
-                          via="kbariotis"
-                          className="share-twitter"
-                        >
-                          <span>Twitter</span>
-                        </TwitterShareButton>
-                      </li>
-                      <li className="link-facebook">
-                        <FacebookShareButton
-                          url={fullUrl}
-                          className="share-facebook"
-                        >
-                          <span>Facebook</span>
-                        </FacebookShareButton>
-                      </li>
-                      <li className="link-google-plus">
-                        <GooglePlusShareButton
-                          url={fullUrl}
-                          className="share-google-plus"
-                        >
-                          <span>Google+</span>
-                        </GooglePlusShareButton>
-                      </li>
-                      <li
-                        className="link-reddit"
+                {!post.frontmatter.draft ? (
+                  <ul className="share-buttons list-inline">
+                    <li>
+                      <b>Share this post on</b>
+                    </li>
+                    <li className="link-twitter">
+                      <TwitterShareButton
+                        url={fullUrl}
                         title={post.frontmatter.title}
+                        via="kbariotis"
+                        className="share-twitter"
                       >
-                        <RedditShareButton
-                          url={fullUrl}
-                          className="share-reddit"
-                        >
-                          <span>Reddit</span>
-                        </RedditShareButton>
-                      </li>
-                    </ul>
-                  : <small>
-                      This is a draft post, thus sharing is disabled. Please do
-                      not share untill is ready for prime time.
-                    </small>}
+                        <span>Twitter</span>
+                      </TwitterShareButton>
+                    </li>
+                    <li className="link-facebook">
+                      <FacebookShareButton
+                        url={fullUrl}
+                        className="share-facebook"
+                      >
+                        <span>Facebook</span>
+                      </FacebookShareButton>
+                    </li>
+                    <li className="link-google-plus">
+                      <GooglePlusShareButton
+                        url={fullUrl}
+                        className="share-google-plus"
+                      >
+                        <span>Google+</span>
+                      </GooglePlusShareButton>
+                    </li>
+                    <li className="link-reddit" title={post.frontmatter.title}>
+                      <RedditShareButton url={fullUrl} className="share-reddit">
+                        <span>Reddit</span>
+                      </RedditShareButton>
+                    </li>
+                  </ul>
+                ) : (
+                  <small>
+                    This is a draft post, thus sharing is disabled. Please do
+                    not share untill is ready for prime time.
+                  </small>
+                )}
               </section>
             </footer>
 
@@ -145,13 +139,14 @@ export default function Template({ data, pathContext }) {
               <header className="header">
                 <h2>Comments</h2>
               </header>
-              {isProduction &&
+              {isProduction && (
                 <ReactDisqusThread
                   shortname="kostasbariotis"
                   identifier={uuidv5(fullUrl, uuidv5.URL)}
                   title={post.frontmatter.title}
                   url={fullUrl}
-                />}
+                />
+              )}
             </section>
 
             <section className="blog-section">
