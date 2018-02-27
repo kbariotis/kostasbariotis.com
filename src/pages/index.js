@@ -1,7 +1,9 @@
+/* global graphql */
+
 import React from 'react';
+import PropTypes from 'prop-types';
 import GatsbyLink from 'gatsby-link';
 import Img from 'gatsby-image';
-import dateformat from 'dateformat';
 
 import Separator from './../components/Separator';
 import Menu from './../components/Menu';
@@ -28,9 +30,9 @@ export default function Index({ data }) {
             </GatsbyLink>
             <h1>Kostas Bariotis</h1>
             <p>
-              I'm Kostas Bariotis, a web developer, a proud wanderer and a
-              passionate doer. My mission is to write clean and efficient code,
-              to solve problems on the web and to learn something more.
+              I am Kostas Bariotis, a web developer, a proud wanderer and a passionate doer. My
+              mission is to write clean and efficient code, to solve problems on the web and to
+              learn something more.
             </p>
           </div>
           <header className="header">Latest Posts</header>
@@ -51,6 +53,10 @@ export default function Index({ data }) {
     </div>
   );
 }
+
+Index.propTypes = {
+  data: PropTypes.object,
+};
 
 export const pageQuery = graphql`
   query IndexQuery {

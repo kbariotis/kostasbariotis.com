@@ -11,19 +11,13 @@ const Pagination = ({ tag, page, pagesSum }) => (
         </GatsbyLink>
       )}
       {page > 2 && (
-        <GatsbyLink
-          className="newer-posts"
-          to={`/tag/${tag}/page/${page - 1}/`}
-        >
+        <GatsbyLink className="newer-posts" to={`/tag/${tag}/page/${page - 1}/`}>
           <span aria-hidden="true">←</span> Newer Posts
         </GatsbyLink>
       )}
       <span className="page-number">{`Page ${page} of ${pagesSum}`}</span>
       {page < pagesSum && (
-        <GatsbyLink
-          className="older-posts"
-          to={`/tag/${tag}/page/${page + 1}/`}
-        >
+        <GatsbyLink className="older-posts" to={`/tag/${tag}/page/${page + 1}/`}>
           Older Posts <span aria-hidden="true">→</span>
         </GatsbyLink>
       )}
@@ -32,7 +26,7 @@ const Pagination = ({ tag, page, pagesSum }) => (
 );
 
 Pagination.propTypes = {
-  tags: PropTypes.string,
+  tag: PropTypes.string,
   page: PropTypes.number,
   pagesSum: PropTypes.number,
 };

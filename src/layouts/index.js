@@ -1,12 +1,11 @@
+/* global graphql */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 
 import '../scss/boot.scss';
 
 import Footer from '../components/Footer';
-import MetaTags from '../components/MetaTags';
 
 export default function IndexLayout({ children, data }) {
   let { description, title } = data.site.siteMetadata;

@@ -1,5 +1,7 @@
+/* global graphql */
+
 import React from 'react';
-import GatsbyLink from 'gatsby-link';
+import PropTypes from 'prop-types';
 
 import Posts from '../components/Posts';
 import Menu from '../components/Menu';
@@ -8,13 +10,13 @@ import Separator from '../components/Separator';
 import MetaTags from '../components/MetaTags';
 
 export default function Tags({ pathContext, data }) {
-  const { title, siteUrl } = data.site.siteMetadata;
+  const { siteUrl } = data.site.siteMetadata;
   const { posts, tag, pagesSum, page } = pathContext;
 
   return (
     <section className="main-content">
       <MetaTags
-        title={`${tag} - ${title}`}
+        title={`Tag ${tag}`}
         description={`All posts talking about ${tag}`}
         tags={tag}
         siteUrl={siteUrl}
@@ -26,9 +28,7 @@ export default function Tags({ pathContext, data }) {
           <header className="header">
             <h1 className="tag-title tag-page-title">{tag}</h1>
           </header>
-          <section className="tag-meta">
-            A {posts.length} posts collection
-          </section>
+          <section className="tag-meta">A {posts.length} posts collection</section>
 
           <div className="posts">
             <Pagination page={page} pagesSum={pagesSum} tag={tag} />
@@ -42,6 +42,11 @@ export default function Tags({ pathContext, data }) {
     </section>
   );
 }
+
+Tags.propTypes = {
+  data: PropTypes.object,
+  pathContext: PropTypes.object,
+};
 
 export const tagsQuery = graphql`
   query TagsSiteMetadata {

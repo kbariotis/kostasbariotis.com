@@ -41,10 +41,14 @@
     "preserve": "npm run build",
     "serve": "gatsby serve",
     "start": "npm run develop",
-    "format": "prettier --trailing-comma es5 --single-quote --write \"src/**/*.js\"",
+    "lint": "./node_modules/.bin/eslint --fix src/**/*.js gatsby-config.js gatsby-browser.js gatsby-node.js",
     "test": "echo \"Should probably write some tests!\""
   },
   "dependencies": {
+    "eslint": "^4.18.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.7.0",
     "gatsby-image": "^1.0.39",
     "gatsby-remark-emoji": "0.0.1",
     "gatsby-remark-external-links": "0.0.4",

@@ -1,5 +1,7 @@
+/* global graphql */
+
 import React from 'react';
-import Helmet from 'react-helmet';
+import PropTypes from 'prop-types';
 import dateformat from 'dateformat';
 import GatsbyLink from 'gatsby-link';
 import { ShareButtons } from 'react-share';
@@ -16,7 +18,6 @@ import MetaTags from '../components/MetaTags';
 const {
   FacebookShareButton,
   GooglePlusShareButton,
-  LinkedinShareButton,
   TwitterShareButton,
   RedditShareButton,
 } = ShareButtons;
@@ -24,7 +25,7 @@ const {
 export default function Template({ data, pathContext }) {
   const { markdownRemark: post } = data;
   const { siteUrl } = data.site.siteMetadata;
-  const { next, prev } = pathContext;
+  const { next } = pathContext;
 
   const isProduction = process.env.NODE_ENV === 'production';
   const fullUrl = `${siteUrl}${post.frontmatter.path}`;
@@ -50,11 +51,7 @@ export default function Template({ data, pathContext }) {
               <div className="medium-4">
                 <ul className="list-inline">
                   <li>
-                    <GatsbyLink
-                      to="/"
-                      className="author-avatar"
-                      itemProp="name"
-                    >
+                    <GatsbyLink to="/" className="author-avatar" itemProp="name">
                       <Img sizes={data.file.childImageSharp.sizes} />
                     </GatsbyLink>
                   </li>
@@ -62,10 +59,7 @@ export default function Template({ data, pathContext }) {
                     <div className="author-name">Kostas Bariotis</div>
                     <time
                       className="post-date"
-                      dateTime={dateformat(
-                        post.frontmatter.date,
-                        'isoDateTime'
-                      )}
+                      dateTime={dateformat(post.frontmatter.date, 'isoDateTime')}
                     >
                       {dateformat(post.frontmatter.date, 'd mmmm yyyy')}
                     </time>
@@ -73,19 +67,13 @@ export default function Template({ data, pathContext }) {
                 </ul>
               </div>
               <div className="medium-8">
-                <BulletListTags
-                  tags={post.frontmatter.tags}
-                  draft={post.frontmatter.draft}
-                />
+                <BulletListTags tags={post.frontmatter.tags} draft={post.frontmatter.draft} />
               </div>
             </div>
           </section>
           <Separator />
           <article className="main-post {{post_class}}">
-            <section
-              className="post-content"
-              dangerouslySetInnerHTML={{ __html: post.html }}
-            />
+            <section className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
             <Separator />
             <footer className="post-footer">
               <section className="share text-center">
@@ -105,18 +93,12 @@ export default function Template({ data, pathContext }) {
                       </TwitterShareButton>
                     </li>
                     <li className="link-facebook">
-                      <FacebookShareButton
-                        url={fullUrl}
-                        className="share-facebook"
-                      >
+                      <FacebookShareButton url={fullUrl} className="share-facebook">
                         <span>Facebook</span>
                       </FacebookShareButton>
                     </li>
                     <li className="link-google-plus">
-                      <GooglePlusShareButton
-                        url={fullUrl}
-                        className="share-google-plus"
-                      >
+                      <GooglePlusShareButton url={fullUrl} className="share-google-plus">
                         <span>Google+</span>
                       </GooglePlusShareButton>
                     </li>
@@ -128,8 +110,8 @@ export default function Template({ data, pathContext }) {
                   </ul>
                 ) : (
                   <small>
-                    This is a draft post, thus sharing is disabled. Please do
-                    not share untill is ready for prime time.
+                    This is a draft post, thus sharing is disabled. Please do not share untill is
+                    ready for prime time.
                   </small>
                 )}
               </section>
@@ -161,6 +143,11 @@ export default function Template({ data, pathContext }) {
     </div>
   );
 }
+
+Template.propTypes = {
+  data: PropTypes.object,
+  pathContext: PropTypes.object,
+};
 
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {

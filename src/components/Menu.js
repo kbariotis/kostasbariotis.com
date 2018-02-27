@@ -34,9 +34,7 @@ class Menu extends React.Component {
               </button>
             </div>
             <div
-              className={`collapse navbar-collapse ${
-                this.state.menuOpened ? 'in' : ''
-              }`}
+              className={`collapse navbar-collapse ${this.state.menuOpened ? 'in' : ''}`}
               id="main-menu"
             >
               <ul className="nav navbar-nav navbar-right">
