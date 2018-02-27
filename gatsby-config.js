@@ -7,6 +7,7 @@ module.exports = {
     description: `I am Kostas Bariotis, a web developer, a proud wanderer and a passionate doer. My mission is to write clean and efficient code, to solve problems on the web and to learn something more.`,
   },
   plugins: [
+    'gatsby-plugin-offline',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sass',
     {
