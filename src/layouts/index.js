@@ -19,6 +19,10 @@ export default function IndexLayout({ children, data }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="HandheldFriendly" content="True" />
+        <meta
+          name="google-site-verification"
+          content="2cN-EmJ2d00_gaP6eUs43tdcXd1UL965Rs_UBQc0Oec"
+        />
       </Helmet>
       <section className="main-content">{children()}</section>
       <Footer />
