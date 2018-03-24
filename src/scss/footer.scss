@@ -6,7 +6,7 @@
     font-size: 1em;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
-    padding: 65px 0;
+    padding: 3.25em 0;
 
     .separator {
         color:#3B4B7D;
@@ -41,14 +41,14 @@
         }
         li {
             display: inline-block;
-            width: 40px;
-            height: 40px;
+            width: 2em;
+            height: 2em;
             font-size: 3em;
             text-align: center;
-            line-height: 40px;
+            line-height: 2em;
             -webkit-border-radius: 50%;
             border-radius: 50%;
-            margin: 10px;
+            margin: 0.5em;
             transition: all .1s ease;
             &:hover,
             &:focus {

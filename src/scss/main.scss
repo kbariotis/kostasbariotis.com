@@ -1,14 +1,25 @@
-html,
+html {
+  font-size: 20px;
+}
+
 body {
     background-color: $background;
     color: #fff;
     font-weight: 300;
-    font-family: 'Roboto', sans-serif;
+    font-family: sans-serif;
     line-height: 1.5em;
-    font-size: 20px;
+    font-size: 1em;
+
+    .subset-fonts-enabled & {
+      font-family: 'Roboto Subset', sans-serif;
+    }
+
+    .fonts-enabled &{
+      font-family: 'Roboto', sans-serif;
+    }
 
     @media(max-width: 768px) {
-        font-size: 18px;
+      font-size: 0.99em;
     }
 
     background: $background;
@@ -31,10 +42,10 @@ body {
     hyphens: auto;
 
     @include mobile {
-        background-size: 100% 125px;
+      background-size: 100% 6.25em;
     }
     @include tablet {
-        background-size: 100% 200px;
+      background-size: 100% 10em;
     }
 }
 
@@ -51,7 +62,18 @@ h6,
 .h5,
 .h6 {
     font-weight: 700;
-    font-family: 'Roboto Slab', serif;
+    font-family: sans-serif;
+    line-height: 1.5em;
+
+    @at-root {
+      .subset-fonts-enabled & {
+        font-family: 'Roboto Slab Subset', sans-serif;
+      }
+
+      .fonts-enabled & {
+        font-family: 'Roboto Slab', sans-serif;
+      }
+    }
 }
 
 a {
@@ -68,12 +90,12 @@ a {
 }
 
 .main-content {
-    margin: 0 0 100px 0;
+    margin: 0 0 5em 0;
 }
 
 .not-found-section {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 2.50em;
 }
 
 .header {
@@ -84,4 +106,9 @@ a {
 
 .gatsby-resp-image-wrapper {
     z-index: 1 !important;
+}
+
+.header-description {
+  font-size: 1.2em;
+  line-height: 1.4em;
 }

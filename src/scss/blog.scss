@@ -1,10 +1,10 @@
 .blog {
-    margin-top: 80px;
+    margin-top: 4em;
     .home-template & {
-        margin-top: 100px;
+        margin-top: 5em;
     }
     @media(max-width: 768px) {
-        margin-top: 50px;
+        margin-top: 2.5em;
     }
     .newer-posts {
         float: left;
@@ -12,7 +12,7 @@
         @media(max-width: 768px) {
             display: block;
             float: none;
-            margin-bottom: 20px;
+            margin-bottom: 1em;
         }
     }
     .older-posts {
@@ -21,15 +21,15 @@
         @media(max-width: 768px) {
             display: block;
             float: none;
-            margin-top: 20px;
+            margin-top: 1em;
         }
     }
     .separator {
         height: 2px;
         background: #4d71b7;
         width: 100%;
-        margin-bottom: 10px;
-        margin-top: 10px;
+        margin-bottom: 0.5em;
+        margin-top: 0.5em;
         display: block;
         background: linear-gradient(to right, #e52f45 0%, #e52f45 25%, #b42b3e 25%, #b42b3e 50%, #8ab2ff 50%, #8ab2ff 75%, #4d71b7 75%, #4d71b7 100%);
     }
@@ -57,21 +57,21 @@
             }
         }
         .post {
-            margin-bottom: 40px;
+            margin-bottom: 2em;
             color: rgba(255, 255, 255, 0.8);
         }
         time {
             color: rgba(255, 255, 255, 0.5);
         }
         .post-excerpt {
-            margin-top: 20px;
+            margin-top: 1em;
         }
         .post-meta .tags {
             color: rgba(255, 255, 255, 0.5);
         }
     }
     article.main-post {
-        margin-top: 50px;
+        margin-top: 2.5em;
         color: rgba(255, 255, 255, 0.8);
         img {
             max-width: 100%;
@@ -89,17 +89,17 @@
             border-left-color: $purple;
         }
         p {
-            padding-bottom: 20px;
+            padding-bottom: 1em;
         }
         .post-footer {
-            padding-top: 40px;
-            padding-bottom: 40px;
+            padding-top: 2em;
+            padding-bottom: 2em;
             font-size: 1.2em;
             .share-buttons {
                 li {
                     @media (max-width: 768px) {
                         display: block;
-                        line-height: 40px;
+                        line-height: 2em;
                     }
                 }
             }
@@ -108,7 +108,7 @@
                 @media (max-width: 768px) {
                     background-color: #00aced;
                     color: #fff;
-                    padding: 5px;
+                    padding: 0.25em;
                     width: 100%;
                     display: block;
                 }
@@ -118,7 +118,7 @@
                 @media (max-width: 768px) {
                     background-color: #ff5700;
                     color: #fff;
-                    padding: 5px;
+                    padding: 0.25em;
                     width: 100%;
                     display: block;
                 }
@@ -128,7 +128,7 @@
                 @media (max-width: 768px) {
                     background-color: #3b5998;
                     color: #fff;
-                    padding: 5px;
+                    padding: 0.25em;
                     width: 100%;
                     display: block;
                 }
@@ -138,7 +138,7 @@
                 @media (max-width: 768px) {
                     background-color: #dd4b39;
                     color: #fff;
-                    padding: 5px;
+                    padding: 0.25em;
                     width: 100%;
                     display: block;
                 }
@@ -148,8 +148,8 @@
     .post-meta {
         .author-avatar div {
             display: inline-block;
-            width: 50px;
-            height: 50px;
+            width: 2.5em;
+            height: 2.5em;
 
             img {
                 border-radius: 50%;
@@ -206,7 +206,7 @@
         color: $red;
     }
     .tag-meta {
-        margin-bottom: 50px;
+        margin-bottom: 2.5em;
     }
 }
 
@@ -217,10 +217,10 @@ code {
 }
 
 .blog-section {
-    margin-top: 50px;
+    margin-top: 2.5em;
 
     .header {
-        margin-bottom: 25px;
+        margin-bottom: 1.25em;
     }
 
     .text-right {
@@ -233,7 +233,7 @@ code {
 .navigate-link:active,
 .navigate-link:focus,
 .navigate-link {
-    font-size: 22px;
+    font-size: 1.11em;
     font-weight: bold;
     color: #8ab2ff;
     margin-bottom: 5px;
@@ -259,7 +259,7 @@ code {
     float: left;
 
     @media(max-width: 1200px) {
-        height: 150px;
+        height: 7.5em;
     }
     @media(max-width: 768px) {
         float: none;

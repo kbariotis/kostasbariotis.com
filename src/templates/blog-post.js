@@ -15,6 +15,8 @@ import NavigateLink from '../components/NavigateLink';
 import Separator from '../components/Separator';
 import MetaTags from '../components/MetaTags';
 
+import ArticleSchema from '../components/schemas/ArticleSchema';
+
 const {
   FacebookShareButton,
   GooglePlusShareButton,
@@ -32,6 +34,12 @@ export default function Template({ data, pathContext }) {
 
   return (
     <div>
+      <ArticleSchema
+        authorName={`Kostas Bariotis`}
+        title={`${post.frontmatter.title}`}
+        description={post.excerpt}
+        date={post.frontmatter.date}
+      />
       <MetaTags
         title={`${post.frontmatter.title}`}
         description={post.excerpt}

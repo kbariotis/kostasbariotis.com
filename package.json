@@ -52,6 +52,7 @@
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.7.0",
+    "fontfaceobserver": "^2.0.13",
     "gatsby-image": "^1.0.39",
     "gatsby-plugin-offline": "^1.0.14",
     "gatsby-remark-emoji": "0.0.1",

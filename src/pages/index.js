@@ -10,12 +10,15 @@ import Menu from './../components/Menu';
 import Posts from './../components/Posts';
 import MetaTags from './../components/MetaTags';
 
+import WebPageSchema from '../components/schemas/WebPageSchema';
+
 export default function Index({ data }) {
   let { edges: posts } = data.allMarkdownRemark;
   let { siteUrl, description, author } = data.site.siteMetadata;
   posts = posts.map(post => post.node);
   return (
     <div>
+      <WebPageSchema title={author} description={description} url={siteUrl} />
       <MetaTags
         noIndex={false}
         tags=""
@@ -36,7 +39,7 @@ export default function Index({ data }) {
               />
             </GatsbyLink>
             <h1>{author}</h1>
-            <p>{description}</p>
+            <p className="header-description" dangerouslySetInnerHTML={{ __html: description }} />
           </div>
           <header className="header">Latest Posts</header>
           <Separator />

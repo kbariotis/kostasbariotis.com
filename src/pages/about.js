@@ -259,8 +259,16 @@ export default function About({ data }) {
                   <div className="medium-8 text-right">How do I scale my codebase</div>
                 </div>
                 <div className="row">
-                  <div className="medium-offset-4 medium-8 text-right">Find all my presentation slides at <a rel="noopener noreferrer"
-                    target="_blank"href="https://slides.com/kostasbariotis/">Slides.com</a></div>
+                  <div className="medium-offset-4 medium-8 text-right">
+                    Find all my presentation slides at{' '}
+                    <a
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      href="https://slides.com/kostasbariotis/"
+                    >
+                      Slides.com
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
