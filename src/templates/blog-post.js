@@ -24,10 +24,10 @@ const {
   RedditShareButton,
 } = ShareButtons;
 
-export default function Template({ data, pathContext }) {
-  const { markdownRemark: post } = data;
+export default function Template({ data }) {
+  const { mainPost: post } = data;
+  const { nextPost: next } = data;
   const { siteUrl } = data.site.siteMetadata;
-  const { next } = pathContext;
 
   const isProduction = process.env.NODE_ENV === 'production';
   const fullUrl = `${siteUrl}${post.frontmatter.path}`;
@@ -158,7 +158,7 @@ Template.propTypes = {
 };
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
+  query BlogPostByPath($mainPostPath: String!, $nextPostPath: String!) {
     file(relativePath: { eq: "avatar.jpg" }) {
       childImageSharp {
         sizes {
@@ -173,7 +173,18 @@ export const pageQuery = graphql`
         siteUrl
       }
     }
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+    mainPost: markdownRemark(frontmatter: { path: { eq: $mainPostPath } }) {
+      html
+      excerpt
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        path
+        tags
+        title
+        draft
+      }
+    }
+    nextPost: markdownRemark(frontmatter: { path: { eq: $nextPostPath } }) {
       html
       excerpt
       frontmatter {

@@ -11,15 +11,43 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
    */
   return graphql(`
     {
-      site {
-        siteMetadata {
-          siteUrl
-          title
-          description
+      publishedPosts: allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+        filter: { frontmatter: { draft: { ne: true } } }
+      ) {
+        edges {
+          next {
+            frontmatter {
+              path
+            }
+          }
+          node {
+            excerpt(pruneLength: 250)
+            html
+            id
+            timeToRead
+            frontmatter {
+              date
+              path
+              tags
+              title
+              draft
+            }
+          }
         }
       }
-      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, limit: 1000) {
+      draftPosts: allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+        filter: { frontmatter: { draft: { eq: true } } }
+      ) {
         edges {
+          next {
+            frontmatter {
+              path
+            }
+          }
           node {
             excerpt(pruneLength: 250)
             html
@@ -36,45 +64,40 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         }
       }
     }
-  `).then(result => generateContent(createPage, result));
+  `).then(results => {
+    if (results.errors) {
+      return Promise.reject(results.errors);
+    }
+
+    const published = results.data.publishedPosts.edges;
+    const drafts = results.data.draftPosts.edges;
+
+    generateContent(createPage, published);
+    generateContent(createPage, drafts);
+
+    createTagPages(createPage, published);
+
+    createPagination(createPage, published, `/page`);
+    createPagination(createPage, drafts, `/drafts/page`);
+  });
 };
 
-function generateContent(createPage, graphqlResults) {
-  if (graphqlResults.errors) {
-    return Promise.reject(graphqlResults.errors);
-  }
-
+function generateContent(createPage, posts) {
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
-
-  /**
-   * Separate published posts and and drafts
-   */
-  const posts = graphqlResults.data.allMarkdownRemark.edges;
-  const published = posts.filter(post => !post.node.frontmatter.draft);
-  const drafts = posts.filter(post => post.node.frontmatter.draft);
-
-  createTagPages(createPage, published);
-  createPagination(createPage, published, `/page`);
-  createPagination(createPage, drafts, `/drafts/page`);
 
   /**
    * Create pages for each markdown file.
    */
-  posts.forEach(({ node }, index) => {
-    const prev = index === 0 ? false : posts[index - 1].node;
-    const next = index === posts.length - 1 ? false : posts[index + 1].node;
-
+  posts.forEach(({ node, next }) => {
     createPage({
       path: node.frontmatter.path,
       component: blogPostTemplate,
       context: {
-        prev,
-        next,
+        mainPostPath: node.frontmatter.path,
+        nextPostPath: next ? next.frontmatter.path : 'none',
       },
     });
   });
-
-  return drafts;
 }
 
 /**
