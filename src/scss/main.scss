@@ -62,16 +62,16 @@ h6,
 .h5,
 .h6 {
     font-weight: 700;
-    font-family: sans-serif;
+    font-family: serif;
     line-height: 1.5em;
 
     @at-root {
       .subset-fonts-enabled & {
-        font-family: 'Roboto Slab Subset', sans-serif;
+        font-family: 'Roboto Slab Subset', serif;
       }
 
       .fonts-enabled & {
-        font-family: 'Roboto Slab', sans-serif;
+        font-family: 'Roboto Slab', serif;
       }
     }
 }
