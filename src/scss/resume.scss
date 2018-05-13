@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import "~prismjs/themes/prism-tomorrow.css";
 
 $bootstrap-sass-asset-helper: true;
 
@@ -13,24 +12,13 @@ $font-size-base: 16px;
 @import "~bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
 @import "~bootstrap-sass/assets/stylesheets/bootstrap/scaffolding";
 @import "~bootstrap-sass/assets/stylesheets/bootstrap/type";
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/code";
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/forms";
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/navbar";
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/navs";
-@import "~bootstrap-sass/assets/stylesheets/bootstrap/component-animations";
 
 /* Override Bootstrap Grid naming */
 
-// @import "grid";
-@import "variables";
+@import "grid";
 @import "~bootstrap-sass/assets/stylesheets/bootstrap/utilities";
 @import "~bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
 
 @import "fonts";
 @import "entypo";
 @import "mixins";
-@import "main";
-@import "header";
-@import "footer";
-@import "blog";
-@import "about";

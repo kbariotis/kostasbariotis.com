@@ -1,5 +1,18 @@
 const path = require('path');
 
+exports.onCreatePage = ({ page, boundActionCreators }) => {
+  const { createPage } = boundActionCreators;
+
+  return new Promise(resolve => {
+    if (page.path.match(/^\/resume/)) {
+      page.layout = 'resume';
+      createPage(page);
+    }
+
+    resolve();
+  });
+};
+
 /**
  * This is where all starts
  */

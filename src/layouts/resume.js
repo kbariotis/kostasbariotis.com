@@ -3,11 +3,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import Footer from '../components/Footer';
+// import '../scss/resume.scss';
 
-import '../scss/boot.scss';
-
-export default function IndexLayout({ children, data }) {
+export default function ResumeLayout({ children, data }) {
   let { description, title } = data.site.siteMetadata;
 
   return (
@@ -19,24 +17,19 @@ export default function IndexLayout({ children, data }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <meta name="HandheldFriendly" content="True" />
-        <meta
-          name="google-site-verification"
-          content="2cN-EmJ2d00_gaP6eUs43tdcXd1UL965Rs_UBQc0Oec"
-        />
       </Helmet>
       <section className="main-content">{children()}</section>
-      <Footer />
     </div>
   );
 }
 
-IndexLayout.propTypes = {
+ResumeLayout.propTypes = {
   children: PropTypes.func,
   data: PropTypes.object,
 };
 
 export const pageQuery = graphql`
-  query LayoutQuery {
+  query ResumeLayoutQuery {
     site {
       siteMetadata {
         title

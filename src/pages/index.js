@@ -12,6 +12,8 @@ import MetaTags from './../components/MetaTags';
 
 import WebPageSchema from '../components/schemas/WebPageSchema';
 
+import { Grid, Row, Col } from 'react-flexbox-grid';
+
 export default function Index({ data }) {
   let { edges: posts } = data.allMarkdownRemark;
   let { siteUrl, description, author } = data.site.siteMetadata;
@@ -28,34 +30,46 @@ export default function Index({ data }) {
         path={'/'}
       />
       <Menu />
-      <section className="blog container">
-        <div className="medium-8 medium-offset-2 large-10 large-offset-1">
-          <div className="blog-header">
-            <GatsbyLink to="/" className="blog-header__link" itemProp="name">
-              <Img
-                className="header-avatar blog-header__img"
-                alt={author}
-                sizes={data.file.childImageSharp.sizes}
-              />
-            </GatsbyLink>
-            <h1>{author}</h1>
-            <p className="header-description" dangerouslySetInnerHTML={{ __html: description }} />
-          </div>
-          <header className="header">Latest Posts</header>
-          <Separator />
-          <div className="posts">
-            <Posts posts={posts} />
-            <Separator />
-            <article className="post text-right">
-              <header className="post-head">
-                <h3 className="post-title">
-                  <GatsbyLink to="/page/2">Older Posts &gt;</GatsbyLink>
-                </h3>
-              </header>
-            </article>
-          </div>
-        </div>
-      </section>
+      <Grid>
+        <Row center="xs">
+          <Col xs={8}>
+            <section
+              className="blog"
+              style={{
+                'text-align': 'left',
+              }}
+            >
+              <div className="blog-header">
+                <GatsbyLink to="/" className="blog-header__link" itemProp="name">
+                  <Img
+                    className="header-avatar blog-header__img"
+                    alt={author}
+                    sizes={data.file.childImageSharp.sizes}
+                  />
+                </GatsbyLink>
+                <h1>{author}</h1>
+                <p
+                  className="header-description"
+                  dangerouslySetInnerHTML={{ __html: description }}
+                />
+              </div>
+              <header className="header">Latest Posts</header>
+              <Separator />
+              <div className="posts">
+                <Posts posts={posts} />
+                <Separator />
+                <article className="post text-right">
+                  <header className="post-head">
+                    <h3 className="post-title">
+                      <GatsbyLink to="/page/2">Older Posts &gt;</GatsbyLink>
+                    </h3>
+                  </header>
+                </article>
+              </div>
+            </section>
+          </Col>
+        </Row>
+      </Grid>
     </div>
   );
 }
