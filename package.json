@@ -4,7 +4,7 @@
   "private": true,
   "devDependencies": {
     "bootstrap-sass": "^3.3.7",
-    "dateformat": "^2.2.0",
+    "dateformat": "^3.0.3",
     "gatsby": "^1.9.175",
     "gatsby-cli": "^1.1.33",
     "gatsby-link": "^1.6.35",

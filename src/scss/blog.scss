@@ -1,7 +1,4 @@
 .blog {
-    .home-template & {
-        margin-top: 5em;
-    }
     @media(max-width: 768px) {
         margin-top: 2.5em;
     }
@@ -26,59 +23,6 @@
         p {
             padding-bottom: 1em;
         }
-        .post-footer {
-            padding-top: 2em;
-            padding-bottom: 2em;
-            font-size: 1.2em;
-            .share-buttons {
-                li {
-                    @media (max-width: 768px) {
-                        display: block;
-                        line-height: 2em;
-                    }
-                }
-            }
-            .share-twitter {
-                color: #00aced;
-                @media (max-width: 768px) {
-                    background-color: #00aced;
-                    color: #fff;
-                    padding: 0.25em;
-                    width: 100%;
-                    display: block;
-                }
-            }
-            .share-reddit {
-                color: #ff5700;
-                @media (max-width: 768px) {
-                    background-color: #ff5700;
-                    color: #fff;
-                    padding: 0.25em;
-                    width: 100%;
-                    display: block;
-                }
-            }
-            .share-facebook {
-                color: #3b5998;
-                @media (max-width: 768px) {
-                    background-color: #3b5998;
-                    color: #fff;
-                    padding: 0.25em;
-                    width: 100%;
-                    display: block;
-                }
-            }
-            .share-google-plus {
-                color: #dd4b39;
-                @media (max-width: 768px) {
-                    background-color: #dd4b39;
-                    color: #fff;
-                    padding: 0.25em;
-                    width: 100%;
-                    display: block;
-                }
-            }
-        }
     }
 }
 
@@ -86,33 +30,6 @@ code {
     background: #2d2d2d;
     color: #FF9619;
     border-radius: 4px;
-}
-
-.blog-section {
-    margin-top: 2.5em;
-
-    .header {
-        margin-bottom: 1.25em;
-    }
-
-    .text-right {
-        @media(max-width: $desktop-width) {
-            text-align: left;
-        }
-    }
-}
-
-.navigate-link:active,
-.navigate-link:focus,
-.navigate-link {
-    font-size: 1.11em;
-    font-weight: bold;
-    color: #8ab2ff;
-    margin-bottom: 5px;
-}
-
-.navigate-desc {
-    margin-top: $vpadding;
 }
 
 .drafts-description {

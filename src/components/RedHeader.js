@@ -13,7 +13,7 @@ const header = css({
 const RedHeader = ({ children }) => <header className={header}>{children}</header>;
 
 RedHeader.propTypes = {
-  children: PropTypes.object.isRequired(),
+  children: PropTypes.object.isRequired,
 };
 
 export default RedHeader;

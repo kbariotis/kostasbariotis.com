@@ -4,7 +4,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import dateformat from 'dateformat';
 import GatsbyLink from 'gatsby-link';
-import { ShareButtons } from 'react-share';
 import ReactDisqusThread from 'react-disqus-thread';
 import uuidv5 from 'uuid/v5';
 import Img from 'gatsby-image';
@@ -13,6 +12,7 @@ import { css } from 'glamor';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import Menu from '../components/Menu';
+import Share from '../components/Share';
 import BulletListTags from '../components/BulletListTags';
 import NavigateLink from '../components/NavigateLink';
 import Separator from '../components/Separator';
@@ -47,12 +47,18 @@ const authorAvatarImg = css({
   border: '3px solid white',
 });
 
-const {
-  FacebookShareButton,
-  GooglePlusShareButton,
-  TwitterShareButton,
-  RedditShareButton,
-} = ShareButtons;
+const postFooter = css({
+  paddingTop: '2em',
+  paddingBottom: '2em',
+  fontSize: '1.2em',
+});
+const blogSection = css({
+  marginTop: '2.5em',
+});
+
+const blogSectionHeader = css({
+  marginBottom: '1.25em',
+});
 
 export default function Template({ data }) {
   const { mainPost: post } = data;
@@ -118,50 +124,16 @@ export default function Template({ data }) {
               <article className="main-post {{post_class}}">
                 <section className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
                 <Separator />
-                <footer className="post-footer">
-                  <section className="share text-center">
-                    {!post.frontmatter.draft ? (
-                      <ul className="share-buttons list-inline">
-                        <li>
-                          <b>Share this post on</b>
-                        </li>
-                        <li className="link-twitter">
-                          <TwitterShareButton
-                            url={fullUrl}
-                            title={post.frontmatter.title}
-                            via="kbariotis"
-                            className="share-twitter"
-                          >
-                            <span>Twitter</span>
-                          </TwitterShareButton>
-                        </li>
-                        <li className="link-facebook">
-                          <FacebookShareButton url={fullUrl} className="share-facebook">
-                            <span>Facebook</span>
-                          </FacebookShareButton>
-                        </li>
-                        <li className="link-google-plus">
-                          <GooglePlusShareButton url={fullUrl} className="share-google-plus">
-                            <span>Google+</span>
-                          </GooglePlusShareButton>
-                        </li>
-                        <li className="link-reddit" title={post.frontmatter.title}>
-                          <RedditShareButton url={fullUrl} className="share-reddit">
-                            <span>Reddit</span>
-                          </RedditShareButton>
-                        </li>
-                      </ul>
-                    ) : (
-                      <small>
-                        This is a draft post, thus sharing is disabled. Please do not share untill
-                        is ready for prime time.
-                      </small>
-                    )}
-                  </section>
+                <footer className={postFooter}>
+                  <Share
+                    title={post.frontmatter.title}
+                    draft={post.frontmatter.draft}
+                    fullUrl={fullUrl}
+                  />
                 </footer>
 
-                <section className="blog-section">
-                  <header className="header">
+                <section className={blogSection}>
+                  <header className={blogSectionHeader}>
                     <h2>Comments</h2>
                   </header>
                   {isProduction && (
@@ -174,8 +146,8 @@ export default function Template({ data }) {
                   )}
                 </section>
 
-                <section className="blog-section">
-                  <header className="header">
+                <section className={blogSection}>
+                  <header className={blogSectionHeader}>
                     <h2>Read Next</h2>
                   </header>
                   <NavigateLink post={next} />
