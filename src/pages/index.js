@@ -2,10 +2,12 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import GatsbyLink from 'gatsby-link';
-import Img from 'gatsby-image';
+
+import { css } from 'glamor';
 
 import Separator from './../components/Separator';
+import AuthorHeader from './../components/AuthorHeader';
+import RedHeader from './../components/RedHeader';
 import Menu from './../components/Menu';
 import Posts from './../components/Posts';
 import MetaTags from './../components/MetaTags';
@@ -13,6 +15,11 @@ import MetaTags from './../components/MetaTags';
 import WebPageSchema from '../components/schemas/WebPageSchema';
 
 import { Grid, Row, Col } from 'react-flexbox-grid';
+
+const blogContainer = css({
+  marginTop: '4em',
+  textAlign: 'left',
+});
 
 export default function Index({ data }) {
   let { edges: posts } = data.allMarkdownRemark;
@@ -30,43 +37,15 @@ export default function Index({ data }) {
         path={'/'}
       />
       <Menu />
-      <Grid>
-        <Row center="xs">
-          <Col xs={8}>
-            <section
-              className="blog"
-              style={{
-                'text-align': 'left',
-              }}
-            >
-              <div className="blog-header">
-                <GatsbyLink to="/" className="blog-header__link" itemProp="name">
-                  <Img
-                    className="header-avatar blog-header__img"
-                    alt={author}
-                    sizes={data.file.childImageSharp.sizes}
-                  />
-                </GatsbyLink>
-                <h1>{author}</h1>
-                <p
-                  className="header-description"
-                  dangerouslySetInnerHTML={{ __html: description }}
-                />
-              </div>
-              <header className="header">Latest Posts</header>
-              <Separator />
-              <div className="posts">
-                <Posts posts={posts} />
-                <Separator />
-                <article className="post text-right">
-                  <header className="post-head">
-                    <h3 className="post-title">
-                      <GatsbyLink to="/page/2">Older Posts &gt;</GatsbyLink>
-                    </h3>
-                  </header>
-                </article>
-              </div>
-            </section>
+      <Grid className={blogContainer}>
+        <Row>
+          <Col xs={8} xsOffset={2}>
+            <AuthorHeader sizes={data.file.childImageSharp.sizes} author={author}>
+              {description}
+            </AuthorHeader>
+            <RedHeader>Latest Posts</RedHeader>
+            <Separator />
+            <Posts posts={posts} />
           </Col>
         </Row>
       </Grid>

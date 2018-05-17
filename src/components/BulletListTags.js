@@ -1,21 +1,69 @@
 import React from 'react';
 import GatsbyLink from 'gatsby-link';
 import PropTypes from 'prop-types';
+import { css } from 'glamor';
+import { Row, Col } from 'react-flexbox-grid';
+
+import Variables from './variables';
+
+const tagsItemStyle = css({
+  fontSize: '0.8em',
+  margin: '5px 5px',
+  border: `2px solid ${Variables.lightblue}`,
+  textAlign: 'center',
+  borderRadius: '100px / 100px',
+  '&:hover': {
+    background: Variables.lightblue,
+    a: {
+      color: Variables.darkpurple,
+    },
+  },
+});
+
+const tagsItemLink = css({
+  color: Variables.lightblue,
+  display: 'block',
+  width: 'auto',
+  height: '30px',
+  lineHeight: '27px',
+  padding: '2px 20px',
+  'a:hover,a:active': {
+    textDecoration: 'none',
+  },
+});
+
+const tagsDraftItemStyle = css({
+  borderColor: Variables.red,
+});
+
+const tagsDraftItemLink = css({
+  color: Variables.red,
+  '&:hover': {
+    background: Variables.red,
+    a: {
+      color: 'white',
+    },
+  },
+});
 
 const BulletListTags = ({ tags, draft }) => (
-  <ul className="tags list-inline text-right">
+  <Row end="xs">
     {tags &&
       tags.split(', ').map((tag, index) => (
-        <li key={index}>
-          <GatsbyLink to={`/tag/${tag}`}>{tag}</GatsbyLink>
-        </li>
+        <Col key={index} className={tagsItemStyle}>
+          <GatsbyLink className={tagsItemLink} to={`/tag/${tag}`}>
+            {tag}
+          </GatsbyLink>
+        </Col>
       ))}
     {draft && (
-      <li className="draft-tag">
-        <GatsbyLink to={`/drafts`}>Draft</GatsbyLink>
-      </li>
+      <Col className={`${tagsDraftItemStyle} ${tagsItemStyle}`}>
+        <GatsbyLink className={tagsDraftItemLink} to={`/drafts`}>
+          Draft
+        </GatsbyLink>
+      </Col>
     )}
-  </ul>
+  </Row>
 );
 
 BulletListTags.propTypes = {

@@ -2,13 +2,28 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { css } from 'glamor';
 
 import Posts from '../components/Posts';
 import Menu from '../components/Menu';
 import Pagination from '../components/TagsPagination';
 import Separator from '../components/Separator';
 import MetaTags from '../components/MetaTags';
+import Variables from '../components/variables';
 
+import { Grid, Row, Col } from 'react-flexbox-grid';
+
+const tagTitle = css({
+  color: Variables.red,
+});
+const tagMeta = css({
+  marginBottom: '2.5em',
+});
+
+const blogContainer = css({
+  marginTop: '4em',
+  textAlign: 'left',
+});
 export default function Tags({ pathContext, data }) {
   const { siteUrl } = data.site.siteMetadata;
   const { posts, tag, pagesSum, page } = pathContext;
@@ -24,22 +39,21 @@ export default function Tags({ pathContext, data }) {
         noIndex={false}
       />
       <Menu />
-      <section className="blog container tags-collection">
-        <div className="medium-8 medium-offset-2 large-10 large-offset-1">
-          <header className="header">
-            <h1 className="tag-title tag-page-title">{tag}</h1>
-          </header>
-          <section className="tag-meta">A {posts.length} posts collection</section>
-
-          <div className="posts">
+      <Grid className={blogContainer}>
+        <Row>
+          <Col md={8} mdOffset={2} lg={10} lgOffset={1}>
+            <header className="header">
+              <h1 className={tagTitle}>{tag}</h1>
+            </header>
+            <section className={tagMeta}>A {posts.length} posts collection</section>
             <Pagination page={page} pagesSum={pagesSum} tag={tag} />
             <Separator />
             <Posts posts={posts} />
             <Separator />
             <Pagination page={page} pagesSum={pagesSum} tag={tag} />
-          </div>
-        </div>
-      </section>
+          </Col>
+        </Row>
+      </Grid>
     </section>
   );
 }

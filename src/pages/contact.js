@@ -2,11 +2,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import GatsbyLink from 'gatsby-link';
-import Img from 'gatsby-image';
 
-import Separator from './../components/Separator';
 import Menu from './../components/Menu';
 import MetaTags from './../components/MetaTags';
+import Header from './../components/Header';
 
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
@@ -23,6 +22,9 @@ export default function Contact({ data }) {
       />
       <Menu />
       <Grid className="blog about">
+        <Header sizes={data.file.childImageSharp.sizes}>
+          In need for a Web Developer? <br />Search no more.
+        </Header>
         <Row center="xs">
           <Col
             xs={8}
@@ -30,17 +32,6 @@ export default function Contact({ data }) {
               'text-align': 'left',
             }}
           >
-            <header className="header">
-              <Row center="xs">
-                <Col>
-                  <Img sizes={data.file.childImageSharp.sizes} className="header-avatar" />
-                  <h1>
-                    In need for a Web Developer? <br />Search no more.
-                  </h1>
-                </Col>
-              </Row>
-            </header>
-            <Separator />
             <main role="main">
               <p>
                 I am a web developer with almost ten years of experience in creating web

@@ -55,10 +55,13 @@
     "fontfaceobserver": "^2.0.13",
     "gatsby-image": "^1.0.39",
     "gatsby-plugin-offline": "^1.0.14",
+    "gatsby-plugin-typography": "^1.7.18",
     "gatsby-remark-emoji": "0.0.1",
     "gatsby-remark-external-links": "0.0.4",
     "gatsby-transformer-sharp": "^1.6.21",
+    "glamor": "^2.20.40",
     "npm": "^5.6.0",
+    "react-burger-menu": "^2.4.4",
     "react-flexbox-grid": "^2.1.0"
   },
   "lint-staged": {

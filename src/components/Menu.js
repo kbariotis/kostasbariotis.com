@@ -1,81 +1,79 @@
 import React from 'react';
 import GatsbyLink from 'gatsby-link';
 
+import { slide as BurgerMenu } from 'react-burger-menu';
+
+var styles = {
+  bmBurgerButton: {
+    position: 'fixed',
+    width: '36px',
+    height: '30px',
+    left: '36px',
+    top: '36px',
+  },
+  bmBurgerBars: {
+    background: '#373a47',
+  },
+  bmCrossButton: {
+    height: '24px',
+    width: '24px',
+  },
+  bmCross: {
+    background: '#bdc3c7',
+  },
+  bmMenu: {
+    background: '#373a47',
+    padding: '2.5em 1.5em 0',
+    fontSize: '1.15em',
+  },
+  bmMorphShape: {
+    fill: '#373a47',
+  },
+  bmItemList: {
+    color: '#b8b7ad',
+    padding: '0.8em',
+  },
+  bmOverlay: {
+    background: 'rgba(0, 0, 0, 0.3)',
+  },
+};
+
 class Menu extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      menuOpened: false,
-    };
   }
 
-  handleClick() {
-    this.setState({
-      menuOpened: !this.state.menuOpened,
-    });
-  }
   render() {
     return (
-      <nav className="navbar navbar-default">
-        {/* <div className="image-placeholder" /> */}
-        <div className="container">
-          <div className="medium-8 medium-offset-2 large-10 large-offset-1">
-            <div className="navbar-header">
-              <button
-                type="button"
-                className="navbar-toggle collapsed"
-                onClick={this.handleClick.bind(this)}
-              >
-                <span className="sr-only">Toggle navigation</span>
-                <span className="icon-bar" />
-                <span className="icon-bar" />
-                <span className="icon-bar" />
-              </button>
-            </div>
-            <div
-              className={`collapse navbar-collapse ${this.state.menuOpened ? 'in' : ''}`}
-              id="main-menu"
-            >
-              <ul className="nav navbar-nav navbar-right">
-                <li>
-                  <GatsbyLink
-                    exact
-                    activeStyle={{
-                      color: '#e52f45',
-                    }}
-                    to="/"
-                  >
-                    Home
-                  </GatsbyLink>
-                </li>
-                <li>
-                  <GatsbyLink
-                    exact
-                    activeStyle={{
-                      color: '#e52f45',
-                    }}
-                    to="/about"
-                  >
-                    About
-                  </GatsbyLink>
-                </li>
-                <li>
-                  <GatsbyLink
-                    exact
-                    activeStyle={{
-                      color: '#e52f45',
-                    }}
-                    to="/contact"
-                  >
-                    Contact
-                  </GatsbyLink>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <BurgerMenu styles={styles}>
+        <GatsbyLink
+          exact
+          activeStyle={{
+            color: '#e52f45',
+          }}
+          to="/"
+        >
+          Home
+        </GatsbyLink>
+        <GatsbyLink
+          exact
+          activeStyle={{
+            color: '#e52f45',
+          }}
+          to="/about"
+        >
+          About
+        </GatsbyLink>
+        <GatsbyLink
+          exact
+          activeStyle={{
+            color: '#e52f45',
+          }}
+          to="/contact"
+        >
+          Contact
+        </GatsbyLink>
+      </BurgerMenu>
     );
   }
 }

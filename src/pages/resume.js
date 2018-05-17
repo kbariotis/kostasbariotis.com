@@ -7,7 +7,7 @@ export default function Resume() {
   return (
     <div>
       <section className="container">
-        <div className="medium-8 medium-offset-2 large-10 large-offset-1">
+        <div className="medium-8 mediumOffset-2 large-10 largeOffset-1">
           <ul className="inline">
             <li>Site</li>
             <li>Email</li>

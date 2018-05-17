@@ -24,7 +24,7 @@ export default function NotFound() {
       />
       <Menu />
       <section className="blog container about">
-        <div className="medium-8 medium-offset-2 large-10 large-offset-1">
+        <div className="medium-8 mediumOffset-2 large-10 largeOffset-1">
           <header className="header">
             <div className="row text-center">
               <h1>AW NO! The page you are trying to access is not here.</h1>

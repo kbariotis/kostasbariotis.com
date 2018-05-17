@@ -11,6 +11,12 @@ module.exports = {
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sass',
     {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/typography.js`,
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/blog`,
