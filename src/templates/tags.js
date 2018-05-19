@@ -3,14 +3,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from 'glamor';
-
-import Posts from '../components/Posts';
-import Pagination from '../components/TagsPagination';
-import Separator from '../components/Separator';
-import MetaTags from '../components/MetaTags';
-import RedHeader from '../components/RedHeader';
-
 import { Row, Col } from 'react-flexbox-grid';
+
+import Posts from '../components/blog/Posts';
+import Pagination from '../components/blog/TagsPagination';
+import Separator from '../components/blog/Separator';
+import MetaTags from '../components/blog/MetaTags';
+import RedHeader from '../components/blog/RedHeader';
 
 const tagMeta = css({
   marginBottom: '2.5em',

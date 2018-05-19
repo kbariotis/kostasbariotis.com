@@ -2,16 +2,14 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import Separator from './../components/Separator';
-import AuthorHeader from './../components/AuthorHeader';
-import RedHeader from './../components/RedHeader';
-import Posts from './../components/Posts';
-import MetaTags from './../components/MetaTags';
-
-import WebPageSchema from '../components/schemas/WebPageSchema';
-
 import { Row, Col } from 'react-flexbox-grid';
+
+import Separator from '../components/blog/Separator';
+import AuthorHeader from '../components/blog/AuthorHeader';
+import RedHeader from '../components/blog/RedHeader';
+import Posts from '../components/blog/Posts';
+import MetaTags from '../components/blog/MetaTags';
+import WebPageSchema from '../components/blog/schemas/WebPageSchema';
 
 export default function Index({ data }) {
   let { edges: posts } = data.allMarkdownRemark;

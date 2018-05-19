@@ -2,13 +2,12 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import Header from './../components/Header';
-import BioEntry from './../components/BioEntry';
-import MetaTags from './../components/MetaTags';
-import AboutSection from './../components/AboutSection';
-
 import { Row, Col } from 'react-flexbox-grid';
+
+import Header from '../components/blog/Header';
+import BioEntry from '../components/blog/BioEntry';
+import MetaTags from '../components/blog/MetaTags';
+import AboutSection from '../components/blog/AboutSection';
 
 export default function About({ data }) {
   return (

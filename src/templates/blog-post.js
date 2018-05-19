@@ -8,17 +8,15 @@ import ReactDisqusThread from 'react-disqus-thread';
 import uuidv5 from 'uuid/v5';
 import Img from 'gatsby-image';
 import { css } from 'glamor';
-
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
-import Share from '../components/Share';
-import Post from '../components/Post';
-import BulletListTags from '../components/BulletListTags';
-import Separator from '../components/Separator';
-import MetaTags from '../components/MetaTags';
-import Variables from '../components/variables';
-
-import ArticleSchema from '../components/schemas/ArticleSchema';
+import Share from '../components/blog/Share';
+import Post from '../components/blog/Post';
+import BulletListTags from '../components/blog/BulletListTags';
+import Separator from '../components/blog/Separator';
+import MetaTags from '../components/blog/MetaTags';
+import Variables from '../components/blog/variables';
+import ArticleSchema from '../components/blog/schemas/ArticleSchema';
 
 const postTitle = css({
   color: Variables.red,

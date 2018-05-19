@@ -2,13 +2,12 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import Separator from './../components/Separator';
-import Posts from './../components/Posts';
-import MetaTags from './../components/MetaTags';
-import RedHeader from './../components/RedHeader';
-
 import { Row, Col } from 'react-flexbox-grid';
+
+import Separator from '../components/blog/Separator';
+import Posts from '../components/blog/Posts';
+import MetaTags from '../components/blog/MetaTags';
+import RedHeader from '../components/blog/RedHeader';
 
 export default function Drafts({ data }) {
   let { edges: posts } = data.allMarkdownRemark;

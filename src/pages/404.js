@@ -2,10 +2,10 @@ import React from 'react';
 import GatsbyLink from 'gatsby-link';
 import Helmet from 'react-helmet';
 import { css } from 'glamor';
-
-import Separator from './../components/Separator';
-import RedHeader from './../components/RedHeader';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+
+import Separator from '../components/blog/Separator';
+import RedHeader from '../components/blog/RedHeader';
 
 const notFoundSection = css({
   marginTop: '2.50em',

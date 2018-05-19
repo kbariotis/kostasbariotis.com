@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
-import OGImageImg from './../../static/images/og.jpg';
+import OGImageImg from './../../../static/images/og.jpg';
 
 const MetaTags = ({ title, description, path, tags, noIndex, siteUrl }) => (
   <div>

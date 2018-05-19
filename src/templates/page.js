@@ -2,13 +2,12 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import Pagination from '../components/Pagination';
-import Posts from '../components/Posts';
-import Separator from '../components/Separator';
-import MetaTags from '../components/MetaTags';
-
 import { Row, Col } from 'react-flexbox-grid';
+
+import Pagination from '../components/blog/Pagination';
+import Posts from '../components/blog/Posts';
+import Separator from '../components/blog/Separator';
+import MetaTags from '../components/blog/MetaTags';
 
 export default function Pages({ pathContext, data }) {
   const { description, siteUrl } = data.site.siteMetadata;

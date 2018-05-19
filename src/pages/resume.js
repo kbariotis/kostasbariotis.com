@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import { css } from 'glamor';
 import { Grid } from 'react-flexbox-grid';
 
-import QuickLinks from './components/resume/QuickLinks';
-import ProjectItem from './components/resume/ProjectItem';
+import QuickLinks from '../components/resume/QuickLinks';
+import ProjectItem from '../components/resume/ProjectItem';
 
 const textCenter = css({
   textAlign: 'center',

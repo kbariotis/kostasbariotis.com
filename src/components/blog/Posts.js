@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 
 import { css } from 'glamor';
 
-import Separator from './../components/Separator';
-import Post from './../components/Post';
+import Separator from './Separator';
+import Post from './Post';
 import Variables from './variables';
 
 const postTitle = css({

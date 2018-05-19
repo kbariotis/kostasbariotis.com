@@ -2,11 +2,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import GatsbyLink from 'gatsby-link';
-
-import MetaTags from './../components/MetaTags';
-import Header from './../components/Header';
-
 import { Row, Col } from 'react-flexbox-grid';
+
+import MetaTags from '../components/blog/MetaTags';
+import Header from '../components/blog/Header';
 
 export default function Contact({ data }) {
   return (

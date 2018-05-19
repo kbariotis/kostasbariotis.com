@@ -3,12 +3,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { css } from 'glamor';
-
-import Footer from '../components/Footer';
-import Variables from '../components/variables';
-import Menu from '../components/Menu';
-
 import { Grid } from 'react-flexbox-grid';
+
+import Footer from '../components/blog/Footer';
+import Variables from '../components/blog/variables';
+import Menu from '../components/blog/Menu';
 
 const bodyStyle = css({
   backgroundColor: Variables.background,
