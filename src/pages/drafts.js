@@ -2,19 +2,13 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from 'glamor';
 
 import Separator from './../components/Separator';
-import Menu from './../components/Menu';
 import Posts from './../components/Posts';
 import MetaTags from './../components/MetaTags';
+import RedHeader from './../components/RedHeader';
 
-import { Grid, Row, Col } from 'react-flexbox-grid';
-
-const blogContainer = css({
-  marginTop: '4em',
-  textAlign: 'left',
-});
+import { Row, Col } from 'react-flexbox-grid';
 
 export default function Drafts({ data }) {
   let { edges: posts } = data.allMarkdownRemark;
@@ -32,26 +26,21 @@ export default function Drafts({ data }) {
         }
         noIndex={true}
       />
-      <Menu />
-      <Grid className="blog">
-        <Row center="xs">
-          <Col xs={8}>
-            <section className={blogContainer}>
-              <header className="header">Drafts</header>
-              <p className="drafts-description">
-                These are the draft posts either I am currently working on either I have abandoned
-                them for some reason. You can read them and comment on them if you think you can
-                help me complete them. It will be fun to write an article together. I will also
-                include you as a co-author.
-              </p>
-              <Separator />
-              <div>
-                <Posts posts={posts} />
-              </div>
-            </section>
-          </Col>
-        </Row>
-      </Grid>
+      <Row center="xs">
+        <Col xs={8}>
+          <RedHeader>Drafts</RedHeader>
+          <p className="drafts-description">
+            These are the draft posts either I am currently working on either I have abandoned them
+            for some reason. You can read them and comment on them if you think you can help me
+            complete them. It will be fun to write an article together. I will also include you as a
+            co-author.
+          </p>
+          <Separator />
+          <div>
+            <Posts posts={posts} />
+          </div>
+        </Col>
+      </Row>
     </div>
   );
 }

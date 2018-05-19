@@ -3,23 +3,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { css } from 'glamor';
-
 import Separator from './../components/Separator';
 import AuthorHeader from './../components/AuthorHeader';
 import RedHeader from './../components/RedHeader';
-import Menu from './../components/Menu';
 import Posts from './../components/Posts';
 import MetaTags from './../components/MetaTags';
 
 import WebPageSchema from '../components/schemas/WebPageSchema';
 
-import { Grid, Row, Col } from 'react-flexbox-grid';
-
-const blogContainer = css({
-  marginTop: '4em',
-  textAlign: 'left',
-});
+import { Row, Col } from 'react-flexbox-grid';
 
 export default function Index({ data }) {
   let { edges: posts } = data.allMarkdownRemark;
@@ -36,19 +28,16 @@ export default function Index({ data }) {
         siteUrl={siteUrl}
         path={'/'}
       />
-      <Menu />
-      <Grid className={blogContainer}>
-        <Row>
-          <Col xs={8} xsOffset={2}>
-            <AuthorHeader sizes={data.file.childImageSharp.sizes} author={author}>
-              {description}
-            </AuthorHeader>
-            <RedHeader>Latest Posts</RedHeader>
-            <Separator />
-            <Posts posts={posts} />
-          </Col>
-        </Row>
-      </Grid>
+      <Row>
+        <Col xs={8} xsOffset={2}>
+          <AuthorHeader sizes={data.file.childImageSharp.sizes} author={author}>
+            {description}
+          </AuthorHeader>
+          <RedHeader>Latest Posts</RedHeader>
+          <Separator />
+          <Posts posts={posts} />
+        </Col>
+      </Row>
     </div>
   );
 }

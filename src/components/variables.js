@@ -11,5 +11,4 @@ export default {
   lightblue: '#8ab2ff',
   red: '#e52f45',
   blue: '#3B4B7D',
-  vpadding: '20px',
 };

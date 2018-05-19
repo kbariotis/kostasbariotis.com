@@ -12,7 +12,6 @@ import Variables from './variables';
 const postTitle = css({
   fontSize: '1.5em',
   fontWeight: '700',
-  marginBottom: 2 * Variables.vpadding,
   color: Variables.lightblue,
   '@media(max-width: 768px)': {
     textAlign: 'left',

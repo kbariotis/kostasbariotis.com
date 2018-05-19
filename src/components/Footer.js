@@ -27,7 +27,6 @@ const footerLinkSeparator = css({
 
 const footerSocial = css({
   background: Variables.darkerpurple,
-  padding: Variables.vpadding * 20,
   color: Variables.darkpurple,
   fontSize: '0.9em',
 });
@@ -69,6 +68,7 @@ const footerSocialListItem = css({
 
 const footerText = css({
   textAlign: 'center',
+  paddingTop: '4em',
 });
 const Footer = () => (
   <div>

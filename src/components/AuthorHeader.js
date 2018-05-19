@@ -4,11 +4,8 @@ import Img from 'gatsby-image';
 import { css } from 'glamor';
 import GatsbyLink from 'gatsby-link';
 
-import Variables from './variables';
-
 const blogHeader = css({
   display: 'block',
-  marginBottom: Variables.vpadding * 4,
 });
 
 const blogHeaderLink = css({

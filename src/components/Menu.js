@@ -38,43 +38,36 @@ var styles = {
   },
 };
 
-class Menu extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const Menu = () => (
+  <BurgerMenu styles={styles}>
+    <GatsbyLink
+      exact
+      activeStyle={{
+        color: '#e52f45',
+      }}
+      to="/"
+    >
+      Home
+    </GatsbyLink>
+    <GatsbyLink
+      exact
+      activeStyle={{
+        color: '#e52f45',
+      }}
+      to="/about"
+    >
+      About
+    </GatsbyLink>
+    <GatsbyLink
+      exact
+      activeStyle={{
+        color: '#e52f45',
+      }}
+      to="/contact"
+    >
+      Contact
+    </GatsbyLink>
+  </BurgerMenu>
+);
 
-  render() {
-    return (
-      <BurgerMenu styles={styles}>
-        <GatsbyLink
-          exact
-          activeStyle={{
-            color: '#e52f45',
-          }}
-          to="/"
-        >
-          Home
-        </GatsbyLink>
-        <GatsbyLink
-          exact
-          activeStyle={{
-            color: '#e52f45',
-          }}
-          to="/about"
-        >
-          About
-        </GatsbyLink>
-        <GatsbyLink
-          exact
-          activeStyle={{
-            color: '#e52f45',
-          }}
-          to="/contact"
-        >
-          Contact
-        </GatsbyLink>
-      </BurgerMenu>
-    );
-  }
-}
 export default Menu;

@@ -11,7 +11,6 @@ import { css } from 'glamor';
 
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
-import Menu from '../components/Menu';
 import Share from '../components/Share';
 import BulletListTags from '../components/BulletListTags';
 import NavigateLink from '../components/NavigateLink';
@@ -21,16 +20,10 @@ import Variables from '../components/variables';
 
 import ArticleSchema from '../components/schemas/ArticleSchema';
 
-const blogContainer = css({
-  marginTop: '4em',
-  textAlign: 'left',
-});
-
 const postTitle = css({
   color: Variables.red,
   fontSize: '2.6em',
   fontWeight: 700,
-  marginBottom: 2 * Variables.vpadding,
   '@media(max-width: 768px)': {
     textAlign: 'left',
   },
@@ -60,6 +53,43 @@ const blogSectionHeader = css({
   marginBottom: '1.25em',
 });
 
+const mainPostStyle = css({
+  marginTop: '2.5em',
+  color: 'rgba(255, 255, 255, 0.8)',
+  '& blockquote': {
+    color: 'rgba(255, 255, 255, 0.5)',
+    borderLeft: `5px solid ${Variables.purple}`,
+    paddingLeft: '20px',
+    marginLeft: 0,
+  },
+  '& img': {
+    maxWidth: '100%',
+  },
+  '& h1': {
+    color: Variables.lightblue,
+  },
+  '& h2': {
+    color: Variables.lightblue,
+  },
+  '& h3': {
+    color: Variables.lightblue,
+  },
+  '& h4': {
+    color: Variables.lightblue,
+  },
+  '& h5': {
+    color: Variables.lightblue,
+  },
+  '& h6': {
+    color: Variables.lightblue,
+  },
+  '& code': {
+    background: '#2d2d2d',
+    color: '#FF9619',
+    borderRadius: '4px',
+  },
+});
+
 export default function Template({ data }) {
   const { mainPost: post } = data;
   const { nextPost: next } = data;
@@ -84,76 +114,70 @@ export default function Template({ data }) {
         siteUrl={siteUrl}
         noIndex={post.frontmatter.draft}
       />
-      <Menu />
       <Grid>
-        <Row center="sm">
-          <Col sm={8}>
-            <section className={blogContainer}>
-              <header className="post-head">
-                <h1 className={postTitle}>{post.frontmatter.title}</h1>
-              </header>
-              <section className="post-meta">
-                <Row center="sm">
-                  <Col md={4}>
-                    <Row start="sm">
-                      <Col sm>
-                        <GatsbyLink to="/" className={authorAvatar} itemProp="name">
-                          <Img
-                            sizes={data.file.childImageSharp.sizes}
-                            className={authorAvatarImg}
-                          />
-                        </GatsbyLink>
-                      </Col>
-                      <Col sm>
-                        <div className="author-name">Kostas Bariotis</div>
-                        <time
-                          className="post-date"
-                          dateTime={dateformat(post.frontmatter.date, 'isoDateTime')}
-                        >
-                          {dateformat(post.frontmatter.date, 'd mmmm yyyy')}
-                        </time>
-                      </Col>
-                    </Row>
-                  </Col>
-                  <Col md={8}>
-                    <BulletListTags tags={post.frontmatter.tags} draft={post.frontmatter.draft} />
-                  </Col>
-                </Row>
-              </section>
-              <Separator />
-              <article className="main-post {{post_class}}">
-                <section className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
-                <Separator />
-                <footer className={postFooter}>
-                  <Share
-                    title={post.frontmatter.title}
-                    draft={post.frontmatter.draft}
-                    fullUrl={fullUrl}
-                  />
-                </footer>
-
-                <section className={blogSection}>
-                  <header className={blogSectionHeader}>
-                    <h2>Comments</h2>
-                  </header>
-                  {isProduction && (
-                    <ReactDisqusThread
-                      shortname="kostasbariotis"
-                      identifier={uuidv5(fullUrl, uuidv5.URL)}
-                      title={post.frontmatter.title}
-                      url={fullUrl}
-                    />
-                  )}
-                </section>
-
-                <section className={blogSection}>
-                  <header className={blogSectionHeader}>
-                    <h2>Read Next</h2>
-                  </header>
-                  <NavigateLink post={next} />
-                </section>
-              </article>
+        <Row>
+          <Col sm={8} smOffset={2}>
+            <header className="post-head">
+              <h1 className={postTitle}>{post.frontmatter.title}</h1>
+            </header>
+            <section className="post-meta">
+              <Row center="sm">
+                <Col md={4}>
+                  <Row start="sm">
+                    <Col sm>
+                      <GatsbyLink to="/" className={authorAvatar} itemProp="name">
+                        <Img sizes={data.file.childImageSharp.sizes} className={authorAvatarImg} />
+                      </GatsbyLink>
+                    </Col>
+                    <Col sm>
+                      <div className="author-name">Kostas Bariotis</div>
+                      <time
+                        className="post-date"
+                        dateTime={dateformat(post.frontmatter.date, 'isoDateTime')}
+                      >
+                        {dateformat(post.frontmatter.date, 'd mmmm yyyy')}
+                      </time>
+                    </Col>
+                  </Row>
+                </Col>
+                <Col md={8}>
+                  <BulletListTags tags={post.frontmatter.tags} draft={post.frontmatter.draft} />
+                </Col>
+              </Row>
             </section>
+            <Separator />
+            <article className={mainPostStyle}>
+              <section className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
+              <Separator />
+              <footer className={postFooter}>
+                <Share
+                  title={post.frontmatter.title}
+                  draft={post.frontmatter.draft}
+                  fullUrl={fullUrl}
+                />
+              </footer>
+
+              <section className={blogSection}>
+                <header className={blogSectionHeader}>
+                  <h2>Comments</h2>
+                </header>
+                {isProduction && (
+                  <ReactDisqusThread
+                    shortname="kostasbariotis"
+                    identifier={uuidv5(fullUrl, uuidv5.URL)}
+                    title={post.frontmatter.title}
+                    url={fullUrl}
+                  />
+                )}
+              </section>
+
+              <section className={blogSection}>
+                <header className={blogSectionHeader}>
+                  <h2>Read Next</h2>
+                </header>
+                <NavigateLink post={next} />
+              </section>
+            </article>
           </Col>
         </Row>
       </Grid>

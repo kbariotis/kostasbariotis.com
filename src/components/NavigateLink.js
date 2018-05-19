@@ -4,17 +4,11 @@ import dateformat from 'dateformat';
 import PropTypes from 'prop-types';
 import { css } from 'glamor';
 
-import Variables from './variables';
-
 const navigateLink = css({
   fontSize: '1.11em',
   fontWeight: 'bold',
   color: '#8ab2ff',
   marginBottom: '5px',
-});
-
-const navigateDesc = css({
-  marginTop: Variables.vpadding,
 });
 
 const NavigateLink = ({ post }) =>
@@ -24,7 +18,7 @@ const NavigateLink = ({ post }) =>
         {post.frontmatter.title}
       </GatsbyLink>
       <div>{dateformat(post.frontmatter.date, 'd mmmm yyyy')}</div>
-      <p className={navigateDesc}>{`${post.excerpt}`}</p>
+      <p>{`${post.excerpt}`}</p>
     </div>
   );
 

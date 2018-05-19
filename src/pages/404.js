@@ -1,9 +1,15 @@
 import React from 'react';
 import GatsbyLink from 'gatsby-link';
 import Helmet from 'react-helmet';
+import { css } from 'glamor';
 
 import Separator from './../components/Separator';
-import Menu from './../components/Menu';
+import RedHeader from './../components/RedHeader';
+import { Grid, Row, Col } from 'react-flexbox-grid';
+
+const notFoundSection = css({
+  marginTop: '2.50em',
+});
 
 function tweet() {
   window.open(
@@ -22,25 +28,22 @@ export default function NotFound() {
         meta={[{ name: 'description', content: 'Not found' }]}
         noIndex={true}
       />
-      <Menu />
-      <section className="blog container about">
-        <div className="medium-8 mediumOffset-2 large-10 largeOffset-1">
-          <header className="header">
-            <div className="row text-center">
-              <h1>AW NO! The page you are trying to access is not here.</h1>
-            </div>
-          </header>
-          <Separator />
-          <p className="not-found-section">
-            Sorry for the inconvience. You can go to the <GatsbyLink to="/">home page</GatsbyLink>{' '}
-            or{' '}
-            <a href="#" onClick={tweet}>
-              tweet me
-            </a>{' '}
-            about this incident. Thanks ✌️
-          </p>
-        </div>
-      </section>
+      <Grid>
+        <Row>
+          <Col md={8} mdOffset={2} lg={10} lgOffset={1} xs="center">
+            <RedHeader>AW NO! The page you are trying to access is not here.</RedHeader>
+            <Separator />
+            <p className={notFoundSection}>
+              Sorry for the inconvience. You can go to the <GatsbyLink to="/">home page</GatsbyLink>{' '}
+              or{' '}
+              <a href="#" onClick={tweet}>
+                tweet me
+              </a>{' '}
+              about this incident. Thanks ✌️
+            </p>
+          </Col>
+        </Row>
+      </Grid>
     </div>
   );
 }
