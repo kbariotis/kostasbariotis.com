@@ -10,47 +10,7 @@ import Menu from '../components/Menu';
 
 import { Grid } from 'react-flexbox-grid';
 
-css.global('.gatsby-highlight-code-line', {
-  backgroundColor: '#feb',
-  display: 'block',
-  marginRight: '-1em',
-  marginLeft: '-1em',
-  paddingRight: '1em',
-  paddingLeft: '0.75em',
-  borderLeft: '0.25em solid #f99',
-});
-css.global('.gatsby-highlight', {
-  backgroundColor: '#fdf6e3',
-  borderRadius: '0.3em',
-  margin: '0.5em 0',
-  padding: '1em',
-  overflow: 'auto',
-});
-css.global('.gatsby-highlight pre[class*="language-"]', {
-  backgroundColor: 'transparent',
-  margin: '0',
-  padding: '0',
-  overflow: 'initial',
-  float: 'left',
-  minWidth: '100%',
-});
-css.global('.gatsby-resp-image-wrapper', {
-  zIndex: '1 !important',
-});
-css.global('a', {
-  color: Variables.lightblue,
-  '&:hover': {
-    color: Variables.red,
-  },
-  '&:active': {
-    color: Variables.red,
-  },
-});
-css.global('.anchor', {
-  color: 'white',
-  fill: 'currentColor',
-});
-css.global('body', {
+const bodyStyle = css({
   backgroundColor: Variables.background,
   color: '#fff',
   fontWeight: '300',
@@ -65,6 +25,15 @@ css.global('body', {
   textRendering: 'optimizeLegibility',
   wordWrap: 'break-word',
   hyphens: 'auto',
+  '& a': {
+    color: Variables.lightblue,
+    '&:hover': {
+      color: Variables.red,
+    },
+    '&:active': {
+      color: Variables.red,
+    },
+  },
 });
 
 const blogContainer = css({
@@ -77,7 +46,7 @@ export default function IndexLayout({ children, data }) {
   let { description, title } = data.site.siteMetadata;
 
   return (
-    <div>
+    <div className={bodyStyle}>
       <Menu />
       <Helmet titleTemplate={`%s - ${title}`} defaultTitle={title}>
         <meta name="description" content={description} />

@@ -9,7 +9,6 @@ module.exports = {
   plugins: [
     'gatsby-plugin-offline',
     'gatsby-plugin-catch-links',
-    'gatsby-plugin-sass',
     {
       resolve: `gatsby-plugin-typography`,
       options: {
@@ -193,7 +192,11 @@ module.exports = {
                   });
                 });
             },
-            setup: ({ query: { site: { siteMetadata } } }) => {
+            setup: ({
+              query: {
+                site: { siteMetadata },
+              },
+            }) => {
               return {
                 title: siteMetadata.title,
                 description: siteMetadata.description,
