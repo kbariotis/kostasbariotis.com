@@ -50,14 +50,14 @@ const BulletListTags = ({ tags, draft }) => (
   <Row end="xs">
     {tags &&
       tags.split(', ').map((tag, index) => (
-        <Col key={index} className={tagsItemStyle}>
+        <Col key={index} className={tagsItemStyle.toString()}>
           <GatsbyLink className={tagsItemLink} to={`/tag/${tag}`}>
             {tag}
           </GatsbyLink>
         </Col>
       ))}
     {draft && (
-      <Col className={`${tagsDraftItemStyle} ${tagsItemStyle}`}>
+      <Col className={`${tagsDraftItemStyle.toString()} ${tagsItemStyle.toString()}`}>
         <GatsbyLink className={tagsDraftItemLink} to={`/drafts`}>
           Draft
         </GatsbyLink>

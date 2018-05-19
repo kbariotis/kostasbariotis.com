@@ -47,7 +47,7 @@ const AuthorHeader = ({ sizes, children, author }) => (
 AuthorHeader.propTypes = {
   sizes: PropTypes.object,
   author: PropTypes.string,
-  children: PropTypes.object,
+  children: PropTypes.string,
 };
 
 export default AuthorHeader;

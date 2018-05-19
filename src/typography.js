@@ -4,6 +4,7 @@ const typography = new Typography({
   baseFontSize: '20px',
   headerFontFamily: ['Roboto Slab', 'sans-serif'],
   bodyFontFamily: ['Roboto', 'sans-serif'],
+  bodyWeight: '300',
   googleFonts: [
     {
       name: 'Roboto+Slab',

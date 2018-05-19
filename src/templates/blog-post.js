@@ -12,8 +12,8 @@ import { css } from 'glamor';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import Share from '../components/Share';
+import Post from '../components/Post';
 import BulletListTags from '../components/BulletListTags';
-import NavigateLink from '../components/NavigateLink';
 import Separator from '../components/Separator';
 import MetaTags from '../components/MetaTags';
 import Variables from '../components/variables';
@@ -31,8 +31,7 @@ const postTitle = css({
 
 const authorAvatar = css({
   display: 'inline-block',
-  width: '2.5em',
-  height: '2.5em',
+  width: '100%',
 });
 
 const authorAvatarImg = css({
@@ -90,6 +89,8 @@ const mainPostStyle = css({
   },
 });
 
+require('prismjs/themes/prism-tomorrow.css');
+
 export default function Template({ data }) {
   const { mainPost: post } = data;
   const { nextPost: next } = data;
@@ -121,15 +122,15 @@ export default function Template({ data }) {
               <h1 className={postTitle}>{post.frontmatter.title}</h1>
             </header>
             <section className="post-meta">
-              <Row center="sm">
+              <Row middle="xs">
                 <Col md={4}>
-                  <Row start="sm">
-                    <Col sm>
+                  <Row middle="xs">
+                    <Col sm={4}>
                       <GatsbyLink to="/" className={authorAvatar} itemProp="name">
                         <Img sizes={data.file.childImageSharp.sizes} className={authorAvatarImg} />
                       </GatsbyLink>
                     </Col>
-                    <Col sm>
+                    <Col sm={8}>
                       <div className="author-name">Kostas Bariotis</div>
                       <time
                         className="post-date"
@@ -175,7 +176,7 @@ export default function Template({ data }) {
                 <header className={blogSectionHeader}>
                   <h2>Read Next</h2>
                 </header>
-                <NavigateLink post={next} />
+                <Post post={next} />
               </section>
             </article>
           </Col>

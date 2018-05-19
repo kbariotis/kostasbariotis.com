@@ -8,19 +8,41 @@ import Footer from '../components/Footer';
 import Variables from '../components/variables';
 import Menu from '../components/Menu';
 
-import '../scss/boot.scss';
-
 import { Grid } from 'react-flexbox-grid';
 
+css.global('.gatsby-highlight-code-line', {
+  backgroundColor: '#feb',
+  display: 'block',
+  marginRight: '-1em',
+  marginLeft: '-1em',
+  paddingRight: '1em',
+  paddingLeft: '0.75em',
+  borderLeft: '0.25em solid #f99',
+});
+css.global('.gatsby-highlight', {
+  backgroundColor: '#fdf6e3',
+  borderRadius: '0.3em',
+  margin: '0.5em 0',
+  padding: '1em',
+  overflow: 'auto',
+});
+css.global('.gatsby-highlight pre[class*="language-"]', {
+  backgroundColor: 'transparent',
+  margin: '0',
+  padding: '0',
+  overflow: 'initial',
+  float: 'left',
+  minWidth: '100%',
+});
 css.global('.gatsby-resp-image-wrapper', {
   zIndex: '1 !important',
 });
 css.global('a', {
   color: Variables.lightblue,
-  ':hover': {
+  '&:hover': {
     color: Variables.red,
   },
-  ':active': {
+  '&:active': {
     color: Variables.red,
   },
 });
@@ -34,23 +56,11 @@ css.global('body', {
   fontWeight: '300',
   background: Variables.background,
   backgroundSize: '100% 300px',
-  /* http://colorzilla.com/gradient-editor/#7db9e8+0,221931+99&0+0,1+100 */
-  // backgroundImage:
-  //   "-moz-linear-gradient(top, rgba(125, 185, 232, 0) 0%, rgba(34, 25, 49, 1) 100%), url('/images/header_index.jpg')",
-  // backgroundImage:
-  //   "-webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(125, 185, 232, 0)), color-stop(100%, rgba(34, 25, 49, 1))), url('/images/header_index.jpg')",
-  // backgroundImage:
-  //   "-webkit-linear-gradient(top, rgba(125, 185, 232, 0) 0%, rgba(34, 25, 49, 1) 100%), url('/images/header_index.jpg')",
-  // backgroundImage:
-  //   "-o-linear-gradient(top, rgba(125, 185, 232, 0) 0%, rgba(34, 25, 49, 1) 100%), url('/images/header_index.jpg')",
-  // backgroundImage:
-  //   "-ms-linear-gradient(top, rgba(125, 185, 232, 0) 0%, rgba(34, 25, 49, 1) 100%), url('/images/header_index.jpg')",
   backgroundImage:
     "linear-gradient(to bottom, rgba(125, 185, 232, 0) 0%, rgba(34, 25, 49, 1) 100%), url('/images/header_index.jpg')",
   filter:
     "progid:DXImageTransform.Microsoft.gradient(startColorstr='#007db9e8', endColorstr='#221931', GradientType=0)",
   backgroundRepeat: 'no-repeat',
-  '-webkit-font-smoothing': 'antialiased',
   fontSmoothing: 'antialiased',
   textRendering: 'optimizeLegibility',
   wordWrap: 'break-word',
@@ -59,6 +69,7 @@ css.global('body', {
 
 const blogContainer = css({
   textAlign: 'left',
+  paddingTop: '4em',
   marginBottom: '4em',
 });
 
@@ -80,7 +91,7 @@ export default function IndexLayout({ children, data }) {
           content="2cN-EmJ2d00_gaP6eUs43tdcXd1UL965Rs_UBQc0Oec"
         />
       </Helmet>
-      <Grid className={blogContainer}>{children()}</Grid>
+      <Grid className={blogContainer.toString()}>{children()}</Grid>
       <Footer />
     </div>
   );

@@ -1,25 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from 'glamor';
-import { ShareButtons } from 'react-share';
-
-import { Row, Col } from 'react-flexbox-grid';
-
-const {
+import {
   FacebookShareButton,
   GooglePlusShareButton,
   TwitterShareButton,
   RedditShareButton,
-} = ShareButtons;
+} from 'react-share';
+
+import { Row, Col } from 'react-flexbox-grid';
 
 const shareButtonsListItem = css({
+  marginLeft: '5px',
+  marginRight: '5px',
   '@media (max-width: 768px)': {
-    display: 'block',
-    lineHeight: '2em',
+    width: '100%',
   },
 });
 const shareTwitterButton = css({
   color: '#00aced',
+  cursor: 'pointer',
   '@media (max-width: 768px)': {
     backgroundColor: '#00aced',
     color: '#fff',
@@ -29,6 +29,7 @@ const shareTwitterButton = css({
   },
 });
 const shareRedditButton = css({
+  cursor: 'pointer',
   color: '#ff5700',
   '@media (max-width: 768px)': {
     backgroundColor: '#ff5700',
@@ -40,6 +41,7 @@ const shareRedditButton = css({
 });
 const shareFacebookButton = css({
   color: '#3b5998',
+  cursor: 'pointer',
   '@media (max-width: 768px)': {
     backgroundColor: '#3b5998',
     color: '#fff',
@@ -50,6 +52,7 @@ const shareFacebookButton = css({
 });
 const shareGooglePlusButton = css({
   color: '#dd4b39',
+  cursor: 'pointer',
   '@media (max-width: 768px)': {
     backgroundColor: '#dd4b39',
     color: '#fff',
@@ -60,35 +63,30 @@ const shareGooglePlusButton = css({
 });
 
 const Share = ({ draft, title, fullUrl }) => (
-  <section className="share text-center">
+  <div>
     {!draft ? (
-      <Row>
-        <Col>
-          <b>Share this post on</b>
+      <Row center="sm">
+        <Col className={shareButtonsListItem.toString()}>
+          <b>Share this post on:</b>
         </Col>
-        <Col className={shareButtonsListItem}>
-          <TwitterShareButton
-            url={fullUrl}
-            title={title}
-            via="kbariotis"
-            className={shareTwitterButton}
-          >
-            <span>Twitter</span>
+        <Col className={shareButtonsListItem.toString()}>
+          <TwitterShareButton url={fullUrl} title={title} via="kbariotis">
+            <span className={shareTwitterButton.toString()}>Twitter</span>
           </TwitterShareButton>
         </Col>
-        <Col className={shareButtonsListItem}>
-          <FacebookShareButton url={fullUrl} className={shareFacebookButton}>
-            <span>Facebook</span>
+        <Col className={shareButtonsListItem.toString()}>
+          <FacebookShareButton url={fullUrl}>
+            <span className={shareFacebookButton}>Facebook</span>
           </FacebookShareButton>
         </Col>
-        <Col className={shareButtonsListItem}>
-          <GooglePlusShareButton url={fullUrl} className={shareGooglePlusButton}>
-            <span>Google+</span>
+        <Col className={shareButtonsListItem.toString()}>
+          <GooglePlusShareButton url={fullUrl}>
+            <span className={shareGooglePlusButton}>Google+</span>
           </GooglePlusShareButton>
         </Col>
-        <Col className={shareButtonsListItem}>
-          <RedditShareButton title={title} url={fullUrl} className={shareRedditButton}>
-            <span>Reddit</span>
+        <Col className={shareButtonsListItem.toString()}>
+          <RedditShareButton title={title} url={fullUrl}>
+            <span className={shareRedditButton}>Reddit</span>
           </RedditShareButton>
         </Col>
       </Row>
@@ -98,11 +96,11 @@ const Share = ({ draft, title, fullUrl }) => (
         prime time.
       </small>
     )}
-  </section>
+  </div>
 );
 
 Share.propTypes = {
-  draft: PropTypes.boolean,
+  draft: PropTypes.bool,
   title: PropTypes.string,
   fullUrl: PropTypes.string,
 };
