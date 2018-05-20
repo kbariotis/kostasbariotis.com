@@ -94,7 +94,7 @@ You will also notice that there are some `<img>` tags pointing to static assets.
 
 So we will turn this:
 
-```HTML
+```html
 <!-- old index.html file -->
 ...
 <a href="#"><img src="assets/img/app-store.png" height="50" alt=""></a>
@@ -102,7 +102,7 @@ So we will turn this:
 ```
 
 into this:
-```JSX
+```jsx
 // src/index.js
 ...
 const appStoreImg = require('../assets/images/app-store.png)
@@ -172,7 +172,7 @@ Now that our page has some visual form and we are happy with the result, we can 
 
 Since our index page is just a React component, we can just start adding functionality as we know. Let's add an event to fire once the Subscribe button is clicked and send the email to our server.
 
-```JSX
+```jsx
 ...
 class IndexPage extends React.Component {
 
@@ -212,7 +212,7 @@ class IndexPage extends React.Component {
 
 and the form inside `render`
 
-```HTML
+```html
 ...
 <form role="form" action="register.php" method="post" enctype="plain">
   <input

@@ -12,7 +12,7 @@ In this post, I will try to provide a real world example of how we can move a Pr
 ## A Promise-based example
 Let's take an example and move from there. This is an actual controller (slighty changed for the purposes of this post) from a project of mine I've been working on:
 
-```Javascript
+```javascript
 const BPromise = require('bluebird');
 
 const { WrongCredentialsError, DBConnectionError, EmailError } = require('./../errors');
@@ -132,7 +132,7 @@ function generateJWT(user) {
 So a few notes here:
 
 ### Outer scope variables
-```Javascript
+```javascript
 let user;
 
 /* ... */
@@ -144,7 +144,7 @@ let user;
 Notice here how I am making a global inside the function, in order to use the User object on various calls in my Promise chain. A possible overcome would be to make my functions always return the User object, but that would a) make my functions make no sense at all and b) tightly couple my functions with this particular Promise chain so I couldn't use them in other places.
 
 ### Start the Promise chain with a Promise
-```Javascript
+```javascript
 /* ... */
 BPromise.try(() => validateUserInput(req))
 /* ... */
@@ -159,7 +159,7 @@ But, Bluebird is just another dependency that can possibly break my code on its 
 ## Async/Await version
 Let's now see the same code, but written with async/await and compare it with the above.
 
-```Javascript
+```javascript
 const { WrongCredentialsError, DBConnectionError, EmailError } = require('./../errors');
 
 /**

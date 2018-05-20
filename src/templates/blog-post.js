@@ -89,30 +89,30 @@ const mainPostStyle = css({
     color: 'white',
     fill: 'currentColor',
   },
-  '& .gatsby-highlight-code-line': {
-    backgroundColor: '#feb',
-    display: 'block',
-    marginRight: '-1em',
-    marginLeft: '-1em',
-    paddingRight: '1em',
-    paddingLeft: '0.75em',
-    borderLeft: '0.25em solid #f99',
-  },
-  '& .gatsby-highlight': {
-    backgroundColor: '#fdf6e3',
-    borderRadius: '0.3em',
-    margin: '0.5em 0',
-    padding: '1em',
-    overflow: 'auto',
-  },
-  '& .gatsby-highlight pre[class*="language-"]': {
-    backgroundColor: 'transparent',
-    margin: '0',
-    padding: '0',
-    overflow: 'initial',
-    float: 'left',
-    minWidth: '100%',
-  },
+  // '& .gatsby-highlight-code-line': {
+  //   // backgroundColor: '#feb',
+  //   display: 'block',
+  //   marginRight: '-1em',
+  //   marginLeft: '-1em',
+  //   paddingRight: '1em',
+  //   paddingLeft: '0.75em',
+  //   borderLeft: '0.25em solid #f99',
+  // },
+  // '& .gatsby-highlight': {
+  //   // backgroundColor: '#fdf6e3',
+  //   borderRadius: '0.3em',
+  //   margin: '0.5em 0',
+  //   padding: '1em',
+  //   overflow: 'auto',
+  // },
+  // '& .gatsby-highlight pre[class*="language-"]': {
+  //   backgroundColor: 'transparent',
+  //   margin: '0',
+  //   padding: '0',
+  //   overflow: 'initial',
+  //   float: 'left',
+  //   minWidth: '100%',
+  // },
   '& .gatsby-resp-image-wrapper': {
     zIndex: '1 !important',
   },
@@ -205,7 +205,7 @@ export default function Template({ data }) {
                 <header className={blogSectionHeader}>
                   <h2>Read Next</h2>
                 </header>
-                <Post post={next} />
+                {next && <Post post={next} />}
               </section>
             </article>
           </Col>

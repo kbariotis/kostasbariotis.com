@@ -40,7 +40,7 @@ Let's start by installing dependencies:
 
 Then add your `.eslintrc` file with contents. This is just an example setup I hacked for simplicity purposes. It follows the recommended rules by ESLint and also extends Prettier to work with ESLint seamlessly. Last I have added some custom rules of mine.
 
-```JSON
+```json
 {
   "extends": [
     "eslint:recommended",
@@ -66,7 +66,7 @@ The configuration applies the recommended by ESLint set of rules and also the Pr
 
 Now that our configuration is in place, let's run it and see how it goes. Add this your `package.json` (we will use it later) and run `npm run lint`.
 
-```JSON
+```json
 {
   ...
 
@@ -90,7 +90,7 @@ Now we want to setup the linter to run on pre-commit only on the modified files.
 
 Then modify your `package.json`:
 
-```JSON
+```json
 {
   ...
 
