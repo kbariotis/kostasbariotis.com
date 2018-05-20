@@ -146,7 +146,7 @@ export default function Template({ data }) {
       />
       <Grid>
         <Row>
-          <Col sm={8} smOffset={2}>
+          <Col lg={8} lgOffset={2}>
             <header className="post-head">
               <h1 className={postTitle}>{post.frontmatter.title}</h1>
             </header>

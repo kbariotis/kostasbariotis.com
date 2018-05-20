@@ -22,8 +22,8 @@ export default function Pages({ pathContext, data }) {
         description={description}
         noIndex={false}
       />
-      <Row center="xs">
-        <Col md={8} mdOffset={2} lg={10} lgOffset={1}>
+      <Row>
+        <Col lg={8} lgOffset={2}>
           <Pagination page={page} pagesSum={pagesSum} prevPath={prevPath} nextPath={nextPath} />
           <Separator />
           <Posts posts={posts} />

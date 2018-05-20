@@ -69,5 +69,8 @@
       "./node_modules/.bin/eslint --fix",
       "git add"
     ]
+  },
+  "dependencies": {
+    "react-entypo-icons": "^1.4.1"
   }
 }

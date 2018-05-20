@@ -17,7 +17,7 @@ const postTitle = css({
   },
 });
 const postStyle = css({
-  marginBottom: '2em',
+  marginBottom: '3em',
   color: 'rgba(255, 255, 255, 0.8)',
 });
 const postTime = css({

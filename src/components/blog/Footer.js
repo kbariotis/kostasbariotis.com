@@ -1,5 +1,10 @@
 import React from 'react';
 import GatsbyLink from 'gatsby-link';
+import EntypoTwitter from 'react-entypo-icons/lib/entypo/Twitter';
+import EntypoMedium from 'react-entypo-icons/lib/entypo/Medium';
+import EntypoLinkedIn from 'react-entypo-icons/lib/entypo/Linkedin';
+import EntypoGitHub from 'react-entypo-icons/lib/entypo/GitHub';
+import EntypoMail from 'react-entypo-icons/lib/entypo/Mail';
 
 import { css } from 'glamor';
 
@@ -29,6 +34,7 @@ const footerSocial = css({
   background: Variables.darkerpurple,
   color: Variables.darkpurple,
   fontSize: '0.9em',
+  paddingTop: '4em',
 });
 const footerSocialLink = css({
   color: Variables.lightpurple,
@@ -68,14 +74,14 @@ const footerSocialListItem = css({
 
 const footerText = css({
   textAlign: 'center',
-  paddingTop: '4em',
+  paddingBottom: '4em',
 });
 const Footer = () => (
   <div>
     <footer className={footer}>
       <Grid>
         <Row center="xs">
-          <Col md={8} mdOffset={2} lg={10} lgOffset={1}>
+          <Col>
             I am{' '}
             <GatsbyLink className={footerLink} to="/" title="Kostasbariotis.com Home">
               Kostas Bariotis
@@ -105,7 +111,7 @@ const Footer = () => (
             href="https://twitter.com/kbariotis"
             title="tweet me"
           >
-            <i className="icon-twitter" />
+            <EntypoTwitter />
           </a>
         </li>
         <li className={footerSocialListItem}>
@@ -116,7 +122,7 @@ const Footer = () => (
             href="https://github.com/kbariotis"
             title="contribute"
           >
-            <i className="icon-github" />
+            <EntypoGitHub />
           </a>
         </li>
         <li className={footerSocialListItem}>
@@ -127,7 +133,7 @@ const Footer = () => (
             href="https://medium.com/@kbariotis"
             title="medium"
           >
-            <i className="icon-medium" />
+            <EntypoMedium />
           </a>
         </li>
         <li className={footerSocialListItem}>
@@ -138,7 +144,7 @@ const Footer = () => (
             href="https://www.linkedin.com/pub/kostas-bariotis/81/b74/2a8"
             title="linkedin"
           >
-            <i className="icon-linkedin" />
+            <EntypoLinkedIn />
           </a>
         </li>
         <li className={footerSocialListItem}>
@@ -149,7 +155,7 @@ const Footer = () => (
             href="mailto:konmpar@gmail.com?subject=Hi!"
             title="konmpar@gmail.com"
           >
-            <i className="icon-mail" />
+            <EntypoMail />
           </a>
         </li>
       </ul>

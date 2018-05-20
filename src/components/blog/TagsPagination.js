@@ -7,7 +7,6 @@ import { Row, Col } from 'react-flexbox-grid';
 
 const newerPostsStyle = css({
   float: 'left',
-  fontSize: '0.8em',
   '@media(max-width: 768px)': {
     display: 'block',
     float: 'none',
@@ -16,7 +15,6 @@ const newerPostsStyle = css({
 });
 const olderPostsStyle = css({
   float: 'right',
-  fontSize: '0.8em',
   '@media(max-width: 768px)': {
     display: 'block',
     float: 'none',

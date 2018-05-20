@@ -13,8 +13,8 @@ const bioDate = css({
 });
 
 const BioEntry = ({ year, children }) => (
-  <Row className={row}>
-    <Col md={2} className={bioDate}>
+  <Row className={row.toString()}>
+    <Col md={2} className={bioDate.toString()}>
       {year}
     </Col>
     <Col md={10}>{children}</Col>
@@ -23,7 +23,7 @@ const BioEntry = ({ year, children }) => (
 
 BioEntry.propTypes = {
   year: PropTypes.string,
-  children: PropTypes.object,
+  children: PropTypes.string,
 };
 
 export default BioEntry;

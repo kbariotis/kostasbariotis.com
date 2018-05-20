@@ -15,8 +15,8 @@ const aboutSection = css({
 });
 
 const AboutSection = ({ title, children }) => (
-  <Row className={aboutSection}>
-    <Col md={2} className={aboutSectionTitle}>
+  <Row className={aboutSection.toString()}>
+    <Col md={2} className={aboutSectionTitle.toString()}>
       {title}
     </Col>
     <Col md={10}>{children}</Col>
@@ -25,7 +25,7 @@ const AboutSection = ({ title, children }) => (
 
 AboutSection.propTypes = {
   title: PropTypes.string,
-  children: PropTypes.object,
+  children: PropTypes.array,
 };
 
 export default AboutSection;

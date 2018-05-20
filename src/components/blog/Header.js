@@ -24,7 +24,7 @@ const columnStyles = css({
 
 const Header = ({ sizes, children }) => (
   <Row center="xs">
-    <Col xs={8} classNames={`${columnStyles}`}>
+    <Col xs={8} className={`${columnStyles}`}>
       <header className={`${headerStyles}`}>
         <Row center="xs">
           <Col>
@@ -40,7 +40,7 @@ const Header = ({ sizes, children }) => (
 
 Header.propTypes = {
   sizes: PropTypes.object,
-  children: PropTypes.object,
+  children: PropTypes.string,
 };
 
 export default Header;
