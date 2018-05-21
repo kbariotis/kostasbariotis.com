@@ -191,6 +191,7 @@ export default function Template({ data }) {
                 <header className={blogSectionHeader}>
                   <h2>Comments</h2>
                 </header>
+                <Separator />
                 {isProduction && (
                   <ReactDisqusThread
                     shortname="kostasbariotis"
@@ -205,6 +206,7 @@ export default function Template({ data }) {
                 <header className={blogSectionHeader}>
                   <h2>Read Next</h2>
                 </header>
+                <Separator />
                 {next && <Post post={next} />}
               </section>
             </article>

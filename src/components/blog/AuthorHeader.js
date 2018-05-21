@@ -30,8 +30,9 @@ const blogHeaderImg = css({
     margin: '0 auto',
   },
 });
+
 const headerDescriptionStyles = css({
-  fontSize: '1.5em',
+  // fontSize: '1.2em',
 });
 
 const AuthorHeader = ({ sizes, children, author }) => (
