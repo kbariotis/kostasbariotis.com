@@ -2,6 +2,7 @@ import React from 'react';
 import GatsbyLink from 'gatsby-link';
 
 import { slide as BurgerMenu } from 'react-burger-menu';
+import Variables from './variables';
 
 var styles = {
   bmBurgerButton: {
@@ -12,7 +13,7 @@ var styles = {
     top: '36px',
   },
   bmBurgerBars: {
-    background: '#373a47',
+    background: Variables.lightblue,
   },
   bmCrossButton: {
     height: '24px',
@@ -66,6 +67,15 @@ const Menu = () => (
       to="/contact"
     >
       Contact
+    </GatsbyLink>
+    <GatsbyLink
+      exact
+      activeStyle={{
+        color: '#e52f45',
+      }}
+      to="/resume"
+    >
+      Resume
     </GatsbyLink>
   </BurgerMenu>
 );
