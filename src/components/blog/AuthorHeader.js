@@ -6,6 +6,7 @@ import GatsbyLink from 'gatsby-link';
 
 const blogHeader = css({
   display: 'block',
+  marginBottom: '4em',
 });
 
 const blogHeaderLink = css({
@@ -31,8 +32,11 @@ const blogHeaderImg = css({
   },
 });
 
+const headerStyle = css({
+  marginBottom: '0.3em',
+});
 const headerDescriptionStyles = css({
-  // fontSize: '1.2em',
+  fontSize: '1.1em',
 });
 
 const AuthorHeader = ({ sizes, children, author }) => (
@@ -40,7 +44,7 @@ const AuthorHeader = ({ sizes, children, author }) => (
     <GatsbyLink to="/" className={blogHeaderLink} itemProp="name">
       <Img className={`header-avatar ${blogHeaderImg}`} alt={author} sizes={sizes} />
     </GatsbyLink>
-    <h1>{author}</h1>
+    <h1 className={headerStyle}>{author}</h1>
     <p className={headerDescriptionStyles} dangerouslySetInnerHTML={{ __html: children }} />
   </div>
 );

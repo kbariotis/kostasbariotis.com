@@ -47,7 +47,7 @@ const tagsDraftItemLink = css({
 });
 
 const BulletListTags = ({ tags, draft }) => (
-  <Row end="xs">
+  <Row end="md">
     {tags &&
       tags.split(', ').map((tag, index) => (
         <Col key={index} className={tagsItemStyle.toString()}>

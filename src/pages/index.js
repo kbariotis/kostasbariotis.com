@@ -45,7 +45,7 @@ export default function Index({ data }) {
         path={'/'}
       />
       <Row>
-        <Col xs={8} xsOffset={2}>
+        <Col sm={8} smOffset={2}>
           <AuthorHeader sizes={data.file.childImageSharp.sizes} author={author}>
             {description}
           </AuthorHeader>

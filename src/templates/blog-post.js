@@ -30,11 +30,16 @@ const postTitle = css({
 const authorAvatar = css({
   display: 'inline-block',
   width: '100%',
+  maxWidth: '100px',
 });
 
 const authorAvatarImg = css({
   borderRadius: '50%',
   border: '3px solid white',
+});
+
+const authorName = css({
+  fontSize: '1.3em',
 });
 
 const postFooter = css({
@@ -152,25 +157,22 @@ export default function Template({ data }) {
             </header>
             <section className="post-meta">
               <Row middle="xs">
-                <Col md={4}>
+                <Col md={6}>
                   <Row middle="xs">
-                    <Col sm={4}>
+                    <Col md={4}>
                       <GatsbyLink to="/" className={authorAvatar} itemProp="name">
                         <Img sizes={data.file.childImageSharp.sizes} className={authorAvatarImg} />
                       </GatsbyLink>
                     </Col>
-                    <Col sm={8}>
-                      <div className="author-name">Kostas Bariotis</div>
-                      <time
-                        className="post-date"
-                        dateTime={dateformat(post.frontmatter.date, 'isoDateTime')}
-                      >
+                    <Col md={8}>
+                      <div className={authorName}>Kostas Bariotis</div>
+                      <time dateTime={dateformat(post.frontmatter.date, 'isoDateTime')}>
                         {dateformat(post.frontmatter.date, 'd mmmm yyyy')}
                       </time>
                     </Col>
                   </Row>
                 </Col>
-                <Col md={8}>
+                <Col md={6}>
                   <BulletListTags tags={post.frontmatter.tags} draft={post.frontmatter.draft} />
                 </Col>
               </Row>
