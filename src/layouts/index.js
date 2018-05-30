@@ -9,6 +9,55 @@ import Footer from '../components/blog/Footer';
 import Variables from '../components/blog/variables';
 import Menu from '../components/blog/Menu';
 
+css.fontFace({
+  fontFamily: 'Roboto Subset',
+  src: "url('/fonts/Roboto_Subset/Roboto-Light-subset.ttf')",
+  fontWeight: 'normal',
+  fontStyle: 'normal',
+});
+
+css.fontFace({
+  fontFamily: 'Roboto Slab Subset',
+  src: "url('/fonts/Roboto_Slab_Subset/RobotoSlab-Regular-subset.ttf')",
+  fontWeight: 'normal',
+  fontStyle: 'normal',
+});
+
+css.fontFace({
+  fontFamily: 'Roboto',
+  src: "url('/fonts/Roboto/Roboto-Bold.ttf')",
+  fontWeight: 'bold',
+  fontStyle: 'normal',
+});
+
+css.fontFace({
+  fontFamily: 'Roboto',
+  src: "url('/fonts/Roboto/Roboto-Black.ttf')",
+  fontWeight: 'bolder',
+  fontStyle: 'normal',
+});
+
+css.fontFace({
+  fontFamily: 'Roboto',
+  src: "url('/fonts/Roboto/Roboto-Light.ttf')",
+  fontWeight: 'lighter',
+  fontStyle: 'normal',
+});
+
+css.fontFace({
+  fontFamily: 'Roboto',
+  src: "url('/fonts/Roboto/Roboto-Italic.ttf')",
+  fontWeight: 'normal',
+  fontStyle: 'italic',
+});
+
+css.fontFace({
+  fontFamily: 'Roboto Slab',
+  src: "url('/fonts/Roboto_Slab/RobotoSlab-Regular.ttf')",
+  fontWeight: 'normal',
+  fontStyle: 'normal',
+});
+
 const bodyStyle = css({
   backgroundColor: Variables.background,
   color: '#fff',
@@ -24,6 +73,12 @@ const bodyStyle = css({
   textRendering: 'optimizeLegibility',
   wordWrap: 'break-word',
   hyphens: 'auto',
+  '.subset-fonts-enabled &': {
+    fontFamily: "'Roboto Subset', sans-serif",
+  },
+  '.fonts-enabled &': {
+    fontFamily: 'Roboto, sans-serif',
+  },
   '& a': {
     color: Variables.lightblue,
     '&:hover': {
@@ -32,6 +87,12 @@ const bodyStyle = css({
     '&:active': {
       color: Variables.red,
     },
+  },
+  '.subset-fonts-enabled & h1': {
+    fontFamily: "'Roboto Subset', sans-serif",
+  },
+  '.fonts-enabled & h1': {
+    fontFamily: 'Roboto, sans-serif',
   },
 });
 

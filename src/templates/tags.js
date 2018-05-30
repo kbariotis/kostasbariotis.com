@@ -29,7 +29,7 @@ export default function Tags({ pathContext, data }) {
         path={`/tag/${tag}`}
         noIndex={false}
       />
-      <Col md={8} mdOffset={2} lg={10} lgOffset={1}>
+      <Col lg={8} lgOffset={2}>
         <RedHeader>{tag}</RedHeader>
         <section className={tagMeta}>A {posts.length} posts collection</section>
         <Pagination page={page} pagesSum={pagesSum} tag={tag} />
