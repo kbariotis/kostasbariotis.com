@@ -51,7 +51,8 @@
     "react-router-scroll": "github:ytase/react-router-scroll#build",
     "react-share": "^2.2.0",
     "rimraf": "^2.6.2",
-    "uuid": "^3.2.1"
+    "uuid": "^3.2.1",
+    "react-entypo-icons": "^1.4.1"
   },
   "scripts": {
     "build": "gatsby build --prefix-paths",
@@ -69,8 +70,5 @@
       "./node_modules/.bin/eslint --fix",
       "git add"
     ]
-  },
-  "dependencies": {
-    "react-entypo-icons": "^1.4.1"
   }
 }
