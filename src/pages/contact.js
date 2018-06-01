@@ -43,7 +43,7 @@ export default function Contact({ data }) {
           <p>Above all, I am getting things done.</p>
           <p>
             This site should provide you with{' '}
-            <GatsbyLink className="footer-link" to="/about" title="About Kostasbariotis.com">
+            <GatsbyLink className="footer-link" to="/about/" title="About Kostasbariotis.com">
               all the information
             </GatsbyLink>{' '}
             you need but if you still have questions, please consult my{' '}

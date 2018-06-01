@@ -88,11 +88,11 @@ const Footer = () => (
             </GatsbyLink>, a web developer, a proud wanderer and a passionate doer. My mission is to
             write clean and efficient code, to solve problems on the Web and to learn something
             more. Read{' '}
-            <GatsbyLink className={footerLink} to="/about" title="About Kostasbariotis.com">
+            <GatsbyLink className={footerLink} to="/about/" title="About Kostasbariotis.com">
               more about me
             </GatsbyLink>{' '}
             or{' '}
-            <GatsbyLink className={footerLink} to="/contact" title="Contact Kostas">
+            <GatsbyLink className={footerLink} to="/contact/" title="Contact Kostas">
               {' '}
               get in touch{' '}
             </GatsbyLink>.

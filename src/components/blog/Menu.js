@@ -55,7 +55,7 @@ const Menu = () => (
       activeStyle={{
         color: '#e52f45',
       }}
-      to="/about"
+      to="/about/"
     >
       About
     </GatsbyLink>
@@ -64,7 +64,7 @@ const Menu = () => (
       activeStyle={{
         color: '#e52f45',
       }}
-      to="/contact"
+      to="/contact/"
     >
       Contact
     </GatsbyLink>
@@ -73,7 +73,7 @@ const Menu = () => (
       activeStyle={{
         color: '#e52f45',
       }}
-      to="/resume"
+      to="/resume/"
     >
       Resume
     </GatsbyLink>

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import { css } from 'glamor';
 
+import { rhythm } from '../../typography';
 import { Row, Col } from 'react-flexbox-grid';
 import Separator from './Separator';
 import Variables from './variables';
@@ -16,6 +17,7 @@ const headerAvatarStyles = css({
   height: '150px',
   borderRadius: '50%',
   border: '4px solid #fff',
+  marginBottom: rhythm(1),
 });
 
 const columnStyles = css({
@@ -24,7 +26,7 @@ const columnStyles = css({
 
 const Header = ({ sizes, children }) => (
   <Row center="xs">
-    <Col xs={8} className={`${columnStyles}`}>
+    <Col className={`${columnStyles}`}>
       <header className={`${headerStyles}`}>
         <Row center="xs">
           <Col>

@@ -14,7 +14,7 @@ const tagsItemStyle = css({
   borderRadius: '100px / 100px',
   '&:hover': {
     background: Variables.lightblue,
-    a: {
+    '& a': {
       color: Variables.darkpurple,
     },
   },
@@ -27,20 +27,22 @@ const tagsItemLink = css({
   height: '30px',
   lineHeight: '27px',
   padding: '2px 20px',
-  'a:hover,a:active': {
+  'a:active': {
+    textDecoration: 'none',
+  },
+  'a:hover': {
     textDecoration: 'none',
   },
 });
 
 const tagsDraftItemStyle = css({
-  borderColor: Variables.red,
-});
-
-const tagsDraftItemLink = css({
-  color: Variables.red,
+  border: `2px solid ${Variables.red}`,
+  '& a': {
+    color: Variables.red,
+  },
   '&:hover': {
     background: Variables.red,
-    a: {
+    '& a': {
       color: 'white',
     },
   },
@@ -51,14 +53,14 @@ const BulletListTags = ({ tags, draft }) => (
     {tags &&
       tags.split(', ').map((tag, index) => (
         <Col key={index} className={tagsItemStyle.toString()}>
-          <GatsbyLink className={tagsItemLink} to={`/tag/${tag}`}>
+          <GatsbyLink className={tagsItemLink.toString()} to={`/tag/${tag}`}>
             {tag}
           </GatsbyLink>
         </Col>
       ))}
     {draft && (
-      <Col className={`${tagsDraftItemStyle.toString()} ${tagsItemStyle.toString()}`}>
-        <GatsbyLink className={tagsDraftItemLink} to={`/drafts`}>
+      <Col className={`${tagsItemStyle.toString()} ${tagsDraftItemStyle.toString()}`}>
+        <GatsbyLink className={`${tagsItemLink.toString()}`} to={`/drafts`}>
           Draft
         </GatsbyLink>
       </Col>
