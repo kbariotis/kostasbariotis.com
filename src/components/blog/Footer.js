@@ -6,54 +6,52 @@ import EntypoLinkedIn from 'react-entypo-icons/lib/entypo/Linkedin';
 import EntypoGitHub from 'react-entypo-icons/lib/entypo/GitHub';
 import EntypoMail from 'react-entypo-icons/lib/entypo/Mail';
 
-import { css } from 'glamor';
-
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Variables from './variables';
 
-const footer = css({
+const footer = {
   background: Variables.darkpurple,
   color: Variables.lightpurple,
   fontSize: '1em',
   fontFamily: "'Roboto', sans-serif",
   fontWeight: '300',
   padding: '3.25em 0',
-});
-const footerLink = css({
+};
+const footerLink = {
   marginTop: '2em',
   marginBottom: '2em',
-});
+};
 
-const footerLinkSeparator = css({
+const footerLinkSeparator = {
   color: '#3B4B7D',
   margin: '0 5px',
   fontSize: '0.8em',
-});
+};
 
-const footerSocial = css({
+const footerSocial = {
   background: Variables.darkerpurple,
   color: Variables.darkpurple,
   fontSize: '0.9em',
   paddingTop: '4em',
-});
-const footerSocialLink = css({
+};
+const footerSocialLink = {
   color: Variables.lightpurple,
   textDecoration: 'none',
   '&:active,&:hover': {
     color: Variables.lightblue,
   },
-});
+};
 
-const footerSocialList = css({
+const footerSocialList = {
   fontSize: '0.5em',
   textAlign: 'center',
   padding: '0',
-});
-const footerSocialListLink = css({
+};
+const footerSocialListLink = {
   color: Variables.lightblue,
   textDecoration: 'none',
-});
-const footerSocialListItem = css({
+};
+const footerSocialListItem = {
   display: 'inline-block',
   width: '2em',
   height: '2em',
@@ -70,29 +68,29 @@ const footerSocialListItem = css({
       textDecoration: 'none',
     },
   },
-});
+};
 
-const footerText = css({
+const footerText = {
   textAlign: 'center',
   paddingBottom: '4em',
-});
+};
 const Footer = () => (
   <div>
-    <footer className={footer}>
+    <footer css={footer}>
       <Grid>
         <Row center="xs">
           <Col>
             I am{' '}
-            <GatsbyLink className={footerLink} to="/" title="Kostasbariotis.com Home">
+            <GatsbyLink css={footerLink} to="/" title="Kostasbariotis.com Home">
               Kostas Bariotis
             </GatsbyLink>, a web developer, a proud wanderer and a passionate doer. My mission is to
             write clean and efficient code, to solve problems on the Web and to learn something
             more. Read{' '}
-            <GatsbyLink className={footerLink} to="/about/" title="About Kostasbariotis.com">
+            <GatsbyLink css={footerLink} to="/about/" title="About Kostasbariotis.com">
               more about me
             </GatsbyLink>{' '}
             or{' '}
-            <GatsbyLink className={footerLink} to="/contact/" title="Contact Kostas">
+            <GatsbyLink css={footerLink} to="/contact/" title="Contact Kostas">
               {' '}
               get in touch{' '}
             </GatsbyLink>.
@@ -101,11 +99,11 @@ const Footer = () => (
       </Grid>
     </footer>
 
-    <footer className={footerSocial}>
-      <ul className={footerSocialList}>
-        <li className={footerSocialListItem}>
+    <footer css={footerSocial}>
+      <ul css={footerSocialList}>
+        <li css={footerSocialListItem}>
           <a
-            className={footerSocialListLink}
+            css={footerSocialListLink}
             rel="noopener noreferrer"
             target="_blank"
             href="https://twitter.com/kbariotis"
@@ -114,9 +112,9 @@ const Footer = () => (
             <EntypoTwitter />
           </a>
         </li>
-        <li className={footerSocialListItem}>
+        <li css={footerSocialListItem}>
           <a
-            className={footerSocialListLink}
+            css={footerSocialListLink}
             rel="noopener noreferrer"
             target="_blank"
             href="https://github.com/kbariotis"
@@ -125,9 +123,9 @@ const Footer = () => (
             <EntypoGitHub />
           </a>
         </li>
-        <li className={footerSocialListItem}>
+        <li css={footerSocialListItem}>
           <a
-            className={footerSocialListLink}
+            css={footerSocialListLink}
             rel="noopener noreferrer"
             target="_blank"
             href="https://medium.com/@kbariotis"
@@ -136,9 +134,9 @@ const Footer = () => (
             <EntypoMedium />
           </a>
         </li>
-        <li className={footerSocialListItem}>
+        <li css={footerSocialListItem}>
           <a
-            className={footerSocialListLink}
+            css={footerSocialListLink}
             rel="noopener noreferrer"
             target="_blank"
             href="https://www.linkedin.com/pub/kostas-bariotis/81/b74/2a8"
@@ -147,9 +145,9 @@ const Footer = () => (
             <EntypoLinkedIn />
           </a>
         </li>
-        <li className={footerSocialListItem}>
+        <li css={footerSocialListItem}>
           <a
-            className={footerSocialListLink}
+            css={footerSocialListLink}
             rel="noopener noreferrer"
             target="_blank"
             href="mailto:konmpar@gmail.com?subject=Hi!"
@@ -159,14 +157,14 @@ const Footer = () => (
           </a>
         </li>
       </ul>
-      <div className={footerText}>
+      <div css={footerText}>
         Copyright {new Date().getFullYear()}{' '}
-        <GatsbyLink className={footerSocialLink} to="/" title="Kostas Bariotis Blog">
+        <GatsbyLink css={footerSocialLink} to="/" title="Kostas Bariotis Blog">
           Kostas Bariotis
         </GatsbyLink>
-        <span className={footerLinkSeparator}> • </span> Design by{' '}
+        <span css={footerLinkSeparator}> • </span> Design by{' '}
         <a
-          className={footerSocialLink}
+          css={footerSocialLink}
           rel="noopener noreferrer"
           href="http://www.attheo.do"
           target="_blank"

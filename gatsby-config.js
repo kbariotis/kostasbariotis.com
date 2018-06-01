@@ -8,6 +8,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-catch-links',
+    'gatsby-plugin-glamor',
     {
       resolve: `gatsby-plugin-typography`,
       options: {

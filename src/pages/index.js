@@ -4,7 +4,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'react-flexbox-grid';
 import GatsbyLink from 'gatsby-link';
-import { css } from 'glamor';
 
 import Separator from '../components/blog/Separator';
 import AuthorHeader from '../components/blog/AuthorHeader';
@@ -14,20 +13,6 @@ import MetaTags from '../components/blog/MetaTags';
 import WebPageSchema from '../components/blog/schemas/WebPageSchema';
 
 import Variables from './../components/blog/variables';
-
-const postTitle = css({
-  fontSize: '1.5em',
-  fontWeight: '700',
-  float: 'right',
-  color: Variables.lightblue,
-  '@media(max-width: 768px)': {
-    textAlign: 'left',
-  },
-});
-const postStyle = css({
-  marginBottom: '2em',
-  color: 'rgba(255, 255, 255, 0.8)',
-});
 
 export default function Index({ data }) {
   let { edges: posts } = data.allMarkdownRemark;
@@ -53,9 +38,24 @@ export default function Index({ data }) {
           <Separator />
           <Posts posts={posts} />
           <Separator />
-          <article className={postStyle}>
+          <article
+            css={{
+              marginBottom: '2em',
+              color: 'rgba(255, 255, 255, 0.8)',
+            }}
+          >
             <header>
-              <h3 className={postTitle}>
+              <h3
+                css={{
+                  fontSize: '1.5em',
+                  fontWeight: '700',
+                  float: 'right',
+                  color: Variables.lightblue,
+                  '@media(max-width: 768px)': {
+                    textAlign: 'left',
+                  },
+                }}
+              >
                 <GatsbyLink to="/page/2">Older Posts &gt;</GatsbyLink>
               </h3>
             </header>

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from 'glamor';
 import {
   FacebookShareButton,
   GooglePlusShareButton,
@@ -10,14 +9,14 @@ import {
 
 import { Row, Col } from 'react-flexbox-grid';
 
-const shareButtonsListItem = css({
+const shareButtonsListItem = {
   marginLeft: '5px',
   marginRight: '5px',
   '@media (max-width: 768px)': {
     width: '100%',
   },
-});
-const shareTwitterButton = css({
+};
+const shareTwitterButton = {
   color: '#00aced',
   cursor: 'pointer',
   '@media (max-width: 768px)': {
@@ -27,8 +26,8 @@ const shareTwitterButton = css({
     width: '100%',
     display: 'block',
   },
-});
-const shareRedditButton = css({
+};
+const shareRedditButton = {
   cursor: 'pointer',
   color: '#ff5700',
   '@media (max-width: 768px)': {
@@ -38,8 +37,8 @@ const shareRedditButton = css({
     width: '100%',
     display: 'block',
   },
-});
-const shareFacebookButton = css({
+};
+const shareFacebookButton = {
   color: '#3b5998',
   cursor: 'pointer',
   '@media (max-width: 768px)': {
@@ -49,8 +48,8 @@ const shareFacebookButton = css({
     width: '100%',
     display: 'block',
   },
-});
-const shareGooglePlusButton = css({
+};
+const shareGooglePlusButton = {
   color: '#dd4b39',
   cursor: 'pointer',
   '@media (max-width: 768px)': {
@@ -60,33 +59,33 @@ const shareGooglePlusButton = css({
     width: '100%',
     display: 'block',
   },
-});
+};
 
 const Share = ({ draft, title, fullUrl }) => (
   <div>
     {!draft ? (
       <Row center="sm">
-        <Col className={shareButtonsListItem.toString()}>
+        <Col css={shareButtonsListItem}>
           <b>Share this post on:</b>
         </Col>
-        <Col className={shareButtonsListItem.toString()}>
+        <Col css={shareButtonsListItem}>
           <TwitterShareButton url={fullUrl} title={title} via="kbariotis">
-            <span className={shareTwitterButton.toString()}>Twitter</span>
+            <span css={shareTwitterButton}>Twitter</span>
           </TwitterShareButton>
         </Col>
-        <Col className={shareButtonsListItem.toString()}>
+        <Col css={shareButtonsListItem}>
           <FacebookShareButton url={fullUrl}>
-            <span className={shareFacebookButton}>Facebook</span>
+            <span css={shareFacebookButton}>Facebook</span>
           </FacebookShareButton>
         </Col>
-        <Col className={shareButtonsListItem.toString()}>
+        <Col css={shareButtonsListItem}>
           <GooglePlusShareButton url={fullUrl}>
-            <span className={shareGooglePlusButton}>Google+</span>
+            <span css={shareGooglePlusButton}>Google+</span>
           </GooglePlusShareButton>
         </Col>
-        <Col className={shareButtonsListItem.toString()}>
+        <Col css={shareButtonsListItem}>
           <RedditShareButton title={title} url={fullUrl}>
-            <span className={shareRedditButton}>Reddit</span>
+            <span css={shareRedditButton}>Reddit</span>
           </RedditShareButton>
         </Col>
       </Row>

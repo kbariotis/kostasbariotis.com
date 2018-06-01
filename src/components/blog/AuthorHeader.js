@@ -1,51 +1,58 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
-import { css } from 'glamor';
 import GatsbyLink from 'gatsby-link';
 
-const blogHeader = css({
-  display: 'block',
-  marginBottom: '4em',
-});
-
-const blogHeaderLink = css({
-  fontSize: '1.5em',
-  height: 'auto',
-  padding: '10px 15px',
-  float: 'left',
-  '@media(max-width: 1200px)': {
-    height: '7.5em',
-  },
-  '@media(max-width: 768px)': {
-    float: 'none',
-  },
-});
-
-const blogHeaderImg = css({
-  width: '100px',
-  borderRadius: '50%',
-  border: '4px solid #fff',
-  marginRight: '25px',
-  '@media(max-width: 768px)': {
-    margin: '0 auto',
-  },
-});
-
-const headerStyle = css({
-  marginBottom: '0.3em',
-});
-const headerDescriptionStyles = css({
-  fontSize: '1.1em',
-});
-
 const AuthorHeader = ({ sizes, children, author }) => (
-  <div className={blogHeader}>
-    <GatsbyLink to="/" className={blogHeaderLink} itemProp="name">
-      <Img className={`header-avatar ${blogHeaderImg}`} alt={author} sizes={sizes} />
+  <div
+    css={{
+      display: 'block',
+      marginBottom: '4em',
+    }}
+  >
+    <GatsbyLink
+      to="/"
+      css={{
+        fontSize: '1.5em',
+        height: 'auto',
+        padding: '10px 15px',
+        float: 'left',
+        '@media(max-width: 1200px)': {
+          height: '7.5em',
+        },
+        '@media(max-width: 768px)': {
+          float: 'none',
+        },
+      }}
+      itemProp="name"
+    >
+      <Img
+        css={{
+          width: '100px',
+          borderRadius: '50%',
+          border: '4px solid #fff',
+          marginRight: '25px',
+          '@media(max-width: 768px)': {
+            margin: '0 auto',
+          },
+        }}
+        alt={author}
+        sizes={sizes}
+      />
     </GatsbyLink>
-    <h1 className={headerStyle}>{author}</h1>
-    <p className={headerDescriptionStyles} dangerouslySetInnerHTML={{ __html: children }} />
+    <h1
+      css={{
+        marginBottom: '0.3em',
+      }}
+    >
+      {author}
+    </h1>
+    <p
+      css={{
+        fontSize: '1.1em',
+      }}
+      dangerouslySetInnerHTML={{ __html: children }}
+    />
   </div>
 );
 

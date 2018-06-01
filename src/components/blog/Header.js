@@ -1,36 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
-import { css } from 'glamor';
 
 import { rhythm } from '../../typography';
 import { Row, Col } from 'react-flexbox-grid';
 import Separator from './Separator';
 import Variables from './variables';
 
-const headerStyles = css({
-  color: Variables.red,
-});
-const headerAvatarStyles = css({
-  display: 'inline-block',
-  width: '150px',
-  height: '150px',
-  borderRadius: '50%',
-  border: '4px solid #fff',
-  marginBottom: rhythm(1),
-});
-
-const columnStyles = css({
-  textAlign: 'center',
-});
-
 const Header = ({ sizes, children }) => (
   <Row center="xs">
-    <Col className={`${columnStyles}`}>
-      <header className={`${headerStyles}`}>
+    <Col
+      css={{
+        textAlign: 'center',
+      }}
+    >
+      <header
+        css={{
+          color: Variables.red,
+        }}
+      >
         <Row center="xs">
           <Col>
-            <Img sizes={sizes} className={`${headerAvatarStyles}`} />
+            <Img
+              sizes={sizes}
+              css={{
+                display: 'inline-block',
+                width: '150px',
+                height: '150px',
+                borderRadius: '50%',
+                border: '4px solid #fff',
+                marginBottom: rhythm(1),
+              }}
+            />
             <h1>{children}</h1>
           </Col>
         </Row>
