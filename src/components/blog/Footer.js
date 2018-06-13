@@ -1,10 +1,10 @@
 import React from 'react';
 import GatsbyLink from 'gatsby-link';
-import EntypoTwitter from 'react-entypo-icons/lib/entypo/Twitter';
-import EntypoMedium from 'react-entypo-icons/lib/entypo/Medium';
-import EntypoLinkedIn from 'react-entypo-icons/lib/entypo/Linkedin';
-import EntypoGitHub from 'react-entypo-icons/lib/entypo/GitHub';
-import EntypoMail from 'react-entypo-icons/lib/entypo/Mail';
+import FaTwitter from 'react-icons/lib/fa/twitter';
+import FaMedium from 'react-icons/lib/fa/medium';
+import FaLinkedIn from 'react-icons/lib/fa/linkedin';
+import FaGitHub from 'react-icons/lib/fa/github';
+import FaEnvelope from 'react-icons/lib/fa/envelope';
 
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Variables from './variables';
@@ -109,7 +109,7 @@ const Footer = () => (
             href="https://twitter.com/kbariotis"
             title="tweet me"
           >
-            <EntypoTwitter />
+            <FaTwitter />
           </a>
         </li>
         <li css={footerSocialListItem}>
@@ -120,7 +120,7 @@ const Footer = () => (
             href="https://github.com/kbariotis"
             title="contribute"
           >
-            <EntypoGitHub />
+            <FaGitHub />
           </a>
         </li>
         <li css={footerSocialListItem}>
@@ -131,7 +131,7 @@ const Footer = () => (
             href="https://medium.com/@kbariotis"
             title="medium"
           >
-            <EntypoMedium />
+            <FaMedium />
           </a>
         </li>
         <li css={footerSocialListItem}>
@@ -142,7 +142,7 @@ const Footer = () => (
             href="https://www.linkedin.com/pub/kostas-bariotis/81/b74/2a8"
             title="linkedin"
           >
-            <EntypoLinkedIn />
+            <FaLinkedIn />
           </a>
         </li>
         <li css={footerSocialListItem}>
@@ -153,7 +153,7 @@ const Footer = () => (
             href="mailto:konmpar@gmail.com?subject=Hi!"
             title="konmpar@gmail.com"
           >
-            <EntypoMail />
+            <FaEnvelope />
           </a>
         </li>
       </ul>

@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from 'glamor';
 import { Grid } from 'react-flexbox-grid';
-import EntypoLightBulb from 'react-entypo-icons/lib/entypo/LightBulb';
+import FaLightbulbO from 'react-icons/lib/fa/lightbulb-o';
 
 import QuickLinks from '../components/resume/QuickLinks';
 import ProjectItem from '../components/resume/ProjectItem';
@@ -41,7 +41,7 @@ export default function Resume() {
   return (
     <div>
       <div className={notificationStyle}>
-        <EntypoLightBulb />
+        <FaLightbulbO />
         Did you know you can print this page into a PDF? Try CTRL + P and choose {'"'}To PDF{'"'}.
       </div>
       <Grid className={globalStyle.toString()}>
