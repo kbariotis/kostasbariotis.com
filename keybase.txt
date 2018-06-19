@@ -1,0 +1,55 @@
+====================================================================
+https://keybase.io/kbariotis
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://kostasbariotis.com
+  * I am kbariotis (https://keybase.io/kbariotis) on keybase.
+  * I have a public key ASAvMLWENqnjD5J1VRYcwlMumOY46GjHWQk0-Ci5CN2ZHwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01202f30b58436a9e30f927555161cc2532e98e638e868c7590934f828b908dd991f0a",
+      "host": "keybase.io",
+      "kid": "01202f30b58436a9e30f927555161cc2532e98e638e868c7590934f828b908dd991f0a",
+      "uid": "a107d7fc818aab644985e4be19459d19",
+      "username": "kbariotis"
+    },
+    "merkle_root": {
+      "ctime": 1518906851,
+      "hash": "7ebcfec630c4333f8e71b6223943006dcbe9e816a3c866b2f9b2b7122098b8c5f63563f28fd7397b8fc356682f02d6dfa9303cf2ecefa9b8f2e4889b193019bb",
+      "hash_meta": "b392a189d8e8a82e42d4417ce6482abe4946904c3c6173c11379a9cf89a7dd10",
+      "seqno": 2117033
+    },
+    "service": {
+      "hostname": "kostasbariotis.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.40"
+  },
+  "ctime": 1518906878,
+  "expire_in": 504576000,
+  "prev": "5ff0f9d32dfd6dbbb5a3a533f248a10a168981c8cc9c5cb8e8e38d74c10ed7cf",
+  "seqno": 7,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgLzC1hDap4w+SdVUWHMJTLpjmOOhox1kJNPgouQjdmR8Kp3BheWxvYWTFA0t7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwMmYzMGI1ODQzNmE5ZTMwZjkyNzU1NTE2MWNjMjUzMmU5OGU2MzhlODY4Yzc1OTA5MzRmODI4YjkwOGRkOTkxZjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwMmYzMGI1ODQzNmE5ZTMwZjkyNzU1NTE2MWNjMjUzMmU5OGU2MzhlODY4Yzc1OTA5MzRmODI4YjkwOGRkOTkxZjBhIiwidWlkIjoiYTEwN2Q3ZmM4MThhYWI2NDQ5ODVlNGJlMTk0NTlkMTkiLCJ1c2VybmFtZSI6ImtiYXJpb3RpcyJ9LCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTUxODkwNjg1MSwiaGFzaCI6IjdlYmNmZWM2MzBjNDMzM2Y4ZTcxYjYyMjM5NDMwMDZkY2JlOWU4MTZhM2M4NjZiMmY5YjJiNzEyMjA5OGI4YzVmNjM1NjNmMjhmZDczOTdiOGZjMzU2NjgyZjAyZDZkZmE5MzAzY2YyZWNlZmE5YjhmMmU0ODg5YjE5MzAxOWJiIiwiaGFzaF9tZXRhIjoiYjM5MmExODlkOGU4YTgyZTQyZDQ0MTdjZTY0ODJhYmU0OTQ2OTA0YzNjNjE3M2MxMTM3OWE5Y2Y4OWE3ZGQxMCIsInNlcW5vIjoyMTE3MDMzfSwic2VydmljZSI6eyJob3N0bmFtZSI6Imtvc3Rhc2JhcmlvdGlzLmNvbSIsInByb3RvY29sIjoiaHR0cHM6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjQwIn0sImN0aW1lIjoxNTE4OTA2ODc4LCJleHBpcmVfaW4iOjUwNDU3NjAwMCwicHJldiI6IjVmZjBmOWQzMmRmZDZkYmJiNWEzYTUzM2YyNDhhMTBhMTY4OTgxYzhjYzljNWNiOGU4ZTM4ZDc0YzEwZWQ3Y2YiLCJzZXFubyI6NywidGFnIjoic2lnbmF0dXJlIn2jc2lnxEBCppyGxIc55pmFmW/R7RI68hvClmnY1Eqq3L/HanhRz3uz9ItKkBLK2kgWMj3Hk2Y5JEkPAyGeQfO2sps/qR4EqHNpZ190eXBlIKRoYXNogqR0eXBlCKV2YWx1ZcQgmkJY5xB5qJxhspuK1CV0NoDwJE9VNPkwji07VxrlxSyjdGFnzQICp3ZlcnNpb24B
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/kbariotis
+
+==================================================================
