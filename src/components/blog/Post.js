@@ -1,5 +1,5 @@
 import React from 'react';
-import GatsbyLink from 'gatsby-link';
+import { Link } from 'gatsby';
 import dateformat from 'dateformat';
 import PropTypes from 'prop-types';
 
@@ -24,7 +24,7 @@ const Post = ({ post }) => (
           },
         }}
       >
-        <GatsbyLink to={post.frontmatter.path}>{post.frontmatter.title}</GatsbyLink>
+        <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
       </h1>
     </header>
     <time
@@ -41,7 +41,7 @@ const Post = ({ post }) => (
       }}
     >
       <p>
-        {post.excerpt} <GatsbyLink to={post.frontmatter.path}>&raquo;</GatsbyLink>
+        {post.excerpt} <Link to={post.frontmatter.path}>&raquo;</Link>
       </p>
     </section>
     <footer>

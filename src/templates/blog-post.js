@@ -3,13 +3,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import dateformat from 'dateformat';
-import GatsbyLink from 'gatsby-link';
-import ReactDisqusThread from 'react-disqus-thread';
+import { Link } from 'gatsby';
+import ReactDisqusThread from 'react-disqus-comments';
 import uuidv5 from 'uuid/v5';
 import Img from 'gatsby-image';
-import { css } from 'glamor';
+import { css } from 'react-emotion';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import 'prismjs/themes/prism-tomorrow.css';
 
+import IndexLayout from '../components/layouts/Index';
 import Share from '../components/blog/Share';
 import Post from '../components/blog/Post';
 import BulletListTags from '../components/blog/BulletListTags';
@@ -123,8 +125,6 @@ const mainPostStyle = css({
   },
 });
 
-require('prismjs/themes/prism-tomorrow.css');
-
 export default function Template({ data }) {
   const { mainPost: post } = data;
   const { nextPost: next } = data;
@@ -134,7 +134,7 @@ export default function Template({ data }) {
   const fullUrl = `${siteUrl}${post.frontmatter.path}`;
 
   return (
-    <div>
+    <IndexLayout>
       <ArticleSchema
         authorName={`Kostas Bariotis`}
         title={`${post.frontmatter.title}`}
@@ -160,9 +160,9 @@ export default function Template({ data }) {
                 <Col md={6}>
                   <Row middle="xs">
                     <Col md={4}>
-                      <GatsbyLink to="/" className={authorAvatar} itemProp="name">
-                        <Img sizes={data.file.childImageSharp.sizes} className={authorAvatarImg} />
-                      </GatsbyLink>
+                      <Link to="/" className={authorAvatar} itemProp="name">
+                        <Img fluid={data.file.childImageSharp.fluid} className={authorAvatarImg} />
+                      </Link>
                     </Col>
                     <Col md={8}>
                       <div className={authorName}>Kostas Bariotis</div>
@@ -215,21 +215,21 @@ export default function Template({ data }) {
           </Col>
         </Row>
       </Grid>
-    </div>
+    </IndexLayout>
   );
 }
 
 Template.propTypes = {
   data: PropTypes.object,
-  pathContext: PropTypes.object,
+  pageContext: PropTypes.object,
 };
 
 export const pageQuery = graphql`
   query BlogPostByPath($mainPostPath: String!, $nextPostPath: String!) {
     file(relativePath: { eq: "avatar.jpg" }) {
       childImageSharp {
-        sizes {
-          ...GatsbyImageSharpSizes_withWebp
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

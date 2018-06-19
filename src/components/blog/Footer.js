@@ -1,5 +1,5 @@
 import React from 'react';
-import GatsbyLink from 'gatsby-link';
+import { Link } from 'gatsby';
 import FaTwitter from 'react-icons/lib/fa/twitter';
 import FaMedium from 'react-icons/lib/fa/medium';
 import FaLinkedIn from 'react-icons/lib/fa/linkedin';
@@ -81,19 +81,18 @@ const Footer = () => (
         <Row center="xs">
           <Col>
             I am{' '}
-            <GatsbyLink css={footerLink} to="/" title="Kostasbariotis.com Home">
+            <Link css={footerLink} to="/" title="Kostasbariotis.com Home">
               Kostas Bariotis
-            </GatsbyLink>, a web developer, a proud wanderer and a passionate doer. My mission is to
-            write clean and efficient code, to solve problems on the Web and to learn something
-            more. Read{' '}
-            <GatsbyLink css={footerLink} to="/about/" title="About Kostasbariotis.com">
+            </Link>, a web developer, a proud wanderer and a passionate doer. My mission is to write
+            clean and efficient code, to solve problems on the Web and to learn something more. Read{' '}
+            <Link css={footerLink} to="/about/" title="About Kostasbariotis.com">
               more about me
-            </GatsbyLink>{' '}
+            </Link>{' '}
             or{' '}
-            <GatsbyLink css={footerLink} to="/contact/" title="Contact Kostas">
+            <Link css={footerLink} to="/contact/" title="Contact Kostas">
               {' '}
               get in touch{' '}
-            </GatsbyLink>.
+            </Link>.
           </Col>
         </Row>
       </Grid>
@@ -159,9 +158,9 @@ const Footer = () => (
       </ul>
       <div css={footerText}>
         Copyright {new Date().getFullYear()}{' '}
-        <GatsbyLink css={footerSocialLink} to="/" title="Kostas Bariotis Blog">
+        <Link css={footerSocialLink} to="/" title="Kostas Bariotis Blog">
           Kostas Bariotis
-        </GatsbyLink>
+        </Link>
         <span css={footerLinkSeparator}> • </span> Design by{' '}
         <a
           css={footerSocialLink}

@@ -2,10 +2,11 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from 'glamor';
+import { css } from 'react-emotion';
 import { Grid } from 'react-flexbox-grid';
 import FaLightbulbO from 'react-icons/lib/fa/lightbulb-o';
 
+import ResumeLayout from '../components/layouts/Resume';
 import QuickLinks from '../components/resume/QuickLinks';
 import ProjectItem from '../components/resume/ProjectItem';
 import Section from '../components/resume/Section';
@@ -39,12 +40,12 @@ const notificationStyle = css({
 
 export default function Resume() {
   return (
-    <div>
+    <ResumeLayout>
       <div className={notificationStyle}>
         <FaLightbulbO />
         Did you know you can print this page into a PDF? Try CTRL + P and choose {'"'}To PDF{'"'}.
       </div>
-      <Grid className={globalStyle.toString()}>
+      <Grid className={globalStyle}>
         <section className={pageInfo}>
           <QuickLinks />
           <hr />
@@ -178,7 +179,7 @@ export default function Resume() {
           <QuickLinks />
         </section>
       </Grid>
-    </div>
+    </ResumeLayout>
   );
 }
 
@@ -195,8 +196,8 @@ export const aboutPageQuery = graphql`
     }
     file(relativePath: { eq: "avatar.jpg" }) {
       childImageSharp {
-        sizes {
-          ...GatsbyImageSharpSizes_withWebp
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

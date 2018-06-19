@@ -16,6 +16,79 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-paginate`,
+      options: {
+        sources: [
+          {
+            path: `/page`,
+            template: `${__dirname}/src/templates/page.js`,
+            serialize: results => results.data.allMarkdownRemark.edges,
+            query: `{
+              allMarkdownRemark(
+                sort: { order: DESC, fields: [frontmatter___date] }
+                limit: 1000
+                filter: { frontmatter: { draft: { ne: true } } }
+              ) {
+                edges {
+                  next {
+                    frontmatter {
+                      path
+                    }
+                  }
+                  node {
+                    excerpt(pruneLength: 250)
+                    html
+                    id
+                    timeToRead
+                    frontmatter {
+                      date
+                      path
+                      tags
+                      title
+                      draft
+                    }
+                  }
+                }
+              }
+            }`,
+          },
+          {
+            path: `/drafts/page`,
+            template: `${__dirname}/src/templates/page.js`,
+            serialize: results => results.data.allMarkdownRemark.edges,
+            query: `{
+              allMarkdownRemark(
+                sort: { order: DESC, fields: [frontmatter___date] }
+                limit: 1000
+                filter: { frontmatter: { draft: { eq: true } } }
+              ) {
+                edges {
+                  next {
+                    frontmatter {
+                      path
+                    }
+                  }
+                  node {
+                    excerpt(pruneLength: 250)
+                    html
+                    id
+                    timeToRead
+                    frontmatter {
+                      date
+                      path
+                      tags
+                      title
+                      draft
+                    }
+                  }
+                }
+              }
+            }`,
+          },
+        ],
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/blog`,
@@ -42,7 +115,7 @@ module.exports = {
             },
           },
           {
-            resolve: 'gatsby-remark-responsive-image',
+            resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 750,
               linkImagesToOriginal: true,

@@ -11,4 +11,5 @@ const typography = new Typography({
   bodyWeight: '300',
 });
 
+export const { scale, rhythm, options } = typography;
 export default typography;

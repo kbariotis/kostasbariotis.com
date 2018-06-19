@@ -1,9 +1,10 @@
 import React from 'react';
-import GatsbyLink from 'gatsby-link';
+import { Link } from 'gatsby';
 import Helmet from 'react-helmet';
-import { css } from 'glamor';
+import { css } from 'react-emotion';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
+import IndexLayout from '../components/layouts/Index';
 import Separator from '../components/blog/Separator';
 import RedHeader from '../components/blog/RedHeader';
 
@@ -22,7 +23,7 @@ function tweet() {
 
 export default function NotFound() {
   return (
-    <div>
+    <IndexLayout>
       <Helmet
         title="Not found - Kostas Bariotis"
         meta={[{ name: 'description', content: 'Not found' }]}
@@ -34,8 +35,7 @@ export default function NotFound() {
             <RedHeader>AW NO! The page you are trying to access is not here.</RedHeader>
             <Separator />
             <p className={notFoundSection}>
-              Sorry for the inconvience. You can go to the <GatsbyLink to="/">home page</GatsbyLink>{' '}
-              or{' '}
+              Sorry for the inconvience. You can go to the <Link to="/">home page</Link> or{' '}
               <a href="#" onClick={tweet}>
                 tweet me
               </a>{' '}
@@ -44,6 +44,6 @@ export default function NotFound() {
           </Col>
         </Row>
       </Grid>
-    </div>
+    </IndexLayout>
   );
 }

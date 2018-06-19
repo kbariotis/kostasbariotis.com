@@ -1,12 +1,12 @@
 import React from 'react';
-import GatsbyLink from 'gatsby-link';
+import { Link } from 'gatsby';
 import dateformat from 'dateformat';
 import PropTypes from 'prop-types';
 
 const NavigateLink = ({ post }) =>
   post && (
     <div>
-      <GatsbyLink
+      <Link
         css={{
           fontSize: '1.11em',
           fontWeight: 'bold',
@@ -16,7 +16,7 @@ const NavigateLink = ({ post }) =>
         to={post.frontmatter.path}
       >
         {post.frontmatter.title}
-      </GatsbyLink>
+      </Link>
       <div>{dateformat(post.frontmatter.date, 'd mmmm yyyy')}</div>
       <p>{`${post.excerpt}`}</p>
     </div>

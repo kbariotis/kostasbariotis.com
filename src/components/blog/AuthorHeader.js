@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
-import GatsbyLink from 'gatsby-link';
+import { Link } from 'gatsby';
 
-const AuthorHeader = ({ sizes, children, author }) => (
+const AuthorHeader = ({ fluid, children, author }) => (
   <div
     css={{
       display: 'block',
       marginBottom: '4em',
     }}
   >
-    <GatsbyLink
+    <Link
       to="/"
       css={{
         fontSize: '1.5em',
@@ -37,9 +37,9 @@ const AuthorHeader = ({ sizes, children, author }) => (
           },
         }}
         alt={author}
-        sizes={sizes}
+        fluid={fluid}
       />
-    </GatsbyLink>
+    </Link>
     <h1
       css={{
         marginBottom: '0.3em',
@@ -57,7 +57,7 @@ const AuthorHeader = ({ sizes, children, author }) => (
 );
 
 AuthorHeader.propTypes = {
-  sizes: PropTypes.object,
+  fluid: PropTypes.object,
   author: PropTypes.string,
   children: PropTypes.string,
 };

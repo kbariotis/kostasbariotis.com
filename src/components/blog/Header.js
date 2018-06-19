@@ -7,7 +7,7 @@ import { Row, Col } from 'react-flexbox-grid';
 import Separator from './Separator';
 import Variables from './variables';
 
-const Header = ({ sizes, children }) => (
+const Header = ({ fluid, children }) => (
   <Row center="xs">
     <Col
       css={{
@@ -22,7 +22,7 @@ const Header = ({ sizes, children }) => (
         <Row center="xs">
           <Col>
             <Img
-              sizes={sizes}
+              fluid={fluid}
               css={{
                 display: 'inline-block',
                 width: '150px',
@@ -42,7 +42,7 @@ const Header = ({ sizes, children }) => (
 );
 
 Header.propTypes = {
-  sizes: PropTypes.object,
+  fluid: PropTypes.object,
   children: PropTypes.string,
 };
 

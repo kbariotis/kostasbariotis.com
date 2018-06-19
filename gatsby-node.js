@@ -1,23 +1,10 @@
 const path = require('path');
 
-exports.onCreatePage = ({ page, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
-
-  return new Promise(resolve => {
-    if (page.path.match(/^\/resume/)) {
-      page.layout = 'resume';
-      createPage(page);
-    }
-
-    resolve();
-  });
-};
-
 /**
  * This is where all starts
  */
-exports.createPages = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions;
 
   /**
    * Fetch our posts
@@ -89,9 +76,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     generateContent(createPage, drafts);
 
     createTagPages(createPage, published);
-
-    createPagination(createPage, published, `/page`);
-    createPagination(createPage, drafts, `/drafts/page`);
   });
 };
 
@@ -151,30 +135,6 @@ function createTagPages(createPage, edges) {
       });
     }
   });
-}
-
-/**
- * Create pagination for posts
- */
-function createPagination(createPage, edges, pathPrefix) {
-  const pageTemplate = path.resolve(`src/templates/page.js`);
-
-  const pageSize = 5;
-  const pagesSum = Math.ceil(edges.length / pageSize);
-
-  for (let page = 1; page <= pagesSum; page++) {
-    createPage({
-      path: `${pathPrefix}/${page}`,
-      component: pageTemplate,
-      context: {
-        posts: paginate(edges, pageSize, page).map(({ node }) => node),
-        page,
-        pagesSum,
-        prevPath: page - 1 > 0 ? `${pathPrefix}/${page - 1}` : null,
-        nextPath: page + 1 <= pagesSum ? `${pathPrefix}/${page + 1}` : null,
-      },
-    });
-  }
 }
 
 function paginate(array, page_size, page_number) {

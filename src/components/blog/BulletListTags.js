@@ -1,5 +1,5 @@
 import React from 'react';
-import GatsbyLink from 'gatsby-link';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'react-flexbox-grid';
 
@@ -52,16 +52,16 @@ const BulletListTags = ({ tags, draft }) => (
     {tags &&
       tags.split(', ').map((tag, index) => (
         <Col key={index} css={tagsItemStyle}>
-          <GatsbyLink css={tagsItemLink} to={`/tag/${tag}`}>
+          <Link css={tagsItemLink} to={`/tag/${tag}`}>
             {tag}
-          </GatsbyLink>
+          </Link>
         </Col>
       ))}
     {draft && (
       <Col css={tagsDraftItemStyle}>
-        <GatsbyLink css={tagsItemLink} to={`/drafts`}>
+        <Link css={tagsItemLink} to={`/drafts`}>
           Draft
-        </GatsbyLink>
+        </Link>
       </Col>
     )}
   </Row>

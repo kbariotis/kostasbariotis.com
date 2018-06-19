@@ -1,5 +1,5 @@
 import React from 'react';
-import GatsbyLink from 'gatsby-link';
+import { Link } from 'gatsby';
 
 import { slide as BurgerMenu } from 'react-burger-menu';
 import Variables from './variables';
@@ -41,7 +41,7 @@ var styles = {
 
 const Menu = () => (
   <BurgerMenu styles={styles}>
-    <GatsbyLink
+    <Link
       exact
       activeStyle={{
         color: '#e52f45',
@@ -49,8 +49,8 @@ const Menu = () => (
       to="/"
     >
       Home
-    </GatsbyLink>
-    <GatsbyLink
+    </Link>
+    <Link
       exact
       activeStyle={{
         color: '#e52f45',
@@ -58,8 +58,8 @@ const Menu = () => (
       to="/about/"
     >
       About
-    </GatsbyLink>
-    <GatsbyLink
+    </Link>
+    <Link
       exact
       activeStyle={{
         color: '#e52f45',
@@ -67,8 +67,8 @@ const Menu = () => (
       to="/contact/"
     >
       Contact
-    </GatsbyLink>
-    <GatsbyLink
+    </Link>
+    <Link
       exact
       activeStyle={{
         color: '#e52f45',
@@ -76,7 +76,7 @@ const Menu = () => (
       to="/resume/"
     >
       Resume
-    </GatsbyLink>
+    </Link>
   </BurgerMenu>
 );
 

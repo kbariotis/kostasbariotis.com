@@ -3,8 +3,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'react-flexbox-grid';
-import GatsbyLink from 'gatsby-link';
+import { Link } from 'gatsby';
 
+import IndexLayout from '../components/layouts/Index';
 import Separator from '../components/blog/Separator';
 import AuthorHeader from '../components/blog/AuthorHeader';
 import RedHeader from '../components/blog/RedHeader';
@@ -19,7 +20,7 @@ export default function Index({ data }) {
   let { siteUrl, description, author } = data.site.siteMetadata;
   posts = posts.map(post => post.node);
   return (
-    <div>
+    <IndexLayout>
       <WebPageSchema title={author} description={description} url={siteUrl} />
       <MetaTags
         noIndex={false}
@@ -31,7 +32,7 @@ export default function Index({ data }) {
       />
       <Row>
         <Col sm={8} smOffset={2}>
-          <AuthorHeader sizes={data.file.childImageSharp.sizes} author={author}>
+          <AuthorHeader fluid={data.file.childImageSharp.fluid} author={author}>
             {description}
           </AuthorHeader>
           <RedHeader>Latest Posts</RedHeader>
@@ -56,13 +57,13 @@ export default function Index({ data }) {
                   },
                 }}
               >
-                <GatsbyLink to="/page/2">Older Posts &gt;</GatsbyLink>
+                <Link to="/page/2">Older Posts &gt;</Link>
               </h3>
             </header>
           </article>
         </Col>
       </Row>
-    </div>
+    </IndexLayout>
   );
 }
 
@@ -74,8 +75,8 @@ export const pageQuery = graphql`
   query IndexQuery {
     file(relativePath: { eq: "avatar.jpg" }) {
       childImageSharp {
-        sizes {
-          ...GatsbyImageSharpSizes_withWebp
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

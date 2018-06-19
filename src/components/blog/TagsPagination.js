@@ -1,5 +1,5 @@
 import React from 'react';
-import GatsbyLink from 'gatsby-link';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import { Row, Col } from 'react-flexbox-grid';
@@ -26,14 +26,14 @@ const Pagination = ({ tag, page, pagesSum }) => (
     <Row>
       <Col sm>
         {page === 2 && (
-          <GatsbyLink css={newerPostsStyle} to={`/tag/${tag}/`}>
+          <Link css={newerPostsStyle} to={`/tag/${tag}/`}>
             <span aria-hidden="true">←</span> Newer Posts
-          </GatsbyLink>
+          </Link>
         )}
         {page > 2 && (
-          <GatsbyLink css={newerPostsStyle} to={`/tag/${tag}/page/${page - 1}/`}>
+          <Link css={newerPostsStyle} to={`/tag/${tag}/page/${page - 1}/`}>
             <span aria-hidden="true">←</span> Newer Posts
-          </GatsbyLink>
+          </Link>
         )}
       </Col>
       <Col>
@@ -41,9 +41,9 @@ const Pagination = ({ tag, page, pagesSum }) => (
       </Col>
       <Col sm>
         {page < pagesSum && (
-          <GatsbyLink css={olderPostsStyle} to={`/tag/${tag}/page/${page + 1}/`}>
+          <Link css={olderPostsStyle} to={`/tag/${tag}/page/${page + 1}/`}>
             Older Posts <span aria-hidden="true">→</span>
-          </GatsbyLink>
+          </Link>
         )}
       </Col>
     </Row>
