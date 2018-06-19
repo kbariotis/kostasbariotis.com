@@ -22,7 +22,7 @@ module.exports = {
           {
             path: `/page`,
             template: `${__dirname}/src/templates/page.js`,
-            serialize: results => results.data.allMarkdownRemark.edges,
+            serialize: results => results.allMarkdownRemark.edges,
             query: `{
               allMarkdownRemark(
                 sort: { order: DESC, fields: [frontmatter___date] }
@@ -55,7 +55,7 @@ module.exports = {
           {
             path: `/drafts/page`,
             template: `${__dirname}/src/templates/page.js`,
-            serialize: results => results.data.allMarkdownRemark.edges,
+            serialize: results => results.allMarkdownRemark.edges,
             query: `{
               allMarkdownRemark(
                 sort: { order: DESC, fields: [frontmatter___date] }
