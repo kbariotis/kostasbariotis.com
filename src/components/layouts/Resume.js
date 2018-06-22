@@ -3,7 +3,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery } from 'gatsby';
+import { injectGlobal } from 'react-emotion';
 
+injectGlobal`
+  body,
+  html {
+    color: black;
+    font-weight: 300;
+    font-style: normal;
+    font-smoothing: 'antialiased',
+    text-rendering: 'optimizeLegibility',
+    word-wrap: 'break-word',
+    hyphens: 'auto',
+  }
+`;
 export default function ResumeLayout({ children }) {
   return (
     <StaticQuery

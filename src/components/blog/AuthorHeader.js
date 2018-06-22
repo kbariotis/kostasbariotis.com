@@ -8,6 +8,7 @@ const AuthorHeader = ({ fluid, children, author }) => (
     css={{
       display: 'block',
       marginBottom: '4em',
+      color: 'white',
     }}
   >
     <Link

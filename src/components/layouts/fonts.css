@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'Roboto Subset';
+  src: url('/fonts/Roboto_Subset/Roboto-Light-subset.ttf');
+  font-weight: 'light';
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto Slab Subset';
+  src: url('/fonts/Roboto_Slab_Subset/RobotoSlab-Regular-subset.ttf');
+  font-weight: 'normal';
+  font-style: 'normal';
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto/Roboto-Bold.ttf');
+  font-weight: 'bold';
+  font-style: 'normal';
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto/Roboto-Black.ttf');
+  font-weight: 'bolder';
+  font-style: 'normal';
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto/Roboto-Light.ttf');
+  font-weight: 'lighter';
+  font-style: 'normal';
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto/Roboto-Italic.ttf');
+  font-weight: 'normal';
+  font-style: 'italic';
+}
+@font-face {
+  font-family: 'Roboto Slab';
+  src: url('/fonts/Roboto_Slab/RobotoSlab-Regular.ttf');
+  font-weight: 'normal';
+  font-style: 'normal';
+}

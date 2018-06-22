@@ -57,6 +57,10 @@ const blogSectionHeader = css({
   marginBottom: '1.25em',
 });
 
+const postMetaStyle = css({
+  color: 'white',
+});
+
 const mainPostStyle = css({
   marginTop: '2.5em',
   color: 'rgba(255, 255, 255, 0.8)',
@@ -157,7 +161,7 @@ export default function Template({ data }) {
             <header className="post-head">
               <h1 className={postTitle}>{post.frontmatter.title}</h1>
             </header>
-            <section className="post-meta">
+            <section className={postMetaStyle}>
               <Row middle="xs">
                 <Col md={6}>
                   <Row middle="xs">
