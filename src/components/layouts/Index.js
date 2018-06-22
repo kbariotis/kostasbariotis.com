@@ -16,7 +16,6 @@ import './fonts.css';
 injectGlobal`
   body,
   html {
-    color: rgba(255,255,255,0.8);
     font-weight: 300;
     font-style: normal;
     font-smoothing: 'antialiased',
@@ -48,7 +47,8 @@ injectGlobal`
   }
 `;
 
-const bodyStyle = css({
+const containerStyle = css({
+  color: 'rgba(255,255,255,0.8)',
   backgroundColor: Variables.background,
   background: Variables.background,
   backgroundSize: '100% 300px',
@@ -92,7 +92,7 @@ export default function IndexLayout({ children }) {
         let { description, title } = data.site.siteMetadata;
 
         return (
-          <div className={bodyStyle}>
+          <div className={containerStyle}>
             <Menu />
             <Helmet titleTemplate={`%s - ${title}`} defaultTitle={title}>
               <meta name="description" content={description} />

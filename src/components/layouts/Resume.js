@@ -3,20 +3,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery } from 'gatsby';
-import { injectGlobal } from 'react-emotion';
+import { css } from 'react-emotion';
 
-injectGlobal`
-  body,
-  html {
-    color: black;
-    font-weight: 300;
-    font-style: normal;
-    font-smoothing: 'antialiased',
-    text-rendering: 'optimizeLegibility',
-    word-wrap: 'break-word',
-    hyphens: 'auto',
-  }
-`;
+const containerStyle = css({
+  color: 'black',
+});
+
 export default function ResumeLayout({ children }) {
   return (
     <StaticQuery
@@ -44,7 +36,7 @@ export default function ResumeLayout({ children }) {
               <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
               <meta name="HandheldFriendly" content="True" />
             </Helmet>
-            <section className="main-content">{children}</section>
+            <section className={containerStyle}>{children}</section>
           </div>
         );
       }}

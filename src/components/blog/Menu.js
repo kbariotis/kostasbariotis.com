@@ -75,7 +75,7 @@ const Menu = () => (
       }}
       to="/resume/"
     >
-      Resume
+      Résumé
     </Link>
   </BurgerMenu>
 );
