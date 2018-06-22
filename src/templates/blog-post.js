@@ -65,6 +65,8 @@ const mainPostStyle = css({
     borderLeft: `5px solid ${Variables.purple}`,
     paddingLeft: '20px',
     marginLeft: 0,
+    fontSize: '2em',
+    fontStyle: 'italic',
   },
   '& img': {
     maxWidth: '100%',
