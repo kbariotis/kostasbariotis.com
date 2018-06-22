@@ -52,8 +52,6 @@ const containerStyle = css({
   backgroundColor: Variables.background,
   background: Variables.background,
   backgroundSize: '100% 300px',
-  backgroundImage:
-    "linear-gradient(to bottom, rgba(125, 185, 232, 0) 0%, rgba(34, 25, 49, 1) 100%), url('/images/header_index.jpg')",
   filter:
     "progid:DXImageTransform.Microsoft.gradient(startColorstr='#007db9e8', endColorstr='#221931', GradientType=0)",
   backgroundRepeat: 'no-repeat',
@@ -66,6 +64,10 @@ const containerStyle = css({
       color: Variables.red,
     },
   },
+  '@media (max-width: 767px)': {
+    backgroundSize: '1400px 300px',
+    backgroundPosition: 'center top',
+  },
 });
 
 const blogContainer = css({
@@ -74,7 +76,7 @@ const blogContainer = css({
   marginBottom: '4em',
 });
 
-export default function IndexLayout({ children }) {
+export default function IndexLayout({ children, fixed }) {
   return (
     <StaticQuery
       query={graphql`
@@ -91,10 +93,27 @@ export default function IndexLayout({ children }) {
       render={data => {
         let { description, title } = data.site.siteMetadata;
 
+        const backgroundImageStyle = css(containerStyle, {
+          backgroundImage: `linear-gradient(to bottom, rgba(125, 185, 232, 0) 0%, rgba(34, 25, 49, 1) 100%), url('${
+            fixed.src
+          }')`,
+        });
         return (
-          <div className={containerStyle}>
+          <div className={backgroundImageStyle}>
             <Menu />
             <Helmet titleTemplate={`%s - ${title}`} defaultTitle={title}>
+              <link
+                rel="preload"
+                href="/fonts/Roboto_Subset/Roboto-Light-subset.ttf"
+                as="font"
+                crossOrigin="anonymous"
+              />
+              <link
+                rel="preload"
+                href="/fonts/Roboto_Slab_Subset/RobotoSlab-Regular-subset.ttf"
+                as="font"
+                crossOrigin="anonymous"
+              />
               <meta name="description" content={description} />
               <html lang="en" /> {/* this is valid react-helmet usage! */}
               <meta charSet="utf-8" />
@@ -117,5 +136,5 @@ export default function IndexLayout({ children }) {
 
 IndexLayout.propTypes = {
   children: PropTypes.func,
-  data: PropTypes.object,
+  fixed: PropTypes.object,
 };

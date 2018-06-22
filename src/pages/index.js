@@ -20,7 +20,7 @@ export default function Index({ data }) {
   let { siteUrl, description, author } = data.site.siteMetadata;
   posts = posts.map(post => post.node);
   return (
-    <IndexLayout>
+    <IndexLayout fixed={data.headerImage.childImageSharp.fixed}>
       <WebPageSchema title={author} description={description} url={siteUrl} />
       <MetaTags
         noIndex={false}
@@ -32,7 +32,7 @@ export default function Index({ data }) {
       />
       <Row>
         <Col sm={8} smOffset={2}>
-          <AuthorHeader fluid={data.file.childImageSharp.fluid} author={author}>
+          <AuthorHeader fluid={data.avatarImage.childImageSharp.fluid} author={author}>
             {description}
           </AuthorHeader>
           <RedHeader>Latest Posts</RedHeader>
@@ -73,10 +73,17 @@ Index.propTypes = {
 
 export const pageQuery = graphql`
   query IndexQuery {
-    file(relativePath: { eq: "avatar.jpg" }) {
+    avatarImage: file(relativePath: { eq: "avatar.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    headerImage: file(relativePath: { eq: "header.jpg" }) {
+      childImageSharp {
+        fixed(width: 1400) {
+          ...GatsbyImageSharpFixed
         }
       }
     }
