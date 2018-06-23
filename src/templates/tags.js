@@ -1,5 +1,3 @@
-/* global graphql */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from 'react-emotion';
@@ -16,8 +14,7 @@ const tagMeta = css({
   marginBottom: '2.5em',
 });
 
-export default function Tags({ pageContext, data }) {
-  const { siteUrl } = data.site.siteMetadata;
+export default function Tags({ pageContext }) {
   const { posts, tag, pagesSum, page } = pageContext;
 
   return (
@@ -27,9 +24,7 @@ export default function Tags({ pageContext, data }) {
           title={`Tag ${tag}`}
           description={`All posts talking about ${tag}`}
           tags={tag}
-          siteUrl={siteUrl}
           path={`/tag/${tag}`}
-          noIndex={false}
         />
         <Col lg={8} lgOffset={2}>
           <RedHeader>{tag}</RedHeader>
@@ -46,18 +41,5 @@ export default function Tags({ pageContext, data }) {
 }
 
 Tags.propTypes = {
-  data: PropTypes.object,
   pageContext: PropTypes.object,
 };
-
-export const tagsQuery = graphql`
-  query TagsSiteMetadata {
-    site {
-      siteMetadata {
-        title
-        description
-        siteUrl
-      }
-    }
-  }
-`;

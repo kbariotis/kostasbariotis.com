@@ -22,12 +22,9 @@ export default function About({ data }) {
           }}
         >
           <MetaTags
-            siteUrl={data.site.siteMetadata.siteUrl}
             title={`About`}
             path={`/about`}
             description={'Hey, I am Kostas. Nice having you here.'}
-            noIndex={false}
-            tags=""
           />
           <Header fluid={data.file.childImageSharp.fluid}>
             Hey, I am Kostas. Nice having you here.
@@ -223,11 +220,6 @@ About.propTypes = {
 
 export const aboutPageQuery = graphql`
   query AboutPageSiteMetadata {
-    site {
-      siteMetadata {
-        siteUrl
-      }
-    }
     file(relativePath: { eq: "avatar.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 750) {

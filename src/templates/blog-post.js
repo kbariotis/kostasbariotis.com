@@ -152,7 +152,6 @@ export default function Template({ data }) {
         description={post.excerpt}
         tags={post.frontmatter.tags}
         path={post.frontmatter.path}
-        siteUrl={siteUrl}
         noIndex={post.frontmatter.draft}
       />
       <Grid>

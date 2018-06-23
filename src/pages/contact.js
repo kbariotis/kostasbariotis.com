@@ -20,12 +20,9 @@ export default function Contact({ data }) {
           }}
         >
           <MetaTags
-            siteUrl={data.site.siteMetadata.siteUrl}
             path={'/contact'}
             title={`Contact`}
             description={'In need for a Web Developer? Search no more.'}
-            noIndex={false}
-            tags=""
           />
           <Header fluid={data.file.childImageSharp.fluid}>
             In need for a Web Developer? <br />Search no more.
@@ -77,11 +74,6 @@ Contact.propTypes = {
 
 export const contactPageQuery = graphql`
   query ContactPageSiteMetadata {
-    site {
-      siteMetadata {
-        siteUrl
-      }
-    }
     file(relativePath: { eq: "avatar.jpg" }) {
       childImageSharp {
         fluid {

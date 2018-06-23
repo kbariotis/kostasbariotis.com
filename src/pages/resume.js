@@ -189,11 +189,6 @@ Resume.propTypes = {
 
 export const aboutPageQuery = graphql`
   query ResumePageSiteMetadata {
-    site {
-      siteMetadata {
-        siteUrl
-      }
-    }
     file(relativePath: { eq: "avatar.jpg" }) {
       childImageSharp {
         fluid {

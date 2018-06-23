@@ -12,7 +12,6 @@ import RedHeader from '../components/blog/RedHeader';
 
 export default function Drafts({ data }) {
   let { edges: posts } = data.allMarkdownRemark;
-  let { siteUrl } = data.site.siteMetadata;
   posts = posts.map(post => post.node);
   return (
     <IndexLayout>
@@ -25,10 +24,8 @@ export default function Drafts({ data }) {
           }}
         >
           <MetaTags
-            siteUrl={siteUrl}
             path={'/drafts'}
             title={`My drafts`}
-            tags=""
             description={
               'These are the draft posts either I am currently working on either I have abandoned them for some reason. You can read them and comment on them if you think you can help me complete them.'
             }
@@ -57,12 +54,6 @@ Drafts.propTypes = {
 
 export const pageQuery = graphql`
   query DraftsQuery {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       limit: 5

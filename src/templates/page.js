@@ -11,7 +11,7 @@ import Separator from '../components/blog/Separator';
 import MetaTags from '../components/blog/MetaTags';
 
 export default function Pages({ pageContext, data }) {
-  const { description, siteUrl } = data.site.siteMetadata;
+  const { description } = data.site.siteMetadata;
   const { posts, page, pagesSum, prevPath, nextPath } = pageContext;
   return (
     <IndexLayout>
@@ -19,10 +19,8 @@ export default function Pages({ pageContext, data }) {
         <MetaTags
           title={`Page ${page}`}
           path={`/page/${page}`}
-          siteUrl={siteUrl}
           tags="webdev, programming, javascript"
           description={description}
-          noIndex={false}
         />
         <Row>
           <Col lg={8} lgOffset={2}>
@@ -48,7 +46,6 @@ export const pagesQuery = graphql`
     site {
       siteMetadata {
         description
-        siteUrl
       }
     }
   }

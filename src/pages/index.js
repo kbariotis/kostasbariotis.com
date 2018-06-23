@@ -17,24 +17,15 @@ import Variables from './../components/blog/variables';
 
 export default function Index({ data }) {
   let { edges: posts } = data.allMarkdownRemark;
-  let { siteUrl, description, author } = data.site.siteMetadata;
+  let { description } = data.site.siteMetadata;
   posts = posts.map(post => post.node);
   return (
     <IndexLayout>
-      <WebPageSchema title={author} description={description} url={siteUrl} />
-      <MetaTags
-        noIndex={false}
-        tags=""
-        title={'Home'}
-        description={description}
-        siteUrl={siteUrl}
-        path={'/'}
-      />
+      <WebPageSchema />
+      <MetaTags title={'Home'} description={description} />
       <Row>
         <Col sm={8} smOffset={2}>
-          <AuthorHeader fluid={data.file.childImageSharp.fluid} author={author}>
-            {description}
-          </AuthorHeader>
+          <AuthorHeader />
           <RedHeader>Latest Posts</RedHeader>
           <Separator />
           <Posts posts={posts} />
@@ -73,18 +64,9 @@ Index.propTypes = {
 
 export const pageQuery = graphql`
   query IndexQuery {
-    file(relativePath: { eq: "avatar.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
     site {
       siteMetadata {
         description
-        siteUrl
-        author
       }
     }
     allMarkdownRemark(
