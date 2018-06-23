@@ -76,11 +76,18 @@ const blogContainer = css({
   marginBottom: '4em',
 });
 
-export default function IndexLayout({ children, fixed }) {
+export default function IndexLayout({ children }) {
   return (
     <StaticQuery
       query={graphql`
         query LayoutQuery {
+          file(relativePath: { eq: "header.jpg" }) {
+            childImageSharp {
+              fixed(width: 1400) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
           site {
             siteMetadata {
               title
@@ -92,11 +99,10 @@ export default function IndexLayout({ children, fixed }) {
       `}
       render={data => {
         let { description, title } = data.site.siteMetadata;
+        let { src } = data.file.childImageSharp.fixed;
 
         const backgroundImageStyle = css(containerStyle, {
-          backgroundImage: `linear-gradient(to bottom, rgba(125, 185, 232, 0) 0%, rgba(34, 25, 49, 1) 100%), url('${
-            fixed.src
-          }')`,
+          backgroundImage: `linear-gradient(to bottom, rgba(125, 185, 232, 0) 0%, rgba(34, 25, 49, 1) 100%), url('${src}')`,
         });
         return (
           <div className={backgroundImageStyle}>
@@ -136,5 +142,4 @@ export default function IndexLayout({ children, fixed }) {
 
 IndexLayout.propTypes = {
   children: PropTypes.func,
-  fixed: PropTypes.object,
 };
