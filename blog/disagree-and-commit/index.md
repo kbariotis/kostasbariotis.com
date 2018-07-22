@@ -1,8 +1,7 @@
 ---
 title: "Disagree and commit"
-path: "/drafts/disagree-and-commit/"
-date: "2018-06-22"
-draft: true
+path: "/disagree-and-commit/"
+date: "2018-07-22"
 tags: Culture, Team
 ---
 
