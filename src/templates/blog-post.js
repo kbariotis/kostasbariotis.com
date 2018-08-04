@@ -74,6 +74,8 @@ const mainPostStyle = css({
   },
   '& img': {
     maxWidth: '100%',
+    display: 'block',
+    margin: '0 auto',
   },
   '& h1': {
     color: Variables.lightblue,
