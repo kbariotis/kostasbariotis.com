@@ -1,9 +1,7 @@
-/* global graphql */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import dateformat from 'dateformat';
-import { Link } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import ReactDisqusThread from 'react-disqus-comments';
 import uuidv5 from 'uuid/v5';
 import Img from 'gatsby-image';

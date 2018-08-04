@@ -1,8 +1,7 @@
-/* global graphql */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'react-flexbox-grid';
+import { graphql } from 'gatsby';
 
 import IndexLayout from '../components/layouts/Index';
 import Pagination from '../components/blog/Pagination';

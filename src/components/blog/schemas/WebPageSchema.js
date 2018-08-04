@@ -1,7 +1,5 @@
-/* global graphql */
-
 import React from 'react';
-import { StaticQuery } from 'gatsby';
+import { graphql, StaticQuery } from 'gatsby';
 
 export default function WebPageSchema() {
   return (

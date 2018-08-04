@@ -1,7 +1,6 @@
-/* global graphql */
-
 import React from 'react';
 import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 import { Row, Col } from 'react-flexbox-grid';
 
 import IndexLayout from '../components/layouts/Index';
@@ -52,11 +51,12 @@ export default function About({ data }) {
                 <a href="www.meetup.com/Thessaloniki-Node-js-Meetup/">Nodejs meetup</a> and{' '}
                 <a rel="noopener noreferrer" href="http://devit.org" target="_blank">
                   DEVit Conf
-                </a>, the biggest web development conference in northern Greece. We are also known
-                as{' '}
+                </a>
+                , the biggest web development conference in northern Greece. We are also known as{' '}
                 <a rel="noopener noreferrer" href="http://skgtech.io" target="_blank">
                   SKGtech
-                </a>.
+                </a>
+                .
               </p>
               <p>
                 This site is being generated using Gatsby.js and you can find the source on{' '}

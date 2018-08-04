@@ -1,7 +1,6 @@
-/* global graphql */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { Row, Col } from 'react-flexbox-grid';
 
 import IndexLayout from '../components/layouts/Index';
@@ -25,14 +24,16 @@ export default function Contact({ data }) {
             description={'In need for a Web Developer? Search no more.'}
           />
           <Header fluid={data.file.childImageSharp.fluid}>
-            In need for a Web Developer? <br />Search no more.
+            In need for a Web Developer? <br />
+            Search no more.
           </Header>
           <main role="main">
             <p>
               I am a web developer with almost ten years of experience in creating web applications
               and services. I can help you design your business infrastructure and your development
               team management process. I can help you set your testing strategy and build your
-              application{"'"}s architecture.
+              application
+              {"'"}s architecture.
             </p>
             <p>
               Regarding the stack, I am currently working extensively with Javascript/Node.js and
@@ -46,11 +47,12 @@ export default function Contact({ data }) {
                 all the information
               </Link>{' '}
               you need but if you still have questions, please consult my{' '}
-              <a href="https://www.linkedin.com/pub/kostas-bariotis/81/b74/2a8">LinkedIn profile</a>,
-              my <a href="https://github.com/kbariotis">GitHub profile</a> or{' '}
+              <a href="https://www.linkedin.com/pub/kostas-bariotis/81/b74/2a8">LinkedIn profile</a>
+              , my <a href="https://github.com/kbariotis">GitHub profile</a> or{' '}
               <a href="mailto:konmpar@gmail.com?subject=Freelance%20Javascript%20development">
                 contact me directly
-              </a>. I like receiving email from people.
+              </a>
+              . I like receiving email from people.
             </p>
             <p>
               <b>I am currently available to hire for a limited time of work per week.</b>

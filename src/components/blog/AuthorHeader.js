@@ -1,8 +1,6 @@
-/* global graphql */
-
 import React from 'react';
 import Img from 'gatsby-image';
-import { StaticQuery, Link } from 'gatsby';
+import { graphql, StaticQuery, Link } from 'gatsby';
 
 const AuthorHeader = () => (
   <StaticQuery

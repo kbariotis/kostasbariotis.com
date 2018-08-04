@@ -1,8 +1,7 @@
-/* global graphql */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { StaticQuery } from 'gatsby';
+import { graphql, StaticQuery } from 'gatsby';
 import { css } from 'react-emotion';
 
 const containerStyle = css({

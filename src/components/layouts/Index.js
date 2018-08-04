@@ -1,11 +1,9 @@
-/* global graphql */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { css, injectGlobal } from 'react-emotion';
 import { Grid } from 'react-flexbox-grid';
-import { StaticQuery } from 'gatsby';
+import { graphql, StaticQuery } from 'gatsby';
 
 import Footer from '../blog/Footer';
 import Variables from '../blog/variables';

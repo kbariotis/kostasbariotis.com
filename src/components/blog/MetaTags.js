@@ -1,9 +1,7 @@
-/* global graphql */
-
 import React from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
-import { StaticQuery } from 'gatsby';
+import { graphql, StaticQuery } from 'gatsby';
 
 import OGImageImg from './../../../static/images/og.jpg';
 

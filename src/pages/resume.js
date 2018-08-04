@@ -1,8 +1,7 @@
-/* global graphql */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from 'react-emotion';
+import { graphql } from 'gatsby';
 import { Grid } from 'react-flexbox-grid';
 import FaLightbulbO from 'react-icons/lib/fa/lightbulb-o';
 
@@ -43,7 +42,9 @@ export default function Resume() {
     <ResumeLayout>
       <div className={notificationStyle}>
         <FaLightbulbO />
-        Did you know you can print this page into a PDF? Try CTRL + P and choose {'"'}To PDF{'"'}.
+        Did you know you can print this page into a PDF? Try CTRL + P and choose {'"'}
+        To PDF
+        {'"'}.
       </div>
       <Grid className={globalStyle}>
         <section className={pageInfo}>
