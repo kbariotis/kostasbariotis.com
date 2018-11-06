@@ -109,6 +109,13 @@ module.exports = {
           `gatsby-remark-autolink-headers`,
           `gatsby-remark-emoji`,
           {
+            resolve: 'gatsby-remark-graph',
+            options: {
+              language: 'mermaid',
+              theme: 'dark',
+            },
+          },
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: 'language-',
