@@ -2,6 +2,7 @@
 title: "Aggregated log management"
 path: "/aggregated-log-management/"
 date: "2018-12-27"
+tags: Logging, Architecture
 ---
 
 I have been building aggregated logging mechanisms in all my projects and I always thought of it as an industry standard practice. Lately I've noticed that this is not the case and lots of people are not taking it seriously.
@@ -128,7 +129,7 @@ See how you are able to answer basic questions (or even more complex ones) for y
 ## Conclusion
 I consider log management to be a foundational piece for every software architecture. I would always design it and have it available as early as possible.
 
-As the architecture grows, log management can be a tedious task but till then, small to medium size architecture should have a way to:
+As the architecture grows, log management can be a tedious task. Here are some insights on [StackOverflow's monitoring process](https://nickcraver.com/blog/2018/11/29/stack-overflow-how-we-do-monitoring/). But till then, small to medium size architecture should have a way to simply:
 
 * Trace back in time execution of individual requests
 * Analyze and answer basic questions about your architecture
