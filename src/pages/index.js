@@ -13,12 +13,12 @@ import WebPageSchema from '../components/blog/schemas/WebPageSchema';
 
 import Variables from './../components/blog/variables';
 
-export default function Index({ data, location }) {
+export default function Index({ data }) {
   let { edges: posts } = data.allMarkdownRemark;
   let { description } = data.site.siteMetadata;
   posts = posts.map(post => post.node);
   return (
-    <IndexLayout location={location}>
+    <IndexLayout>
       <WebPageSchema />
       <MetaTags title={'Home'} description={description} />
       <Row>
@@ -58,7 +58,6 @@ export default function Index({ data, location }) {
 
 Index.propTypes = {
   data: PropTypes.object,
-  location: PropTypes.object,
 };
 
 export const pageQuery = graphql`

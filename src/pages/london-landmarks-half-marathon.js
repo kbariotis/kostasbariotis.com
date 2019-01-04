@@ -8,9 +8,9 @@ import Header from '../components/blog/Header';
 import MetaTags from '../components/blog/MetaTags';
 import AboutSection from '../components/blog/AboutSection';
 
-export default function LLHM({ data, location }) {
+export default function LLHM({ data }) {
   return (
-    <IndexLayout location={location}>
+    <IndexLayout>
       <Row>
         <Col
           lg={8}
@@ -53,9 +53,13 @@ export default function LLHM({ data, location }) {
                 join and put my self in a real race.
               </p>
               The event is being held by the{' '}
-              <a href="https://www.tommys.org">baby charity Tommy&quote;s</a>. Tommy&quote;s is
-              funding research into miscarriage, stillbirth and premature birth. Their abour page
-              says it better than anyone:
+              <a href="https://www.tommys.org">
+                baby charity Tommy
+                {"'"}s
+              </a>
+              . Tommy
+              {"'"}s is funding research into miscarriage, stillbirth and premature birth. Their
+              abour page says it better than anyone:
               <br />
               <br />
               <blockquote>
@@ -78,9 +82,10 @@ export default function LLHM({ data, location }) {
             </AboutSection>
             <AboutSection title={'You'}>
               <p>
-                In order to join this marathon I (pinky)-promised Tommy&quote;s that I will raise an
-                amount of money. Those will be used by them to further their cause, fund more
-                research and eventually reach their goals. You have goals too, you know how it is.
+                In order to join this marathon I (pinky)-promised Tommy
+                {"'"}s that I will raise an amount of money. Those will be used by them to further
+                their cause, fund more research and eventually reach their goals. You have goals
+                too, you know how it is.
               </p>
               <p>
                 I have setup this page to help me take money from people like you that want to see
@@ -134,7 +139,6 @@ export default function LLHM({ data, location }) {
 
 LLHM.propTypes = {
   data: PropTypes.object,
-  location: PropTypes.object,
 };
 
 export const LLHMPageQuery = graphql`

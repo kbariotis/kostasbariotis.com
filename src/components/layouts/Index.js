@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import { css, injectGlobal } from 'react-emotion';
 import { Grid } from 'react-flexbox-grid';
 import { graphql, StaticQuery } from 'gatsby';
+import { Location } from '@reach/router';
 
 import Footer from '../blog/Footer';
 import Variables from '../blog/variables';
@@ -92,7 +93,7 @@ const alert = css({
   textAlign: 'center',
 });
 
-export default function IndexLayout({ children, location }) {
+export default function IndexLayout({ children }) {
   return (
     <StaticQuery
       query={graphql`
@@ -123,13 +124,18 @@ export default function IndexLayout({ children, location }) {
         return (
           <div className={backgroundImageStyle}>
             <Menu />
-            {location.pathname !== '/london-landmarks-half-marathon' && (
-              <div className={alert} role="alert">
-                <a href="/london-landmarks-half-marathon">
-                  I will run at 2019 London Landmarks Half Marathon. Here&quote;s how you can help!
-                </a>
-              </div>
-            )}
+            <Location>
+              {({ location }) =>
+                location.pathname !== '/london-landmarks-half-marathon' && (
+                  <div className={alert} role="alert">
+                    <a href="/london-landmarks-half-marathon">
+                      I will run at 2019 London Landmarks Half Marathon. Here
+                      {"'"}s how you can help!
+                    </a>
+                  </div>
+                )
+              }
+            </Location>
             <Helmet titleTemplate={`%s - ${title}`} defaultTitle={title}>
               <link
                 rel="preload"

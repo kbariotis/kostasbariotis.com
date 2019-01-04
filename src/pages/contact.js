@@ -7,9 +7,9 @@ import IndexLayout from '../components/layouts/Index';
 import MetaTags from '../components/blog/MetaTags';
 import Header from '../components/blog/Header';
 
-export default function Contact({ data, location }) {
+export default function Contact({ data }) {
   return (
-    <IndexLayout location={location}>
+    <IndexLayout>
       <Row>
         <Col
           lg={8}
@@ -72,7 +72,6 @@ export default function Contact({ data, location }) {
 
 Contact.propTypes = {
   data: PropTypes.object,
-  location: PropTypes.object,
 };
 
 export const contactPageQuery = graphql`
