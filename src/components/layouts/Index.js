@@ -5,6 +5,7 @@ import { css, injectGlobal } from 'react-emotion';
 import { Grid } from 'react-flexbox-grid';
 import { graphql, StaticQuery } from 'gatsby';
 import { Location } from '@reach/router';
+import { Link } from 'gatsby';
 
 import Footer from '../blog/Footer';
 import Variables from '../blog/variables';
@@ -126,12 +127,12 @@ export default function IndexLayout({ children }) {
             <Menu />
             <Location>
               {({ location }) =>
-                location.pathname !== '/london-landmarks-half-marathon' && (
+                location.pathname.indexOf('london-landmarks-half-marathon') === -1 && (
                   <div className={alert} role="alert">
-                    <a href="/london-landmarks-half-marathon">
+                    <Link to="/london-landmarks-half-marathon">
                       I will run at 2019 London Landmarks Half Marathon. Here
                       {"'"}s how you can help!
-                    </a>
+                    </Link>
                   </div>
                 )
               }
