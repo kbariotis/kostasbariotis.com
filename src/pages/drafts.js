@@ -9,11 +9,11 @@ import Posts from '../components/blog/Posts';
 import MetaTags from '../components/blog/MetaTags';
 import RedHeader from '../components/blog/RedHeader';
 
-export default function Drafts({ data }) {
+export default function Drafts({ data, location }) {
   let { edges: posts } = data.allMarkdownRemark;
   posts = posts.map(post => post.node);
   return (
-    <IndexLayout>
+    <IndexLayout location={location}>
       <Row>
         <Col
           lg={8}
@@ -49,6 +49,7 @@ export default function Drafts({ data }) {
 
 Drafts.propTypes = {
   data: PropTypes.object,
+  location: PropTypes.object,
 };
 
 export const pageQuery = graphql`

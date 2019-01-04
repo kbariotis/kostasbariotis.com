@@ -9,11 +9,11 @@ import Posts from '../components/blog/Posts';
 import Separator from '../components/blog/Separator';
 import MetaTags from '../components/blog/MetaTags';
 
-export default function Pages({ pageContext, data }) {
+export default function Pages({ pageContext, data, location }) {
   const { description } = data.site.siteMetadata;
   const { posts, page, pagesSum, prevPath, nextPath } = pageContext;
   return (
-    <IndexLayout>
+    <IndexLayout location={location}>
       <section className="main-content">
         <MetaTags
           title={`Page ${page}`}
@@ -38,6 +38,7 @@ export default function Pages({ pageContext, data }) {
 Pages.propTypes = {
   pageContext: PropTypes.object,
   data: PropTypes.object,
+  location: PropTypes.object,
 };
 
 export const pagesQuery = graphql`

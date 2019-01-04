@@ -9,9 +9,9 @@ import BioEntry from '../components/blog/BioEntry';
 import MetaTags from '../components/blog/MetaTags';
 import AboutSection from '../components/blog/AboutSection';
 
-export default function About({ data }) {
+export default function About({ data, location }) {
   return (
-    <IndexLayout>
+    <IndexLayout location={location}>
       <Row>
         <Col
           lg={8}
@@ -216,6 +216,7 @@ export default function About({ data }) {
 
 About.propTypes = {
   data: PropTypes.object,
+  location: PropTypes.object,
 };
 
 export const aboutPageQuery = graphql`

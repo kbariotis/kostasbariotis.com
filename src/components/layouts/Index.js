@@ -66,6 +66,14 @@ const containerStyle = css({
     backgroundSize: '1400px 300px',
     backgroundPosition: 'center top',
   },
+  '& blockquote': {
+    color: 'rgba(255, 255, 255, 0.5)',
+    borderLeft: `5px solid ${Variables.purple}`,
+    paddingLeft: '20px',
+    marginLeft: 0,
+    fontSize: '2em',
+    fontStyle: 'italic',
+  },
 });
 
 const blogContainer = css({
@@ -74,7 +82,17 @@ const blogContainer = css({
   marginBottom: '4em',
 });
 
-export default function IndexLayout({ children }) {
+const alert = css({
+  padding: '15px',
+  marginBottom: '20px',
+  border: '1px solid transparent',
+  color: '#8a6d3b',
+  backgroundColor: 'white',
+  borderColor: '#faebcc',
+  textAlign: 'center',
+});
+
+export default function IndexLayout({ children, location }) {
   return (
     <StaticQuery
       query={graphql`
@@ -105,6 +123,13 @@ export default function IndexLayout({ children }) {
         return (
           <div className={backgroundImageStyle}>
             <Menu />
+            {location.pathname !== '/london-landmarks-half-marathon' && (
+              <div className={alert} role="alert">
+                <a href="/london-landmarks-half-marathon">
+                  I will run at 2019 London Landmarks Half Marathon. Here&quote;s how you can help!
+                </a>
+              </div>
+            )}
             <Helmet titleTemplate={`%s - ${title}`} defaultTitle={title}>
               <link
                 rel="preload"
@@ -140,4 +165,5 @@ export default function IndexLayout({ children }) {
 
 IndexLayout.propTypes = {
   children: PropTypes.func,
+  location: PropTypes.object,
 };

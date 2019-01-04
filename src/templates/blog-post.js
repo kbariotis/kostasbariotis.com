@@ -62,14 +62,6 @@ const postMetaStyle = css({
 const mainPostStyle = css({
   marginTop: '2.5em',
   color: 'rgba(255, 255, 255, 0.8)',
-  '& blockquote': {
-    color: 'rgba(255, 255, 255, 0.5)',
-    borderLeft: `5px solid ${Variables.purple}`,
-    paddingLeft: '20px',
-    marginLeft: 0,
-    fontSize: '2em',
-    fontStyle: 'italic',
-  },
   '& img': {
     maxWidth: '100%',
     display: 'block',
@@ -131,7 +123,7 @@ const mainPostStyle = css({
   },
 });
 
-export default function Template({ data }) {
+export default function Template({ data, location }) {
   const { mainPost: post } = data;
   const { nextPost: next } = data;
   const { siteUrl } = data.site.siteMetadata;
@@ -140,7 +132,7 @@ export default function Template({ data }) {
   const fullUrl = `${siteUrl}${post.frontmatter.path}`;
 
   return (
-    <IndexLayout>
+    <IndexLayout location={location}>
       <ArticleSchema
         authorName={`Kostas Bariotis`}
         title={`${post.frontmatter.title}`}
@@ -226,6 +218,7 @@ export default function Template({ data }) {
 
 Template.propTypes = {
   data: PropTypes.object,
+  location: PropTypes.object,
   pageContext: PropTypes.object,
 };
 

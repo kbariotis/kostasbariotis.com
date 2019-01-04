@@ -14,11 +14,11 @@ const tagMeta = css({
   marginBottom: '2.5em',
 });
 
-export default function Tags({ pageContext }) {
+export default function Tags({ pageContext, location }) {
   const { posts, tag, pagesSum, page } = pageContext;
 
   return (
-    <IndexLayout>
+    <IndexLayout location={location}>
       <Row>
         <MetaTags
           title={`Tag ${tag}`}
@@ -41,5 +41,6 @@ export default function Tags({ pageContext }) {
 }
 
 Tags.propTypes = {
+  location: PropTypes.object,
   pageContext: PropTypes.object,
 };
