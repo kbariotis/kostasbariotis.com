@@ -69,12 +69,16 @@ export default function About({ data, location }) {
             </AboutSection>
             <AboutSection title={'Bio'}>
               <BioEntry year={'2018'}>
-                Started working with <a href="https://geekbot.io">Geekbot</a>, a fully remote
-                company with a mission to change the way we do standup meetings.
+                Started working with <a href="https://trouva.com">Trouva</a>, a curated marketplace
+                with unique products that you wont find on high streets.
+              </BioEntry>
+              <BioEntry year={'2018'}>
+                Worked with <a href="https://geekbot.io">Geekbot</a>, a fully remote company with a
+                mission to change the way we do standup meetings.
               </BioEntry>
               <BioEntry year={'2017'}>
-                Started working with <a href="https://quotelier.com">Quotelier</a>. A amazing
-                product on the hospitality industry.
+                Worked with <a href="https://quotelier.com">Quotelier</a>. A amazing product on the
+                hospitality industry.
               </BioEntry>
               <BioEntry year={'2017'}>
                 Released <a href="https://janitr.net">Janitr.net</a>
