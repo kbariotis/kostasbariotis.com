@@ -93,13 +93,13 @@ export default function LLHM({ data }) {
               </p>
               <p>
                 <a
-                  href="http://www.justgiving.com/kostas-bariotis"
+                  href="https://www.justgiving.com/kostas-bariotis"
                   title="JustGiving - Sponsor me now!"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
                   <img
-                    src="http://www.justgiving.com/App_Themes/JustGiving/images/badges/badge10.gif"
+                    src="https://www.justgiving.com/App_Themes/JustGiving/images/badges/badge10.gif"
                     width="270"
                     height="50"
                     alt="JustGiving - Sponsor me now!"
