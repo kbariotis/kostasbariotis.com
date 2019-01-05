@@ -30,15 +30,14 @@ export default function LLHM({ data }) {
           <main role="main">
             <AboutSection title={'Why'}>
               <p>
-                I set to run a marathon as my new years resolution. Three years ago! And that is a
-                lesson that if you really want something, eventually (after three years) you will
-                have an opportunity!
+                I set to run a marathon as my new year{"'"}s resolution. Three years ago! And that
+                is a lesson that if you really want something, eventually (after three years) you
+                will have an opportunity!
               </p>
               <p>
                 Seriously. Running marathons was never a priority for me. But I do enjoy running and
                 I am constantly training for a lower pace and longer distances.
               </p>
-              <small>I stopped using Strava this fall, so you will have to trust me on this.</small>
               <iframe
                 height="454"
                 width="100%"
@@ -47,6 +46,7 @@ export default function LLHM({ data }) {
                 scrolling="no"
                 src="https://www.strava.com/athletes/24820048/latest-rides/02bb37285f12542eae89484a4df7e5c29ab5ad97"
               />
+              <small>I stopped using Strava this fall, so you will have to trust me on this.</small>
               <p>
                 I found <a href="https://www.llhm.co.uk/">London Landmarks Half Marathon</a> through{' '}
                 <a href="http://www.opensourcerer.io/">Michael</a> and I was immediately keen to
@@ -76,8 +76,8 @@ export default function LLHM({ data }) {
               </p>
               <p>
                 It will be a great path through central London that will start from Pall Mall to St
-                Paul’s Cathedral to the Tower of London and the London Eye and will eventually end
-                by Downing Street.
+                Paul’s Cathedral to the Tower of London to the London Eye and will eventually end by
+                Downing Street.
               </p>
             </AboutSection>
             <AboutSection title={'You'}>
