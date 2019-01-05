@@ -46,7 +46,11 @@ export default function LLHM({ data }) {
                 scrolling="no"
                 src="https://www.strava.com/athletes/24820048/latest-rides/02bb37285f12542eae89484a4df7e5c29ab5ad97"
               />
-              <small>I stopped using Strava this fall, so you will have to trust me on this.</small>
+              <p>
+                <small>
+                  I stopped using Strava this fall, so you will have to trust me on this.
+                </small>
+              </p>
               <p>
                 I found <a href="https://www.llhm.co.uk/">London Landmarks Half Marathon</a> through{' '}
                 <a href="http://www.opensourcerer.io/">Michael</a> and I was immediately keen to
