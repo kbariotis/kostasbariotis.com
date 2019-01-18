@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { Row, Col } from 'react-flexbox-grid';
 
+import variables from '../components/blog/variables';
 import IndexLayout from '../components/layouts/Index';
 import Header from '../components/blog/Header';
 import MetaTags from '../components/blog/MetaTags';
@@ -63,7 +64,7 @@ export default function LLHM({ data }) {
               </a>
               . Tommy
               {"'"}s is funding research into miscarriage, stillbirth and premature birth. Their
-              abour page says it better than anyone:
+              about page says it better than anyone:
               <br />
               <br />
               <blockquote>
@@ -95,19 +96,32 @@ export default function LLHM({ data }) {
                 I have setup this page to help me take money from people like you that want to see
                 me running. Click the link below to visit it.
               </p>
-              <p>
+              <p style={{ textAlign: 'center' }}>
                 <a
                   href="https://www.justgiving.com/kostas-bariotis"
                   title="JustGiving - Sponsor me now!"
                   target="_blank"
                   rel="noreferrer noopener"
+                  style={{
+                    backgroundColor: variables.purple,
+                    borderColor: '#fff',
+                    color: '#fff',
+                    padding: '16px 32px',
+                    fontSize: '16px',
+                    lineHeight: '1.5',
+                    border: 'solid 1px #009fc6',
+                    borderRadius: '3px',
+                    boxSizing: 'border-box',
+                    cursor: 'pointer',
+                    display: 'inline-block',
+                    fontFamily: 'Open Sans, sans-serif',
+                    fontWeight: 'bold',
+                    margin: '0',
+                    textDecoration: 'none',
+                    textTransform: 'uppercase',
+                  }}
                 >
-                  <img
-                    src="https://www.justgiving.com/App_Themes/JustGiving/images/badges/badge10.gif"
-                    width="270"
-                    height="50"
-                    alt="JustGiving - Sponsor me now!"
-                  />
+                  Sponsor me now!
                 </a>
               </p>
             </AboutSection>
