@@ -7,10 +7,9 @@ tags: Node.js
 
 I broke our main API last week. I merged a PR of mine I had been working for a while. It got two approvals from two co-workers, green test suite and it was working perfectly fine locally and on our staging environment, the one that we test things before we send them to production. Somehow, the Node.js server failed to boot on production and we had to rollback to the last deployment, resulting into a 2-3 minutes downtime.
 
-Well there were so much to learn from that adventure, but the one that
-we are going to focus on this post is, why did the Node.js server failed to
-boot on production while was working perfectly fine locally and on our
-pre-production staging environment? Keep reading.
+Why did the Node.js server failed to boot on production while was
+working perfectly fine locally and on our pre-production staging
+environment? Keep reading.
 
 ## What happened?
 
@@ -49,6 +48,9 @@ as well without even knowing about it. And it won't be looking for multiple valu
 Now where did `NODE_ENV` came from and why does npm actually uses it? Node.js documentation mention nothing about such a variable. Well the `NODE_ENV` variable became famous from the [Express.js](http://expressjs.com/) framework where it was using it to decide whether it should enable some development features on production. After people started to use it, other projects started to adopt it as well and we reached today.
 
 ## To conclude
+Choosing `NODE_ENV` to denote your application's environment is not wise
+since so many utilities around depend on it. Keep it to mark online
+production-like environment vs local development environments.
 
 Like I mention above, we learned quite a few things from that incident, but
 our immediate action was to rename `NODE_ENV` in an attempt to keep to our online environments as similar as possible. 🤓
