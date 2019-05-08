@@ -35,6 +35,9 @@ const notificationStyle = css({
   color: 'white',
   paddingTop: '0.5em',
   paddingBottom: '0.5em',
+  '@media print': {
+    display: 'none',
+  },
 });
 
 export default function Resume() {

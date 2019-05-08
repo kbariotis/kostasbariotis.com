@@ -4,8 +4,6 @@ import Helmet from 'react-helmet';
 import { css, injectGlobal } from 'react-emotion';
 import { Grid } from 'react-flexbox-grid';
 import { graphql, StaticQuery } from 'gatsby';
-import { Location } from '@reach/router';
-import { Link } from 'gatsby';
 
 import Footer from '../blog/Footer';
 import Variables from '../blog/variables';
@@ -84,16 +82,6 @@ const blogContainer = css({
   marginBottom: '4em',
 });
 
-const alert = css({
-  padding: '15px',
-  marginBottom: '20px',
-  border: '1px solid transparent',
-  color: '#8a6d3b',
-  backgroundColor: 'white',
-  borderColor: '#faebcc',
-  textAlign: 'center',
-});
-
 export default function IndexLayout({ children }) {
   return (
     <StaticQuery
@@ -125,18 +113,6 @@ export default function IndexLayout({ children }) {
         return (
           <div className={backgroundImageStyle}>
             <Menu />
-            <Location>
-              {({ location }) =>
-                location.pathname.indexOf('london-landmarks-half-marathon') === -1 && (
-                  <div className={alert} role="alert">
-                    <Link to="/london-landmarks-half-marathon">
-                      I will run at 2019 London Landmarks Half Marathon. Here
-                      {"'"}s how you can help!
-                    </Link>
-                  </div>
-                )
-              }
-            </Location>
             <Helmet titleTemplate={`%s - ${title}`} defaultTitle={title}>
               <link
                 rel="preload"
