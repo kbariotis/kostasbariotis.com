@@ -320,7 +320,7 @@ const { makeCallExternalService } = require('./callExternalService')
 
 // HTTP Client stub
 const client = {
-  put: Promise.resolve({ response: { data: { success: false } } });
+  post: Promise.resolve({ response: { data: { success: false } } });
 }
 
 // Produce the function under test
