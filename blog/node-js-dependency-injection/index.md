@@ -7,7 +7,7 @@ tags: Node.js, Dependency Injection, awilix
 
 This article is about how to achieve [dependency injection](https://en.wikipedia.org/wiki/Dependency_injection) in Node.js using [awilix](https://github.com/jeffijoe/awilix), a Dependency Injection Container I have been personally using for quite some time now. I will use unit testing as a use case where dependency injection can be helpful, but needless to say, its purpose is far more greater than just that.
 
-I've seen different patterns over the years and this is a summary of what led me to use dependency injection. Node.js, and JavaScript, being a dynamic language, can forgive different techniques. My goal is to achieve a standard technique to use across all of my projects and teams I am working on.
+I've seen different patterns over the years and this is a summary of what led me to use dependency injection. Node.js, and JavaScript, being a dynamic language, can support different techniques and even forgive the wrong ones. My goal is to achieve a standard technique to use across all of my projects and teams I am working on.
 
 ## The case of unit testing
 
