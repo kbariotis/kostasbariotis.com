@@ -6,9 +6,9 @@ draft: true
 tags: Node.js
 ---
 
-This article is about how to achieve dependency injection in Node.js using `awilix`, a Dependency Injection Container I have been personally using for quite some time now. I will use unit testing as a use case where dependency injection can be helpful, but needless to say, its purpose is far more greater than just it.
+This article is about how to achieve [dependency injection](https://en.wikipedia.org/wiki/Dependency_injection) in Node.js using `awilix`, a Dependency Injection Container I have been personally using for quite some time now. I will use unit testing as a use case where dependency injection can be helpful, but needless to say, its purpose is far more greater than just that.
 
-I've seen different patterns over the years and this is kind of a summary that led me to use dependency injection. Node.js, and JavaScript, being a dynamic language, can forgive different techniques. My goal is to achieve a standard technique to use across all of my projects and teams I am working on.
+I've seen different patterns over the years and this is a summary of what led me to use dependency injection. Node.js, and JavaScript, being a dynamic language, can forgive different techniques. My goal is to achieve a standard technique to use across all of my projects and teams I am working on.
 
 ## The case of unit testing
 
@@ -72,7 +72,7 @@ I don't like this approach for two reasons.
 
 First, since the exported module is a singleton, it means that if a test stubs the `_client` property, it will remain stubbed across all other places that have been required. You should be really careful to reset the stubbed version so other test files can function properly.
 
-Second, it exposes public properties, which makes it dangerous for consumers.
+Second, it exposes public properties, which makes it dangerous for consumers. People will try to be smart and alter it.
 
 ## Dependency injection
 
@@ -144,7 +144,7 @@ module.exports = { callExternalService };
 
 ## Dependency injection container
 
-A dependency injection container is kind of what it seems to be. It contains all of your dependencies and you can pass that on your functions regardless of what it needs.
+A dependency injection container is kind of what you think. It contains all of your dependencies. It's responsibility is to construct all of your classes or modules thus abstracting that bit away from your business logic.
 
 In addition, it handles the wiring of your modules as well. Instead, of directly requiring our `externalService` module, we are asking it from the container and it will make sure to return the needed function ready with its dependencies.
 
@@ -204,7 +204,7 @@ container.register({
 
 Now `asFunction` is a little different, as it will actually run that function whenever someone requires that variable.
 
-Great. That's our first dependency of the `callExternalService` function. Now we need to pass the `axios` module. In an ideal world, you would actually pass a module that follows a specific interface, otherwise you are coupling your code to `axios` thus making it harder later to switch to another HTTP client library. For now, let's suppose that `axios` follows our standard interface.
+Great. That's our first dependency of the `callExternalService` function. Now we need to pass the `axios` module. In an ideal world, you would actually pass a module that follows a specific interface, otherwise you are coupling your code to `axios` and making it harder later to switch to another HTTP client library. For now, let's suppose that `axios` follows our standard interface.
 
 ```javascript
 const { createContainer, asFunction, asValue } = require('awilix');
@@ -343,3 +343,9 @@ describe('callExternalService', () => {
 There you have it. Unit testing our function with stubs. We have our container loaded with our dependencies and modules that we can use across our app. We don't have to worry about wiring our modules together. Every time we write a new module, we know exactly where to find any dependency, how to request them, and all we focus on is the task on hand.
 
 ## Conclusion
+
+I advice you to take a look on [its repository](https://github.com/jeffijoe/awilix) and go through its documentation and examples. Also, I have found this [API boilerplate](https://github.com/talyssonoc/node-api-boilerplate) that uses awilix, and also makes uses of many best practices. It's a great read even if you don't intent to use it as is.
+
+The above was an oversimplified example of how dependency injection with awilix can be achieved on Node.js. In practice, as the project grows, other complications arise, like the container being bloated it self. Awilix is an amazing library though and has most of this issues solved already.
+
+I would be curious to know how do you handle dependency injection in your projects. Leave a comment below.
