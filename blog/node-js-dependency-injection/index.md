@@ -97,6 +97,26 @@ Now the consumer is responsible to pass the module whenever he's calling the `ca
 
 Here are some other patterns I've seen and used my self.
 
+### Dependencies always as the first argument
+
+Have a convention to always pass all dependencies as the first argument of the function.
+
+```javascript
+const externalServiceRoot = 'https://api.example-external-service.com';
+
+async function callExternalService(dependencies, anArgument) {
+  const { response } = await dependencies.client.post(`${externalServiceRoot}/an/endpoint`, anArgument);
+
+  if (!response.success) {
+    throw new Error('Response doesn\'t look good');
+  }
+
+  return response.data;
+}
+
+module.exports = { callExternalService };
+```
+
 ### Function factory
 
 Use currying from functional programming to create a factory that will produce our final function.
@@ -121,27 +141,9 @@ module.exports = { makeCallExternalService };
 
 Call the `makeCallExternalService` with the client and you have your function.
 
-### Dependencies always as the first argument
-
-Have a convention to always pass all dependencies as the first argument of the function.
-
-```javascript
-const externalServiceRoot = 'https://api.example-external-service.com';
-
-async function callExternalService(dependencies, anArgument) {
-  const { response } = await dependencies.client.post(`${externalServiceRoot}/an/endpoint`, anArgument);
-
-  if (!response.success) {
-    throw new Error('Response doesn\'t look good');
-  }
-
-  return response.data;
-}
-
-module.exports = { callExternalService };
-```
-
 ## Dependency injection container
+
+So far, we've seen a few examples on how to pass dependencies to a given module directly. Personally, I like the functions factory pattern the most and is the one I am using most of the times, when I don't use a container.
 
 A dependency injection container is kind of what you think. It contains all of your dependencies. It's responsibility is to construct all of your classes or modules thus abstracting that bit away from your business logic.
 
