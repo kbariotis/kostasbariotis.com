@@ -6,7 +6,7 @@ draft: true
 tags: Node.js
 ---
 
-This article is about how to achieve [dependency injection](https://en.wikipedia.org/wiki/Dependency_injection) in Node.js using `awilix`, a Dependency Injection Container I have been personally using for quite some time now. I will use unit testing as a use case where dependency injection can be helpful, but needless to say, its purpose is far more greater than just that.
+This article is about how to achieve [dependency injection](https://en.wikipedia.org/wiki/Dependency_injection) in Node.js using [awilix](https://github.com/jeffijoe/awilix), a Dependency Injection Container I have been personally using for quite some time now. I will use unit testing as a use case where dependency injection can be helpful, but needless to say, its purpose is far more greater than just that.
 
 I've seen different patterns over the years and this is a summary of what led me to use dependency injection. Node.js, and JavaScript, being a dynamic language, can forgive different techniques. My goal is to achieve a standard technique to use across all of my projects and teams I am working on.
 
@@ -150,7 +150,7 @@ In addition, it handles the wiring of your modules as well. Instead, of directly
 
 In Node.js, I have only used one such container and really never looked back. It's the [awilix container](https://github.com/jeffijoe/awilix).
 
-Awilix is really powerful and once you get on track with it, it can really abstract most of the dependency injection hassling away from you.
+awilix is really powerful and once you get on track with it, it can really abstract most of the dependency injection hassling away from you.
 
 We will see an example shortly, but before that, let's add another minor requirement to our `externalService` module. Let's require that we want the `externalServiceRoot` variable to be injected as well, because we want to hit a different endpoint based on the environment our app runs. It's different for production/staging and the local development. Dependency injection cannot only be used for stubbing dependencies.
 
@@ -236,7 +236,7 @@ const axios = require('axios');
 const container = createContainer();
 
 // The container will be passed to this function with
-// everything is contained. Awilix is smart enough to
+// everything is contained. awilix is smart enough to
 // understand what exactly you are requiring.
 function makeCallExternalService({ client, externalServiceRoot }) {
   return async function callExternalService(anArgument) {
@@ -346,6 +346,6 @@ There you have it. Unit testing our function with stubs. We have our container l
 
 I advice you to take a look on [its repository](https://github.com/jeffijoe/awilix) and go through its documentation and examples. Also, I have found this [API boilerplate](https://github.com/talyssonoc/node-api-boilerplate) that uses awilix, and also makes uses of many best practices. It's a great read even if you don't intent to use it as is.
 
-The above was an oversimplified example of how dependency injection with awilix can be achieved on Node.js. In practice, as the project grows, other complications arise, like the container being bloated it self. Awilix is an amazing library though and has most of this issues solved already.
+The above was an oversimplified example of how dependency injection with awilix can be achieved on Node.js. In practice, as the project grows, other complications arise, like the container being bloated it self. awilix is an amazing library though and has most of this issues solved already.
 
 I would be curious to know how do you handle dependency injection in your projects. Leave a comment below.
