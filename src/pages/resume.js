@@ -68,8 +68,7 @@ export default function Resume() {
           <ExperienceItem
             title="Senior Software Developer @ Trouva"
             duration="2018 June - Present"
-            description="I have been involved in various parts of Trouvas' product development. As a member of the platform squad,
-            I helped set up the ground for "
+            description="In a truly fast pace environment, I helped maintain the core API of Trouvas' product and also to build more services around based on Node.js and AWS Lambda. I took part on various architectural decisions and worked closely to other engineers to help them get on track. I also built from scratch a Shopify integration to power the syncronization between Trouvas' system."
           />
           <ExperienceItem
             title="Senior Software Developer @ ​Quotelier​"
