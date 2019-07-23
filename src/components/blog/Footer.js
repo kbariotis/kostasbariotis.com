@@ -83,8 +83,9 @@ const Footer = () => (
             I am{' '}
             <Link css={footerLink} to="/" title="Kostasbariotis.com Home">
               Kostas Bariotis
-            </Link>, a web developer, a proud wanderer and a passionate doer. My mission is to write
-            clean and efficient code, to solve problems on the Web and to learn something more. Read{' '}
+            </Link>
+            , a web developer, a proud wanderer and a passionate doer. My mission is to write clean
+            and efficient code, to solve problems on the Web and to learn something more. Read{' '}
             <Link css={footerLink} to="/about/" title="About Kostasbariotis.com">
               more about me
             </Link>{' '}
@@ -92,7 +93,8 @@ const Footer = () => (
             <Link css={footerLink} to="/contact/" title="Contact Kostas">
               {' '}
               get in touch{' '}
-            </Link>.
+            </Link>
+            .
           </Col>
         </Row>
       </Grid>
@@ -149,8 +151,8 @@ const Footer = () => (
             css={footerSocialListLink}
             rel="noopener noreferrer"
             target="_blank"
-            href="mailto:konmpar@gmail.com?subject=Hi!"
-            title="konmpar@gmail.com"
+            href="mailto:kostas@bariotis.com?subject=Hi!"
+            title="kostas@bariotis.com"
           >
             <FaEnvelope />
           </a>

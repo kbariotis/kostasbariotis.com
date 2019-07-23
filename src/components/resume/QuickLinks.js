@@ -13,7 +13,7 @@ export default function QuickLinks() {
         <b>Site:</b> <a href="https://kostasbariotis.com">https://kostasbariotis.com</a>
       </Col>
       <Col css={headerItem}>
-        <b>Email:</b> <a href="mailto:konmpar@gmail.com">konmpar@gmail.com</a>
+        <b>Email:</b> <a href="mailto:kostas@bariotis.com">kostas@bariotis.com</a>
       </Col>
       <Col css={headerItem}>
         <b>Skype:</b> <a href="skype:konstantinos.mpariotis">konstantinos.mpariotis</a>

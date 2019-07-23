@@ -49,7 +49,7 @@ export default function Contact({ data }) {
               you need but if you still have questions, please consult my{' '}
               <a href="https://www.linkedin.com/pub/kostas-bariotis/81/b74/2a8">LinkedIn profile</a>
               , my <a href="https://github.com/kbariotis">GitHub profile</a> or{' '}
-              <a href="mailto:konmpar@gmail.com?subject=Freelance%20Javascript%20development">
+              <a href="mailto:kostas@bariotis.com?subject=Freelance%20Javascript%20development">
                 contact me directly
               </a>
               . I like receiving email from people.
@@ -58,7 +58,7 @@ export default function Contact({ data }) {
               <b>I am currently available to hire for a limited time of work per week.</b>
             </p>
             <p>
-              <a href="mailto:konmpar@gmail.com?subject=Freelance%20Javascript%20development">
+              <a href="mailto:kostas@bariotis.com?subject=Freelance%20Javascript%20development">
                 Email me
               </a>{' '}
               to talk about your project or just to say hi.
