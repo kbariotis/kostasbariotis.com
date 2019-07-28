@@ -16,7 +16,7 @@ export default function QuickLinks() {
         <b>Email:</b> <a href="mailto:kostas@bariotis.com">kostas@bariotis.com</a>
       </Col>
       <Col css={headerItem}>
-        <b>Skype:</b> <a href="skype:konstantinos.mpariotis">konstantinos.mpariotis</a>
+        <b>Mobile:</b> <a href="tel:00447492705670">0044 7492705670</a>
       </Col>
     </Row>
   );

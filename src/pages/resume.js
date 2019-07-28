@@ -51,41 +51,53 @@ export default function Resume() {
           <QuickLinks />
           <hr />
         </section>
-        <Header title="Kostas Bariotis" subtitle="Software Engineer" />
+        <Header title="Kostas Bariotis" subtitle="Senior Software Engineer" />
         <Section title="Brief">
           <p>
             I am Kostas Bariotis, a software engineer from Thessaloniki, Greece currently living in
-            London, UK. I hold a BsC in Computer Science. I have been writing code professionally
-            for the past six years and during that time I have worked with some amazing companies
-            and individuals. I have done open source work and have also contributed to lots of
-            projects. I have been actively involved with the vibrant tech community of Thessaloniki
-            and have been helping in the organization of the DEVit conference since day one. I have
-            been documenting my technical endeavours on my blog and have interviewed some amazing
-            people on my podcast.
+            London, UK. I have been writing code professionally for the past six years and during
+            that time I have worked with some amazing companies and individuals. I have done open
+            source work and have also contributed to lots of projects. I have been actively involved
+            with the vibrant tech community of Thessaloniki and have been helping in the
+            organization of the DEVit conference since day one. I have been documenting my technical
+            endeavours on my blog and have interviewed some amazing people on my podcast.
           </p>
         </Section>
         <Section title="Experience">
           <ExperienceItem
             title="Senior Product Engineer @ Trouva"
             duration="2018 June - Present"
-            description="In a truly fast pace environment, I helped maintain the core API of Trouvas' product and also to build more services around based on Node.js and AWS Lambda. I took part on various architectural decisions and worked closely to other engineers to help them get on track. I also built from scratch a Shopify integration to power the syncronization between Trouvas' system."
+            description="In a very fast paced environment and a small, I participated in many decisions
+            and involved in many parts of the product teams' process. As a member of the consumer squad, I
+            designed and built an integration with Shopify that would allow our customers
+            to be in sync with our platform. As a member of the platform squad, I involved
+            in many DevOps operations, building and re-architecting existing parts, writing documentation
+            and helping in defining engineering processes. I was also helping
+            other team members to when blocked in designing extensions of our system in a
+            micro-services architecture. We were using Node.js for our backend services and React.js/Ember.js
+            for our frontend apps. Our architecture was built on AWS (ECS for VMs, SQS/SNS for intercommunication,
+            and others)."
           />
           <ExperienceItem
             title="Senior Software Developer @ ​Quotelier​"
             duration="2017 February - 2018 March"
-            description="As the lead developer in a team of three, I helped set up the infrastructure for the Quotelier platform and apply best practices to both the backend and the frontend blocks. I also learned a lot more about AWS infrastructure since it was our IaaS of
-        preference. I have worked with both the backend project, built completely on AWS
-        Lambdas with Node.js. I ‘ve also worked on the frontend project, built with React.js
-        and helped set up the testing strategy and raised the code coverage of the codebase."
+            description="As the lead developer in a team of three, I helped set up the infrastructure
+            for the Quotelier platform and apply best practices to both the backend and
+            the frontend blocks. We chose AWS for our infrastructure and used many services
+            like AWS Lambda and DynamoDB. I have worked with both the backend
+            project, built completely on AWS Lambdas with Node.js. I ‘ve also worked
+            on the frontend project, built with React.js and helped set up the testing
+            strategy and raised the code coverage of the whole codebase."
           />
           <ExperienceItem
             title="Nodejs Developer, Backend Product Engineer @ ​Goodvidio​"
             duration="2015 March - 2016 December"
-            description="I have developed the backbone REST API that serves the Goodvidio service using
-        Javascript. Besides that, being the fourth developer in the team, I have participated
-        in the architecture build process that was designed to serve an application that would
-        scale fast. TDD was a requirement for this job and I have enjoyed writing tests and
-        keeping a high test coverage score."
+            description="Being the fourth engineer, I helped the company grow its platform from an MVP to
+            fully scalable, modularized architecture that was servicing thousands of requests
+            per day. I have developed the backbone REST API that served the Goodvidio service using
+            Node.js. I have participated in the architecture build process that was
+            designed to serve an application that would scale fast. We payed attention on our
+            testing strategy and kept keeping a high test coverage."
           />
           <ExperienceItem
             title="Front-End Developer @ ​InsightReplay​"
