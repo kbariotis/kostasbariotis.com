@@ -193,14 +193,16 @@ const { createContainer, asFunction } = require('awilix');
 const container = createContainer();
 
 container.register({
-  externalServiceRoot: asFunction(() => {
-    if (!process.env.EXTERNAL_SERVICE_ROOT) {
-      throw new Error('EXTERNAL_SERVICE_ROOT is not defined.')
-    }
-
-    return process.env.EXTERNAL_SERVICE_ROOT;
-  }
+  externalServiceRoot: asFunction(readEnvVariable)
 });
+
+function readEnvVariable() {
+  if (!process.env.EXTERNAL_SERVICE_ROOT) {
+    throw new Error('EXTERNAL_SERVICE_ROOT is not defined.')
+  }
+
+  return process.env.EXTERNAL_SERVICE_ROOT;
+}
 ```
 
 Now `asFunction` is a little different, as it will actually run that function whenever someone requires that variable.
@@ -218,14 +220,16 @@ container.register({
 });
 
 container.register({
-  externalServiceRoot: asFunction(() => {
-    if (!process.env.EXTERNAL_SERVICE_ROOT) {
-      throw new Error('EXTERNAL_SERVICE_ROOT is not defined.')
-    }
-
-    return process.env.EXTERNAL_SERVICE_ROOT;
-  }
+  externalServiceRoot: asFunction(readEnvVariable)
 });
+
+function readEnvVariable() {
+  if (!process.env.EXTERNAL_SERVICE_ROOT) {
+    throw new Error('EXTERNAL_SERVICE_ROOT is not defined.')
+  }
+
+  return process.env.EXTERNAL_SERVICE_ROOT;
+}
 ```
 
 Now our container is aware of our HTTP client as well. It's time to put everything together. We will use the function factory from above.
@@ -235,6 +239,18 @@ const { createContainer, asFunction, asValue } = require('awilix');
 const axios = require('axios');
 
 const container = createContainer();
+
+container.register({
+  callExternalService: asFunction(makeCallExternalService)
+})
+
+container.register({
+  client: asValue(axios)
+});
+
+container.register({
+  externalServiceRoot: asFunction(readEnvVariable)
+});
 
 // The container will be passed to this function with
 // everything is contained. awilix is smart enough to
@@ -251,23 +267,13 @@ function makeCallExternalService({ client, externalServiceRoot }) {
   }
 }
 
-container.register({
-  callExternalService: asFunction(makeCallExternalService)
-})
-
-container.register({
-  client: asValue(axios)
-});
-
-container.register({
-  externalServiceRoot: asFunction(() => {
-    if (!process.env.EXTERNAL_SERVICE_ROOT) {
-      throw new Error('EXTERNAL_SERVICE_ROOT is not defined.')
-    }
-
-    return process.env.EXTERNAL_SERVICE_ROOT;
+function readEnvVariable() {
+  if (!process.env.EXTERNAL_SERVICE_ROOT) {
+    throw new Error('EXTERNAL_SERVICE_ROOT is not defined.')
   }
-});
+
+  return process.env.EXTERNAL_SERVICE_ROOT;
+}
 
 module.exports = container;
 ```
@@ -325,16 +331,15 @@ const client = {
   post: Promise.resolve({ response: { data: { success: false } } });
 }
 
-// Produce the function under test
-// by passing our stubs
-const callExternalService = makeCallExternalService({
-  externalServiceRoot: 'FAKE_ROOT',
-  client,
-})
-
 describe('callExternalService', () => {
   context('with false success response', () => {
     it('should throw', () => {
+      // Produce the function under test by passing our stubs
+      const callExternalService = makeCallExternalService({
+        externalServiceRoot: 'FAKE_ROOT',
+        client,
+      });
+      
       expect(() => callExternalService('argument')).to.throw('Error');
     })
   })
