@@ -3,7 +3,7 @@ title: "References from my Javascript 101"
 path: "/references-from-my-javascript-101/"
 date: "2015-05-01T15:33:19.000Z"
 date_updated:   2016-05-14T15:40:54.000Z
-tags: javascript, skgnodejs, meetup, node.js
+tags: JavaScript, SKGNodejs, Meetups, Nodejs
 ---
 
 A week ago [Thanasis](http://thanpol.as/) asked me to make a Javascript 101 for the [SKG Node.js monthly meetup](http://www.meetup.com/Thessaloniki-Node-js-Meetup/). The trap? I had to present it a week after. :/ At first, it looked not such an easy task, since I hadn't have any slides or anything ready for it. Fuck it. Challenge accepted.

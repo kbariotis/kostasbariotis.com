@@ -3,7 +3,7 @@ title: "removeEventListener and this"
 path: "/removeeventlistener-and-this/"
 date: "2017-01-17T14:46:20.000Z"
 date_updated:   2017-01-19T11:04:25.000Z
-tags: javascript, DOM
+tags: JavaScript, DOM
 ---
 
 Have you ever tried to call `removeEventListener` on a previously attached element and couldn't remove it? Did you maybe try to pass a function to `addEventListener` that is bound to another context?

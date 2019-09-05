@@ -3,7 +3,7 @@ title: "Removing JS from Magento CMS Pages"
 path: "/removing-js-scripts-from-cms-pages/"
 date: "2014-12-14T18:12:56.000Z"
 date_updated:   2014-12-14T19:24:34.000Z
-tags: magento, prototype.js, cms, loadtime, performance
+tags: Magento, Prototypejs, CMS, LoadTime, Performance
 ---
 
 Magento comes with a lot of Javascript. It uses [Prototype.js](http://prototypejs.org/), [Scriptaculus](https://github.com/madrobby/scriptaculous) and custom libraries written be the Varien people. No doubt that these libraries are old and I hardly use 'em on my themes, but they are very tight to the Magento theme ecosystem and we should be careful when we mess with them.

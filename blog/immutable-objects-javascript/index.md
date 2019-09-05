@@ -3,7 +3,7 @@ title: "Immutable Objects with Javascript"
 path: "/immutable-objects-javascript/"
 date: "2015-09-14T13:51:58.000Z"
 date_updated:   2016-05-14T15:40:28.000Z
-tags: javascript, node.js
+tags: JavaScript, Nodejs
 ---
 
 There is no way, by default, to ensure that your Javascript Object you passed into a function will stay as is nevertheless. And that creates a problem and a lot of side effects.

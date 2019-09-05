@@ -3,7 +3,7 @@ title: "Create an SEO friendly and performant landing page with Gatsby.js"
 path: "/gatsby-landing-page/"
 date: "2017-10-30T18:16:00.000Z"
 draft: true
-tags: Javascript, gatsby.js, react.js, SSR
+tags: JavaScript, Gatsbyjs, Reactjs, SSR
 ---
 
 On this post, I will go through the process of creating a landing page using Gatsby.js and BootstrapCSS framework. I use the same process for all my projects and products and I can certainly say that it works like a charm every time.

@@ -3,7 +3,7 @@ title: "Geospatial Query with MongoDB and Node.js"
 path: "/geospatial-query-with-mongodb-and-node-js/"
 date: "2014-10-30T18:16:00.000Z"
 date_updated:   2015-07-16T16:14:43.000Z
-tags: node.js, mongodb, wearetech.io
+tags: Nodejs, MongoDB
 ---
 
 Hasn't been a long time when i started working with <a title="Wearetech.io" href="http://wearetech.io" target="_blank">Wearetech.io</a> and my first challenge was on. Sweet!

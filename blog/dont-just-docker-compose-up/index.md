@@ -2,7 +2,7 @@
 title: "Don't just \"docker-compose up\""
 path: "/dont-just-docker-compose-up/"
 date: "2018-08-05"
-tags: docker-compose, docker
+tags: DockerCompose, Docker
 ---
 
 Chances are that you are working on a containerized stack. Whether

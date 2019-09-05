@@ -2,7 +2,7 @@
 title: "NODE_ENV: So easy to miss your step"
 path: "/node-env-so-easy-to-miss-your-step/"
 date: "2019-01-19"
-tags: Node.js
+tags: Nodejs
 ---
 
 I broke our main API last week. I merged a PR of mine I had been working for a while. It got two approvals from two co-workers, green test suite and it was working perfectly fine locally and on our staging environment, the one that we test things before we send them to production. Somehow, the Node.js server failed to boot on production and we had to rollback to the last deployment, resulting into a 2-3 minutes downtime.

@@ -3,7 +3,7 @@ title: "REST API Error Handling with Express.js"
 path: "/rest-api-error-handling-with-express-js/"
 date: "2015-05-22T16:35:17.000Z"
 date_updated:   2015-12-13T13:35:25.000Z
-tags: node.js, rest, express.js, api
+tags: Nodejs, REST, Expressjs, API
 ---
 
 When you are writing an API, especially when is going to go public, you want the error responses to be as consistent as possible. You want your errors to be identical everywhere, to provide not too much information for your internal system but enough information to the debugger.

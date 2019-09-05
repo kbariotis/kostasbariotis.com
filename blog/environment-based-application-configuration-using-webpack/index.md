@@ -3,7 +3,7 @@ title: "Environment based application configuration using Webpack"
 path: "/environment-based-application-configuration-using-webpack/"
 date: "2017-05-14T09:47:37.000Z"
 date_updated:   2017-05-14T11:35:09.000Z
-tags: webpack
+tags: Webpack
 ---
 
 I am using webpack a lot. A common pattern I am constantly using is how to manage the application specific configuration between different environments. I want to be able to set different API URLs, access codes, feature flags for every environment of my team's workflow.

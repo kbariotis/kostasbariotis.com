@@ -3,7 +3,7 @@ title: "The road to Client Side Javascript"
 path: "/state-of-client-side-js-frameworks/"
 date: "2015-09-19T09:54:54.000Z"
 date_updated:   2015-09-20T07:15:08.000Z
-tags: javascript, client-side, frameworks
+tags: JavaScript, ClientSide, Frameworks
 ---
 
 Client Side JS frameworks have come a long way. Since the rise of [Backbone.js](http://backbonejs.org/) back at 2010, the way we write Javascript and everything about it has changed. A lot of frameworks have born, almost one for every need. But what does a Client Side JS framework consists of? Should I adopt one out of the wild or write my own? As always, it depends. And you should do your [homework](https://medium.com/@kbariotis/choosing-your-next-best-tool-fba96eb19a7f) before choosing one or the other.

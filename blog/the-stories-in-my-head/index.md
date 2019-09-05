@@ -3,7 +3,7 @@ title: "The stories in my head"
 path: "/the-stories-in-my-head/"
 date: "2015-06-13T13:46:56.000Z"
 date_updated:   2015-06-13T13:54:36.000Z
-tags: engineers, experience, stories
+tags: Engineers, Experience
 ---
 
 A few days ago I stumbled upon this wonderful [story](http://cs.txstate.edu/~br02/cs1428/ShortStoryForEngineers.htm). I love those short stories. They are real, inspirational and educational stories.

@@ -2,7 +2,7 @@
 title: "How I failed landing a remote position"
 path: "/how-i-failed-landing-a-remote-position/"
 date: "2017-07-07T17:43:00.000Z"
-tags: interviews, job, engineers
+tags: Interviews, Job
 ---
 
 I started looking for a remote position, telecommuting in other words, as a software engineer last November. It took me 3 months to apply to ~150 job descriptions and none of them was a successful hire. Nevertheless, I now have a great job and I would like to share that experience with you. I have prepared a spreadsheet listing anonymous applications, whether they rejected me or I rejected them and till which level I got into. I will also share my cover letter and how I approached the remote job hunting.

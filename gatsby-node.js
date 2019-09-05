@@ -121,10 +121,7 @@ function createTagPages(createPage, edges) {
 
     for (let page = 1; page <= pagesSum; page++) {
       createPage({
-        path:
-          page === 1
-            ? `/tag/${tagName.toLowerCase()}`
-            : `/tag/${tagName.toLowerCase()}/page/${page}`,
+        path: page === 1 ? `/tag/${tagName}` : `/tag/${tagName}/page/${page}`,
         component: tagTemplate,
         context: {
           posts: paginate(posts[tagName], pageSize, page),

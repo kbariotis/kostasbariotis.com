@@ -2,7 +2,7 @@
 title: "Async/await - A thorough example"
 path: "/async-await-a-thorough-example/"
 date: "2017-11-24T09:40:42.000Z"
-tags: Node.js, AsyncAwait
+tags: Nodejs, AsyncAwait
 ---
 
 With the eighth (8) version of Node.js becoming an LTS, I think that this is a good time to consider switching to it and enjoy the awesome new [async/await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) feature that will help us move away to an even more readable and synchronous flow. Promises served us well for the past 2 or so years but they came with frustration as well.

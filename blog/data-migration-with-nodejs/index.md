@@ -3,7 +3,7 @@ title: "Database Migrations with Nodejs"
 path: "/data-migration-with-nodejs/"
 date: "2016-05-14T15:19:51.000Z"
 date_updated:   2016-05-15T17:00:12.000Z
-tags: Database, CI, node.js
+tags: Database, CI, Nodejs
 ---
 
 A database is a vital part of every complex application. Databases change very often and contain data that can even disintegrate our whole application if they get out of sync. Changing a live database, whether it's related to schema or data, can be hard. Modern apps, where Agile methodologies along with processes such as [Continuous Integration](http://continuousdelivery.com/) apply, have raised the bar of complexity so maintaining a database separately from the application's business logic can be quite painful.

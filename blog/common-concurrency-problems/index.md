@@ -3,7 +3,7 @@ title: "Common Concurrency Problems"
 path: "/common-concurrency-problems/"
 date: "2015-03-15T13:59:03.000Z"
 date_updated:   2015-03-15T14:00:29.000Z
-tags: concurrency, dijkstra
+tags: Concurrency
 ---
 
 A common problem to Computer Science is [Concurrency](http://en.wikipedia.org/wiki/Concurrency_%28computer_science%29). Most of the application we use today, use it in order to better utilise the hardware underneath them, especially when you are dealing with multicore systems.
@@ -23,4 +23,3 @@ Now a few days ago I bumped into an interesting theory, [Dining Philosophers Pro
 Whether we are trying to make an algorithm faster or serve more request through our Web Server putting multiple machines on work is the only essential process. But problems occurs when we are trying to synchronise those machines. And this is where concurrency methods takes place.
 
 But concurrency is certainly not an easy technique and whether we are facing it in our day life or not, we should have some understanding of it, all it's forms it may appear and common solutions of our problem.
-

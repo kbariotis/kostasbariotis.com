@@ -3,7 +3,7 @@ title: "GitYeller.com is my latest weekend project"
 path: "/gityeller-com-weekend-project/"
 date: "2017-03-01T08:49:08.000Z"
 date_updated:   2017-03-01T09:02:18.000Z
-tags: node.js, mongodb
+tags: Nodejs, MongoDB
 ---
 
 It all started when [Adonis](https://twitter.com/_adonisk) told me that he was looking to contribute to some open source projects. He had a list of projects that he actively uses but he didn't want to always be checking their issues list for new issues that he could get his hands on. So we thought it would be cool if we had a way to watch a GitHub repository for issues of specific tags, e.g. "Need help", "Good first contribution", etc.

@@ -3,7 +3,7 @@ title: "Sending and receiving emails when on GitHub Pages"
 path: "/sending-and-receiving-emails-with-a-site-hosted-on-github-pages/"
 date: "2016-10-30T14:28:37.000Z"
 date_updated:   2017-04-05T12:41:40.000Z
-tags: Github, GithubPages
+tags: GitHub, GitHubPages
 ---
 
 If you, like me, like to host simple little sites of yours on GitHub Pages, I am sure you have already reached the moment when you wanted to send emails from that site but you didn't know how to. This is how I did it.
@@ -35,4 +35,3 @@ The first three records are my GitHub Pages DNS records for the redirection to w
 ![](./images/Screen-Shot-2016-10-30-at-19-06-36.png)
 
 So how do you handle your emails when on GitHub Pages?
-

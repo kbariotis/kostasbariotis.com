@@ -3,7 +3,7 @@ title: "Maintaining a Magento code base"
 path: "/maintaining-a-magento-code-base/"
 date: "2014-09-08T17:23:58.000Z"
 date_updated:   2014-11-19T17:11:02.000Z
-tags: magento, codebase, e-commerce
+tags: Magento, Codebase, eCommerce
 ---
 
 Magento is hard. No doubt about it. But this is not an excuse. Beside that (and a few other issues) it's still the number one e-commerce solution. It's proven.

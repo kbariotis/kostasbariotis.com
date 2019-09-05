@@ -3,7 +3,7 @@ title: "Hands on React.js"
 path: "/hands-on-react-js/"
 date: "2015-03-29T17:25:06.000Z"
 date_updated:   2016-05-14T15:41:06.000Z
-tags: reactjs, javascript, node.js
+tags: Reactjs, JavaScript, Nodejs
 ---
 
 I haven't really gotten into [React.js](https://facebook.github.io/react/) yet, even though I have heard about it about a year ago. It was this video, [about react-native](https://www.youtube.com/watch?v=KVZ-P-ZI6W4) and how you can build native iOS apps  with Javascript, that really got me thinking.
@@ -48,4 +48,3 @@ Until next time, take care!
 *Please let me know if I missed or misunderstood something, since it's my second day using React. If you liked my article please share it. :)*
 
 *I have to thank [Matthew Lewis](http://mplewis.com/) for reviewing this article. Thank you Matt.*
-

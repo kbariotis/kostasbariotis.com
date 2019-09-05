@@ -1,8 +1,8 @@
 ---
-title: "Valiation : The most awesome validation engine ever created for PHP"
-path: "/valiation-the-most-awesome-validation-engine-ever-created-for-php/"
+title: "Validation : The awesome validation engine ever created for PHP"
+path: "/validation-the-awesome-validation-engine-ever-created-for-php/"
 date: "2014-10-08T16:02:59.000Z"
-tags: php, validation, oop
+tags: PHP, Validation, OOP
 ---
 
 The past few weeks, you would find Validation at <a title="Github PHP Trending Projects" href="https://github.com/trending?l=php" target="_blank">Github's PHP Trending projects.</a>

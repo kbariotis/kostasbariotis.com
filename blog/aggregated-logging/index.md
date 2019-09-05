@@ -2,7 +2,7 @@
 title: "Aggregated log management"
 path: "/aggregated-log-management/"
 date: "2018-12-27"
-tags: logging, architecture
+tags: Logging, Architecture
 ---
 
 I have been building aggregated logging mechanisms in all my projects and I always thought of it as an industry standard practice. Lately I've noticed that this is not the case and lots of people are not taking it seriously.

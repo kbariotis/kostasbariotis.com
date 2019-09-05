@@ -3,7 +3,7 @@ title: "Isolated Unit Tests with Sinonjs"
 path: "/isolated-unit-tests-with-sinonjs/"
 date: "2016-03-05T21:02:37.000Z"
 date_updated:   2017-01-16T19:59:41.000Z
-tags: TDD, javascript, node.js
+tags: TDD, JavaScript, Nodejs
 ---
 
 Units in Unit Testing is the smallest unit of code. But how small? Small enough to be tested. For that matter, Unit Tests need to be isolated and for that you need stubs.

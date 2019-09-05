@@ -2,7 +2,7 @@
 title: "Dependency injection in Node.js"
 path: "/dependency-injection-in-node-js/"
 date: "2019-07-20"
-tags: Node.js, Dependency Injection, awilix
+tags: Nodejs, DependencyInjection, Awilix
 ---
 
 This article is about how to achieve [dependency injection](https://en.wikipedia.org/wiki/Dependency_injection) in Node.js using [awilix](https://github.com/jeffijoe/awilix), a Dependency Injection Container I have been personally using for quite some time now. I will use unit testing as a use case where dependency injection can be helpful, but needless to say, its purpose is far more greater than just that.

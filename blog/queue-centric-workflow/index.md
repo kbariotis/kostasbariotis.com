@@ -3,7 +3,7 @@ title: "Queue-Centric Workflow"
 path: "/queue-centric-workflow/"
 date: "2015-12-06T13:33:15.000Z"
 date_updated:   2015-12-12T13:14:25.000Z
-tags: Microservices, node.js, AWS, QCW
+tags: MicroServices, Nodejs, AWS, QCW
 ---
 
 We started adopting a Queue-Centric workflow recently at [Goodvidio](http://goodvid.io), although it's still too early to talk whether it served us well and what the benefits were. In this article I would like to talk about the mindset of adopting such an infrastructure and some key concepts you must keep in mind, especially when using [AWS's SQS](https://aws.amazon.com/sqs/), a cloud hosted Messaging System.

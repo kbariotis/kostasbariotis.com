@@ -3,7 +3,7 @@ title: "Magento(Varien lib) & PHP memory_limit -1 bug"
 path: "/magentovarien-lib-php-memory_limit-1-bug/"
 date: "2014-08-30T13:21:24.000Z"
 date_updated:   2015-12-13T13:37:29.000Z
-tags: magento
+tags: Magento
 ---
 
 Last week an unusual bug really got me some time until i figured out.
@@ -41,5 +41,3 @@ protected function _convertToByte($memoryValue)
 There you have it. The author here doesn't check for when memory_limit is set to -1. Instead he assumes that it will be always set to form of XXM or XXKB.
 
 So in case you have bumped into the above symptoms check out that your PHP's memory limit is not set to infinite.
-
-

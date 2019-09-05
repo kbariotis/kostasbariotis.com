@@ -3,7 +3,7 @@ title: "Be prepared to scale your team"
 path: "/scaling-your-team/"
 date: "2015-09-10T17:33:38.000Z"
 date_updated:   2015-09-11T08:26:20.000Z
-tags: team, dev, scale, workplace
+tags: Team, Dev, Scale, Workplace
 ---
 
 Fortunately, I have been lucky enough to work with a lot of dev teams. [Good](http://www.lifehack.org/articles/work/10-signs-you-are-working-happy-workplace.html) and bad.
@@ -40,5 +40,3 @@ because no one can guarantee you a job for ever like no manager can guarantee a 
 
 ##Finally
 I would say that, when you're joining a team, you can't simply wait everyone to be as you would like to be. You may have to put a little something in the mix. Teams are not born perfect. It's the everyday inside process that will eventually mature and fill with wisdom the people behind. A perfect recipe to scale your team.
-
-

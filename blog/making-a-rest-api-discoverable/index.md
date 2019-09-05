@@ -3,7 +3,7 @@ title: "Making a REST API discoverable"
 path: "/making-a-rest-api-discoverable/"
 date: "2015-08-24T14:39:27.000Z"
 date_updated:   2015-08-24T14:45:08.000Z
-tags: rest, api
+tags: REST, API
 ---
 
 Making a discoverable API means thats some software would be able to traverse it, by only providing it's root endpoint. For example, my IDE could provide me all the endpoints, input schemas and responses of Github's API by putting in it's root, that is `https://api.github.com`.

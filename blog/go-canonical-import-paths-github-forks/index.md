@@ -3,7 +3,7 @@ title: "Go canonical import paths & Github forks"
 path: "/go-canonical-import-paths-github-forks/"
 date: "2016-02-27T15:49:31.000Z"
 date_updated:   2016-11-20T13:29:42.000Z
-tags: Golang, Github
+tags: GoLang, GitHub
 ---
 
 I started playing with [Golang(or just Go)](http://golang.org) this week for the first time. Go is a compiled, statically typed language and I thought it would be a great fit for situations where Node.js, my primary go-to stack, won't be a great candidate for the job. For heavy processing and problems where concurrent-first solutions must be applied.

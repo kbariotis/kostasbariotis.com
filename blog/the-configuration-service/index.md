@@ -3,7 +3,7 @@ title: "The Configuration Service"
 path: "/the-configuration-service/"
 date: "2015-11-13T18:51:34.000Z"
 date_updated:   2015-11-14T20:05:04.000Z
-tags: Microservices
+tags: MicroServices
 ---
 
 While we were moving towards the [Microservices](http://martinfowler.com/microservices/) path at [Goodvidio](https://goodvid.io), we were in the need of keeping in a central place the configuration of our system. Thus, we created the *Configuration Service*.

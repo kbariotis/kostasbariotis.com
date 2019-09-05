@@ -3,7 +3,7 @@ title: "JWT: The modern way of authenticating"
 path: "/jwt-the-modern-way-of-authenticating/"
 date: "2015-01-08T18:51:28.000Z"
 date_updated:   2015-01-08T19:20:16.000Z
-tags: jwt, rest, apis, authentication, spa
+tags: JWT, Rest, Apis, Authentication, SPA
 ---
 
 Recently, [Thanos](http://attheo.do) got me into [JWT](http://jwt.io). Json Web Token is the modern way of authenticating between your REST API and a web/mobile/native client without using Sessions and/or cookies. This is a nice explanation of how things were [done](http://stackoverflow.com/questions/15051712/how-to-do-authentication-with-a-rest-api-right-browser-native-clients), until Json Web Tokens came into place.

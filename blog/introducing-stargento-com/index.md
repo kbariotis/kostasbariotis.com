@@ -3,7 +3,7 @@ title: "Introducing Stargento.com"
 path: "/introducing-stargento-com/"
 date: "2014-09-24T16:16:00.000Z"
 date_updated:   2014-11-19T17:10:41.000Z
-tags: stargento.com, magento
+tags: Magento
 ---
 
 I am introducing <a title="Stargento is an online PHP Sandbox and a Magento playground" href="http://stargento.com" target="_blank">Stargento.com</a> to the <a title="Magento" href="http://magentocommerce.com/" target="_blank">Magento</a> community. I am looking forward for your thoughts and feedback.

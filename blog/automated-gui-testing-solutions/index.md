@@ -3,7 +3,7 @@ title: "Automated GUI Testing Solutions"
 path: "/automated-gui-testing-solutions/"
 date: "2016-01-08T06:03:02.000Z"
 date_updated:   2016-05-14T15:40:03.000Z
-tags: GUI, javascript, Testing, node.js
+tags: GUI, JavaScript, Testing, Nodejs
 ---
 
 I gave a talk entitled [TDD with Node.js](http://slides.com/kostasbariotis/tdd-nodejs) in the ~~latest~~ [SKGNode.js meetup](https://www.meetup.com/Thessaloniki-Node-js-Meetup/). I explained the concept of TDD and described my tools of choice for integrating the TDD flow with Node.js. It was great.

@@ -3,7 +3,7 @@ title: "Mongoose objects and the IN operator"
 path: "/mongoose-objects-and-the-in-operator/"
 date: "2015-08-31T17:51:38.000Z"
 date_updated:   2015-08-31T17:54:44.000Z
-tags: mongodb, mongoose
+tags: MongoDB, Mongoose
 ---
 
 Today I lost a few hours trying to understand why a document that I was fetching through Mongoose, kept returning true against checking for a field with the `in` operator, even though the document didn't contain that field.

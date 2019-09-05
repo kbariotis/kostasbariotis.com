@@ -3,7 +3,7 @@ title: "Interviewer vs Interviewee"
 path: "/interviewer-vs-interviewee/"
 date: "2015-02-18T09:10:30.000Z"
 date_updated:   2016-11-28T06:30:29.000Z
-tags: interviews, job, dev life
+tags: Interviews, Job
 ---
 
 The process of a job interview certainly is not easy. Especially when you are young and inexperienced.
