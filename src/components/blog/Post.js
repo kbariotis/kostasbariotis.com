@@ -27,14 +27,16 @@ const Post = ({ post }) => (
         <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
       </h1>
     </header>
-    <time
-      css={{
-        color: 'rgba(255, 255, 255, 0.5)',
-      }}
-      dateTime={dateformat(post.frontmatter.date, 'isoDateTime')}
-    >
-      {dateformat(post.frontmatter.date, 'dd mmmm yyyy')}
-    </time>
+    {!post.frontmatter.draft && (
+      <time
+        css={{
+          color: 'rgba(255, 255, 255, 0.5)',
+        }}
+        dateTime={dateformat(post.frontmatter.date, 'isoDateTime')}
+      >
+        {dateformat(post.frontmatter.date, 'dd mmmm yyyy')}
+      </time>
+    )}
     <section
       css={{
         marginTop: '1em',

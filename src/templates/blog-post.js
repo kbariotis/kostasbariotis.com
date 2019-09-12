@@ -163,9 +163,11 @@ export default function Template({ data, location }) {
                     </Col>
                     <Col md={8}>
                       <div className={authorName}>Kostas Bariotis</div>
-                      <time dateTime={dateformat(post.frontmatter.date, 'isoDateTime')}>
-                        {dateformat(post.frontmatter.date, 'd mmmm yyyy')}
-                      </time>
+                      {!post.frontmatter.draft && (
+                        <time dateTime={dateformat(post.frontmatter.date, 'isoDateTime')}>
+                          {dateformat(post.frontmatter.date, 'd mmmm yyyy')}
+                        </time>
+                      )}
                     </Col>
                   </Row>
                 </Col>
