@@ -5,14 +5,14 @@ draft: true
 tags: NPM
 ---
 
-In this article I am going to talk about `package-lock.json`, why is it important to have and to maintain and also how in my opinion is best to use it in your day to day life.
+In this article, I am going to talk about `package-lock.json`, why is it important to have and to maintain and also how in my opinion is best to use it (along with NPM CLI) in your day to day life.
 
 ## History
 NPM version 5 introduced `package-lock.json` as a mechanism to capture the exact dependency tree installed in any point in time. That would help with the collaboration across different environments where you want everyone that are going to fetch dependencies for a specific version of your project to always fetch the same tree.
 
-`package.json` defines the dependencies required for a project and also the accepted versions using [semantic versioning](https://semver.org/). Semantic versioning though can be ambiguous.
+`package.json` defines the required dependencies and also their respective versions using [semantic versioning](https://semver.org/). Semantic versioning though can be tricky.
 
-Consider a dependency stated as `"express": "^4.16.4"`. The publisher of this module (without using `package-lock.json`) would have `express` version 4.16.4 installed since he installed the latest version. If I download this module and try to install dependencies on it and by that time `express` has published a new version, say 4.17.1, I would download the latest version. The `caret` symbol [tells us exactly that](https://stackoverflow.com/a/22345808/1955940).
+Consider a dependency stated as `"express": "^4.16.4"`. The publisher of this module (without using `package-lock.json`) would have `express` version 4.16.4 installed since they installed the latest version. If I download this module and try to install dependencies on it and by that time `express` has published a new version, say 4.17.1, I will download the latest version. The `caret` symbol [tells us exactly that](https://stackoverflow.com/a/22345808/1955940).
 
 The problem with the above is that if version 4.17.x contain a bug, my local setup will fail but the publishers' will continue to work fine on the previous version. Imagine the same to happen in the production environment and you have no idea why is failing.
 
@@ -23,14 +23,13 @@ So `package-lock.json` will describe the exact dependency tree currently install
 **Key takeaway: Always commit `package-lock.json` to your VCS.**
 
 ## `package.json` vs `package-lock.json`
-You shouldn't be changing `package-lock.json` directly. That is being handled automatically by NPM. It reflects changes made to `package.json` to `package-lock.json` and keeps it up to date.
+You shouldn't be changing `package-lock.json` directly though. That is being handled automatically by NPM. It reflects changes made to `package.json` to `package-lock.json` and keeps it up to date.
 
 That is though only if you use NPMs' CLI to make any changes. If you manually change `package.json` don't expect `package-lock.json` to be updated. Always use the CLI commands, like `install`, `uninstall`, etc.
 
-**Key takeaway: Don't attempt to manually update neither `package.json` or `package-lock.json`.**
+**Key takeaway: Don't attempt to manually change dependencies in neither `package.json` or `package-lock.json`.**
 
 ## How to use the NPM CLI
-
 NPM will auto generate a `package-lock.json` when you first use it in a fresh project. Then you use NPM as usual:
 
 ### npm install (with specific modules are arguments)
@@ -61,15 +60,17 @@ Its purpose is to be used by environments, e.g. build servers, where installatio
 ## Takeaways expanded
 
 ### Always commit `package-lock.json` to your VCS.
-It will ensure that all clients that download your project and attempt to install dependencies, will get the exact same dependency tree.
+It will ensure that all clients that download your project and attempt to install dependencies, will get the exact same dependency tree. Furthermore, you are able to checkout previous commits and replicate the dependencies state of that commit.
 
 ### Don't attempt to manually update neither `package.json` or `package-lock.json`.
 Use always NPMs' CLI and it will automatically keep both files in sync.
 
 ### Don't use `npm install` without arguments to fetch dependencies. Always use `npm ci` and `npm install` to install a specific dependency.
-Use `npm ci` everywhere when all you want is to update your local dependencies tree. Always use NPMs' CLI to install/uninstall specific dependencies. Use `update` in a repetitive fashion (once a month? or use a service like [dependabot](https://dependabot.com/) to update all your dependencies.
+Use `npm ci` everywhere when all you want is to update the local dependencies tree. Even on your local develpment environment.
 
-### Conclusion
+Always use NPMs' CLI to install/uninstall specific dependencies. This way you keep both `package.json` and `package-lock.json` in sync and up to date.
+
+Make `update` a repetitive task, say once a month, to update your dependencies. (or use a service like [dependabot](https://dependabot.com/ but make sure that you have a good test coverage). This way you ensure that you keep your dependencies up to date and you avoid bubbling up technical debt.
 
 **More references**:
 - Differences between `npm install` and `npm ci`: https://stackoverflow.com/questions/52499617/what-is-the-difference-between-npm-install-and-npm-ci
