@@ -132,7 +132,7 @@ export default function Template({ data, location }) {
   const fullUrl = `${siteUrl}${post.frontmatter.path}`;
 
   return (
-    <IndexLayout location={location}>
+    <IndexLayout canonical={post.frontmatter.canonical} location={location}>
       <ArticleSchema
         authorName={`Kostas Bariotis`}
         title={`${post.frontmatter.title}`}
@@ -249,6 +249,7 @@ export const pageQuery = graphql`
         tags
         title
         draft
+        canonical
       }
     }
     nextPost: markdownRemark(frontmatter: { path: { eq: $nextPostPath } }) {

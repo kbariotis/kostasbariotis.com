@@ -1,4 +1,5 @@
 import React from 'react';
+import { parse } from 'url';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { css, injectGlobal } from 'react-emotion';
@@ -82,7 +83,7 @@ const blogContainer = css({
   marginBottom: '4em',
 });
 
-export default function IndexLayout({ children }) {
+export default function IndexLayout({ children, canonical, location }) {
   return (
     <StaticQuery
       query={graphql`
@@ -97,6 +98,7 @@ export default function IndexLayout({ children }) {
           site {
             siteMetadata {
               title
+              siteUrl
               description
               author
             }
@@ -104,12 +106,20 @@ export default function IndexLayout({ children }) {
         }
       `}
       render={data => {
-        let { description, title } = data.site.siteMetadata;
+        let { description, title, siteUrl } = data.site.siteMetadata;
         let { src } = data.file.childImageSharp.fixed;
 
         const backgroundImageStyle = css(containerStyle, {
           backgroundImage: `linear-gradient(to bottom, rgba(125, 185, 232, 0) 0%, rgba(34, 25, 49, 1) 100%), url('${src}')`,
         });
+
+        const parsedPageUrl = parse(
+          canonical
+            ? canonical
+            : `${siteUrl.replace(/\/$/, ``)}${(location && location.pathname) || '/'}`
+        );
+        const pageUrl = `${parsedPageUrl.protocol}//${parsedPageUrl.host}${parsedPageUrl.pathname}`;
+
         return (
           <div className={backgroundImageStyle}>
             <Menu />
@@ -126,8 +136,15 @@ export default function IndexLayout({ children }) {
                 as="font"
                 crossOrigin="anonymous"
               />
+              <link
+                rel="canonical"
+                key={pageUrl}
+                href={pageUrl}
+                data-baseprotocol={parsedPageUrl.protocol}
+                data-basehost={parsedPageUrl.host}
+              />
               <meta name="description" content={description} />
-              <html lang="en" /> {/* this is valid react-helmet usage! */}
+              <html lang="en" />
               <meta charSet="utf-8" />
               <meta name="viewport" content="width=device-width, initial-scale=1" />
               <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -148,5 +165,6 @@ export default function IndexLayout({ children }) {
 
 IndexLayout.propTypes = {
   children: PropTypes.func,
+  canonical: PropTypes.string,
   location: PropTypes.object,
 };

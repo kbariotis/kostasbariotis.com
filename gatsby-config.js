@@ -233,12 +233,6 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
     },
     {
-      resolve: `gatsby-plugin-canonical-urls`,
-      options: {
-        siteUrl: `https://kostasbariotis.com`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-nprogress`,
       options: {
         color: `tomato`,
