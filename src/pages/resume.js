@@ -65,8 +65,13 @@ export default function Resume() {
         </Section>
         <Section title="Experience">
           <ExperienceItem
+            title="Product Engineer III @ Bulb"
+            duration="2019 November - Present"
+            description="-"
+          />
+          <ExperienceItem
             title="Senior Product Engineer @ Trouva"
-            duration="2018 June - Present"
+            duration="2018 June - 2019 October"
             description="In a very fast paced environment and a small, I participated in many decisions
             and involved in many parts of the product teams' process. As a member of the consumer squad, I
             designed and built an integration with Shopify that would allow our customers

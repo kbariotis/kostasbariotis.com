@@ -68,6 +68,10 @@ export default function About({ data }) {
               </p>
             </AboutSection>
             <AboutSection title={'Bio'}>
+              <BioEntry year={'2019'}>
+                Started working with <a href="https://bulb.co.uk">Bulb</a>, hopefully I will get to
+                help on world{"'"}s most serious issue at the moment.
+              </BioEntry>
               <BioEntry year={'2018'}>
                 Started working with <a href="https://trouva.com">Trouva</a>, a curated marketplace
                 with unique products that you wont find on high streets.
