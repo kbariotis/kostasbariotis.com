@@ -108,7 +108,7 @@ services:
       - NODE_ENV=development
 ```
 
-So now I've added a second stage to our `Dockerfile` that starts from `nginx` and also copies all the artifacts from the previous stage. `docker-compose` has also been accomodated to stop at the first stage so it will never reach the second one.
+So now I've added a second stage to our `Dockerfile` that starts from `nginx` and also copies all the artifacts from the previous stage. `docker-compose` has also been accommodated to stop at the first stage so it will never reach the second one.
 
 Let's build the image now with `Docker`:
 
@@ -118,6 +118,6 @@ That's it! Now our `Dockerfile` will produce an `nginx` container with our final
 
 ## Conclusion
 
-And there you go. A single `Dockerfile` to use for both development and production in conjuction with `docker-compose`. Life just became simpler.
+And there you go. A single `Dockerfile` to use for both development and production in conjunction with `docker-compose`. Life just became simpler.
 
 I'm sure more use cases can come out of that. I would love to hear how are you using it! Hit me in the comments below.
