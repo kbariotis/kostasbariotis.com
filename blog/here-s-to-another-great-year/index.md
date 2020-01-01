@@ -46,7 +46,7 @@ I heard once someone saying: "All you need to do is to show up". I need to keep 
 * Prioritize life over work. It's OK if I don't start a new project or if I don't write a new blog post as soon as I spend that time enjoying life and having a good time. It's NOT OK to waste time being inside doing nothing.
 * Travel to one new country, preferably to a new continent.
 * Finish my Spanish study plan.
-* Exercise constantly. Experiment with new diets.
+* Exercise constantly.
 * Start one new side project. Think again before though. Evaluate the time and effort you are going to put into and only do it if you are sure about it.
 * Have been thinking a lot about doing a hardware project. Smart mirrors are really impressing me and I would love to put one on my living room. Maybe something for this year.
 * Get involved in more communities.
