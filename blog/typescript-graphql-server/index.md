@@ -1,7 +1,7 @@
 ---
 title: "Setting up a GraphQL server with TypeScript"
 path: "/graphql-server-typescript/"
-date: "2021-03-21"
+date: "2020-03-21"
 tags: TypeScript, GraphQL
 ---
 
