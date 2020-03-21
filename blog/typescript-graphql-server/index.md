@@ -5,11 +5,11 @@ date: "2021-03-21"
 tags: TypeScript, GraphQL
 ---
 
-This article will go through setting up the basic structure of a GraphQL server with TypeScript. I will use [apollo's Koa server](https://github.com/apollographql/apollo-server/tree/master/packages/apollo-server-koa) package that I found to be very straightforward and also will setup some basic smoke tests with `mocha` and `supertest`. Let's go!
+This article will go through setting up the basic structure of a GraphQL server with TypeScript. I will use [apollo's Koa server](https://github.com/apollographql/apollo-server/tree/master/packages/apollo-server-koa) package that I found to be very straightforward and also will set up some basic smoke tests with `mocha` and `supertest`. Let's go!
 
-GraphQL, [by prodiving its own definition language](https://graphql.org/learn/schema/), it's often hard to co-exist with our high-level language of choice. But things doesn't have to be complicated, so let's try to keep it simple and create a maintanable structure and keep separated concerns as possible.
+GraphQL, [by providing its own definition language](https://graphql.org/learn/schema/), it's often hard to co-exist with our high-level language of choice. But things don't have to be complicated, so let's try to keep it simple and create a maintainable structure and keep separate concerns as possible.
 
-I will assume that you have a TypeScript project setup already in your prefered way. If not, you will find a complete example by the end of this blog post. Bear with me till then.
+I will assume that you have a TypeScript project set up already in your preferred way. If not, you will find a complete example by the end of this blog post. Bear with me till then.
 
 ## Kick off
 
@@ -315,7 +315,7 @@ _Did you know that apollo's server comes with a development GraphQL client? Star
 
 ## More types
 
-So far, we've been doing great. Notice the `hello` query how it returns a `String` type. That's great, but with TypeScript and GraphQL, we are able to define more complex type structures. As a matter of fact, we are definetely going to need them. So let's change the query to return a more complicated object.
+So far, we've been doing great. Notice the `hello` query how it returns a `String` type. That's great, but with TypeScript and GraphQL, we are able to define more complex type structures. As a matter of fact, we are definitely going to need them. So let's change the query to return a more complicated object.
 
 ```TypeScript
 // src/queries/hello.ts
@@ -338,7 +338,7 @@ export default {
 ```
 
 ```GraphQL
-// src/schema/hello.ts
+// src/schema/hello.graphql
 
 type HelloResponse {
   name: String
