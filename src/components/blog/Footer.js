@@ -159,18 +159,22 @@ const Footer = () => (
         </li>
       </ul>
       <div css={footerText}>
-        Copyright {new Date().getFullYear()}{' '}
-        <Link css={footerSocialLink} to="/" title="Kostas Bariotis Blog">
-          Kostas Bariotis
-        </Link>
-        <span css={footerLinkSeparator}> • </span> Design by{' '}
+        <a
+          css={footerSocialLink}
+          rel="noopener noreferrer"
+          href="https://github.com/kbariotis/kostasbariotis.com"
+          target="_blank"
+        >
+          This website is open source
+        </a>
+        <span css={footerLinkSeparator}> • </span>
         <a
           css={footerSocialLink}
           rel="noopener noreferrer"
           href="http://www.attheo.do"
           target="_blank"
         >
-          Thanos Theodoridis
+          Designed by Thanos Theodoridis
         </a>
       </div>
     </footer>
