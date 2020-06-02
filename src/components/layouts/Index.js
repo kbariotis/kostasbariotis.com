@@ -83,6 +83,16 @@ const blogContainer = css({
   marginBottom: '4em',
 });
 
+const blackLivesMatterBannerStyle = css({
+  display: 'block',
+  width: '100%',
+  backgroundColor: 'black',
+  color: 'white',
+  textAlign: 'center',
+  paddingTop: '0.5em',
+  paddingBottom: '0.5em',
+});
+
 export default function IndexLayout({ children, canonical, location }) {
   return (
     <StaticQuery
@@ -122,6 +132,7 @@ export default function IndexLayout({ children, canonical, location }) {
 
         return (
           <div className={backgroundImageStyle}>
+            <div className={blackLivesMatterBannerStyle}>#BlackLivesMatter</div>
             <Menu />
             <Helmet titleTemplate={`%s - ${title}`} defaultTitle={title}>
               <link
