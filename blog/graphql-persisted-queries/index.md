@@ -3,6 +3,7 @@ title: "GraphQL Persisted Queries"
 path: "/graphql-persisted-queries/"
 date: "2020-12-05"
 tags: GraphQL, JavaScript, NodeJS
+draft: true
 ---
 
 Persisted queries (or persisted documents) serve two purposes when it comes to GraphQL: performance and security. The options for implementation varies depending on which one you focus on.
