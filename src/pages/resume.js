@@ -55,19 +55,20 @@ export default function Resume() {
         <Section title="Brief">
           <p>
             I am Kostas Bariotis, a software engineer from Thessaloniki, Greece currently living in
-            London, UK. I have been writing code professionally for the past six years and during
-            that time I have worked with some amazing companies and individuals. I have done open
-            source work and have also contributed to lots of projects. I have been actively involved
-            with the vibrant tech community of Thessaloniki and have been helping in the
-            organization of the DEVit conference since day one. I have been documenting my technical
-            endeavours on my blog and have interviewed some amazing people on my podcast.
+            London, UK. I have over seven years of experience as a software engineer in small but
+            also in bigger technological companies. I have worked with some amazing companies and
+            individuals. I have done open source work and have also contributed to lots of projects.
+            I have been actively involved with the vibrant tech community of Thessaloniki and have
+            been helping in the organization of the DEVit conference since day one. I have been
+            documenting my technical journey on my blog and have interviewed some amazing people on
+            my podcast.
           </p>
         </Section>
         <Section title="Experience">
           <ExperienceItem
             title="Product Engineer III @ Bulb"
             duration="2019 November - Present"
-            description="-"
+            description="As a member of the team that is building internal tools for Bulbs' energy specialist, I've been involved in building many tools but also integrating third-party services into our every-day processes. Bulbs' main stack is TypeScript/React.js/Node.js and are using Terraform to manage our platform provider and Kubernetes to manage our runtime services. I've been involved in different side projects as well, from security to onboarding. As a senior engineer, I led several projects, by braking them down, designing the architecture and planning the release from zero to production."
           />
           <ExperienceItem
             title="Senior Product Engineer @ Trouva"
@@ -158,9 +159,6 @@ export default function Resume() {
                   <ExternalLink title="throw.js" url="https://github.com/kbariotis/throw.js" />
                 </li>
                 <li>
-                  <ExternalLink title="Feedly API" url="https://github.com/kbariotis/feedly-api" />
-                </li>
-                <li>
                   <ExternalLink
                     title="This blog"
                     url="https://github.com/kbariotis/kostasbariotis.com"
@@ -178,7 +176,13 @@ export default function Resume() {
               <b>Projects</b>
               <ul className={listStyle}>
                 <li>
-                  <ExternalLink title="Janitr" url="https://janitr.net" />
+                  <ExternalLink
+                    title="Presentador"
+                    url="https://github.com/kbariotis/presentador"
+                  />
+                </li>
+                <li>
+                  <ExternalLink title="Excalidraw" url="https://github.com/excalidraw/excalidraw" />
                 </li>
                 <li>
                   <ExternalLink title="DEVit Conference" url="https://devitconf.org" />
