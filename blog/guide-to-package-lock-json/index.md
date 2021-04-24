@@ -1,7 +1,7 @@
 ---
 title: "Guide to package-lock.json"
 path: "/guide-to-package-lock-json/"
-tags: NPM
+tags: npm
 date: "2019-10-22"
 canonical: https://blog.logrocket.com/why-you-should-use-package-lock-json/
 ---
