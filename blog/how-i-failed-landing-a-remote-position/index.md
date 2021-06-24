@@ -25,8 +25,7 @@ But to make the recruiter to visit my page, I had to go through her mailbox firs
 
 This is the final version of it because I had to do some revises after I sent it a few times.
 
-```
-Dear Mr/Ms,
+"Dear Mr/Ms,
 
 I am Kostas Bariotis, a software developer and a passionate doer. I am sending you my regards from sunny Thessaloniki, Greece. Have you ever been? Take a look, I am sure you will fall in love with the amazing beaches of Chalkidiki.
 
@@ -40,8 +39,7 @@ Last, but not least, I love reading books, mainly science fiction, traveling and
 
 I would love it if we could arrange a talk and talk more about how I could potentially be a fit for your team. Please, consult my resume or see the links below.
 
-Thank you so much and have a nice day. :)
-```
+Thank you so much and have a nice day. :)"
 
 ## Where did I look?
 Nowadays there are lots of places to find a remote position, especially in software engineering. Here's my list of preference:
