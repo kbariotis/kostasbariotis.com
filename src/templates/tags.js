@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from 'react-emotion';
+import { css } from 'emotion';
 import { Row, Col } from 'react-flexbox-grid';
 
 import IndexLayout from '../components/layouts/Index';

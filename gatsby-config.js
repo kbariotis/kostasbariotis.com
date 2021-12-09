@@ -255,6 +255,7 @@ module.exports = {
       `,
         feeds: [
           {
+            title: "Kostas Bariotis's blog",
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges
                 .filter(post => !post.node.frontmatter.draft)

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import FaTwitter from 'react-icons/lib/fa/twitter';
-import FaMedium from 'react-icons/lib/fa/medium';
-import FaLinkedIn from 'react-icons/lib/fa/linkedin';
-import FaGitHub from 'react-icons/lib/fa/github';
-import FaEnvelope from 'react-icons/lib/fa/envelope';
+import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter';
+import { FaMedium } from '@react-icons/all-files/fa/FaMedium';
+import { FaLinkedinIn } from '@react-icons/all-files/fa/FaLinkedinIn';
+import { VscGithub } from '@react-icons/all-files/vsc/VscGithub';
+import { BsFillEnvelopeFill } from '@react-icons/all-files/bs/BsFillEnvelopeFill';
 
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import Variables from './variables';
@@ -121,7 +121,7 @@ const Footer = () => (
             href="https://github.com/kbariotis"
             title="contribute"
           >
-            <FaGitHub />
+            <VscGithub />
           </a>
         </li>
         <li css={footerSocialListItem}>
@@ -143,7 +143,7 @@ const Footer = () => (
             href="https://www.linkedin.com/pub/kostas-bariotis/81/b74/2a8"
             title="linkedin"
           >
-            <FaLinkedIn />
+            <FaLinkedinIn />
           </a>
         </li>
         <li css={footerSocialListItem}>
@@ -154,7 +154,7 @@ const Footer = () => (
             href="mailto:kostas@bariotis.com?subject=Hi!"
             title="kostas@bariotis.com"
           >
-            <FaEnvelope />
+            <BsFillEnvelopeFill />
           </a>
         </li>
       </ul>

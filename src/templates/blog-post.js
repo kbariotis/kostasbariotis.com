@@ -5,7 +5,7 @@ import { graphql, Link } from 'gatsby';
 import ReactDisqusThread from 'react-disqus-comments';
 import uuidv5 from 'uuid/v5';
 import Img from 'gatsby-image';
-import { css } from 'react-emotion';
+import { css } from 'emotion';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import 'prismjs/themes/prism-tomorrow.css';
 

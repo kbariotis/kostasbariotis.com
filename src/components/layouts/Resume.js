@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { graphql, StaticQuery } from 'gatsby';
-import { css } from 'react-emotion';
+import { css } from 'emotion';
 
 const containerStyle = css({
   color: 'black',

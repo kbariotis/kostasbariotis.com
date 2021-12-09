@@ -1,11 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  FacebookShareButton,
-  GooglePlusShareButton,
-  TwitterShareButton,
-  RedditShareButton,
-} from 'react-share';
+import { FacebookShareButton, TwitterShareButton, RedditShareButton } from 'react-share';
 
 import { Row, Col } from 'react-flexbox-grid';
 
@@ -49,17 +44,6 @@ const shareFacebookButton = {
     display: 'block',
   },
 };
-const shareGooglePlusButton = {
-  color: '#dd4b39',
-  cursor: 'pointer',
-  '@media (max-width: 768px)': {
-    backgroundColor: '#dd4b39',
-    color: '#fff',
-    padding: '0.25em',
-    width: '100%',
-    display: 'block',
-  },
-};
 
 const Share = ({ draft, title, fullUrl }) => (
   <div>
@@ -77,11 +61,6 @@ const Share = ({ draft, title, fullUrl }) => (
           <FacebookShareButton url={fullUrl}>
             <span css={shareFacebookButton}>Facebook</span>
           </FacebookShareButton>
-        </Col>
-        <Col css={shareButtonsListItem}>
-          <GooglePlusShareButton url={fullUrl}>
-            <span css={shareGooglePlusButton}>Google+</span>
-          </GooglePlusShareButton>
         </Col>
         <Col css={shareButtonsListItem}>
           <RedditShareButton title={title} url={fullUrl}>

@@ -2,7 +2,7 @@ import React from 'react';
 import { parse } from 'url';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { css, injectGlobal } from 'react-emotion';
+import { css, injectGlobal } from 'emotion';
 import { Grid } from 'react-flexbox-grid';
 import { graphql, StaticQuery } from 'gatsby';
 

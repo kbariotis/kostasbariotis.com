@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import Helmet from 'react-helmet';
-import { css } from 'react-emotion';
+import { css } from 'emotion';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import IndexLayout from '../components/layouts/Index';

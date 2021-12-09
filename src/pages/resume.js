@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from 'react-emotion';
+import { css } from 'emotion';
 import { graphql } from 'gatsby';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import FaLightbulbO from 'react-icons/lib/fa/lightbulb-o';
+import { GoLightBulb } from '@react-icons/all-files/go/GoLightBulb';
 
 import ExternalLink from '../components/resume/ExternalLink';
 import ResumeLayout from '../components/layouts/Resume';
@@ -41,7 +41,7 @@ export default function Resume() {
   return (
     <ResumeLayout>
       <div className={notificationStyle}>
-        <FaLightbulbO />
+        <GoLightBulb />
         Did you know you can print this page into a PDF? Try CTRL + P and choose {'"'}
         To PDF
         {'"'}.
