@@ -66,6 +66,11 @@ export default function Resume() {
         </Section>
         <Section title="Experience">
           <ExperienceItem
+            title="Senior Software Engineer @ Grover"
+            duration="2019 November - Present"
+            description="Based in Berlin, Grover is renting tech and other products directly to their customers on a monthly subscription. "
+          />
+          <ExperienceItem
             title="Senior Product Engineer @ Bulb"
             duration="2019 November - Present"
             description="As a member of the team that is building internal tools for Bulbs' energy specialist, I've been involved in building many tools but also integrating third-party services into our every-day processes. Bulbs' main stack is TypeScript/React.js/Node.js and are using Terraform to manage our platform provider and Kubernetes to manage our runtime services. I've been involved in different side projects as well, from security to onboarding. As a senior engineer, I led several projects, by braking them down, designing the architecture and planning the release from zero to production."
