@@ -8,6 +8,7 @@
     "@react-icons/all-files": "^4.1.0",
     "core-js": "^2.6.12",
     "dateformat": "^3.0.3",
+    "disqus-react": "^1.1.5",
     "emotion": "^9.2.12",
     "emotion-server": "^9.2.12",
     "eslint": "^8.4.1",

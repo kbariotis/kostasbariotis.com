@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import dateformat from 'dateformat';
 import { graphql, Link } from 'gatsby';
-import ReactDisqusThread from 'react-disqus-comments';
+import { DiscussionEmbed } from 'disqus-react';
 import uuidv5 from 'uuid/v5';
 import Img from 'gatsby-image';
 import { css } from 'emotion';
@@ -194,11 +194,13 @@ export default function Template({ data, location }) {
                 </header>
                 <Separator />
                 {isProduction && (
-                  <ReactDisqusThread
+                  <DiscussionEmbed
                     shortname="kostasbariotis"
-                    identifier={uuidv5(fullUrl, uuidv5.URL)}
-                    title={post.frontmatter.title}
-                    url={fullUrl}
+                    config={{
+                      identifier: uuidv5(fullUrl, uuidv5.URL),
+                      title: post.frontmatter.title,
+                      url: fullUrl,
+                    }}
                   />
                 )}
               </section>
