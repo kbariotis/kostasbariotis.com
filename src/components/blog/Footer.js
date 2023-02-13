@@ -1,78 +1,78 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter';
-import { FaMedium } from '@react-icons/all-files/fa/FaMedium';
-import { FaLinkedinIn } from '@react-icons/all-files/fa/FaLinkedinIn';
-import { VscGithub } from '@react-icons/all-files/vsc/VscGithub';
-import { BsFillEnvelopeFill } from '@react-icons/all-files/bs/BsFillEnvelopeFill';
+import React from "react";
+import { Link } from "gatsby";
+import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter";
+import { FaMedium } from "@react-icons/all-files/fa/FaMedium";
+import { FaLinkedinIn } from "@react-icons/all-files/fa/FaLinkedinIn";
+import { VscGithub } from "@react-icons/all-files/vsc/VscGithub";
+import { BsFillEnvelopeFill } from "@react-icons/all-files/bs/BsFillEnvelopeFill";
 
-import { Grid, Row, Col } from 'react-flexbox-grid';
-import Variables from './variables';
+import { Grid, Row, Col } from "react-flexbox-grid";
+import Variables from "./variables";
 
 const footer = {
   background: Variables.darkpurple,
   color: Variables.lightpurple,
-  fontSize: '1em',
+  fontSize: "1em",
   fontFamily: "'Roboto', sans-serif",
-  fontWeight: '300',
-  padding: '3.25em 0',
+  fontWeight: "300",
+  padding: "3.25em 0",
 };
 const footerLink = {
-  marginTop: '2em',
-  marginBottom: '2em',
+  marginTop: "2em",
+  marginBottom: "2em",
 };
 
 const footerLinkSeparator = {
-  color: '#3B4B7D',
-  margin: '0 5px',
-  fontSize: '0.8em',
+  color: "#3B4B7D",
+  margin: "0 5px",
+  fontSize: "0.8em",
 };
 
 const footerSocial = {
   background: Variables.darkerpurple,
   color: Variables.darkpurple,
-  fontSize: '0.9em',
-  paddingTop: '4em',
+  fontSize: "0.9em",
+  paddingTop: "4em",
 };
 const footerSocialLink = {
   color: Variables.lightpurple,
-  textDecoration: 'none',
-  '&:active,&:hover': {
+  textDecoration: "none",
+  "&:active,&:hover": {
     color: Variables.lightblue,
   },
 };
 
 const footerSocialList = {
-  fontSize: '0.5em',
-  textAlign: 'center',
-  padding: '0',
+  fontSize: "0.5em",
+  textAlign: "center",
+  padding: "0",
 };
 const footerSocialListLink = {
   color: Variables.lightblue,
-  textDecoration: 'none',
+  textDecoration: "none",
 };
 const footerSocialListItem = {
-  display: 'inline-block',
-  width: '2em',
-  height: '2em',
-  fontSize: '3em',
-  textAlign: 'center',
-  lineHeight: '2em',
-  borderRadius: '50%',
-  margin: '0.5em',
-  transition: 'all .1s ease',
-  '&:hover,&:focus': {
+  display: "inline-block",
+  width: "2em",
+  height: "2em",
+  fontSize: "3em",
+  textAlign: "center",
+  lineHeight: "2em",
+  borderRadius: "50%",
+  margin: "0.5em",
+  transition: "all .1s ease",
+  "&:hover,&:focus": {
     backgroundColor: Variables.darkpurple,
-    transform: 'rotate(360deg)',
+    transform: "rotate(360deg)",
     a: {
-      textDecoration: 'none',
+      textDecoration: "none",
     },
   },
 };
 
 const footerText = {
-  textAlign: 'center',
-  paddingBottom: '4em',
+  textAlign: "center",
+  paddingBottom: "4em",
 };
 const Footer = () => (
   <div>
@@ -80,19 +80,23 @@ const Footer = () => (
       <Grid>
         <Row center="xs">
           <Col>
-            I am{' '}
+            I'm{" "}
             <Link css={footerLink} to="/" title="Kostasbariotis.com Home">
-              Kostas Bariotis
+              Kostas
             </Link>
-            , a web developer, a proud wanderer and a passionate doer. My mission is to write clean
-            and efficient code, to solve problems on the Web and to learn something more. Read{' '}
-            <Link css={footerLink} to="/about/" title="About Kostasbariotis.com">
+            , a passionate product engineer with over ten years of experience in
+            early stage companies. Read{" "}
+            <Link
+              css={footerLink}
+              to="/about/"
+              title="About Kostasbariotis.com"
+            >
               more about me
-            </Link>{' '}
-            or{' '}
+            </Link>{" "}
+            or{" "}
             <Link css={footerLink} to="/contact/" title="Contact Kostas">
-              {' '}
-              get in touch{' '}
+              {" "}
+              get in touch{" "}
             </Link>
             .
           </Col>
