@@ -22,7 +22,7 @@
     "gatsby-plugin-catch-links": "^4.3.0",
     "gatsby-plugin-emotion": "^7.3.0",
     "gatsby-plugin-feed": "^4.3.0",
-    "gatsby-plugin-google-analytics": "^4.3.0",
+    "gatsby-plugin-google-gtag": "^5.6.0",
     "gatsby-plugin-manifest": "^4.3.0",
     "gatsby-plugin-netlify": "^3.14.0",
     "gatsby-plugin-nprogress": "^4.3.0",

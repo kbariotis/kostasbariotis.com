@@ -143,9 +143,12 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-netlify',
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: 'UA-40793458-2',
+        trackingIds: ['UA-40793458-2'],
+        gtagConfig: {
+          anonymize_ip: true,
+        },
       },
     },
     {
