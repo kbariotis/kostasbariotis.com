@@ -54,25 +54,24 @@ export default function Resume() {
         <Header title="Kostas Bariotis" subtitle="Senior Software Engineer" />
         <Section title="Brief">
           <p>
-            I am Kostas Bariotis, a software engineer from Thessaloniki, Greece currently living in
-            London, UK. I have over seven years of experience as a software engineer in small but
-            also in bigger technological companies. I have worked with some amazing companies and
-            individuals. I have done open source work and have also contributed to lots of projects.
-            I have been actively involved with the vibrant tech community of Thessaloniki and have
-            been helping in the organization of the DEVit conference since day one. I have been
-            documenting my technical journey on my blog and have interviewed some amazing people on
-            my podcast.
+            I'm Kostas, a full-stack engineer with over 10 years of experience. I've been exposed to different industries over the years from e-commerce, to the hospitality sector, to the UK's energy sector. Most importantly, I've been working with a multi-cultural, cross-functional teams.
+          </p>
+          <p>
+            Apart from designing and delivering features as my daily work, I've been leading bigger projects that were often spanning across multiple teams as well as managing smaller teams for the completion of these projects. I have been working with lower level roles and I've been enjoying mentoring and coaching the hard parts of software engineering.
+          </p>
+          <p>
+            I've done open source work that you can check on my GitHub profile and I've also been actively involved with lots of vibrant tech communities and the organization of the DEVit conference since day one. I've been documenting my technical journey on my blog and have interviewed some amazing people on my podcast.
           </p>
         </Section>
         <Section title="Experience">
           <ExperienceItem
             title="Senior Software Engineer @ Grover"
-            duration="2019 November - Present"
+            duration="2021 November - Present"
             description="Based in Berlin, Grover is renting tech and other products directly to their customers on a monthly subscription. "
           />
           <ExperienceItem
             title="Senior Product Engineer @ Bulb"
-            duration="2019 November - Present"
+            duration="2019 November - 2021 November"
             description="As a member of the team that is building internal tools for Bulbs' energy specialist, I've been involved in building many tools but also integrating third-party services into our every-day processes. Bulbs' main stack is TypeScript/React.js/Node.js and are using Terraform to manage our platform provider and Kubernetes to manage our runtime services. I've been involved in different side projects as well, from security to onboarding. As a senior engineer, I led several projects, by braking them down, designing the architecture and planning the release from zero to production."
           />
           <ExperienceItem
@@ -164,15 +163,18 @@ export default function Resume() {
                   <ExternalLink title="throw.js" url="https://github.com/kbariotis/throw.js" />
                 </li>
                 <li>
-                  <ExternalLink
-                    title="This blog"
-                    url="https://github.com/kbariotis/kostasbariotis.com"
-                  />
+                  <ExternalLink title="node-cron-expression" url="https://github.com/kbariotis/node-cron-expression" />
                 </li>
                 <li>
                   <ExternalLink
                     title="Go Discover"
                     url="https://github.com/kbariotis/go-discover"
+                  />
+                </li>
+                <li>
+                  <ExternalLink
+                    title="This blog"
+                    url="https://github.com/kbariotis/kostasbariotis.com"
                   />
                 </li>
               </ul>
