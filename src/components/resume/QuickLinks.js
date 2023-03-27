@@ -1,22 +1,21 @@
-import React from 'react';
-import { Row, Col } from 'react-flexbox-grid';
+import React from "react";
+import { Row, Col } from "react-flexbox-grid";
 
 const headerItem = {
-  paddingRight: '10px',
-  paddingLeft: '10px',
+  paddingRight: "10px",
+  paddingLeft: "10px",
 };
 
 export default function QuickLinks() {
   return (
     <Row center="xs">
       <Col css={headerItem}>
-        <b>Site:</b> <a href="https://kostasbariotis.com">https://kostasbariotis.com</a>
+        <b>Site:</b>{" "}
+        <a href="https://kostasbariotis.com">https://kostasbariotis.com</a>
       </Col>
       <Col css={headerItem}>
-        <b>Email:</b> <a href="mailto:kostas@bariotis.com">kostas@bariotis.com</a>
-      </Col>
-      <Col css={headerItem}>
-        <b>Mobile:</b> <a href="tel:00447492705670">0044 7492705670</a>
+        <b>Email:</b>{" "}
+        <a href="mailto:kostas@bariotis.com">kostas@bariotis.com</a>
       </Col>
     </Row>
   );
