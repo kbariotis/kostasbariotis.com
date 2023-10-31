@@ -65,8 +65,13 @@ export default function Resume() {
         </Section>
         <Section title="Experience">
           <ExperienceItem
+            title="Senior Software Engineer @ Mixmax"
+            duration="2023 August - Present"
+            description="Mixmax is a sales engagement platform that integrates with the most popular mail clients and CRMs of the industry."
+          />
+          <ExperienceItem
             title="Senior Software Engineer @ Grover"
-            duration="2021 November - Present"
+            duration="2021 November - 2023 August"
             description="Based in Berlin, Grover is renting tech and other products directly to their customers on a monthly subscription. "
           />
           <ExperienceItem
