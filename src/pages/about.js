@@ -86,6 +86,11 @@ export default function About({ data }) {
               </p>
             </AboutSection>
             <AboutSection title={"Bio"}>
+              <BioEntry year={"2023"}>
+                Second engineer on <a href="https://pblworks.org">PBLWorks</a>,
+                hired as a Staff Engineer to be part of a newly created internal team 
+                to build the worlds' go-to platform for Project Based Learning.
+              </BioEntry>
               <BioEntry year={"2021"}>
                 Started working with <a href="https://grover.com">Grover</a>,
                 the worlds' first renting service for technology products and
