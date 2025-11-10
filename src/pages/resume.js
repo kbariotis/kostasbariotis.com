@@ -65,19 +65,27 @@ export default function Resume() {
         </Section>
         <Section title="Experience">
           <ExperienceItem
-            title="Senior Software Engineer @ Mixmax"
-            duration="2023 August - Present"
-            description="Mixmax is a sales engagement platform that integrates with the most popular mail clients and CRMs of the industry."
+            title="Senior Software Engineer @ PBLWorks"
+            duration="2023 December - Currently"
+            description="PBLWorks is a global non-profit organization asssisting and coaching teachers to the PBL methodology. I was the
+              second engineer in the team on an effort to create and launch the TEACH product, a PBL curriculum based app for online coaching."
           />
           <ExperienceItem
             title="Senior Software Engineer @ Grover"
             duration="2021 November - 2023 August"
-            description="Based in Berlin, Grover is renting tech and other products directly to their customers on a monthly subscription. "
+            description="Based in Berlin, Grover is renting tech and other products directly to their customers on a monthly subscription. 
+              Being part of the Invoicing team, we were migrating a legacy monolithic system for the invoices generation to a newer system 
+              in order to assist the global demand of the company."
           />
           <ExperienceItem
             title="Senior Product Engineer @ Bulb"
             duration="2019 November - 2021 November"
-            description="As a member of the team that is building internal tools for Bulbs' energy specialist, I've been involved in building many tools but also integrating third-party services into our every-day processes. Bulbs' main stack is TypeScript/React.js/Node.js and are using Terraform to manage our platform provider and Kubernetes to manage our runtime services. I've been involved in different side projects as well, from security to onboarding. As a senior engineer, I led several projects, by braking them down, designing the architecture and planning the release from zero to production."
+            description="As a member of the team that is building internal tools for Bulbs' energy specialist, I've been involved 
+              in building many tools but also integrating third-party services into our every-day processes. Bulbs' main stack is 
+              TypeScript/React.js/Node.js and are using Terraform to manage our platform provider and Kubernetes to manage our 
+              runtime services. I've been involved in different side projects as well, from security to onboarding. As a senior 
+              engineer, I led several projects, by braking them down, designing the architecture and planning the release from 
+              zero to production."
           />
           <ExperienceItem
             title="Senior Product Engineer @ Trouva"
