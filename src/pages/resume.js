@@ -1,39 +1,39 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { css } from 'emotion';
-import { graphql } from 'gatsby';
-import { Grid, Row, Col } from 'react-flexbox-grid';
-import { GoLightBulb } from '@react-icons/all-files/go/GoLightBulb';
+import React from "react";
+import PropTypes from "prop-types";
+import { css } from "emotion";
+import { graphql } from "gatsby";
+import { Grid, Row, Col } from "react-flexbox-grid";
+import { GoLightBulb } from "@react-icons/all-files/go/GoLightBulb";
 
-import ExternalLink from '../components/resume/ExternalLink';
-import ResumeLayout from '../components/layouts/Resume';
-import QuickLinks from '../components/resume/QuickLinks';
-import Section from '../components/resume/Section';
-import ExperienceItem from '../components/resume/ExperienceItem';
-import Header from '../components/resume/Header';
+import ExternalLink from "../components/resume/ExternalLink";
+import ResumeLayout from "../components/layouts/Resume";
+import QuickLinks from "../components/resume/QuickLinks";
+import Section from "../components/resume/Section";
+import ExperienceItem from "../components/resume/ExperienceItem";
+import Header from "../components/resume/Header";
 
 const listStyle = css({
-  listStyle: 'none',
+  listStyle: "none",
   marginLeft: 0,
 });
 const pageInfo = css({
-  paddingTop: '20px',
-  paddingBottom: '20px',
+  paddingTop: "20px",
+  paddingBottom: "20px",
 });
 const globalStyle = css({
   a: {
-    color: '#8ab2ff',
+    color: "#8ab2ff",
   },
 });
 
 const notificationStyle = css({
-  textAlign: 'center',
-  backgroundColor: '#1eeab8',
-  color: 'white',
-  paddingTop: '0.5em',
-  paddingBottom: '0.5em',
-  '@media print': {
-    display: 'none',
+  textAlign: "center",
+  backgroundColor: "#1eeab8",
+  color: "white",
+  paddingTop: "0.5em",
+  paddingBottom: "0.5em",
+  "@media print": {
+    display: "none",
   },
 });
 
@@ -42,7 +42,8 @@ export default function Resume() {
     <ResumeLayout>
       <div className={notificationStyle}>
         <GoLightBulb />
-        Did you know you can print this page into a PDF? Try CTRL + P and choose {'"'}
+        Did you know you can print this page into a PDF? Try CTRL + P and choose{" "}
+        {'"'}
         To PDF
         {'"'}.
       </div>
@@ -51,183 +52,155 @@ export default function Resume() {
           <QuickLinks />
           <hr />
         </section>
-        <Header title="Kostas Bariotis" subtitle="Senior Software Engineer" />
+        <Header
+          title="Kostas Bariotis"
+          subtitle="Senior Software Engineer"
+          summary="Architecture, System Design & User-Facing Product Development in
+          Distributed Teams"
+        />
         <Section title="Brief">
           <p>
-            I'm Kostas, a full-stack engineer with over 10 years of experience. I've been exposed to different industries over the years from e-commerce, to the hospitality sector, to the UK's energy sector. Most importantly, I've been working with a multi-cultural, cross-functional teams.
-          </p>
-          <p>
-            Apart from designing and delivering features as my daily work, I've been leading bigger projects that were often spanning across multiple teams as well as managing smaller teams for the completion of these projects. I have been working with lower level roles and I've been enjoying mentoring and coaching the hard parts of software engineering.
-          </p>
-          <p>
-            I've done open source work that you can check on my GitHub profile and I've also been actively involved with lots of vibrant tech communities and the organization of the DEVit conference since day one. I've been documenting my technical journey on my blog and have interviewed some amazing people on my podcast.
+            Senior full-stack engineer who moves easily between architecture,
+            product thinking, and cross-functional work in fully remote teams.
+            I’ve led large greenfield builds and critical migrations across
+            education, energy, and e-commerce, always aiming for measurable
+            improvements. I collaborate closely with designers, users, and
+            non-engineering teams (async or otherwise) to understand the full
+            picture, data, operations, customer success, business goals, and I
+            bring that mindset into the teams I work with.
           </p>
         </Section>
         <Section title="Experience">
           <ExperienceItem
             title="Senior Software Engineer @ PBLWorks"
             duration="2023 December - Currently"
-            description="PBLWorks is a global non-profit organization asssisting and coaching teachers to the PBL methodology. I was the
-              second engineer in the team on an effort to create and launch the TEACH product, a PBL curriculum based app for online coaching."
+            description="Second engineer hired to build the next generation of PBLWorks’ product suite."
+            bullets={[
+              "Led the architecture and development of the whole product suite from scratch using TypeScript, Next.js, PostgreSQL, GCP, and various third-party services.",
+              "Next.js based web application with SSR with constant >90% on Web Core Vitals metrics.",
+              "Wired observability and monitoring tools using Sentry.",
+              "Wrote an internal system for writing database integration tests that would run on every pull request (locally and on the CI).",
+              "Maintained the existing PBLWorks.org platform, hosted on AWS.",
+              "Architected and implemented a STAR design schema pulling data from various sources (GA, PostgresSQL, etc) and wired it through Tableau.",
+            ]}
           />
           <ExperienceItem
             title="Senior Software Engineer @ Grover"
             duration="2021 November - 2023 August"
-            description="Based in Berlin, Grover is renting tech and other products directly to their customers on a monthly subscription. 
-              Being part of the Invoicing team, we were migrating a legacy monolithic system for the invoices generation to a newer system 
-              in order to assist the global demand of the company."
+            description="Migrated a legacy monolith for invoice generation into a modern, scalable microservice architecture to support global growth."
+            bullets={[
+              "Responsible for the legacy and new invoicing micro service, serving in total >20k requests per day",
+              "Architected observability tools on AWS CloudWatch for having a complete overview of the invoicing system.",
+              "Led the migration of the legacy invoicing system to the new micro service, breaking down the tasks, designing the architecture and planning the releases from zero to production with no downtime.",
+            ]}
           />
           <ExperienceItem
             title="Senior Product Engineer @ Bulb"
             duration="2019 November - 2021 November"
-            description="As a member of the team that is building internal tools for Bulbs' energy specialist, I've been involved 
-              in building many tools but also integrating third-party services into our every-day processes. Bulbs' main stack is 
-              TypeScript/React.js/Node.js and are using Terraform to manage our platform provider and Kubernetes to manage our 
-              runtime services. I've been involved in different side projects as well, from security to onboarding. As a senior 
-              engineer, I led several projects, by braking them down, designing the architecture and planning the release from 
-              zero to production."
+            description="Building internal tools for Bulbs' energy specialists and customer success teams to help them better serve Bulb's customers."
+            bullets={[
+              "Worked on the internal customer success platform, developing new features and integrations with third-party services, ZenDesk, Twilio, Salesforce, and others.",
+              "Led the architecture and the implementation of a new authentication system that would work across different domains for multi-national expansion of the company.",
+              "Implemented a customers monitoring system that would pro-actively watch for customers with certain issues on their accounts and notify the internal customer-success team.",
+            ]}
           />
           <ExperienceItem
             title="Senior Product Engineer @ Trouva"
             duration="2018 June - 2019 October"
-            description="In a very fast paced environment and a small, I participated in many decisions
-            and involved in many parts of the product teams' process. As a member of the consumer squad, I
-            designed and built an integration with Shopify that would allow our customers
-            to be in sync with our platform. As a member of the platform squad, I involved
-            in many DevOps operations, building and re-architecting existing parts, writing documentation
-            and helping in defining engineering processes. I was also helping
-            other team members to when blocked in designing extensions of our system in a
-            micro-services architecture. We were using Node.js for our backend services and React.js/Ember.js
-            for our frontend apps. Our architecture was built on AWS (ECS for VMs, SQS/SNS for intercommunication,
-            and others)."
+            description="Integrated with Shopify to help Trouva's merchants better manage their products and orders."
+            bullets={[
+              "Integrated with Sentry to monitor and track errors across the platform. Immediately improved the error rate by more than 50%.",
+              "Led the architecture and implementation of a syncing system with our own platform and Shopify built on a queueing system (AWS SQS) that would handle thousands of products and orders per minute.",
+              "Maintained and improved the legacy backend based on Node.js system that was handling thousands of orders per day.",
+              "Integrated with Algolia as our main search engine, resulting in a 30% faster search experience for end-users.",
+            ]}
           />
           <ExperienceItem
-            title="Senior Software Developer @ ​Quotelier​"
-            duration="2017 February - 2018 March"
-            description="As the lead developer in a team of three, I helped set up the infrastructure
-            for the Quotelier platform and apply best practices to both the backend and
-            the frontend blocks. We chose AWS for our infrastructure and used many services
-            like AWS Lambda and DynamoDB. I have worked with both the backend
-            project, built completely on AWS Lambdas with Node.js. I ‘ve also worked
-            on the frontend project, built with React.js and helped set up the testing
-            strategy and raised the code coverage of the whole codebase."
-          />
-          <ExperienceItem
-            title="Nodejs Developer, Backend Product Engineer @ ​Goodvidio​"
-            duration="2015 March - 2016 December"
-            description="Being the fourth engineer, I helped the company grow its platform from an MVP to
-            fully scalable, modularized architecture that was servicing thousands of requests
-            per day. I have developed the backbone REST API that served the Goodvidio service using
-            Node.js. I have participated in the architecture build process that was
-            designed to serve an application that would scale fast. We payed attention on our
-            testing strategy and kept keeping a high test coverage."
-          />
-          <ExperienceItem
-            title="Front-End Developer @ ​InsightReplay​"
-            duration="2015 Jan - 2015 March"
-            description="I helped the InsightReplay team with the front end development of their product while
-        working closely with Angular.js 1.x."
-          />
-          <ExperienceItem
-            title="Magento Developer, Front-End Developer @ ​Walkinthepark.gr​"
-            duration="2014 Feb - 2015 March"
-            description="Working mainly with E-Commerce businesses, I had the opportunity to work on the
-        world’s most valuable E-Commerce platform, Magento. I have written a lot of modules
-        and created many custom design themes."
-          />
-          <ExperienceItem
-            title="Full Stack Web Developer @ ​dTek Net.working​"
-            duration="2013 Apr - 2014 Feb"
-            description="I have created several web applications, using PHP to serve dynamic content on the
-              client, mySQL to handle persistent data and Javascript to deliver a rich user
-              experiences. I have played with most popular Web's APIs whilst i had the
-              opportunity to write one from scratch."
+            title={"Earlier Experience"}
+            duration="2013 - 2018"
+            bullets={[
+              "Led the implementation of a booking platform based on AWS Lambda/DynamoDB and React.js at Quotelier.",
+              "Built Node.js/MongoDB based REST APIs at Goodvidio (thousands of daily requests).",
+              "Frontend Angular work at InsightReplay.",
+              "Magento-based e-commerce development at Walkinthepark.",
+              "PHP/MySQL full-stack (e-commerce, custom clients projects) work at dTek.",
+            ]}
           />
         </Section>
-        <Section title="Links">
+        <Section title="Open source & Projects">
           <Row>
-            <Col lg={4}>
-              <b>Social</b>
+            <Col lg={6}>
               <ul className={listStyle}>
-                <li>
+                <li style={{ marginBottom: "0.3rem" }}>
+                  Maintainer / contributor to{" "}
                   <ExternalLink
-                    title="LinkedIn"
-                    url="https://www.linkedin.com/in/kostas-bariotis-2a8b7481/"
+                    title="Excalidraw"
+                    url="https://github.com/excalidraw/excalidraw"
                   />
                 </li>
-                <li>
-                  <ExternalLink title="GitHub" url="https://github.com/kbariotis" />
+                <li style={{ marginBottom: "0.3rem" }}>
+                  Organizer of the{" "}
+                  <ExternalLink
+                    title="DEVit Conference"
+                    url="https://github.com/skgtech/devit"
+                  />{" "}
                 </li>
-                <li>
-                  <ExternalLink title="Twitter" url="https://twitter.com/@kbariotis" />
-                </li>
-                <li>
-                  <ExternalLink title="Medium" url="https://medium.com/@kbariotis" />
-                </li>
-                <li>
-                  <ExternalLink title="Slides" url="https://slides.com/kostasbariotis" />
-                </li>
-              </ul>
-            </Col>
-            <Col lg={4}>
-              <b>Open source</b>
-              <ul className={listStyle}>
-                <li>
-                  <ExternalLink title="throw.js" url="https://github.com/kbariotis/throw.js" />
-                </li>
-                <li>
-                  <ExternalLink title="node-cron-expression" url="https://github.com/kbariotis/node-cron-expression" />
-                </li>
-                <li>
+                <li style={{ marginBottom: "0.3rem" }}>
+                  Author of open-source tools such as{" "}
+                  <ExternalLink
+                    title="throw.js"
+                    url="https://github.com/kbariotis/throw.js"
+                  />
+                  ,{" "}
+                  <ExternalLink
+                    title="node-cron-expression"
+                    url="https://github.com/kbariotis/node-cron-expression"
+                  />
+                  ,{" "}
+                  <ExternalLink
+                    title="Presentador"
+                    url="https://github.com/kbariotis/presentador"
+                  />
+                  ,{" "}
                   <ExternalLink
                     title="Go Discover"
                     url="https://github.com/kbariotis/go-discover"
                   />
                 </li>
-                <li>
+                <li style={{ marginBottom: "0.3rem" }}>
+                  Host / interviewer on{" "}
                   <ExternalLink
-                    title="This blog"
-                    url="https://github.com/kbariotis/kostasbariotis.com"
+                    title="Devastation Podcast"
+                    url="https://devastation.tv"
                   />
-                </li>
-              </ul>
-            </Col>
-            <Col lg={4}>
-              <b>Projects</b>
-              <ul className={listStyle}>
-                <li>
-                  <ExternalLink
-                    title="Presentador"
-                    url="https://github.com/kbariotis/presentador"
-                  />
-                </li>
-                <li>
-                  <ExternalLink title="Excalidraw" url="https://github.com/excalidraw/excalidraw" />
-                </li>
-                <li>
-                  <ExternalLink title="DEVit Conference" url="https://devitconf.org" />
-                </li>
-                <li>
-                  <ExternalLink title="Devastation Podcast" url="https://devastation.tv" />
                 </li>
               </ul>
             </Col>
           </Row>
         </Section>
-        <Section title="Personal skills">
+        <Section title="Impact & Collaboration">
           <ul>
-            <li>Immediate familiarity on new technologies.</li>
-            <li>Ability to work in a team effectively.</li>
-            <li>Innovative, Analytical thinking.</li>
-            <li>Mood for acquisition and transmission of knowledge.</li>
-            <li>Organizational behavior, combined knowledge, methodically and consistently.</li>
-            <li>Decision-making.</li>
-            <li>Always in a mood to work and learn.</li>
+            <li style={{ marginBottom: "0.3rem" }}>
+              Mentored junior and mid-level engineers across multiple teams.
+            </li>
+            <li style={{ marginBottom: "0.3rem" }}>
+              Led cross-functional initiatives involving product, design, and
+              data.
+            </li>
+            <li style={{ marginBottom: "0.3rem" }}>
+              Elevated engineering practices around testing, code quality, and
+              architecture.
+            </li>
           </ul>
         </Section>
         <Section title="Education">
-          <h3>Alexander Technological Educational Institute of Thessaloniki (ATEITH)</h3>
-          <p>Bachelor of Science (BS), Computer Software Engineering, 2006 – 2011</p>
+          <h4>
+            Alexander Technological Educational Institute of Thessaloniki
+            (ATEITH)
+          </h4>
+          <p>
+            Bachelor of Science (BS), Computer Software Engineering, 2006 – 2011
+          </p>
         </Section>
         <section className={pageInfo}>
           <hr />

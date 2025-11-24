@@ -1,12 +1,26 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-export default function ExperienceItem({ title, description, duration }) {
+export default function ExperienceItem({
+  title,
+  description,
+  duration,
+  bullets,
+}) {
   return (
-    <div>
-      <h3>{title}</h3>
-      <h4>{duration}</h4>
-      <p>{description}</p>
+    <div style={{ paddingBottom: "1rem" }}>
+      <h4>{title}</h4>
+      <h5>{duration}</h5>
+      <p style={{ marginBottom: "0.5rem" }}>{description}</p>
+      {bullets && (
+        <ul style={{ paddingBottom: 0, marginBottom: 0 }}>
+          {bullets.map((bullet, index) => (
+            <li style={{ marginBottom: "0.3rem" }} key={index}>
+              {bullet}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

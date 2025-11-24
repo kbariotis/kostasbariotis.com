@@ -1,23 +1,25 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-export default function Sectino({ title, children }) {
+export default function Section({ title, children }) {
   return (
     <section>
-      <h2
+      <h3
         css={{
-          color: '#8ab2ff',
-          textTransform: 'uppercase',
+          color: "#8ab2ff",
+          textTransform: "uppercase",
+          paddingBottom: "1rem",
+          marginBottom: "0",
         }}
       >
         {title}
-      </h2>
+      </h3>
       <div>{children}</div>
     </section>
   );
 }
 
-Sectino.propTypes = {
+Section.propTypes = {
   title: PropTypes.string,
   children: PropTypes.string,
 };
