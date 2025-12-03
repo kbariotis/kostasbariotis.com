@@ -58,11 +58,11 @@ export default function Resume() {
           summary="Architecture, System Design & User-Facing Product Development in
           Distributed Teams"
         />
-        <Section title="Brief">
+        <Section title="Professional Summary">
           <p>
             Senior full-stack engineer who moves easily between architecture,
             product thinking, and cross-functional work in fully remote teams.
-            I’ve led large greenfield builds and critical migrations across
+            I've led large greenfield builds and critical migrations across
             education, energy, and e-commerce, always aiming for measurable
             improvements. I collaborate closely with designers, users, and
             non-engineering teams (async or otherwise) to understand the full
@@ -73,57 +73,59 @@ export default function Resume() {
         <Section title="Experience">
           <ExperienceItem
             title="Senior Software Engineer @ PBLWorks"
-            duration="2023 December - Currently"
-            description="Second engineer hired to build the next generation of PBLWorks’ product suite."
+            duration="December 2023 - Present"
+            description="Second engineer hired to build the next generation of PBLWorks' product suite."
             bullets={[
-              "Led the architecture and development of the whole product suite from scratch using TypeScript, Next.js, PostgreSQL, GCP, and various third-party services.",
-              "Next.js based web application with SSR with constant >90% on Web Core Vitals metrics.",
-              "Wired observability and monitoring tools using Sentry.",
-              "Wrote an internal system for writing database integration tests that would run on every pull request (locally and on the CI).",
-              "Maintained the existing PBLWorks.org platform, hosted on AWS.",
-              "Architected and implemented a STAR design schema pulling data from various sources (GA, PostgresSQL, etc) and wired it through Tableau.",
+              "Led the architecture and development of the whole product suite from scratch using TypeScript, Next.js, PostgreSQL, Vercel, and GCP",
+              "Built Next.js-based web application with SSR achieving constant >90% scores on Web Core Vitals metrics",
+              "Monitored developer experience through regular surveys and improved it by 20% in one year",
+              "Advocated and mentored the team on product development best practices, including monitoring Web Core Vitals and tracking user actions",
+              "Implemented observability and monitoring tools using Sentry and created dashboards for the team to monitor product performance",
+              "Developed an internal system for writing PostgreSQL database integration tests that would run on every pull request (locally and on GitHub CI)",
+              "Architected and implemented a STAR design schema pulling data from various sources (Google Analytics, PostgreSQL, etc.) and integrated it with Tableau",
+              "Maintained the existing PBLWorks.org platform, hosted on AWS",
             ]}
           />
           <ExperienceItem
             title="Senior Software Engineer @ Grover"
-            duration="2021 November - 2023 August"
+            duration="November 2021 - August 2023"
             description="Migrated a legacy monolith for invoice generation into a modern, scalable microservice architecture to support global growth."
             bullets={[
-              "Responsible for the legacy and new invoicing micro service, serving in total >20k requests per day",
-              "Architected observability tools on AWS CloudWatch for having a complete overview of the invoicing system.",
-              "Led the migration of the legacy invoicing system to the new micro service, breaking down the tasks, designing the architecture and planning the releases from zero to production with no downtime.",
+              "Responsible for the legacy and new invoicing microservice built with Node.js, serving in total >20,000 requests per day",
+              "Architected observability tools on AWS CloudWatch for having a complete overview of the invoicing system",
+              "Led the migration of the legacy invoicing system to the new microservice architecture, breaking down the tasks, designing the architecture and planning the releases from zero to production with zero downtime",
             ]}
           />
           <ExperienceItem
             title="Senior Product Engineer @ Bulb"
-            duration="2019 November - 2021 November"
+            duration="November 2019 - November 2021"
             description="Building internal tools for Bulbs' energy specialists and customer success teams to help them better serve Bulb's customers."
             bullets={[
-              "Worked on the internal customer success platform, developing new features and integrations with third-party services, ZenDesk, Twilio, Salesforce, and others.",
-              "Led the architecture and the implementation of a new authentication system that would work across different domains for multi-national expansion of the company.",
-              "Implemented a customers monitoring system that would pro-actively watch for customers with certain issues on their accounts and notify the internal customer-success team.",
+              "Worked on the internal customer success platform built with Node.js and React, developing new features and integrations with third-party services including ZenDesk, Twilio, Salesforce, and others",
+              "Led the architecture and implementation of a new authentication system that would work across different domains for multi-national expansion of the company",
+              "Implemented a customer monitoring system that would proactively watch for customers with certain issues on their accounts and notify the internal customer-success team",
             ]}
           />
           <ExperienceItem
             title="Senior Product Engineer @ Trouva"
-            duration="2018 June - 2019 October"
+            duration="June 2018 - October 2019"
             description="Integrated with Shopify to help Trouva's merchants better manage their products and orders."
             bullets={[
-              "Integrated with Sentry to monitor and track errors across the platform. Immediately improved the error rate by more than 50%.",
-              "Led the architecture and implementation of a syncing system with our own platform and Shopify built on a queueing system (AWS SQS) that would handle thousands of products and orders per minute.",
-              "Maintained and improved the legacy backend based on Node.js system that was handling thousands of orders per day.",
-              "Integrated with Algolia as our main search engine, resulting in a 30% faster search experience for end-users.",
+              "Integrated with Sentry to monitor and track errors across the Node.js platform, immediately improving the error rate by more than 50%",
+              "Led the architecture and implementation of a syncing system with our own platform and Shopify built on a queueing system (AWS SQS) that would handle thousands of products and orders per minute",
+              "Maintained and improved the legacy Node.js backend system that was handling thousands of orders per day",
+              "Integrated with Algolia as our main search engine, resulting in a 30% faster search experience for end-users",
             ]}
           />
           <ExperienceItem
             title={"Earlier Experience"}
             duration="2013 - 2018"
             bullets={[
-              "Led the implementation of a booking platform based on AWS Lambda/DynamoDB and React.js at Quotelier.",
-              "Built Node.js/MongoDB based REST APIs at Goodvidio (thousands of daily requests).",
-              "Frontend Angular work at InsightReplay.",
-              "Magento-based e-commerce development at Walkinthepark.",
-              "PHP/MySQL full-stack (e-commerce, custom clients projects) work at dTek.",
+              "Led the implementation of a booking platform based on AWS Lambda, DynamoDB, and React.js at Quotelier",
+              "Built Node.js and MongoDB-based REST APIs at Goodvidio, handling thousands of daily requests",
+              "Developed frontend applications using Angular at InsightReplay",
+              "Built Magento-based e-commerce solutions at Walkinthepark",
+              "Developed PHP and MySQL full-stack solutions including e-commerce and custom client projects at dTek",
             ]}
           />
         </Section>
@@ -137,16 +139,19 @@ export default function Resume() {
                     title="Excalidraw"
                     url="https://github.com/excalidraw/excalidraw"
                   />
+                  . Fastest growing open-source project on GitHub during
+                  2020/21.
                 </li>
                 <li style={{ marginBottom: "0.3rem" }}>
-                  Organizer of the{" "}
+                  Volunteer / Core organizer of the{" "}
                   <ExternalLink
                     title="DEVit Conference"
                     url="https://github.com/skgtech/devit"
                   />{" "}
+                  . 5 editions with ~400 attendees each.
                 </li>
                 <li style={{ marginBottom: "0.3rem" }}>
-                  Author of open-source tools such as{" "}
+                  Author of open-source tools,
                   <ExternalLink
                     title="throw.js"
                     url="https://github.com/kbariotis/throw.js"
@@ -173,6 +178,7 @@ export default function Resume() {
                     title="Devastation Podcast"
                     url="https://devastation.tv"
                   />
+                  . Greek podcast about the software development industry.
                 </li>
               </ul>
             </Col>
