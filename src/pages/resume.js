@@ -75,10 +75,11 @@ export default function Resume() {
             title="Senior Software Engineer @ PBLWorks"
             duration="December 2023 - Present"
             description="Second engineer hired to build the next generation of PBLWorks' product suite."
+            skills="TypeScript, Node.js, Next.js, React Query, Storybook, Prisma, Jest, Cypress, Vercel, PostgreSQL, Redis, TestContainers"
             bullets={[
-              "Led the architecture and development of the whole product suite from scratch using TypeScript, Next.js, PostgreSQL, Vercel, and GCP",
               "Built Next.js-based web application with SSR achieving constant >90% scores on Web Core Vitals metrics",
               "Monitored developer experience through regular surveys and improved it by 20% in one year",
+              "Built an event-driven architecture with a cloud event bus for handling asynchronous tasks and workflows",
               "Advocated and mentored the team on product development best practices, including monitoring Web Core Vitals and tracking user actions",
               "Implemented observability and monitoring tools using Sentry and created dashboards for the team to monitor product performance",
               "Developed an internal system for writing PostgreSQL database integration tests that would run on every pull request (locally and on GitHub CI)",
@@ -90,8 +91,9 @@ export default function Resume() {
             title="Senior Software Engineer @ Grover"
             duration="November 2021 - August 2023"
             description="Migrated a legacy monolith for invoice generation into a modern, scalable microservice architecture to support global growth."
+            skills="Node.js, GoLang, Ruby, TypeScript, Nest.js, Prisma, PostgreSQL, Kafka, AWS, Kubernetes"
             bullets={[
-              "Responsible for the legacy and new invoicing microservice built with Node.js, serving in total >20,000 requests per day",
+              "Responsible for the legacy and new invoicing micro-service built with Node.js, serving in total >20,000 requests per day",
               "Architected observability tools on AWS CloudWatch for having a complete overview of the invoicing system",
               "Led the migration of the legacy invoicing system to the new microservice architecture, breaking down the tasks, designing the architecture and planning the releases from zero to production with zero downtime",
             ]}
@@ -100,9 +102,10 @@ export default function Resume() {
             title="Senior Product Engineer @ Bulb"
             duration="November 2019 - November 2021"
             description="Building internal tools for Bulbs' energy specialists and customer success teams to help them better serve Bulb's customers."
+            skills="Node.js, Python, TypeScript, Sequelize, React, Redux, Storybook, Cypress, Jest, PostgreSQL, GCP, SQS/SNS, Kubernetes"
             bullets={[
               "Worked on the internal customer success platform built with Node.js and React, developing new features and integrations with third-party services including ZenDesk, Twilio, Salesforce, and others",
-              "Led the architecture and implementation of a new authentication system that would work across different domains for multi-national expansion of the company",
+              "Worked on the architecture and implementation of a new authentication system that would work across different domains for multi-national expansion of the company",
               "Implemented a customer monitoring system that would proactively watch for customers with certain issues on their accounts and notify the internal customer-success team",
             ]}
           />
@@ -110,6 +113,7 @@ export default function Resume() {
             title="Senior Product Engineer @ Trouva"
             duration="June 2018 - October 2019"
             description="Integrated with Shopify to help Trouva's merchants better manage their products and orders."
+            skills="Node.js, Sequelize, React, Redux, Jest, MongoDB, AWS"
             bullets={[
               "Integrated with Sentry to monitor and track errors across the Node.js platform, immediately improving the error rate by more than 50%",
               "Led the architecture and implementation of a syncing system with our own platform and Shopify built on a queueing system (AWS SQS) that would handle thousands of products and orders per minute",
@@ -131,7 +135,7 @@ export default function Resume() {
         </Section>
         <Section title="Open source & Projects">
           <Row>
-            <Col lg={6}>
+            <Col lg={12}>
               <ul className={listStyle}>
                 <li style={{ marginBottom: "0.3rem" }}>
                   Maintainer / contributor to{" "}
@@ -151,7 +155,7 @@ export default function Resume() {
                   . 5 editions with ~400 attendees each.
                 </li>
                 <li style={{ marginBottom: "0.3rem" }}>
-                  Author of open-source tools,
+                  Author of open-source tools,{" "}
                   <ExternalLink
                     title="throw.js"
                     url="https://github.com/kbariotis/throw.js"
