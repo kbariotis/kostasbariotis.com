@@ -16,7 +16,7 @@ const MetaTags = ({ title, description, path = '/', tags = '', noIndex = false }
         }
       }
     `}
-    render={data => {
+    render={(data) => {
       let { siteUrl } = data.site.siteMetadata;
       return (
         <Helmet>

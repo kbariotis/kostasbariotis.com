@@ -1,13 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import { graphql, StaticQuery } from "gatsby";
-import { css } from "@emotion/react";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { graphql, StaticQuery } from 'gatsby';
+import { css } from '@emotion/react';
 
 const containerStyle = css({
-  color: "black",
-  "@media print": {
-    fontSize: "12px",
+  color: 'black',
+  '@media print': {
+    fontSize: '12px',
   },
 });
 
@@ -34,10 +34,7 @@ export default function ResumeLayout({ children }) {
               <meta name="description" content={description} />
               <html lang="en" /> {/* this is valid react-helmet usage! */}
               <meta charSet="utf-8" />
-              <meta
-                name="viewport"
-                content="width=device-width, initial-scale=1"
-              />
+              <meta name="viewport" content="width=device-width, initial-scale=1" />
               <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
               <meta name="HandheldFriendly" content="True" />
             </Helmet>

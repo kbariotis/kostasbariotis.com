@@ -1,16 +1,16 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { css } from "@emotion/react";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { css } from '@emotion/react';
 
-import IndexLayout from "../components/layouts/Index";
-import Posts from "../components/blog/Posts";
-import Pagination from "../components/blog/TagsPagination";
-import Separator from "../components/blog/Separator";
-import MetaTags from "../components/blog/MetaTags";
-import RedHeader from "../components/blog/RedHeader";
+import IndexLayout from '../components/layouts/Index';
+import Posts from '../components/blog/Posts';
+import Pagination from '../components/blog/TagsPagination';
+import Separator from '../components/blog/Separator';
+import MetaTags from '../components/blog/MetaTags';
+import RedHeader from '../components/blog/RedHeader';
 
 const tagMeta = css({
-  marginBottom: "2.5em",
+  marginBottom: '2.5em',
 });
 
 export default function Tags({ pageContext, location }) {

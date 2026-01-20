@@ -1,12 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { graphql } from "gatsby";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 
-import IndexLayout from "../components/layouts/Index";
-import Pagination from "../components/blog/Pagination";
-import Posts from "../components/blog/Posts";
-import Separator from "../components/blog/Separator";
-import MetaTags from "../components/blog/MetaTags";
+import IndexLayout from '../components/layouts/Index';
+import Pagination from '../components/blog/Pagination';
+import Posts from '../components/blog/Posts';
+import Separator from '../components/blog/Separator';
+import MetaTags from '../components/blog/MetaTags';
 
 export default function Pages({ pageContext, data, location }) {
   const { description } = data.site.siteMetadata;
@@ -20,21 +20,11 @@ export default function Pages({ pageContext, data, location }) {
           tags="webdev, programming, javascript"
           description={description}
         />
-        <Pagination
-          page={page}
-          pagesSum={pagesSum}
-          prevPath={prevPath}
-          nextPath={nextPath}
-        />
+        <Pagination page={page} pagesSum={pagesSum} prevPath={prevPath} nextPath={nextPath} />
         <Separator />
         <Posts posts={posts} />
         <Separator />
-        <Pagination
-          page={page}
-          pagesSum={pagesSum}
-          prevPath={prevPath}
-          nextPath={nextPath}
-        />
+        <Pagination page={page} pagesSum={pagesSum} prevPath={prevPath} nextPath={nextPath} />
       </section>
     </IndexLayout>
   );

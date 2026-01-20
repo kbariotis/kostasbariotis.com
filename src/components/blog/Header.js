@@ -1,17 +1,17 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Img from "gatsby-image";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Img from 'gatsby-image';
 
-import { rhythm } from "../../typography";
-import { Row, Col } from "../grid";
-import Separator from "./Separator";
-import Variables from "./variables";
+import { rhythm } from '../../typography';
+import { Row, Col } from '../grid';
+import Separator from './Separator';
+import Variables from './variables';
 
 const Header = ({ fluid, children }) => (
   <Row center="xs">
     <Col
       css={{
-        textAlign: "center",
+        textAlign: 'center',
       }}
     >
       <header
@@ -24,11 +24,11 @@ const Header = ({ fluid, children }) => (
             <Img
               fluid={fluid}
               css={{
-                display: "inline-block",
-                width: "150px",
-                height: "150px",
-                borderRadius: "50%",
-                border: "4px solid #fff",
+                display: 'inline-block',
+                width: '150px',
+                height: '150px',
+                borderRadius: '50%',
+                border: '4px solid #fff',
                 marginBottom: rhythm(1),
               }}
             />

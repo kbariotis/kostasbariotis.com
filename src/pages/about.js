@@ -1,13 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { graphql } from "gatsby";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 
-import IndexLayout from "../components/layouts/Index";
-import Header from "../components/blog/Header";
-import BioEntry from "../components/blog/BioEntry";
-import MetaTags from "../components/blog/MetaTags";
-import AboutSection from "../components/blog/AboutSection";
-import { Col, Row } from "../components/grid";
+import IndexLayout from '../components/layouts/Index';
+import Header from '../components/blog/Header';
+import BioEntry from '../components/blog/BioEntry';
+import MetaTags from '../components/blog/MetaTags';
+import AboutSection from '../components/blog/AboutSection';
+import { Col, Row } from '../components/grid';
 
 export default function About({ data }) {
   return (
@@ -15,166 +15,128 @@ export default function About({ data }) {
       <MetaTags
         title={`About`}
         path={`/about`}
-        description={"Hey, I am Kostas. Nice having you here."}
+        description={'Hey, I am Kostas. Nice having you here.'}
       />
       <Header fluid={data.file.childImageSharp.fluid}>
         Hey, I am Kostas. Nice having you here.
       </Header>
       <main role="main">
-        <AboutSection title={"Intro"}>
+        <AboutSection title={'Intro'}>
           <p>
-            I&apos;m a senior full-stack engineer focused on architecture,
-            system design, and user-facing product work, collaborating across
-            functions to deliver reliable, high-scale features in distributed
-            teams.
+            I&apos;m a senior full-stack engineer focused on architecture, system design, and
+            user-facing product work, collaborating across functions to deliver reliable, high-scale
+            features in distributed teams.
           </p>
           <p>
-            I like <a href="http://slides.com/kostasbariotis">speaking</a> to
-            meetups and conferences about things that tried and also talking
-            with others on my <a href="http://devastation.tv">podcast</a>. I
-            created <a href="https://janitr.net">Janitr</a> and{" "}
-            <a href="http://gityeller.com">GitYeller</a> You can find more code
-            samples and my contributions on{" "}
-            <a href="https://github.com/kbariotis">Github</a>. Along with some
-            folks, we are organizing the local{" "}
-            <a href="www.meetup.com/Thessaloniki-Node-js-Meetup/">
-              Nodejs meetup
-            </a>{" "}
-            and{" "}
-            <a
-              rel="noopener noreferrer"
-              href="http://devit.org"
-              target="_blank"
-            >
+            I like <a href="http://slides.com/kostasbariotis">speaking</a> to meetups and
+            conferences about things that tried and also talking with others on my{' '}
+            <a href="http://devastation.tv">podcast</a>. I created{' '}
+            <a href="https://janitr.net">Janitr</a> and <a href="http://gityeller.com">GitYeller</a>{' '}
+            You can find more code samples and my contributions on{' '}
+            <a href="https://github.com/kbariotis">Github</a>. Along with some folks, we are
+            organizing the local{' '}
+            <a href="www.meetup.com/Thessaloniki-Node-js-Meetup/">Nodejs meetup</a> and{' '}
+            <a rel="noopener noreferrer" href="http://devit.org" target="_blank">
               DEVit Conf
             </a>
-            , the biggest web development conference in northern Greece. We are
-            also known as{" "}
-            <a
-              rel="noopener noreferrer"
-              href="http://skgtech.io"
-              target="_blank"
-            >
+            , the biggest web development conference in northern Greece. We are also known as{' '}
+            <a rel="noopener noreferrer" href="http://skgtech.io" target="_blank">
               SKGtech
             </a>
             .
           </p>
           <p>
-            This site is being generated using Gatsby.js and you can find the
-            source on{" "}
-            <a href="https://github.com/kbariotis/kostasbariotis.com">
-              {" "}
-              GitHub
-            </a>
-            .
+            This site is being generated using Gatsby.js and you can find the source on{' '}
+            <a href="https://github.com/kbariotis/kostasbariotis.com"> GitHub</a>.
           </p>
           <p>
-            I&apos;ve been traveling throughout Europe and after spending 5
-            amazing years in London, working with some of the most valuable
-            startups, I&apos;ve ended up back in my home town Thessaloniki,
-            Greece.
+            I&apos;ve been traveling throughout Europe and after spending 5 amazing years in London,
+            working with some of the most valuable startups, I&apos;ve ended up back in my home town
+            Thessaloniki, Greece.
           </p>
         </AboutSection>
-        <AboutSection title={"Bio"}>
-          <BioEntry year={"2023"}>
-            Second engineer on <a href="https://pblworks.org">PBLWorks</a>,
-            hired as a Staff Engineer to be part of a newly created internal
-            team to build the worlds&apos; go-to platform for Project Based
-            Learning.
+        <AboutSection title={'Bio'}>
+          <BioEntry year={'2023'}>
+            Second engineer on <a href="https://pblworks.org">PBLWorks</a>, hired as a Staff
+            Engineer to be part of a newly created internal team to build the worlds&apos; go-to
+            platform for Project Based Learning.
           </BioEntry>
-          <BioEntry year={"2021"}>
-            Started working with <a href="https://grover.com">Grover</a>, the
-            worlds&apos; first renting service for technology products and not
-            only.
+          <BioEntry year={'2021'}>
+            Started working with <a href="https://grover.com">Grover</a>, the worlds&apos; first
+            renting service for technology products and not only.
           </BioEntry>
-          <BioEntry year={"2019"}>
-            Started working with <a href="https://bulb.co.uk">Bulb</a>,
-            hopefully I will get to help on world{"'"}s most serious issue at
-            the moment.
+          <BioEntry year={'2019'}>
+            Started working with <a href="https://bulb.co.uk">Bulb</a>, hopefully I will get to help
+            on world{"'"}s most serious issue at the moment.
           </BioEntry>
-          <BioEntry year={"2018"}>
-            Started working with <a href="https://trouva.com">Trouva</a>, a
-            curated marketplace with unique products that you wont find on high
-            streets.
+          <BioEntry year={'2018'}>
+            Started working with <a href="https://trouva.com">Trouva</a>, a curated marketplace with
+            unique products that you wont find on high streets.
           </BioEntry>
-          <BioEntry year={"2018"}>
-            Worked with <a href="https://geekbot.io">Geekbot</a>, a fully remote
-            company with a mission to change the way we do standup meetings.
+          <BioEntry year={'2018'}>
+            Worked with <a href="https://geekbot.io">Geekbot</a>, a fully remote company with a
+            mission to change the way we do standup meetings.
           </BioEntry>
-          <BioEntry year={"2017"}>
-            Worked with <a href="https://quotelier.com">Quotelier</a>. A amazing
-            product on the hospitality industry.
+          <BioEntry year={'2017'}>
+            Worked with <a href="https://quotelier.com">Quotelier</a>. A amazing product on the
+            hospitality industry.
           </BioEntry>
-          <BioEntry year={"2017"}>
+          <BioEntry year={'2017'}>
             Released <a href="https://janitr.net">Janitr.net</a>
           </BioEntry>
-          <BioEntry year={"2016"}>
-            Started the first ever{" "}
-            <a href="http://devastation.tv">Podcast for greek developers</a>
+          <BioEntry year={'2016'}>
+            Started the first ever <a href="http://devastation.tv">Podcast for greek developers</a>
           </BioEntry>
-          <BioEntry year={"2015"}>
+          <BioEntry year={'2015'}>
             Started working with <a href="http://goodvid.io">Goodvidio</a>
           </BioEntry>
-          <BioEntry year={"2014"}>
-            Won the first place at{" "}
+          <BioEntry year={'2014'}>
+            Won the first place at{' '}
             <a href="http://www.startuplive.org/events/thessaloniki-1/">
               Thessaloniki Startup Live
-            </a>{" "}
+            </a>{' '}
             with the <a href="http://tunedeck.navideck.com/">Tunedeck Team</a>
           </BioEntry>
-          <BioEntry year={"2014"}>
+          <BioEntry year={'2014'}>
             <a href="http://stargento.com">Stargento</a> is on the air
           </BioEntry>
-          <BioEntry year={"2014"}>
-            Started working with a local web design agency. Lots of E-Commerce,
-            Magento based, projects
+          <BioEntry year={'2014'}>
+            Started working with a local web design agency. Lots of E-Commerce, Magento based,
+            projects
           </BioEntry>
-          <BioEntry year={"2013"}>2013 This blog is born</BioEntry>
-          <BioEntry year={"2013"}>
-            Started working with <a href="http://dtek.gr">DTek</a>. A lot of
-            nice projects born from there like{" "}
-            <a href="http://carfinder.gr">Carfinder.gr</a> and{" "}
+          <BioEntry year={'2013'}>2013 This blog is born</BioEntry>
+          <BioEntry year={'2013'}>
+            Started working with <a href="http://dtek.gr">DTek</a>. A lot of nice projects born from
+            there like <a href="http://carfinder.gr">Carfinder.gr</a> and{' '}
             <a href="http://viralcontestapp.com">Viral Contest App</a>
           </BioEntry>
-          <BioEntry year={"2013"}>
-            Fulfilled my military service as defined by the Greek Constitution
-            (nine months)
+          <BioEntry year={'2013'}>
+            Fulfilled my military service as defined by the Greek Constitution (nine months)
           </BioEntry>
-          <BioEntry year={"2012"}>
-            Graduated from{" "}
+          <BioEntry year={'2012'}>
+            Graduated from{' '}
             <a href="http://it.teithe.gr">
               A.T.E.I. Thessalonikis with the BsC of Computer Science
             </a>
           </BioEntry>
-          <BioEntry year={"2005"}>
-            Started Web Development using raw HTML, CSS, JS
+          <BioEntry year={'2005'}>Started Web Development using raw HTML, CSS, JS</BioEntry>
+          <BioEntry year={'2002'}>
+            Started Web Development using Flash, Dreamweaver and MS Web Publisher
           </BioEntry>
-          <BioEntry year={"2002"}>
-            Started Web Development using Flash, Dreamweaver and MS Web
-            Publisher
+          <BioEntry year={'2001'}>Wrote my first app (Lucky Seven) using Visual Basic</BioEntry>
+          <BioEntry year={'2000'}>
+            Bought my first computer. Since then I have formatted every hard disk of my close
+            friends
           </BioEntry>
-          <BioEntry year={"2001"}>
-            Wrote my first app (Lucky Seven) using Visual Basic
-          </BioEntry>
-          <BioEntry year={"2000"}>
-            Bought my first computer. Since then I have formatted every hard
-            disk of my close friends
-          </BioEntry>
-          <BioEntry year={"1988"}>
+          <BioEntry year={'1988'}>
             Bing Bang happens somewhere in Thessaloniki, Greece.
-            <a href="https://en.wikipedia.org/wiki/Millennials">
-              Generation Y got upgraded
-            </a>
+            <a href="https://en.wikipedia.org/wiki/Millennials">Generation Y got upgraded</a>
           </BioEntry>
         </AboutSection>
-        <AboutSection title={"Projects"}>
+        <AboutSection title={'Projects'}>
           <Row>
             <Col md={4}>
-              <a
-                rel="noopener noreferrer"
-                href="https://janitr.net"
-                target="_blank"
-              >
+              <a rel="noopener noreferrer" href="https://janitr.net" target="_blank">
                 Janitr
               </a>
             </Col>
@@ -184,37 +146,29 @@ export default function About({ data }) {
           </Row>
           <Row>
             <Col md={4}>
-              <a
-                rel="noopener noreferrer"
-                href="https://gityeller.com"
-                target="_blank"
-              >
+              <a rel="noopener noreferrer" href="https://gityeller.com" target="_blank">
                 GitYeller (Dead)
               </a>
             </Col>
             <Col md={8} className="text-right">
-              Subscribe to your favorite GitHub repository and get notified by
-              email for new issues with specific labels.
+              Subscribe to your favorite GitHub repository and get notified by email for new issues
+              with specific labels.
             </Col>
           </Row>
           <Row>
             <Col md={4}>
-              <a
-                rel="noopener noreferrer"
-                href="http://stargento.com"
-                target="_blank"
-              >
+              <a rel="noopener noreferrer" href="http://stargento.com" target="_blank">
                 Stargento (Dead)
               </a>
             </Col>
             <Col md={8} className="text-right">
-              PHP sandbox powered up with the latest Magento installation to
-              test your Magento skills
+              PHP sandbox powered up with the latest Magento installation to test your Magento
+              skills
             </Col>
           </Row>
         </AboutSection>
 
-        <AboutSection title={"Talks"}>
+        <AboutSection title={'Talks'}>
           <Row>
             <Col md={4}>
               <a
@@ -246,7 +200,7 @@ export default function About({ data }) {
           <Row>
             <Col md={4} />
             <Col md={8} className="text-right">
-              Find all my presentation slides at{" "}
+              Find all my presentation slides at{' '}
               <a
                 rel="noopener noreferrer"
                 target="_blank"

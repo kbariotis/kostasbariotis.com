@@ -1,22 +1,22 @@
-import React from "react";
-import { Link } from "gatsby";
-import PropTypes from "prop-types";
-import { Row, Col } from "../grid";
+import React from 'react';
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import { Row, Col } from '../grid';
 
 const newerPostsStyle = {
-  float: "left",
-  "@media(max-width: 768px)": {
-    display: "block",
-    float: "none",
-    marginBottom: "1em",
+  float: 'left',
+  '@media(max-width: 768px)': {
+    display: 'block',
+    float: 'none',
+    marginBottom: '1em',
   },
 };
 const olderPostsStyle = {
-  float: "right",
-  "@media(max-width: 768px)": {
-    display: "block",
-    float: "none",
-    marginTop: "1em",
+  float: 'right',
+  '@media(max-width: 768px)': {
+    display: 'block',
+    float: 'none',
+    marginTop: '1em',
   },
 };
 

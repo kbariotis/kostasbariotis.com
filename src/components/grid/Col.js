@@ -1,22 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { css } from "@emotion/react";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { css } from '@emotion/react';
 
-const getColStyle = (
-  xs,
-  sm,
-  md,
-  lg,
-  xl,
-  xsOffset,
-  smOffset,
-  mdOffset,
-  lgOffset,
-  xlOffset,
-) => {
+const getColStyle = (xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset) => {
   const getWidth = (size) => {
-    if (!size) return "100%";
-    if (size === 12) return "100%";
+    if (!size) return '100%';
+    if (size === 12) return '100%';
     return `${(size / 12) * 100}%`;
   };
 
@@ -26,25 +15,25 @@ const getColStyle = (
   };
 
   return css({
-    paddingLeft: "8px",
-    paddingRight: "8px",
+    paddingLeft: '8px',
+    paddingRight: '8px',
     flexGrow: 0,
     flexShrink: 0,
     width: getWidth(md),
     marginLeft: getOffset(mdOffset),
-    "@media(max-width: 600px)": {
+    '@media(max-width: 600px)': {
       width: getWidth(xs),
       marginLeft: getOffset(xsOffset),
     },
-    "@media(min-width: 601px) and (max-width: 960px)": {
+    '@media(min-width: 601px) and (max-width: 960px)': {
       width: getWidth(sm || md),
       marginLeft: getOffset(smOffset || mdOffset),
     },
-    "@media(min-width: 961px) and (max-width: 1264px)": {
+    '@media(min-width: 961px) and (max-width: 1264px)': {
       width: getWidth(lg || md),
       marginLeft: getOffset(lgOffset || mdOffset),
     },
-    "@media(min-width: 1265px)": {
+    '@media(min-width: 1265px)': {
       width: getWidth(xl || lg || md),
       marginLeft: getOffset(xlOffset || lgOffset || mdOffset),
     },
@@ -77,7 +66,7 @@ const Col = ({
     smOffset,
     mdOffset,
     lgOffset,
-    xlOffset,
+    xlOffset
   );
   return (
     <div css={[colStyle, customCss]} className={className} {...props}>

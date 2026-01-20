@@ -1,26 +1,26 @@
-import React from "react";
-import { Link } from "gatsby";
-import PropTypes from "prop-types";
-import { css } from "@emotion/react";
+import React from 'react';
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import { css } from '@emotion/react';
 
-import Variables from "./variables";
+import Variables from './variables';
 
 const tagsContainerStyle = css({
-  display: "flex",
-  flexWrap: "wrap",
-  justifyContent: "flex-end",
-  gap: "5px",
-  alignItems: "center",
+  display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'flex-end',
+  gap: '5px',
+  alignItems: 'center',
 });
 
 const tagsItemStyle = css({
-  fontSize: "0.8em",
+  fontSize: '0.8em',
   border: `2px solid ${Variables.lightblue}`,
-  textAlign: "center",
-  borderRadius: "100px / 100px",
-  "&:hover": {
+  textAlign: 'center',
+  borderRadius: '100px / 100px',
+  '&:hover': {
     background: Variables.lightblue,
-    "& a": {
+    '& a': {
       color: Variables.darkpurple,
     },
   },
@@ -28,28 +28,28 @@ const tagsItemStyle = css({
 
 const tagsItemLink = css({
   color: Variables.lightblue,
-  display: "block",
-  padding: "2px 20px",
-  height: "30px",
-  lineHeight: "27px",
-  textDecoration: "none",
-  "&:active": {
-    textDecoration: "none",
+  display: 'block',
+  padding: '2px 20px',
+  height: '30px',
+  lineHeight: '27px',
+  textDecoration: 'none',
+  '&:active': {
+    textDecoration: 'none',
   },
-  "&:hover": {
-    textDecoration: "none",
+  '&:hover': {
+    textDecoration: 'none',
   },
 });
 
 const tagsDraftItemStyle = css({
   border: `2px solid ${Variables.red}`,
-  "& a": {
+  '& a': {
     color: Variables.red,
   },
-  "&:hover": {
+  '&:hover': {
     background: Variables.red,
-    "& a": {
-      color: "white",
+    '& a': {
+      color: 'white',
     },
   },
 });
@@ -57,7 +57,7 @@ const tagsDraftItemStyle = css({
 const BulletListTags = ({ tags, draft }) => (
   <div css={tagsContainerStyle}>
     {tags &&
-      tags.split(", ").map((tag, index) => (
+      tags.split(', ').map((tag, index) => (
         <div key={index} css={tagsItemStyle}>
           <Link css={tagsItemLink} to={`/tag/${tag}`}>
             {tag}

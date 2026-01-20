@@ -15,7 +15,7 @@ export default function WebPageSchema() {
           }
         }
       `}
-      render={data => {
+      render={(data) => {
         let { siteUrl, title, description } = data.site.siteMetadata;
 
         const payload = `{

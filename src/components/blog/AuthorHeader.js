@@ -22,7 +22,7 @@ const AuthorHeader = () => (
         }
       }
     `}
-    render={data => {
+    render={(data) => {
       let { description, author } = data.site.siteMetadata;
       return (
         <div

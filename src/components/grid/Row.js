@@ -1,20 +1,20 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { css } from "@emotion/react";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { css } from '@emotion/react';
 
 const getRowStyle = (start, center, end, around, between) => {
-  let justifyContent = "flex-start";
-  if (start) justifyContent = "flex-start";
-  if (center) justifyContent = "center";
-  if (end) justifyContent = "flex-end";
-  if (around) justifyContent = "space-around";
-  if (between) justifyContent = "space-between";
+  let justifyContent = 'flex-start';
+  if (start) justifyContent = 'flex-start';
+  if (center) justifyContent = 'center';
+  if (end) justifyContent = 'flex-end';
+  if (around) justifyContent = 'space-around';
+  if (between) justifyContent = 'space-between';
 
   return css({
-    display: "flex",
-    flexWrap: "wrap",
-    marginLeft: "-8px",
-    marginRight: "-8px",
+    display: 'flex',
+    flexWrap: 'wrap',
+    marginLeft: '-8px',
+    marginRight: '-8px',
     justifyContent,
   });
 };
