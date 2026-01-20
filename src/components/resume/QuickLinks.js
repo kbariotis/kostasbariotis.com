@@ -8,7 +8,7 @@ const headerItem = {
 
 export default function QuickLinks() {
   return (
-    <Row center="xs">
+    <Row>
       <Col css={headerItem}>
         <b>Site:</b>{" "}
         <a href="https://kostasbariotis.com">https://kostasbariotis.com</a>

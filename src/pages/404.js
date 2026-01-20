@@ -1,6 +1,6 @@
 import { Link } from "gatsby";
 import Helmet from "react-helmet";
-import { css } from "emotion";
+import { css } from "@emotion/react";
 
 import IndexLayout from "../components/layouts/Index";
 import Separator from "../components/blog/Separator";

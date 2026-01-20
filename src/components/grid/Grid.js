@@ -13,8 +13,8 @@ const gridStyle = css({
   maxWidth: "780px",
 });
 
-const Grid = ({ children, css: customCss, ...props }) => (
-  <div css={[gridStyle, customCss]} {...props}>
+const Grid = ({ children, css: customCss, className, ...props }) => (
+  <div css={[gridStyle, customCss]} className={className} {...props}>
     {children}
   </div>
 );
@@ -22,6 +22,7 @@ const Grid = ({ children, css: customCss, ...props }) => (
 Grid.propTypes = {
   children: PropTypes.node,
   css: PropTypes.object,
+  className: PropTypes.string,
 };
 
 export default Grid;

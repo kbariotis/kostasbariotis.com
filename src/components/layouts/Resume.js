@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { graphql, StaticQuery } from "gatsby";
-import { css } from "emotion";
+import { css } from "@emotion/react";
 
 const containerStyle = css({
   color: "black",
@@ -41,7 +41,7 @@ export default function ResumeLayout({ children }) {
               <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
               <meta name="HandheldFriendly" content="True" />
             </Helmet>
-            <section className={containerStyle}>{children}</section>
+            <section css={containerStyle}>{children}</section>
           </div>
         );
       }}

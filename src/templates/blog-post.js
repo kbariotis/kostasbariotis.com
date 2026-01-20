@@ -5,7 +5,7 @@ import { graphql, Link } from "gatsby";
 import { DiscussionEmbed } from "disqus-react";
 import { v5 as uuidv5 } from "uuid";
 import Img from "gatsby-image";
-import { css } from "emotion";
+import { css } from "@emotion/react";
 import { Row, Col } from "../components/grid";
 import "prismjs/themes/prism-tomorrow.css";
 
@@ -149,7 +149,7 @@ export default function Template({ data, location }) {
       <header className="post-head">
         <h1 className={postTitle}>{post.frontmatter.title}</h1>
       </header>
-      <section className={postMetaStyle}>
+      <section css={postMetaStyle}>
         <Row middle="xs">
           <Col md={6}>
             <Row middle="xs">
@@ -182,7 +182,7 @@ export default function Template({ data, location }) {
         </Row>
       </section>
       <Separator />
-      <article className={mainPostStyle}>
+      <article css={mainPostStyle}>
         <section
           className="post-content"
           dangerouslySetInnerHTML={{ __html: post.html }}

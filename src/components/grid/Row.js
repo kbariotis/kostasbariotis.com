@@ -22,6 +22,7 @@ const getRowStyle = (start, center, end, around, between) => {
 const Row = ({
   children,
   css: customCss,
+  className,
   start,
   center,
   end,
@@ -31,7 +32,7 @@ const Row = ({
 }) => {
   const rowStyle = getRowStyle(start, center, end, around, between);
   return (
-    <div css={[rowStyle, customCss]} {...props}>
+    <div css={[rowStyle, customCss]} className={className} {...props}>
       {children}
     </div>
   );
@@ -40,6 +41,7 @@ const Row = ({
 Row.propTypes = {
   children: PropTypes.node,
   css: PropTypes.object,
+  className: PropTypes.string,
   start: PropTypes.bool,
   center: PropTypes.bool,
   end: PropTypes.bool,

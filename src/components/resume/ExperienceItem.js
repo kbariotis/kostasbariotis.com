@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { css } from "emotion";
+import { css } from "@emotion/react";
 
 const skillsStyle = css({
   fontSize: "0.9rem",
@@ -23,7 +23,7 @@ export default function ExperienceItem({
       <h5>{duration}</h5>
 
       {skills && (
-        <div className={skillsStyle}>
+        <div css={skillsStyle}>
           <strong>Technologies:</strong> {skills}
         </div>
       )}

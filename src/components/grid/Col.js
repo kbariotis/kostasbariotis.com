@@ -64,6 +64,7 @@ const Col = ({
   xlOffset,
   children,
   css: customCss,
+  className,
   ...props
 }) => {
   const colStyle = getColStyle(
@@ -79,7 +80,7 @@ const Col = ({
     xlOffset,
   );
   return (
-    <div css={[colStyle, customCss]} {...props}>
+    <div css={[colStyle, customCss]} className={className} {...props}>
       {children}
     </div>
   );
@@ -98,6 +99,7 @@ Col.propTypes = {
   xlOffset: PropTypes.number,
   children: PropTypes.node,
   css: PropTypes.object,
+  className: PropTypes.string,
 };
 
 export default Col;

@@ -2,8 +2,7 @@ import React from "react";
 import { parse } from "url";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
-import { css } from "emotion";
-import { Global } from "@emotion/react";
+import { css, Global } from "@emotion/react";
 import { Grid, Row, Col } from "../grid";
 import { graphql, StaticQuery } from "gatsby";
 
