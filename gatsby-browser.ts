@@ -1,8 +1,11 @@
-var FontFaceObserver = require('fontfaceobserver');
+import type { GatsbyBrowser } from 'gatsby';
+import FontFaceObserver from 'fontfaceobserver';
 
 // Define phase 1 fonts
 const robotoSubset = new FontFaceObserver('Roboto Subset', { weight: 300 });
-const robotoSlabSubset = new FontFaceObserver('Roboto Slab Subset', { weight: 400 });
+const robotoSlabSubset = new FontFaceObserver('Roboto Slab Subset', {
+  weight: 400,
+});
 
 // Define phase 2 fonts
 const robotoNormal = new FontFaceObserver('Roboto', { weight: 400 });
@@ -12,7 +15,7 @@ const robotoLighter = new FontFaceObserver('Roboto', { weight: 200 });
 
 const robotoSlabNormal = new FontFaceObserver('Roboto Slab', { weight: 400 });
 
-exports.onInitialClientRender = () => {
+export const onInitialClientRender: GatsbyBrowser['onInitialClientRender'] = () => {
   Promise.all([robotoSubset.load(), robotoSlabSubset.load()]).then(function () {
     document.documentElement.classList.add('subset-fonts-enabled');
 

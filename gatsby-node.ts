@@ -1,19 +1,20 @@
-const path = require('path');
+import path from 'path';
+import type { GatsbyNode } from 'gatsby';
 
 /**
  * This is where all starts
  */
-exports.onCreateWebpackConfig = ({ actions }) => {
+export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {
-        emotion: path.resolve(require.resolve('@emotion/react')),
+        emotion: path.resolve(__dirname, 'node_modules', '@emotion/react'),
       },
     },
   });
 };
 
-exports.createPages = ({ actions, graphql }) => {
+export const createPages: GatsbyNode['createPages'] = ({ actions, graphql }) => {
   const { createPage } = actions;
 
   /**
@@ -74,7 +75,7 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then((results) => {
+  `).then((results: any) => {
     if (results.errors) {
       return Promise.reject(results.errors);
     }
@@ -89,8 +90,31 @@ exports.createPages = ({ actions, graphql }) => {
   });
 };
 
-function generateContent(createPage, posts) {
-  const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
+interface PostNode {
+  frontmatter: {
+    path: string;
+    date: string;
+    tags?: string;
+    title: string;
+    draft: boolean;
+  };
+  excerpt: string;
+  html: string;
+  id: string;
+  timeToRead: number;
+}
+
+interface PostEdge {
+  node: PostNode;
+  next?: {
+    frontmatter: {
+      path: string;
+    };
+  };
+}
+
+function generateContent(createPage: any, posts: PostEdge[]): void {
+  const blogPostTemplate = path.resolve(`src/templates/blog-post.tsx`);
 
   /**
    * Create pages for each markdown file.
@@ -110,9 +134,9 @@ function generateContent(createPage, posts) {
 /**
  * Create pages for tags
  */
-function createTagPages(createPage, edges) {
-  const tagTemplate = path.resolve(`src/templates/tags.js`);
-  const posts = {};
+function createTagPages(createPage: any, edges: PostEdge[]): void {
+  const tagTemplate = path.resolve(`src/templates/tags.tsx`);
+  const posts: Record<string, PostNode[]> = {};
 
   edges.forEach(({ node }) => {
     if (node.frontmatter.tags) {
@@ -144,6 +168,6 @@ function createTagPages(createPage, edges) {
   });
 }
 
-function paginate(array, page_size, page_number) {
+function paginate<T>(array: T[], page_size: number, page_number: number): T[] {
   return array.slice(0).slice((page_number - 1) * page_size, page_number * page_size);
 }

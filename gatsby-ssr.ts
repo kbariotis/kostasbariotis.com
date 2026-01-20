@@ -1,7 +1,16 @@
-const React = require('react');
-const url = require('url');
+import React from 'react';
+import url from 'url';
+import type { GatsbySSR } from 'gatsby';
 
-exports.onRenderBody = ({ setHeadComponents, pathname = `/` }, pluginOptions) => {
+interface PluginOptions {
+  siteUrl?: string;
+  stripQueryString?: boolean;
+}
+
+export const onRenderBody: GatsbySSR['onRenderBody'] = (
+  { setHeadComponents, pathname = `/` },
+  pluginOptions: PluginOptions = {}
+) => {
   if (pluginOptions && pluginOptions.siteUrl) {
     const siteUrl = pluginOptions.siteUrl.replace(/\/$/, ``);
     const parsed = url.parse(`${siteUrl}${pathname}`);
@@ -19,13 +28,13 @@ exports.onRenderBody = ({ setHeadComponents, pathname = `/` }, pluginOptions) =>
     }
 
     setHeadComponents([
-      <link
-        rel="canonical"
-        key={pageUrl}
-        href={pageUrl}
-        data-baseprotocol={parsed.protocol}
-        data-basehost={parsed.host}
-      />,
+      React.createElement('link', {
+        rel: 'canonical',
+        key: pageUrl,
+        href: pageUrl,
+        'data-baseprotocol': parsed.protocol,
+        'data-basehost': parsed.host,
+      }),
     ]);
   }
 };

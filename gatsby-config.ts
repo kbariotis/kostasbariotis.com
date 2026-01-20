@@ -1,4 +1,6 @@
-module.exports = {
+import type { GatsbyConfig } from 'gatsby';
+
+const config: GatsbyConfig = {
   pathPrefix: '/',
   siteMetadata: {
     author: 'Kostas Bariotis',
@@ -12,7 +14,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `src/typography.js`,
+        pathToConfigModule: `src/typography.ts`,
       },
     },
     {
@@ -21,8 +23,8 @@ module.exports = {
         sources: [
           {
             path: `/page`,
-            template: `${__dirname}/src/templates/page.js`,
-            serialize: (results) => results.allMarkdownRemark.edges,
+            template: `${__dirname}/src/templates/page.tsx`,
+            serialize: (results: any) => results.allMarkdownRemark.edges,
             query: `{
               allMarkdownRemark(
                 sort: { order: DESC, fields: [frontmatter___date] }
@@ -54,8 +56,8 @@ module.exports = {
           },
           {
             path: `/drafts/page`,
-            template: `${__dirname}/src/templates/page.js`,
-            serialize: (results) => results.allMarkdownRemark.edges,
+            template: `${__dirname}/src/templates/page.tsx`,
+            serialize: (results: any) => results.allMarkdownRemark.edges,
             query: `{
               allMarkdownRemark(
                 sort: { order: DESC, fields: [frontmatter___date] }
@@ -258,10 +260,10 @@ module.exports = {
         feeds: [
           {
             title: "Kostas Bariotis's blog",
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
+            serialize: ({ query: { site, allMarkdownRemark } }: any) => {
               return allMarkdownRemark.edges
-                .filter((post) => !post.node.frontmatter.draft)
-                .map((edge) => {
+                .filter((post: any) => !post.node.frontmatter.draft)
+                .map((edge: any) => {
                   return Object.assign({}, edge.node.frontmatter, {
                     description: edge.node.excerpt,
                     url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
@@ -274,7 +276,7 @@ module.exports = {
               query: {
                 site: { siteMetadata },
               },
-            }) => {
+            }: any) => {
               return {
                 title: siteMetadata.title,
                 description: siteMetadata.description,
@@ -312,3 +314,5 @@ module.exports = {
     'gatsby-plugin-offline',
   ],
 };
+
+export default config;

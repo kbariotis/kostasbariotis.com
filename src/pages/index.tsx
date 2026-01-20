@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
+import type { FC } from 'react';
 
 import IndexLayout from '../components/layouts/Index';
 import Separator from '../components/blog/Separator';
@@ -9,13 +9,31 @@ import RedHeader from '../components/blog/RedHeader';
 import Posts from '../components/blog/Posts';
 import MetaTags from '../components/blog/MetaTags';
 import WebPageSchema from '../components/blog/schemas/WebPageSchema';
-
 import Variables from './../components/blog/variables';
+import type { GatsbyPageProps, PageData } from '../types';
 
-export default function Index({ data }) {
+interface IndexPageData extends PageData {
+  allMarkdownRemark: {
+    edges: Array<{
+      node: {
+        excerpt: string;
+        id: string;
+        frontmatter: {
+          title: string;
+          date: string;
+          path: string;
+          tags: string;
+          draft: boolean;
+        };
+      };
+    }>;
+  };
+}
+
+const Index: FC<GatsbyPageProps<IndexPageData>> = ({ data }) => {
   let { edges: posts } = data.allMarkdownRemark;
   let { description } = data.site.siteMetadata;
-  posts = posts.map((post) => post.node);
+  const postNodes = posts.map((post) => post.node);
   return (
     <IndexLayout>
       <WebPageSchema />
@@ -23,7 +41,7 @@ export default function Index({ data }) {
       <AuthorHeader />
       <RedHeader>Latest Posts</RedHeader>
       <Separator />
-      <Posts posts={posts} />
+      <Posts posts={postNodes} />
       <Separator />
       <article
         style={{
@@ -49,11 +67,9 @@ export default function Index({ data }) {
       </article>
     </IndexLayout>
   );
-}
-
-Index.propTypes = {
-  data: PropTypes.object,
 };
+
+export default Index;
 
 export const pageQuery = graphql`
   query IndexQuery {
