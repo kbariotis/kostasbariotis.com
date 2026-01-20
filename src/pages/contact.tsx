@@ -1,12 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
+import type { FC } from 'react';
 
 import IndexLayout from '../components/layouts/Index';
 import MetaTags from '../components/blog/MetaTags';
 import Header from '../components/blog/Header';
+import type { GatsbyPageProps, BasePageData, ImageFluid } from '../types';
 
-export default function Contact({ data }) {
+interface ContactPageData extends BasePageData {
+  file: {
+    childImageSharp: {
+      fluid: ImageFluid;
+    };
+  };
+}
+
+const Contact: FC<GatsbyPageProps<ContactPageData>> = ({ data }) => {
   return (
     <IndexLayout>
       <MetaTags
@@ -55,11 +64,9 @@ export default function Contact({ data }) {
       </main>
     </IndexLayout>
   );
-}
-
-Contact.propTypes = {
-  data: PropTypes.object,
 };
+
+export default Contact;
 
 export const contactPageQuery = graphql`
   query ContactPageSiteMetadata {

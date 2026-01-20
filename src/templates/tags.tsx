@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { css } from '@emotion/react';
+import type { FC } from 'react';
 
 import IndexLayout from '../components/layouts/Index';
 import Posts from '../components/blog/Posts';
@@ -8,12 +8,26 @@ import Pagination from '../components/blog/TagsPagination';
 import Separator from '../components/blog/Separator';
 import MetaTags from '../components/blog/MetaTags';
 import RedHeader from '../components/blog/RedHeader';
+import type { GatsbyPageProps, BasePageData, Frontmatter } from '../types';
+
+interface TagsPageContext {
+  tag: string;
+  posts: Array<{
+    excerpt: string;
+    html: string;
+    id: string;
+    timeToRead: number;
+    frontmatter: Frontmatter;
+  }>;
+  pagesSum: number;
+  page: number;
+}
 
 const tagMeta = css({
   marginBottom: '2.5em',
 });
 
-export default function Tags({ pageContext, location }) {
+const Tags: FC<GatsbyPageProps<any, TagsPageContext>> = ({ pageContext, location }) => {
   const { posts, tag, pagesSum, page } = pageContext;
 
   return (
@@ -33,9 +47,6 @@ export default function Tags({ pageContext, location }) {
       <Pagination page={page} pagesSum={pagesSum} tag={tag} />
     </IndexLayout>
   );
-}
-
-Tags.propTypes = {
-  location: PropTypes.object,
-  pageContext: PropTypes.object,
 };
+
+export default Tags;

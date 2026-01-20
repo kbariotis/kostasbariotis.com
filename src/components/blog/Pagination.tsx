@@ -1,7 +1,13 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 import { Row, Col } from '../grid';
+
+interface PaginationProps {
+  prevPath?: string;
+  nextPath?: string;
+  page: number;
+  pagesSum: number;
+}
 
 const newerPostsStyle = {
   float: 'left',
@@ -20,7 +26,7 @@ const olderPostsStyle = {
   },
 };
 
-const Pagination = ({ prevPath, nextPath, page, pagesSum }) => (
+const Pagination = ({ prevPath, nextPath, page, pagesSum }: PaginationProps) => (
   <nav role="navigation">
     <Row>
       <Col sm>
@@ -47,12 +53,5 @@ const Pagination = ({ prevPath, nextPath, page, pagesSum }) => (
     </Row>
   </nav>
 );
-
-Pagination.propTypes = {
-  prevPath: PropTypes.string,
-  nextPath: PropTypes.string,
-  page: PropTypes.number,
-  pagesSum: PropTypes.number,
-};
 
 export default Pagination;

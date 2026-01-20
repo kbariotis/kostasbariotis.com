@@ -1,9 +1,21 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import dateformat from 'dateformat';
-import PropTypes from 'prop-types';
 
-const NavigateLink = ({ post }) =>
+interface PostData {
+  frontmatter: {
+    path: string;
+    title: string;
+    date: string;
+  };
+  excerpt: string;
+}
+
+interface NavigateLinkProps {
+  post: PostData;
+}
+
+const NavigateLink = ({ post }: NavigateLinkProps) =>
   post && (
     <div>
       <Link
@@ -21,9 +33,5 @@ const NavigateLink = ({ post }) =>
       <p>{`${post.excerpt}`}</p>
     </div>
   );
-
-NavigateLink.propTypes = {
-  post: PropTypes.object,
-};
 
 export default NavigateLink;

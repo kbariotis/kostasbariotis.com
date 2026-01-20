@@ -10,9 +10,9 @@ import Posts from '../components/blog/Posts';
 import MetaTags from '../components/blog/MetaTags';
 import WebPageSchema from '../components/blog/schemas/WebPageSchema';
 import Variables from './../components/blog/variables';
-import type { GatsbyPageProps, PageData } from '../types';
+import type { GatsbyPageProps, BasePageData } from '../types';
 
-interface IndexPageData extends PageData {
+interface IndexPageData extends BasePageData {
   allMarkdownRemark: {
     edges: Array<{
       node: {
@@ -31,9 +31,10 @@ interface IndexPageData extends PageData {
 }
 
 const Index: FC<GatsbyPageProps<IndexPageData>> = ({ data }) => {
-  let { edges: posts } = data.allMarkdownRemark;
-  let { description } = data.site.siteMetadata;
+  const { edges: posts } = data.allMarkdownRemark;
+  const { description } = data.site.siteMetadata;
   const postNodes = posts.map((post) => post.node);
+
   return (
     <IndexLayout>
       <WebPageSchema />

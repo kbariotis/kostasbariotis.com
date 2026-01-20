@@ -1,10 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import type { ReactNode } from 'react';
 
 import { Row, Col } from '../grid';
 import Variables from './variables';
 
-const BioEntry = ({ year, children }) => (
+interface BioEntryProps {
+  year: string;
+  children: ReactNode;
+}
+
+const BioEntry = ({ year, children }: BioEntryProps) => (
   <Row
     css={{
       marginBottom: '1em',
@@ -21,10 +26,5 @@ const BioEntry = ({ year, children }) => (
     <Col md={10}>{children}</Col>
   </Row>
 );
-
-BioEntry.propTypes = {
-  year: PropTypes.string,
-  children: PropTypes.string,
-};
 
 export default BioEntry;

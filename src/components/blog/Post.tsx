@@ -1,12 +1,26 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import dateformat from 'dateformat';
-import PropTypes from 'prop-types';
 
 import CommaSeparatedTags from './CommaSeparatedTags';
 import Variables from './variables';
 
-const Post = ({ post }) => (
+interface PostNode {
+  frontmatter: {
+    path: string;
+    title: string;
+    date: string;
+    draft: boolean;
+    tags: string;
+  };
+  excerpt: string;
+}
+
+interface PostProps {
+  post: PostNode;
+}
+
+const Post = ({ post }: PostProps) => (
   <article
     css={{
       marginBottom: '3em',
@@ -51,9 +65,5 @@ const Post = ({ post }) => (
     </footer>
   </article>
 );
-
-Post.propTypes = {
-  post: PropTypes.object,
-};
 
 export default Post;

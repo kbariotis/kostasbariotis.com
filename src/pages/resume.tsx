@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { css } from '@emotion/react';
 import { graphql } from 'gatsby';
+import type { FC } from 'react';
 import { Grid, Row, Col } from '../components/grid';
 import { GoLightBulb } from '@react-icons/all-files/go/GoLightBulb';
 
@@ -11,6 +11,15 @@ import QuickLinks from '../components/resume/QuickLinks';
 import Section from '../components/resume/Section';
 import ExperienceItem from '../components/resume/ExperienceItem';
 import Header from '../components/resume/Header';
+import type { GatsbyPageProps, BasePageData, ImageFluid } from '../types';
+
+interface ResumePageData extends BasePageData {
+  file: {
+    childImageSharp: {
+      fluid: ImageFluid;
+    };
+  };
+}
 
 const listStyle = css({
   listStyle: 'none',
@@ -37,7 +46,7 @@ const notificationStyle = css({
   },
 });
 
-export default function Resume() {
+const Resume: FC<GatsbyPageProps<ResumePageData>> = () => {
   return (
     <ResumeLayout>
       <div css={notificationStyle}>
@@ -121,6 +130,7 @@ export default function Resume() {
             ]}
           />
           <ExperienceItem
+            description=""
             title="Earlier Experience"
             duration="2013 - 2018"
             bullets={[
@@ -197,11 +207,9 @@ export default function Resume() {
       </Grid>
     </ResumeLayout>
   );
-}
-
-Resume.propTypes = {
-  data: PropTypes.object,
 };
+
+export default Resume;
 
 export const aboutPageQuery = graphql`
   query ResumePageSiteMetadata {

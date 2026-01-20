@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import dateformat from 'dateformat';
 import { graphql, Link } from 'gatsby';
+import type { FC } from 'react';
 import { DiscussionEmbed } from 'disqus-react';
 import { v5 as uuidv5 } from 'uuid';
 import Img from 'gatsby-image';
@@ -17,6 +17,43 @@ import Separator from '../components/blog/Separator';
 import MetaTags from '../components/blog/MetaTags';
 import Variables from '../components/blog/variables';
 import ArticleSchema from '../components/blog/schemas/ArticleSchema';
+import type { GatsbyPageProps, BasePageData, ImageFluid } from '../types';
+
+interface BlogPostPageData extends BasePageData {
+  markdownRemark: {
+    excerpt: string;
+    html: string;
+    frontmatter: {
+      title: string;
+      date: string;
+      path: string;
+      tags?: string;
+      draft: boolean;
+      canonical?: string;
+    };
+  };
+  nextPost?: {
+    excerpt: string;
+    html: string;
+    frontmatter: {
+      date: string;
+      path: string;
+      tags?: string;
+      title: string;
+      draft: boolean;
+    };
+  };
+  file: {
+    childImageSharp: {
+      fluid: ImageFluid;
+    };
+  };
+}
+
+interface BlogPostPageContext {
+  mainPostPath: string;
+  nextPostPath?: string;
+}
 
 const postTitle = css({
   color: Variables.red,
@@ -123,9 +160,13 @@ const mainPostStyle = css({
   },
 });
 
-export default function Template({ data, location }) {
-  const { mainPost: post } = data;
-  const { nextPost: next } = data;
+const Template: FC<GatsbyPageProps<BlogPostPageData, BlogPostPageContext>> = ({
+  data,
+  location,
+  pageContext,
+}) => {
+  const post = data.markdownRemark;
+  const next = data.nextPost;
   const { siteUrl } = data.site.siteMetadata;
 
   const isProduction = process.env.NODE_ENV === 'production';
@@ -147,19 +188,19 @@ export default function Template({ data, location }) {
         noIndex={post.frontmatter.draft}
       />
       <header className="post-head">
-        <h1 className={postTitle}>{post.frontmatter.title}</h1>
+        <h1 css={postTitle}>{post.frontmatter.title}</h1>
       </header>
       <section css={postMetaStyle}>
         <Row middle="xs">
           <Col md={6}>
             <Row middle="xs">
               <Col md={4}>
-                <Link to="/" className={authorAvatar} itemProp="name">
-                  <Img fluid={data.file.childImageSharp.fluid} className={authorAvatarImg} />
+                <Link to="/" css={authorAvatar} itemProp="name">
+                  <Img fluid={data.file.childImageSharp.fluid} css={authorAvatarImg} />
                 </Link>
               </Col>
               <Col md={8}>
-                <div className={authorName}>Kostas Bariotis</div>
+                <div css={authorName}>Kostas Bariotis</div>
                 {!post.frontmatter.draft && (
                   <time dateTime={dateformat(post.frontmatter.date, 'isoDateTime')}>
                     {dateformat(post.frontmatter.date, 'd mmmm yyyy')}
@@ -177,12 +218,12 @@ export default function Template({ data, location }) {
       <article css={mainPostStyle}>
         <section className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
         <Separator />
-        <footer className={postFooter}>
+        <footer css={postFooter}>
           <Share title={post.frontmatter.title} draft={post.frontmatter.draft} fullUrl={fullUrl} />
         </footer>
 
-        <section className={blogSection}>
-          <header className={blogSectionHeader}>
+        <section css={blogSection}>
+          <header css={blogSectionHeader}>
             <h2>Comments</h2>
           </header>
           <Separator />
@@ -198,8 +239,8 @@ export default function Template({ data, location }) {
           )}
         </section>
 
-        <section className={blogSection}>
-          <header className={blogSectionHeader}>
+        <section css={blogSection}>
+          <header css={blogSectionHeader}>
             <h2>Read Next</h2>
           </header>
           <Separator />
@@ -208,13 +249,9 @@ export default function Template({ data, location }) {
       </article>
     </IndexLayout>
   );
-}
-
-Template.propTypes = {
-  data: PropTypes.object,
-  location: PropTypes.object,
-  pageContext: PropTypes.object,
 };
+
+export default Template;
 
 export const pageQuery = graphql`
   query BlogPostByPath($mainPostPath: String!, $nextPostPath: String!) {
@@ -232,7 +269,7 @@ export const pageQuery = graphql`
         siteUrl
       }
     }
-    mainPost: markdownRemark(frontmatter: { path: { eq: $mainPostPath } }) {
+    markdownRemark: markdownRemark(frontmatter: { path: { eq: $mainPostPath } }) {
       html
       excerpt
       frontmatter {

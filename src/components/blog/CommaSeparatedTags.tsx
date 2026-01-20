@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 
-const CommaSeparatedTags = ({ tags }) => (
+interface CommaSeparatedTagsProps {
+  tags: string;
+}
+
+const CommaSeparatedTags = ({ tags }: CommaSeparatedTagsProps) => (
   <div
     css={{
       color: 'rgba(255, 255, 255, 0.5)',
@@ -21,9 +24,5 @@ const CommaSeparatedTags = ({ tags }) => (
     )}
   </div>
 );
-
-CommaSeparatedTags.propTypes = {
-  tags: PropTypes.string,
-};
 
 export default CommaSeparatedTags;

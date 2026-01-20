@@ -1,10 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import type { ReactNode } from 'react';
 
 import { Row, Col } from '../grid';
 import Variables from './variables';
 
-const AboutSection = ({ title, children }) => (
+interface AboutSectionProps {
+  title: string;
+  children: ReactNode;
+}
+
+const AboutSection = ({ title, children }: AboutSectionProps) => (
   <Row
     css={{
       marginTop: '2em',
@@ -23,10 +28,5 @@ const AboutSection = ({ title, children }) => (
     <Col md={10}>{children}</Col>
   </Row>
 );
-
-AboutSection.propTypes = {
-  title: PropTypes.string,
-  children: PropTypes.array,
-};
 
 export default AboutSection;

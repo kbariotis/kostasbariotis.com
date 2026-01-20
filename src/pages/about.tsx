@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import type { FC } from 'react';
 
 import IndexLayout from '../components/layouts/Index';
 import Header from '../components/blog/Header';
@@ -8,8 +8,19 @@ import BioEntry from '../components/blog/BioEntry';
 import MetaTags from '../components/blog/MetaTags';
 import AboutSection from '../components/blog/AboutSection';
 import { Col, Row } from '../components/grid';
+import type { GatsbyPageProps, BasePageData, ImageFluid } from '../types';
 
-export default function About({ data }) {
+interface AboutPageData extends BasePageData {
+  file: {
+    childImageSharp: {
+      fluid: ImageFluid;
+    };
+  };
+}
+
+const About: FC<GatsbyPageProps<AboutPageData>> = ({ data }) => {
+  const { childImageSharp } = data.file;
+
   return (
     <IndexLayout>
       <MetaTags
@@ -17,9 +28,7 @@ export default function About({ data }) {
         path={`/about`}
         description={'Hey, I am Kostas. Nice having you here.'}
       />
-      <Header fluid={data.file.childImageSharp.fluid}>
-        Hey, I am Kostas. Nice having you here.
-      </Header>
+      <Header fluid={childImageSharp.fluid}>Hey, I am Kostas. Nice having you here.</Header>
       <main role="main">
         <AboutSection title={'Intro'}>
           <p>
@@ -167,58 +176,12 @@ export default function About({ data }) {
             </Col>
           </Row>
         </AboutSection>
-
-        <AboutSection title={'Talks'}>
-          <Row>
-            <Col md={4}>
-              <a
-                rel="noopener noreferrer"
-                href="http://slides.com/kostasbariotis/javascript-101"
-                target="_blank"
-              >
-                JavaScript 101
-              </a>
-            </Col>
-            <Col md={8} className="text-right">
-              A JavaScript journey for beginners
-            </Col>
-          </Row>
-          <Row>
-            <Col md={4}>
-              <a
-                rel="noopener noreferrer"
-                href="https://slides.com/kostasbariotis/microservices"
-                target="_blank"
-              >
-                Micro Services Architecture
-              </a>
-            </Col>
-            <Col md={8} className="text-right">
-              How do I scale my codebase
-            </Col>
-          </Row>
-          <Row>
-            <Col md={4} />
-            <Col md={8} className="text-right">
-              Find all my presentation slides at{' '}
-              <a
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://slides.com/kostasbariotis/"
-              >
-                Slides.com
-              </a>
-            </Col>
-          </Row>
-        </AboutSection>
       </main>
     </IndexLayout>
   );
-}
-
-About.propTypes = {
-  data: PropTypes.object,
 };
+
+export default About;
 
 export const aboutPageQuery = graphql`
   query AboutPageSiteMetadata {

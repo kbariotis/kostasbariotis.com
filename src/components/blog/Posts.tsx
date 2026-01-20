@@ -1,9 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import type { ReactNode } from 'react';
 
 import Post from './Post';
 
-const Posts = ({ posts }) => (
+interface PostNode {
+  frontmatter: {
+    title: string;
+    [key: string]: any;
+  };
+  [key: string]: any;
+}
+
+interface PostsProps {
+  posts: PostNode[];
+}
+
+const Posts = ({ posts }: PostsProps) => (
   <div>
     {posts
       .filter((post) => post.frontmatter.title.length > 0)
@@ -12,9 +24,5 @@ const Posts = ({ posts }) => (
       ))}
   </div>
 );
-
-Posts.propTypes = {
-  posts: PropTypes.arrayOf(PropTypes.object),
-};
 
 export default Posts;

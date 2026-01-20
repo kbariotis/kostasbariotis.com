@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 
 import { Row, Col } from '../grid';
+
+interface TagsPaginationProps {
+  tag: string;
+  page: number;
+  pagesSum: number;
+}
 
 const newerPostsStyle = {
   float: 'left',
@@ -21,7 +26,7 @@ const olderPostsStyle = {
   },
 };
 
-const Pagination = ({ tag, page, pagesSum }) => (
+const Pagination = ({ tag, page, pagesSum }: TagsPaginationProps) => (
   <nav>
     <Row>
       <Col sm>
@@ -49,11 +54,5 @@ const Pagination = ({ tag, page, pagesSum }) => (
     </Row>
   </nav>
 );
-
-Pagination.propTypes = {
-  tag: PropTypes.string,
-  page: PropTypes.number,
-  pagesSum: PropTypes.number,
-};
 
 export default Pagination;

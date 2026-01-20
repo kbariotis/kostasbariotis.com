@@ -1,9 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import type { ReactNode } from 'react';
 
 import Variables from './variables';
 
-const RedHeader = ({ children }) => (
+interface RedHeaderProps {
+  children: ReactNode;
+}
+
+const RedHeader = ({ children }: RedHeaderProps) => (
   <header
     css={{
       color: Variables.red,
@@ -14,9 +18,5 @@ const RedHeader = ({ children }) => (
     {children}
   </header>
 );
-
-RedHeader.propTypes = {
-  children: PropTypes.string.isRequired,
-};
 
 export default RedHeader;

@@ -1,15 +1,43 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { css } from '@emotion/react';
+import type { ReactNode } from 'react';
 
-const getColStyle = (xs, sm, md, lg, xl, xsOffset, smOffset, mdOffset, lgOffset, xlOffset) => {
-  const getWidth = (size) => {
+interface ColProps {
+  xs?: number;
+  sm?: number;
+  md?: number;
+  lg?: number;
+  xl?: number;
+  xsOffset?: number;
+  smOffset?: number;
+  mdOffset?: number;
+  lgOffset?: number;
+  xlOffset?: number;
+  children: ReactNode;
+  css?: any;
+  className?: string;
+  [key: string]: any;
+}
+
+const getColStyle = (
+  xs: number | undefined,
+  sm: number | undefined,
+  md: number | undefined,
+  lg: number | undefined,
+  xl: number | undefined,
+  xsOffset: number | undefined,
+  smOffset: number | undefined,
+  mdOffset: number | undefined,
+  lgOffset: number | undefined,
+  xlOffset: number | undefined
+) => {
+  const getWidth = (size: number | undefined) => {
     if (!size) return '100%';
     if (size === 12) return '100%';
     return `${(size / 12) * 100}%`;
   };
 
-  const getOffset = (size) => {
+  const getOffset = (size: number | undefined) => {
     if (!size) return 0;
     return `${(size / 12) * 100}%`;
   };
@@ -55,7 +83,7 @@ const Col = ({
   css: customCss,
   className,
   ...props
-}) => {
+}: ColProps) => {
   const colStyle = getColStyle(
     xs,
     sm,
@@ -73,22 +101,6 @@ const Col = ({
       {children}
     </div>
   );
-};
-
-Col.propTypes = {
-  xs: PropTypes.number,
-  sm: PropTypes.number,
-  md: PropTypes.number,
-  lg: PropTypes.number,
-  xl: PropTypes.number,
-  xsOffset: PropTypes.number,
-  smOffset: PropTypes.number,
-  mdOffset: PropTypes.number,
-  lgOffset: PropTypes.number,
-  xlOffset: PropTypes.number,
-  children: PropTypes.node,
-  css: PropTypes.object,
-  className: PropTypes.string,
 };
 
 export default Col;

@@ -1,25 +1,30 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
 
-export default function Header({ title, subtitle, summary }) {
+interface HeaderProps {
+  title: string;
+  subtitle: string;
+  summary?: string;
+}
+
+export default function Header({ title, subtitle, summary }: HeaderProps) {
   return (
     <section>
       <div>
         <h1>{title}</h1>
         <div
           css={{
-            color: "#8ab2ff",
-            fontSize: "1.3rem",
+            color: '#8ab2ff',
+            fontSize: '1.3rem',
           }}
         >
           {subtitle}
         </div>
         <div
           css={{
-            color: "rgba(138, 178, 255, 0.7)",
-            fontSize: "1.1rem",
-            paddingTop: "0.3rem",
-            paddingBottom: "0.5rem",
+            color: 'rgba(138, 178, 255, 0.7)',
+            fontSize: '1.1rem',
+            paddingTop: '0.3rem',
+            paddingBottom: '0.5rem',
           }}
         >
           {summary}
@@ -29,8 +34,3 @@ export default function Header({ title, subtitle, summary }) {
     </section>
   );
 }
-
-Header.propTypes = {
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
-};

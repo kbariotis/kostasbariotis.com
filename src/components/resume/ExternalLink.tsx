@@ -1,23 +1,22 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { css } from "@emotion/react";
+import React from 'react';
+import { css } from '@emotion/react';
+
+interface ExternalLinkProps {
+  title: string;
+  url: string;
+  description?: string;
+}
 
 const noPrintStyle = css({
-  "@media print": {
-    display: "none",
+  '@media print': {
+    display: 'none',
   },
 });
 
-export default function ExternalLink({ title, url }) {
+export default function ExternalLink({ title, url }: ExternalLinkProps) {
   return (
     <a rel="noopener noreferrer" target="_blank" href={url}>
       {title} <span css={noPrintStyle}>&#x2197;</span>
     </a>
   );
 }
-
-ExternalLink.propTypes = {
-  title: PropTypes.string,
-  url: PropTypes.string,
-  description: PropTypes.string,
-};

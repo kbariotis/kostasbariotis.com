@@ -1,8 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { FacebookShareButton, TwitterShareButton, RedditShareButton } from 'react-share';
 
 import { Row, Col } from '../grid';
+
+interface ShareProps {
+  draft: boolean;
+  title: string;
+  fullUrl: string;
+}
 
 const shareButtonsListItem = {
   marginLeft: '5px',
@@ -45,7 +50,7 @@ const shareFacebookButton = {
   },
 };
 
-const Share = ({ draft, title, fullUrl }) => (
+const Share = ({ draft, title, fullUrl }: ShareProps) => (
   <div>
     {!draft ? (
       <Row center="sm">
@@ -76,11 +81,5 @@ const Share = ({ draft, title, fullUrl }) => (
     )}
   </div>
 );
-
-Share.propTypes = {
-  draft: PropTypes.bool,
-  title: PropTypes.string,
-  fullUrl: PropTypes.string,
-};
 
 export default Share;

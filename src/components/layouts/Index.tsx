@@ -1,8 +1,8 @@
 import React from 'react';
 import { parse } from 'url';
-import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { css, Global } from '@emotion/react';
+import type { ReactNode } from 'react';
 import { Grid, Row, Col } from '../grid';
 import { graphql, StaticQuery } from 'gatsby';
 
@@ -11,6 +11,12 @@ import Variables from '../blog/variables';
 import Menu from '../blog/Menu';
 
 import './fonts.css';
+
+interface IndexLayoutProps {
+  children: ReactNode;
+  canonical?: string;
+  location?: any;
+}
 
 const globalStyles = css`
   body,
@@ -83,7 +89,7 @@ const blogContainer = css({
   marginBottom: '4em',
 });
 
-export default function IndexLayout({ children, canonical, location }) {
+export default function IndexLayout({ children, canonical, location }: IndexLayoutProps) {
   return (
     <StaticQuery
       query={graphql`
@@ -169,9 +175,3 @@ export default function IndexLayout({ children, canonical, location }) {
     />
   );
 }
-
-IndexLayout.propTypes = {
-  children: PropTypes.func,
-  canonical: PropTypes.string,
-  location: PropTypes.object,
-};

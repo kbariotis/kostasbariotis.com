@@ -1,6 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { css } from '@emotion/react';
+import type { ReactNode } from 'react';
+
+interface GridProps {
+  children: ReactNode;
+  css?: any;
+  className?: string;
+  [key: string]: any;
+}
 
 const gridStyle = css({
   boxSizing: 'border-box',
@@ -13,16 +20,10 @@ const gridStyle = css({
   maxWidth: '780px',
 });
 
-const Grid = ({ children, css: customCss, className, ...props }) => (
+const Grid = ({ children, css: customCss, className, ...props }: GridProps) => (
   <div css={[gridStyle, customCss]} className={className} {...props}>
     {children}
   </div>
 );
-
-Grid.propTypes = {
-  children: PropTypes.node,
-  css: PropTypes.object,
-  className: PropTypes.string,
-};
 
 export default Grid;

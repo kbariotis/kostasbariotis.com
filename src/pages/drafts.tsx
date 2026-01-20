@@ -1,16 +1,35 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
+import type { FC } from 'react';
 
 import IndexLayout from '../components/layouts/Index';
 import Separator from '../components/blog/Separator';
 import Posts from '../components/blog/Posts';
 import MetaTags from '../components/blog/MetaTags';
 import RedHeader from '../components/blog/RedHeader';
+import type { GatsbyPageProps, BasePageData } from '../types';
 
-export default function Drafts({ data }) {
-  let { edges: posts } = data.allMarkdownRemark;
-  posts = posts.map((post) => post.node);
+interface DraftsPageData extends BasePageData {
+  allMarkdownRemark: {
+    edges: Array<{
+      node: {
+        excerpt: string;
+        id: string;
+        frontmatter: {
+          title: string;
+          date: string;
+          path: string;
+          tags: string;
+          draft: boolean;
+        };
+      };
+    }>;
+  };
+}
+
+const Drafts: FC<GatsbyPageProps<DraftsPageData>> = ({ data }) => {
+  const { edges: posts } = data.allMarkdownRemark;
+  const postNodes = posts.map((post) => post.node);
   return (
     <IndexLayout>
       <MetaTags
@@ -29,15 +48,13 @@ export default function Drafts({ data }) {
       </p>
       <Separator />
       <div>
-        <Posts posts={posts} />
+        <Posts posts={postNodes} />
       </div>
     </IndexLayout>
   );
-}
-
-Drafts.propTypes = {
-  data: PropTypes.object,
 };
+
+export default Drafts;
 
 export const pageQuery = graphql`
   query DraftsQuery {

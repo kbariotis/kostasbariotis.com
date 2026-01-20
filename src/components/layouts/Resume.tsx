@@ -1,8 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { graphql, StaticQuery } from 'gatsby';
 import { css } from '@emotion/react';
+import type { ReactNode } from 'react';
+
+interface ResumeLayoutProps {
+  children: ReactNode;
+}
 
 const containerStyle = css({
   color: 'black',
@@ -11,7 +15,7 @@ const containerStyle = css({
   },
 });
 
-export default function ResumeLayout({ children }) {
+export default function ResumeLayout({ children }: ResumeLayoutProps) {
   return (
     <StaticQuery
       query={graphql`
@@ -45,8 +49,3 @@ export default function ResumeLayout({ children }) {
     />
   );
 }
-
-ResumeLayout.propTypes = {
-  children: PropTypes.func,
-  data: PropTypes.object,
-};

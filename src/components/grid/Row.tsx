@@ -1,8 +1,27 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { css } from '@emotion/react';
+import type { ReactNode, CSSProperties } from 'react';
 
-const getRowStyle = (start, center, end, around, between) => {
+interface RowProps {
+  children: ReactNode;
+  css?: any;
+  className?: string;
+  start?: boolean;
+  center?: boolean;
+  end?: boolean;
+  around?: boolean;
+  between?: boolean;
+  middle?: string;
+  [key: string]: any;
+}
+
+const getRowStyle = (
+  start: boolean | undefined,
+  center: boolean | undefined,
+  end: boolean | undefined,
+  around: boolean | undefined,
+  between: boolean | undefined
+) => {
   let justifyContent = 'flex-start';
   if (start) justifyContent = 'flex-start';
   if (center) justifyContent = 'center';
@@ -29,24 +48,13 @@ const Row = ({
   around,
   between,
   ...props
-}) => {
+}: RowProps) => {
   const rowStyle = getRowStyle(start, center, end, around, between);
   return (
     <div css={[rowStyle, customCss]} className={className} {...props}>
       {children}
     </div>
   );
-};
-
-Row.propTypes = {
-  children: PropTypes.node,
-  css: PropTypes.object,
-  className: PropTypes.string,
-  start: PropTypes.bool,
-  center: PropTypes.bool,
-  end: PropTypes.bool,
-  around: PropTypes.bool,
-  between: PropTypes.bool,
 };
 
 export default Row;

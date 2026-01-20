@@ -1,9 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import dateformat from 'dateformat';
 import { withPrefix } from 'gatsby-link';
 
-export default function ArticleSchema({ authorName, title, description, date }) {
+interface ArticleSchemaProps {
+  authorName: string;
+  title: string;
+  description: string;
+  date: string;
+}
+
+export default function ArticleSchema({
+  authorName,
+  title,
+  description,
+  date,
+}: ArticleSchemaProps) {
   const data = `{
     "@context": "http://schema.org/",
     "@type": "BlogPosting",
@@ -22,10 +33,3 @@ export default function ArticleSchema({ authorName, title, description, date }) 
   }`;
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: data }} />;
 }
-
-ArticleSchema.propTypes = {
-  authorName: PropTypes.string,
-  title: PropTypes.string,
-  description: PropTypes.string,
-  date: PropTypes.string,
-};

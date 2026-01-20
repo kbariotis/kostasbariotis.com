@@ -1,15 +1,20 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import type { ReactNode } from 'react';
 
-export default function Section({ title, children }) {
+interface SectionProps {
+  title: string;
+  children: ReactNode;
+}
+
+export default function Section({ title, children }: SectionProps) {
   return (
     <section>
       <h3
         css={{
-          color: "#8ab2ff",
-          textTransform: "uppercase",
-          paddingBottom: "1rem",
-          marginBottom: "0",
+          color: '#8ab2ff',
+          textTransform: 'uppercase',
+          paddingBottom: '1rem',
+          marginBottom: '0',
         }}
       >
         {title}
@@ -18,8 +23,3 @@ export default function Section({ title, children }) {
     </section>
   );
 }
-
-Section.propTypes = {
-  title: PropTypes.string,
-  children: PropTypes.string,
-};

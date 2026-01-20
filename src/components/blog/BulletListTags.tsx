@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 import { css } from '@emotion/react';
 
 import Variables from './variables';
+
+interface BulletListTagsProps {
+  tags: string;
+  draft?: boolean;
+}
 
 const tagsContainerStyle = css({
   display: 'flex',
@@ -54,7 +58,7 @@ const tagsDraftItemStyle = css({
   },
 });
 
-const BulletListTags = ({ tags, draft }) => (
+const BulletListTags = ({ tags, draft }: BulletListTagsProps) => (
   <div css={tagsContainerStyle}>
     {tags &&
       tags.split(', ').map((tag, index) => (
@@ -73,10 +77,5 @@ const BulletListTags = ({ tags, draft }) => (
     )}
   </div>
 );
-
-BulletListTags.propTypes = {
-  tags: PropTypes.string,
-  draft: PropTypes.bool,
-};
 
 export default BulletListTags;

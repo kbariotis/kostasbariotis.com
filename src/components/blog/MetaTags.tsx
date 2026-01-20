@@ -1,11 +1,24 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import PropTypes from 'prop-types';
 import { graphql, StaticQuery } from 'gatsby';
 
 import OGImageImg from './../../../static/images/og.jpg';
 
-const MetaTags = ({ title, description, path = '/', tags = '', noIndex = false }) => (
+interface MetaTagsProps {
+  title: string;
+  description: string;
+  path?: string;
+  tags?: string;
+  noIndex?: boolean;
+}
+
+const MetaTags = ({
+  title,
+  description,
+  path = '/',
+  tags = '',
+  noIndex = false,
+}: MetaTagsProps) => (
   <StaticQuery
     query={graphql`
       query MetaTagsQuery {
@@ -42,13 +55,5 @@ const MetaTags = ({ title, description, path = '/', tags = '', noIndex = false }
     }}
   />
 );
-
-MetaTags.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  path: PropTypes.string,
-  tags: PropTypes.string,
-  noIndex: PropTypes.bool,
-};
 
 export default MetaTags;
