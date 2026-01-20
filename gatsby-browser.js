@@ -13,7 +13,7 @@ const robotoLighter = new FontFaceObserver('Roboto', { weight: 200 });
 const robotoSlabNormal = new FontFaceObserver('Roboto Slab', { weight: 400 });
 
 exports.onInitialClientRender = () => {
-  Promise.all([robotoSubset.load(), robotoSlabSubset.load()]).then(function() {
+  Promise.all([robotoSubset.load(), robotoSlabSubset.load()]).then(function () {
     document.documentElement.classList.add('subset-fonts-enabled');
 
     Promise.all([
@@ -22,7 +22,7 @@ exports.onInitialClientRender = () => {
       robotoBold.load(),
       robotoLighter.load(),
       robotoSlabNormal.load(),
-    ]).then(function() {
+    ]).then(function () {
       document.documentElement.classList.remove('subset-fonts-enabled');
       document.documentElement.classList.add('fonts-enabled');
     });

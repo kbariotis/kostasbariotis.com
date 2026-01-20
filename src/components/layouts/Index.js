@@ -1,18 +1,19 @@
-import React from 'react';
-import { parse } from 'url';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import { css, injectGlobal } from 'emotion';
-import { Grid } from 'react-flexbox-grid';
-import { graphql, StaticQuery } from 'gatsby';
+import React from "react";
+import { parse } from "url";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import { css } from "emotion";
+import { Global } from "@emotion/react";
+import { Grid } from "../grid";
+import { graphql, StaticQuery } from "gatsby";
 
-import Footer from '../blog/Footer';
-import Variables from '../blog/variables';
-import Menu from '../blog/Menu';
+import Footer from "../blog/Footer";
+import Variables from "../blog/variables";
+import Menu from "../blog/Menu";
 
-import './fonts.css';
+import "./fonts.css";
 
-injectGlobal`
+const globalStyles = css`
   body,
   html {
     font-weight: 300;
@@ -47,40 +48,40 @@ injectGlobal`
 `;
 
 const containerStyle = css({
-  color: 'rgba(255,255,255,0.8)',
+  color: "rgba(255,255,255,0.8)",
   backgroundColor: Variables.background,
   background: Variables.background,
-  backgroundSize: '100% 300px',
+  backgroundSize: "100% 300px",
   filter:
     "progid:DXImageTransform.Microsoft.gradient(startColorstr='#007db9e8', endColorstr='#221931', GradientType=0)",
-  backgroundRepeat: 'no-repeat',
-  '& a': {
+  backgroundRepeat: "no-repeat",
+  "& a": {
     color: Variables.lightblue,
-    '&:hover': {
+    "&:hover": {
       color: Variables.red,
     },
-    '&:active': {
+    "&:active": {
       color: Variables.red,
     },
   },
-  '@media (max-width: 767px)': {
-    backgroundSize: '1400px 300px',
-    backgroundPosition: 'center top',
+  "@media (max-width: 767px)": {
+    backgroundSize: "1400px 300px",
+    backgroundPosition: "center top",
   },
-  '& blockquote': {
-    color: 'rgba(255, 255, 255, 0.5)',
+  "& blockquote": {
+    color: "rgba(255, 255, 255, 0.5)",
     borderLeft: `5px solid ${Variables.purple}`,
-    paddingLeft: '20px',
+    paddingLeft: "20px",
     marginLeft: 0,
-    fontSize: '2em',
-    fontStyle: 'italic',
+    fontSize: "2em",
+    fontStyle: "italic",
   },
 });
 
 const blogContainer = css({
-  textAlign: 'left',
-  paddingTop: '4em',
-  marginBottom: '4em',
+  textAlign: "left",
+  paddingTop: "4em",
+  marginBottom: "4em",
 });
 
 export default function IndexLayout({ children, canonical, location }) {
@@ -105,7 +106,7 @@ export default function IndexLayout({ children, canonical, location }) {
           }
         }
       `}
-      render={data => {
+      render={(data) => {
         let { description, title, siteUrl } = data.site.siteMetadata;
         let { src } = data.file.childImageSharp.fixed;
 
@@ -116,47 +117,55 @@ export default function IndexLayout({ children, canonical, location }) {
         const parsedPageUrl = parse(
           canonical
             ? canonical
-            : `${siteUrl.replace(/\/$/, ``)}${(location && location.pathname) || '/'}`
+            : `${siteUrl.replace(/\/$/, ``)}${
+                (location && location.pathname) || "/"
+              }`
         );
         const pageUrl = `${parsedPageUrl.protocol}//${parsedPageUrl.host}${parsedPageUrl.pathname}`;
 
         return (
-          <div className={backgroundImageStyle}>
-            <Menu />
-            <Helmet titleTemplate={`%s - ${title}`} defaultTitle={title}>
-              <link
-                rel="preload"
-                href="/fonts/Roboto_Subset/Roboto-Light-subset.ttf"
-                as="font"
-                crossOrigin="anonymous"
-              />
-              <link
-                rel="preload"
-                href="/fonts/Roboto_Slab_Subset/RobotoSlab-Regular-subset.ttf"
-                as="font"
-                crossOrigin="anonymous"
-              />
-              <link
-                rel="canonical"
-                key={pageUrl}
-                href={pageUrl}
-                data-baseprotocol={parsedPageUrl.protocol}
-                data-basehost={parsedPageUrl.host}
-              />
-              <meta name="description" content={description} />
-              <html lang="en" />
-              <meta charSet="utf-8" />
-              <meta name="viewport" content="width=device-width, initial-scale=1" />
-              <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-              <meta name="HandheldFriendly" content="True" />
-              <meta
-                name="google-site-verification"
-                content="2cN-EmJ2d00_gaP6eUs43tdcXd1UL965Rs_UBQc0Oec"
-              />
-            </Helmet>
-            <Grid className={blogContainer}>{children}</Grid>
-            <Footer />
-          </div>
+          <>
+            <Global styles={globalStyles} />
+            <div css={backgroundImageStyle}>
+              <Menu />
+              <Helmet titleTemplate={`%s - ${title}`} defaultTitle={title}>
+                <link
+                  rel="preload"
+                  href="/fonts/Roboto_Subset/Roboto-Light-subset.ttf"
+                  as="font"
+                  crossOrigin="anonymous"
+                />
+                <link
+                  rel="preload"
+                  href="/fonts/Roboto_Slab_Subset/RobotoSlab-Regular-subset.ttf"
+                  as="font"
+                  crossOrigin="anonymous"
+                />
+                <link
+                  rel="canonical"
+                  key={pageUrl}
+                  href={pageUrl}
+                  data-baseprotocol={parsedPageUrl.protocol}
+                  data-basehost={parsedPageUrl.host}
+                />
+                <meta name="description" content={description} />
+                <html lang="en" />
+                <meta charSet="utf-8" />
+                <meta
+                  name="viewport"
+                  content="width=device-width, initial-scale=1"
+                />
+                <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+                <meta name="HandheldFriendly" content="True" />
+                <meta
+                  name="google-site-verification"
+                  content="2cN-EmJ2d00_gaP6eUs43tdcXd1UL965Rs_UBQc0Oec"
+                />
+              </Helmet>
+              <Grid css={blogContainer}>{children}</Grid>
+              <Footer />
+            </div>
+          </>
         );
       }}
     />

@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import { Row, Col } from 'react-flexbox-grid';
-import Variables from './variables';
+import { Row, Col } from "../grid";
+import Variables from "./variables";
 
 const BioEntry = ({ year, children }) => (
   <Row
     css={{
-      marginBottom: '1em',
+      marginBottom: "1em",
     }}
   >
     <Col

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Row, Col } from 'react-flexbox-grid';
+import { Row, Col } from '../components/grid';
 import { graphql } from 'gatsby';
 
 import IndexLayout from '../components/layouts/Index';

@@ -22,7 +22,7 @@ module.exports = {
           {
             path: `/page`,
             template: `${__dirname}/src/templates/page.js`,
-            serialize: results => results.allMarkdownRemark.edges,
+            serialize: (results) => results.allMarkdownRemark.edges,
             query: `{
               allMarkdownRemark(
                 sort: { order: DESC, fields: [frontmatter___date] }
@@ -55,7 +55,7 @@ module.exports = {
           {
             path: `/drafts/page`,
             template: `${__dirname}/src/templates/page.js`,
-            serialize: results => results.allMarkdownRemark.edges,
+            serialize: (results) => results.allMarkdownRemark.edges,
             query: `{
               allMarkdownRemark(
                 sort: { order: DESC, fields: [frontmatter___date] }
@@ -141,7 +141,6 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-netlify',
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
@@ -261,8 +260,8 @@ module.exports = {
             title: "Kostas Bariotis's blog",
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges
-                .filter(post => !post.node.frontmatter.draft)
-                .map(edge => {
+                .filter((post) => !post.node.frontmatter.draft)
+                .map((edge) => {
                   return Object.assign({}, edge.node.frontmatter, {
                     description: edge.node.excerpt,
                     url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,

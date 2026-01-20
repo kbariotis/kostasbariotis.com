@@ -3,6 +3,16 @@ const path = require('path');
 /**
  * This is where all starts
  */
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        emotion: path.resolve(require.resolve('@emotion/react')),
+      },
+    },
+  });
+};
+
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
 
@@ -64,7 +74,7 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then(results => {
+  `).then((results) => {
     if (results.errors) {
       return Promise.reject(results.errors);
     }
@@ -106,7 +116,7 @@ function createTagPages(createPage, edges) {
 
   edges.forEach(({ node }) => {
     if (node.frontmatter.tags) {
-      node.frontmatter.tags.split(', ').forEach(tag => {
+      node.frontmatter.tags.split(', ').forEach((tag) => {
         if (!posts[tag]) {
           posts[tag] = [];
         }
@@ -115,7 +125,7 @@ function createTagPages(createPage, edges) {
     }
   });
 
-  Object.keys(posts).forEach(tagName => {
+  Object.keys(posts).forEach((tagName) => {
     const pageSize = 5;
     const pagesSum = Math.ceil(posts[tagName].length / pageSize);
 

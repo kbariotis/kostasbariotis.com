@@ -6,7 +6,7 @@ import { FaLinkedinIn } from "@react-icons/all-files/fa/FaLinkedinIn";
 import { VscGithub } from "@react-icons/all-files/vsc/VscGithub";
 import { BsFillEnvelopeFill } from "@react-icons/all-files/bs/BsFillEnvelopeFill";
 
-import { Grid, Row, Col } from "react-flexbox-grid";
+import { Grid, Row, Col } from "../grid";
 import Variables from "./variables";
 
 const footer = {

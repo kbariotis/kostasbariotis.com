@@ -1,26 +1,26 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Row, Col } from 'react-flexbox-grid';
-import { graphql, Link } from 'gatsby';
+import React from "react";
+import PropTypes from "prop-types";
+import { Row, Col } from "../components/grid";
+import { graphql, Link } from "gatsby";
 
-import IndexLayout from '../components/layouts/Index';
-import Separator from '../components/blog/Separator';
-import AuthorHeader from '../components/blog/AuthorHeader';
-import RedHeader from '../components/blog/RedHeader';
-import Posts from '../components/blog/Posts';
-import MetaTags from '../components/blog/MetaTags';
-import WebPageSchema from '../components/blog/schemas/WebPageSchema';
+import IndexLayout from "../components/layouts/Index";
+import Separator from "../components/blog/Separator";
+import AuthorHeader from "../components/blog/AuthorHeader";
+import RedHeader from "../components/blog/RedHeader";
+import Posts from "../components/blog/Posts";
+import MetaTags from "../components/blog/MetaTags";
+import WebPageSchema from "../components/blog/schemas/WebPageSchema";
 
-import Variables from './../components/blog/variables';
+import Variables from "./../components/blog/variables";
 
 export default function Index({ data }) {
   let { edges: posts } = data.allMarkdownRemark;
   let { description } = data.site.siteMetadata;
-  posts = posts.map(post => post.node);
+  posts = posts.map((post) => post.node);
   return (
     <IndexLayout>
       <WebPageSchema />
-      <MetaTags title={'Home'} description={description} />
+      <MetaTags title={"Home"} description={description} />
       <Row>
         <Col sm={8} smOffset={2}>
           <AuthorHeader />
@@ -29,20 +29,20 @@ export default function Index({ data }) {
           <Posts posts={posts} />
           <Separator />
           <article
-            css={{
-              marginBottom: '2em',
-              color: 'rgba(255, 255, 255, 0.8)',
+            style={{
+              marginBottom: "2em",
+              color: "rgba(255, 255, 255, 0.8)",
             }}
           >
             <header>
               <h3
-                css={{
-                  fontSize: '1.5em',
-                  fontWeight: '700',
-                  float: 'right',
+                style={{
+                  fontSize: "1.5em",
+                  fontWeight: "700",
+                  float: "right",
                   color: Variables.lightblue,
-                  '@media(max-width: 768px)': {
-                    textAlign: 'left',
+                  "@media(max-width: 768px)": {
+                    textAlign: "left",
                   },
                 }}
               >

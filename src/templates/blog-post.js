@@ -1,98 +1,98 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import dateformat from 'dateformat';
-import { graphql, Link } from 'gatsby';
-import { DiscussionEmbed } from 'disqus-react';
-import uuidv5 from 'uuid/v5';
-import Img from 'gatsby-image';
-import { css } from 'emotion';
-import { Grid, Row, Col } from 'react-flexbox-grid';
-import 'prismjs/themes/prism-tomorrow.css';
+import React from "react";
+import PropTypes from "prop-types";
+import dateformat from "dateformat";
+import { graphql, Link } from "gatsby";
+import { DiscussionEmbed } from "disqus-react";
+import { v5 as uuidv5 } from "uuid";
+import Img from "gatsby-image";
+import { css } from "emotion";
+import { Grid, Row, Col } from "../components/grid";
+import "prismjs/themes/prism-tomorrow.css";
 
-import IndexLayout from '../components/layouts/Index';
-import Share from '../components/blog/Share';
-import Post from '../components/blog/Post';
-import BulletListTags from '../components/blog/BulletListTags';
-import Separator from '../components/blog/Separator';
-import MetaTags from '../components/blog/MetaTags';
-import Variables from '../components/blog/variables';
-import ArticleSchema from '../components/blog/schemas/ArticleSchema';
+import IndexLayout from "../components/layouts/Index";
+import Share from "../components/blog/Share";
+import Post from "../components/blog/Post";
+import BulletListTags from "../components/blog/BulletListTags";
+import Separator from "../components/blog/Separator";
+import MetaTags from "../components/blog/MetaTags";
+import Variables from "../components/blog/variables";
+import ArticleSchema from "../components/blog/schemas/ArticleSchema";
 
 const postTitle = css({
   color: Variables.red,
-  fontSize: '2.6em',
+  fontSize: "2.6em",
   fontWeight: 700,
-  '@media(max-width: 768px)': {
-    textAlign: 'left',
+  "@media(max-width: 768px)": {
+    textAlign: "left",
   },
 });
 
 const authorAvatar = css({
-  display: 'inline-block',
-  width: '100%',
-  maxWidth: '100px',
+  display: "inline-block",
+  width: "100%",
+  maxWidth: "100px",
 });
 
 const authorAvatarImg = css({
-  borderRadius: '50%',
-  border: '3px solid white',
+  borderRadius: "50%",
+  border: "3px solid white",
 });
 
 const authorName = css({
-  fontSize: '1.3em',
+  fontSize: "1.3em",
 });
 
 const postFooter = css({
-  paddingTop: '2em',
-  paddingBottom: '2em',
-  fontSize: '1.2em',
+  paddingTop: "2em",
+  paddingBottom: "2em",
+  fontSize: "1.2em",
 });
 const blogSection = css({
-  marginTop: '2.5em',
+  marginTop: "2.5em",
 });
 
 const blogSectionHeader = css({
-  marginBottom: '1.25em',
+  marginBottom: "1.25em",
 });
 
 const postMetaStyle = css({
-  color: 'white',
+  color: "white",
 });
 
 const mainPostStyle = css({
-  marginTop: '2.5em',
-  color: 'rgba(255, 255, 255, 0.8)',
-  '& img': {
-    maxWidth: '100%',
-    display: 'block',
-    margin: '0 auto',
+  marginTop: "2.5em",
+  color: "rgba(255, 255, 255, 0.8)",
+  "& img": {
+    maxWidth: "100%",
+    display: "block",
+    margin: "0 auto",
   },
-  '& h1': {
+  "& h1": {
     color: Variables.lightblue,
   },
-  '& h2': {
+  "& h2": {
     color: Variables.lightblue,
   },
-  '& h3': {
+  "& h3": {
     color: Variables.lightblue,
   },
-  '& h4': {
+  "& h4": {
     color: Variables.lightblue,
   },
-  '& h5': {
+  "& h5": {
     color: Variables.lightblue,
   },
-  '& h6': {
+  "& h6": {
     color: Variables.lightblue,
   },
-  '& code': {
-    background: '#2d2d2d',
-    color: '#FF9619',
-    borderRadius: '4px',
+  "& code": {
+    background: "#2d2d2d",
+    color: "#FF9619",
+    borderRadius: "4px",
   },
-  '& .anchor': {
-    color: 'white',
-    fill: 'currentColor',
+  "& .anchor": {
+    color: "white",
+    fill: "currentColor",
   },
   // '& .gatsby-highlight-code-line': {
   //   // backgroundColor: '#feb',
@@ -118,8 +118,8 @@ const mainPostStyle = css({
   //   float: 'left',
   //   minWidth: '100%',
   // },
-  '& .gatsby-resp-image-wrapper': {
-    zIndex: '1 !important',
+  "& .gatsby-resp-image-wrapper": {
+    zIndex: "1 !important",
   },
 });
 
@@ -128,7 +128,7 @@ export default function Template({ data, location }) {
   const { nextPost: next } = data;
   const { siteUrl } = data.site.siteMetadata;
 
-  const isProduction = process.env.NODE_ENV === 'production';
+  const isProduction = process.env.NODE_ENV === "production";
   const fullUrl = `${siteUrl}${post.frontmatter.path}`;
 
   return (
@@ -158,27 +158,41 @@ export default function Template({ data, location }) {
                   <Row middle="xs">
                     <Col md={4}>
                       <Link to="/" className={authorAvatar} itemProp="name">
-                        <Img fluid={data.file.childImageSharp.fluid} className={authorAvatarImg} />
+                        <Img
+                          fluid={data.file.childImageSharp.fluid}
+                          className={authorAvatarImg}
+                        />
                       </Link>
                     </Col>
                     <Col md={8}>
                       <div className={authorName}>Kostas Bariotis</div>
                       {!post.frontmatter.draft && (
-                        <time dateTime={dateformat(post.frontmatter.date, 'isoDateTime')}>
-                          {dateformat(post.frontmatter.date, 'd mmmm yyyy')}
+                        <time
+                          dateTime={dateformat(
+                            post.frontmatter.date,
+                            "isoDateTime"
+                          )}
+                        >
+                          {dateformat(post.frontmatter.date, "d mmmm yyyy")}
                         </time>
                       )}
                     </Col>
                   </Row>
                 </Col>
                 <Col md={6}>
-                  <BulletListTags tags={post.frontmatter.tags} draft={post.frontmatter.draft} />
+                  <BulletListTags
+                    tags={post.frontmatter.tags}
+                    draft={post.frontmatter.draft}
+                  />
                 </Col>
               </Row>
             </section>
             <Separator />
             <article className={mainPostStyle}>
-              <section className="post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
+              <section
+                className="post-content"
+                dangerouslySetInnerHTML={{ __html: post.html }}
+              />
               <Separator />
               <footer className={postFooter}>
                 <Share
@@ -197,7 +211,10 @@ export default function Template({ data, location }) {
                   <DiscussionEmbed
                     shortname="kostasbariotis"
                     config={{
-                      identifier: uuidv5(fullUrl, uuidv5.URL),
+                      identifier: uuidv5(
+                        fullUrl,
+                        "6ba7b811-9dad-11d1-80b4-00c04fd430c8"
+                      ),
                       title: post.frontmatter.title,
                       url: fullUrl,
                     }}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col } from "react-flexbox-grid";
+import { Row, Col } from "../grid";
 
 const headerItem = {
   paddingRight: "10px",

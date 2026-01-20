@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Row, Col } from 'react-flexbox-grid';
+import { Row, Col } from '../components/grid';
 import { graphql } from 'gatsby';
 
 import IndexLayout from '../components/layouts/Index';
@@ -11,7 +11,7 @@ import RedHeader from '../components/blog/RedHeader';
 
 export default function Drafts({ data }) {
   let { edges: posts } = data.allMarkdownRemark;
-  posts = posts.map(post => post.node);
+  posts = posts.map((post) => post.node);
   return (
     <IndexLayout>
       <Row>
