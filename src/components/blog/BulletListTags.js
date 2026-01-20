@@ -1,13 +1,20 @@
 import React from "react";
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
-import { Row, Col } from "../grid";
+import { css } from "@emotion/react";
 
 import Variables from "./variables";
 
-const tagsItemStyle = {
+const tagsContainerStyle = css({
+  display: "flex",
+  flexWrap: "wrap",
+  justifyContent: "flex-end",
+  gap: "5px",
+  alignItems: "center",
+});
+
+const tagsItemStyle = css({
   fontSize: "0.8em",
-  margin: "5px 5px",
   border: `2px solid ${Variables.lightblue}`,
   textAlign: "center",
   borderRadius: "100px / 100px",
@@ -17,24 +24,24 @@ const tagsItemStyle = {
       color: Variables.darkpurple,
     },
   },
-};
+});
 
-const tagsItemLink = {
+const tagsItemLink = css({
   color: Variables.lightblue,
   display: "block",
-  width: "auto",
+  padding: "2px 20px",
   height: "30px",
   lineHeight: "27px",
-  padding: "2px 20px",
-  "a:active": {
+  textDecoration: "none",
+  "&:active": {
     textDecoration: "none",
   },
-  "a:hover": {
+  "&:hover": {
     textDecoration: "none",
   },
-};
+});
 
-const tagsDraftItemStyle = Object.assign({}, tagsItemStyle, {
+const tagsDraftItemStyle = css({
   border: `2px solid ${Variables.red}`,
   "& a": {
     color: Variables.red,
@@ -48,23 +55,23 @@ const tagsDraftItemStyle = Object.assign({}, tagsItemStyle, {
 });
 
 const BulletListTags = ({ tags, draft }) => (
-  <Row end="md">
+  <div css={tagsContainerStyle}>
     {tags &&
       tags.split(", ").map((tag, index) => (
-        <Col key={index} css={tagsItemStyle}>
+        <div key={index} css={tagsItemStyle}>
           <Link css={tagsItemLink} to={`/tag/${tag}`}>
             {tag}
           </Link>
-        </Col>
+        </div>
       ))}
     {draft && (
-      <Col css={tagsDraftItemStyle}>
+      <div css={[tagsItemStyle, tagsDraftItemStyle]}>
         <Link css={tagsItemLink} to={`/drafts`}>
           Draft
         </Link>
-      </Col>
+      </div>
     )}
-  </Row>
+  </div>
 );
 
 BulletListTags.propTypes = {

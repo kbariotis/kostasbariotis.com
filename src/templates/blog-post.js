@@ -6,7 +6,7 @@ import { DiscussionEmbed } from "disqus-react";
 import { v5 as uuidv5 } from "uuid";
 import Img from "gatsby-image";
 import { css } from "emotion";
-import { Grid, Row, Col } from "../components/grid";
+import { Row, Col } from "../components/grid";
 import "prismjs/themes/prism-tomorrow.css";
 
 import IndexLayout from "../components/layouts/Index";
@@ -146,93 +146,84 @@ export default function Template({ data, location }) {
         path={post.frontmatter.path}
         noIndex={post.frontmatter.draft}
       />
-      <Grid>
-        <Row>
-          <Col lg={8} lgOffset={2}>
-            <header className="post-head">
-              <h1 className={postTitle}>{post.frontmatter.title}</h1>
-            </header>
-            <section className={postMetaStyle}>
-              <Row middle="xs">
-                <Col md={6}>
-                  <Row middle="xs">
-                    <Col md={4}>
-                      <Link to="/" className={authorAvatar} itemProp="name">
-                        <Img
-                          fluid={data.file.childImageSharp.fluid}
-                          className={authorAvatarImg}
-                        />
-                      </Link>
-                    </Col>
-                    <Col md={8}>
-                      <div className={authorName}>Kostas Bariotis</div>
-                      {!post.frontmatter.draft && (
-                        <time
-                          dateTime={dateformat(
-                            post.frontmatter.date,
-                            "isoDateTime"
-                          )}
-                        >
-                          {dateformat(post.frontmatter.date, "d mmmm yyyy")}
-                        </time>
-                      )}
-                    </Col>
-                  </Row>
-                </Col>
-                <Col md={6}>
-                  <BulletListTags
-                    tags={post.frontmatter.tags}
-                    draft={post.frontmatter.draft}
+      <header className="post-head">
+        <h1 className={postTitle}>{post.frontmatter.title}</h1>
+      </header>
+      <section className={postMetaStyle}>
+        <Row middle="xs">
+          <Col md={6}>
+            <Row middle="xs">
+              <Col md={4}>
+                <Link to="/" className={authorAvatar} itemProp="name">
+                  <Img
+                    fluid={data.file.childImageSharp.fluid}
+                    className={authorAvatarImg}
                   />
-                </Col>
-              </Row>
-            </section>
-            <Separator />
-            <article className={mainPostStyle}>
-              <section
-                className="post-content"
-                dangerouslySetInnerHTML={{ __html: post.html }}
-              />
-              <Separator />
-              <footer className={postFooter}>
-                <Share
-                  title={post.frontmatter.title}
-                  draft={post.frontmatter.draft}
-                  fullUrl={fullUrl}
-                />
-              </footer>
-
-              <section className={blogSection}>
-                <header className={blogSectionHeader}>
-                  <h2>Comments</h2>
-                </header>
-                <Separator />
-                {isProduction && (
-                  <DiscussionEmbed
-                    shortname="kostasbariotis"
-                    config={{
-                      identifier: uuidv5(
-                        fullUrl,
-                        "6ba7b811-9dad-11d1-80b4-00c04fd430c8"
-                      ),
-                      title: post.frontmatter.title,
-                      url: fullUrl,
-                    }}
-                  />
+                </Link>
+              </Col>
+              <Col md={8}>
+                <div className={authorName}>Kostas Bariotis</div>
+                {!post.frontmatter.draft && (
+                  <time
+                    dateTime={dateformat(post.frontmatter.date, "isoDateTime")}
+                  >
+                    {dateformat(post.frontmatter.date, "d mmmm yyyy")}
+                  </time>
                 )}
-              </section>
-
-              <section className={blogSection}>
-                <header className={blogSectionHeader}>
-                  <h2>Read Next</h2>
-                </header>
-                <Separator />
-                {next && <Post post={next} />}
-              </section>
-            </article>
+              </Col>
+            </Row>
+          </Col>
+          <Col md={6}>
+            <BulletListTags
+              tags={post.frontmatter.tags}
+              draft={post.frontmatter.draft}
+            />
           </Col>
         </Row>
-      </Grid>
+      </section>
+      <Separator />
+      <article className={mainPostStyle}>
+        <section
+          className="post-content"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
+        <Separator />
+        <footer className={postFooter}>
+          <Share
+            title={post.frontmatter.title}
+            draft={post.frontmatter.draft}
+            fullUrl={fullUrl}
+          />
+        </footer>
+
+        <section className={blogSection}>
+          <header className={blogSectionHeader}>
+            <h2>Comments</h2>
+          </header>
+          <Separator />
+          {isProduction && (
+            <DiscussionEmbed
+              shortname="kostasbariotis"
+              config={{
+                identifier: uuidv5(
+                  fullUrl,
+                  "6ba7b811-9dad-11d1-80b4-00c04fd430c8",
+                ),
+                title: post.frontmatter.title,
+                url: fullUrl,
+              }}
+            />
+          )}
+        </section>
+
+        <section className={blogSection}>
+          <header className={blogSectionHeader}>
+            <h2>Read Next</h2>
+          </header>
+          <Separator />
+          {next && <Post post={next} />}
+        </section>
+      </article>
     </IndexLayout>
   );
 }

@@ -12,7 +12,7 @@ const getColStyle = (
   smOffset,
   mdOffset,
   lgOffset,
-  xlOffset
+  xlOffset,
 ) => {
   const getWidth = (size) => {
     if (!size) return "100%";
@@ -76,7 +76,7 @@ const Col = ({
     smOffset,
     mdOffset,
     lgOffset,
-    xlOffset
+    xlOffset,
   );
   return (
     <div css={[colStyle, customCss]} {...props}>

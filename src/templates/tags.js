@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { css } from "@emotion/react";
-import { Row, Col } from "../components/grid";
 
 import IndexLayout from "../components/layouts/Index";
 import Posts from "../components/blog/Posts";
@@ -19,25 +18,19 @@ export default function Tags({ pageContext, location }) {
 
   return (
     <IndexLayout location={location}>
-      <Row>
-        <MetaTags
-          title={`Tag ${tag}`}
-          description={`All posts talking about ${tag}`}
-          tags={tag}
-          path={`/tag/${tag}`}
-        />
-        <Col lg={8} lgOffset={2}>
-          <RedHeader>{tag}</RedHeader>
-          <section className={tagMeta}>
-            A {posts.length} posts collection
-          </section>
-          <Pagination page={page} pagesSum={pagesSum} tag={tag} />
-          <Separator />
-          <Posts posts={posts} />
-          <Separator />
-          <Pagination page={page} pagesSum={pagesSum} tag={tag} />
-        </Col>
-      </Row>
+      <MetaTags
+        title={`Tag ${tag}`}
+        description={`All posts talking about ${tag}`}
+        tags={tag}
+        path={`/tag/${tag}`}
+      />
+      <RedHeader>{tag}</RedHeader>
+      <section className={tagMeta}>A {posts.length} posts collection</section>
+      <Pagination page={page} pagesSum={pagesSum} tag={tag} />
+      <Separator />
+      <Posts posts={posts} />
+      <Separator />
+      <Pagination page={page} pagesSum={pagesSum} tag={tag} />
     </IndexLayout>
   );
 }

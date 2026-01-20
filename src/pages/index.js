@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Row, Col } from "../components/grid";
 import { graphql, Link } from "gatsby";
 
 import IndexLayout from "../components/layouts/Index";
@@ -21,37 +20,33 @@ export default function Index({ data }) {
     <IndexLayout>
       <WebPageSchema />
       <MetaTags title={"Home"} description={description} />
-      <Row>
-        <Col sm={8} smOffset={2}>
-          <AuthorHeader />
-          <RedHeader>Latest Posts</RedHeader>
-          <Separator />
-          <Posts posts={posts} />
-          <Separator />
-          <article
+      <AuthorHeader />
+      <RedHeader>Latest Posts</RedHeader>
+      <Separator />
+      <Posts posts={posts} />
+      <Separator />
+      <article
+        style={{
+          marginBottom: "2em",
+          color: "rgba(255, 255, 255, 0.8)",
+        }}
+      >
+        <header>
+          <h3
             style={{
-              marginBottom: "2em",
-              color: "rgba(255, 255, 255, 0.8)",
+              fontSize: "1.5em",
+              fontWeight: "700",
+              float: "right",
+              color: Variables.lightblue,
+              "@media(max-width: 768px)": {
+                textAlign: "left",
+              },
             }}
           >
-            <header>
-              <h3
-                style={{
-                  fontSize: "1.5em",
-                  fontWeight: "700",
-                  float: "right",
-                  color: Variables.lightblue,
-                  "@media(max-width: 768px)": {
-                    textAlign: "left",
-                  },
-                }}
-              >
-                <Link to="/page/2">Older Posts &gt;</Link>
-              </h3>
-            </header>
-          </article>
-        </Col>
-      </Row>
+            <Link to="/page/2">Older Posts &gt;</Link>
+          </h3>
+        </header>
+      </article>
     </IndexLayout>
   );
 }

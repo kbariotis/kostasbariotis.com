@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { css } from "emotion";
 import { Global } from "@emotion/react";
-import { Grid } from "../grid";
+import { Grid, Row, Col } from "../grid";
 import { graphql, StaticQuery } from "gatsby";
 
 import Footer from "../blog/Footer";
@@ -119,7 +119,7 @@ export default function IndexLayout({ children, canonical, location }) {
             ? canonical
             : `${siteUrl.replace(/\/$/, ``)}${
                 (location && location.pathname) || "/"
-              }`
+              }`,
         );
         const pageUrl = `${parsedPageUrl.protocol}//${parsedPageUrl.host}${parsedPageUrl.pathname}`;
 
@@ -162,7 +162,11 @@ export default function IndexLayout({ children, canonical, location }) {
                   content="2cN-EmJ2d00_gaP6eUs43tdcXd1UL965Rs_UBQc0Oec"
                 />
               </Helmet>
-              <Grid css={blogContainer}>{children}</Grid>
+              <Grid css={blogContainer}>
+                <Row>
+                  <Col md={12}>{children}</Col>
+                </Row>
+              </Grid>
               <Footer />
             </div>
           </>
