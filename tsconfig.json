@@ -20,11 +20,7 @@
     "types": ["node"]
   },
   "include": [
-    "src/**/*",
-    "gatsby-config.ts",
-    "gatsby-node.ts",
-    "gatsby-browser.ts",
-    "gatsby-ssr.ts"
+    "src/**/*"
   ],
   "exclude": ["node_modules", "dist", "build", ".cache", "public"],
   "ts-node": {
