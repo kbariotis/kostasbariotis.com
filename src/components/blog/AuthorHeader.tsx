@@ -1,5 +1,5 @@
 import React from 'react';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import Img from 'gatsby-image';
 import { graphql, StaticQuery, Link } from 'gatsby';
 
 const AuthorHeader = () => (
@@ -8,7 +8,9 @@ const AuthorHeader = () => (
       query AuthorHeaderQuery {
         file(relativePath: { eq: "avatar.jpg" }) {
           childImageSharp {
-            gatsbyImageData
+            fluid {
+              ...GatsbyImageSharpFluid_withWebp
+            }
           }
         }
         site {
@@ -46,21 +48,19 @@ const AuthorHeader = () => (
             }}
             itemProp="name"
           >
-            {data.file?.childImageSharp?.gatsbyImageData && (
-              <GatsbyImage
-                image={data.file.childImageSharp.gatsbyImageData}
-                alt={author}
-                css={{
-                  width: '100px',
-                  borderRadius: '50%',
-                  border: '4px solid #fff',
-                  marginRight: '25px',
-                  '@media(max-width: 768px)': {
-                    margin: '0 auto',
-                  },
-                }}
-              />
-            )}
+            <Img
+              css={{
+                width: '100px',
+                borderRadius: '50%',
+                border: '4px solid #fff',
+                marginRight: '25px',
+                '@media(max-width: 768px)': {
+                  margin: '0 auto',
+                },
+              }}
+              alt={author}
+              fluid={data.file.childImageSharp.fluid}
+            />
           </Link>
           <h1
             css={{
