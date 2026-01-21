@@ -4,7 +4,7 @@ import { graphql, Link } from 'gatsby';
 import type { FC } from 'react';
 import { DiscussionEmbed } from 'disqus-react';
 import { v5 as uuidv5 } from 'uuid';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { css } from '@emotion/react';
 import { Row, Col } from '../components/grid';
 import 'prismjs/themes/prism-tomorrow.css';
@@ -206,7 +206,13 @@ const Template: FC<GatsbyPageProps<BlogPostPageData, BlogPostPageContext>> = ({
             <Row middle="xs">
               <Col md={4}>
                 <Link to="/" css={authorAvatar} itemProp="name">
-                  <Img fluid={data.file.childImageSharp.fluid} css={authorAvatarImg} />
+                  {data.file?.childImageSharp?.gatsbyImageData && (
+                    <GatsbyImage
+                      image={data.file.childImageSharp.gatsbyImageData}
+                      alt="Author"
+                      css={authorAvatarImg}
+                    />
+                  )}
                 </Link>
               </Col>
               <Col md={8}>
@@ -267,9 +273,7 @@ export const pageQuery = graphql`
   query BlogPostByPath($mainPostPath: String!, $nextPostPath: String!) {
     file(relativePath: { eq: "avatar.jpg" }) {
       childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData
       }
     }
     site {

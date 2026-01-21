@@ -1,5 +1,5 @@
 import React from 'react';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import type { FC, ReactNode } from 'react';
 
 import { rhythm } from '../../typography';
@@ -26,17 +26,20 @@ const Header: FC<HeaderProps> = ({ fluid, children }) => (
       >
         <Row center="xs">
           <Col>
-            <Img
-              fluid={fluid}
-              css={{
-                display: 'inline-block',
-                width: '150px',
-                height: '150px',
-                borderRadius: '50%',
-                border: '4px solid #fff',
-                marginBottom: rhythm(1),
-              }}
-            />
+            {fluid && (
+              <GatsbyImage
+                image={getImage(fluid)}
+                alt=""
+                css={{
+                  display: 'inline-block',
+                  width: '150px',
+                  height: '150px',
+                  borderRadius: '50%',
+                  border: '4px solid #fff',
+                  marginBottom: rhythm(1),
+                }}
+              />
+            )}
             <h1>{children}</h1>
           </Col>
         </Row>
