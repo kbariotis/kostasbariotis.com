@@ -1,10 +1,7 @@
 import React from 'react';
 import url from 'url';
 
-export const onRenderBody = (
-  { setHeadComponents, pathname = `/` },
-  pluginOptions = {}
-) => {
+export const onRenderBody = ({ setHeadComponents, pathname = `/` }, pluginOptions = {}) => {
   if (pluginOptions && pluginOptions.siteUrl) {
     const siteUrl = pluginOptions.siteUrl.replace(/\/$/, ``);
     const parsed = url.parse(`${siteUrl}${pathname}`);

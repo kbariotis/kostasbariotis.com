@@ -19,9 +19,7 @@
     },
     "types": ["node"]
   },
-  "include": [
-    "src/**/*"
-  ],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist", "build", ".cache", "public"],
   "ts-node": {
     "compilerOptions": {
