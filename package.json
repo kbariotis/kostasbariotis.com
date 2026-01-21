@@ -65,6 +65,7 @@
   },
   "scripts": {
     "build": "gatsby build --prefix-paths",
+    "clean": "gatsby clean",
     "develop": "gatsby develop",
     "serve": "gatsby serve",
     "type-check": "tsc --noEmit",
