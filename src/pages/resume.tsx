@@ -83,7 +83,7 @@ const Resume: FC<GatsbyPageProps<ResumePageData>> = () => {
             title="Senior Software Engineer @ Natural Intelligence"
             duration="January 2026 - Present"
             description="Part of the Funnels team at Natural Intelligence, partnering with Product to ship high-converting acquisition flows and AI-driven internal tooling."
-            skills="TypeScript, Node, Next, React, Storybook, MongoDB, Biome, AWS, GCP, Mastra, Claude Code"
+            skills="TypeScript, Node.js, Next.js, React, Storybook, MongoDB, Biome, AWS, GCP, Mastra, Claude Code"
             bullets={[
               'Shipped multiple conversion-focused funnel features with Product, leveraging agentic coding workflows (Claude) to accelerate delivery.',
               'Resolved systemic production bugs during on-call rotations, including a ~5% funnel event drop that had gone undetected for over 6 months.',
@@ -96,7 +96,7 @@ const Resume: FC<GatsbyPageProps<ResumePageData>> = () => {
             title="Senior Software Engineer @ PBLWorks"
             duration="December 2023 - November 2025"
             description="Second engineer hired to build the next generation of PBLWorks' product suite."
-            skills="TypeScript, Node, Next, React Query, Storybook, Prisma, Jest, Cypress, Vercel, PostgreSQL, Redis, TestContainers"
+            skills="TypeScript, Node.js, Next.js, React Query, Storybook, Prisma, Jest, Cypress, Vercel, PostgreSQL, Redis, TestContainers"
             bullets={[
               'Built Next.js-based web application with SSR achieving constant >90% scores on Web Core Vitals metrics',
               'Monitored developer experience through regular surveys and improved it by 20% in one year',
@@ -112,9 +112,9 @@ const Resume: FC<GatsbyPageProps<ResumePageData>> = () => {
             title="Senior Software Engineer @ Grover"
             duration="November 2021 - August 2023"
             description="Migrated a legacy monolith for invoice generation into a modern, scalable microservice architecture to support global growth."
-            skills="Node, Go, Ruby, TypeScript, Nest, Prisma, PostgreSQL, Kafka, AWS, Kubernetes"
+            skills="Node.js, Go, Ruby, TypeScript, Nest.js, Prisma, PostgreSQL, Kafka, AWS, Kubernetes"
             bullets={[
-              'Responsible for the legacy and new invoicing micro-service built with Node, serving in total >20,000 requests per day',
+              'Responsible for the legacy and new invoicing micro-service built with Node.js, serving in total >20,000 requests per day',
               'Architected observability tools on AWS CloudWatch for having a complete overview of the invoicing system',
               'Led the migration of the legacy invoicing system to the new microservice architecture, breaking down the tasks, designing the architecture and planning the releases from zero to production with zero downtime',
             ]}
@@ -123,9 +123,9 @@ const Resume: FC<GatsbyPageProps<ResumePageData>> = () => {
             title="Senior Product Engineer @ Bulb"
             duration="November 2019 - November 2021"
             description="Building internal tools for Bulbs' energy specialists and customer success teams to help them better serve Bulb's customers."
-            skills="Node, Python, TypeScript, Sequelize, React, Redux, Storybook, Cypress, Jest, PostgreSQL, GCP, SQS/SNS, Kubernetes"
+            skills="Node.js, Python, TypeScript, Sequelize, React, Redux, Storybook, Cypress, Jest, PostgreSQL, GCP, SQS/SNS, Kubernetes"
             bullets={[
-              'Worked on the internal customer success platform built with Node and React, developing new features and integrations with third-party services including ZenDesk, Twilio, Salesforce, and others',
+              'Worked on the internal customer success platform built with Node.js and React, developing new features and integrations with third-party services including ZenDesk, Twilio, Salesforce, and others',
               'Worked on the architecture and implementation of a new authentication system that would work across different domains for multi-national expansion of the company',
               'Implemented a customer monitoring system that would proactively watch for customers with certain issues on their accounts and notify the internal customer-success team',
             ]}
@@ -134,11 +134,11 @@ const Resume: FC<GatsbyPageProps<ResumePageData>> = () => {
             title="Senior Product Engineer @ Trouva"
             duration="June 2018 - October 2019"
             description="Integrated with Shopify to help Trouva's merchants better manage their products and orders."
-            skills="Node, Sequelize, React, Redux, Jest, MongoDB, AWS"
+            skills="Node.js, Sequelize, React, Redux, Jest, MongoDB, AWS"
             bullets={[
-              'Integrated with Sentry to monitor and track errors across the Node platform, immediately improving the error rate by more than 50%',
+              'Integrated with Sentry to monitor and track errors across the Node.js platform, immediately improving the error rate by more than 50%',
               'Led the architecture and implementation of a syncing system with our own platform and Shopify built on a queueing system (AWS SQS) that would handle thousands of products and orders per minute',
-              'Maintained and improved the legacy Node backend system that was handling thousands of orders per day',
+              'Maintained and improved the legacy Node.js backend system that was handling thousands of orders per day',
               'Integrated with Algolia as our main search engine, resulting in a 30% faster search experience for end-users',
             ]}
           />
@@ -148,7 +148,7 @@ const Resume: FC<GatsbyPageProps<ResumePageData>> = () => {
             duration="2013 - 2018"
             bullets={[
               'Led the implementation of a booking platform based on AWS Lambda, DynamoDB, and React at Quotelier',
-              'Built Node and MongoDB-based REST APIs at Goodvidio, handling thousands of daily requests',
+              'Built Node.js and MongoDB-based REST APIs at Goodvidio, handling thousands of daily requests',
               'Developed frontend applications using Angular at InsightReplay',
               'Built Magento-based e-commerce solutions at Walkinthepark',
               'Developed PHP and MySQL full-stack solutions including e-commerce and custom client projects at dTek',
