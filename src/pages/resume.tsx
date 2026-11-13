@@ -69,13 +69,11 @@ const Resume: FC<GatsbyPageProps<ResumePageData>> = () => {
         />
         <Section title="Professional Summary">
           <p>
-            Senior full-stack engineer who moves easily between architecture, product thinking, and
-            cross-functional work in fully remote teams. I&apos;ve led large greenfield builds and
-            critical migrations across education, energy, and e-commerce, always aiming for
-            measurable improvements. I collaborate closely with designers, users, and
-            non-engineering teams (async or otherwise) to understand the full picture, data,
-            operations, customer success, business goals, and I bring that mindset into the teams I
-            work with.
+            Senior full-stack engineer who moves easily between architecture, product thinking, and cross-functional work 
+            in fully remote teams. I've led large greenfield builds and critical migrations across ad-tech, education, 
+            energy, and e-commerce, leveraging agentic coding workflows to accelerate delivery and drive measurable improvements. 
+            I collaborate closely with designers, users, and non-engineering teams (async or otherwise) to understand the full 
+            picture—data, operations, customer success, business goals—and bring that mindset into the teams I work with.
           </p>
         </Section>
         <Section title="Experience">
