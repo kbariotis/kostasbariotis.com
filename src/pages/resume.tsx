@@ -82,13 +82,14 @@ const Resume: FC<GatsbyPageProps<ResumePageData>> = () => {
           <ExperienceItem
             title="Senior Software Engineer @ Natural Intelligence"
             duration="January 2026 - Present"
-            description="Part of the Funnels team, partnering with Product to build high-converting acquisition flows and internal engineering tools."
-            skills="TypeScript, Node.js, Next.js, React.js, Storybook, MongoDB, Biome, AWS, GCP"
+            description="Part of the Funnels team at Natural Intelligence, partnering with Product to ship high-converting acquisition flows and AI-driven internal tooling."
+            skills="TypeScript, Node.js, Next.js, React.js, Storybook, MongoDB, Biome, AWS, GCP, Mastra.ai, Claude Code"
             bullets={[
-              'Shipped multiple conversion-focused funnel features in direct partnership with the Product team.',
+              'Shipped multiple conversion-focused funnel features with Product, leveraging agentic coding workflows (Claude) to accelerate delivery.',
               'Resolved systemic production bugs by diagnosing ambiguous logs during on-call rotations.',
               'Architected the foundational release notification system adopted across the entire engineering department.',
-              'Built internal QA tooling enhancements that accelerated release verification and reduced manual testing.',
+              'Built internal infrastructure enhancements that streamlined QA workflows and accelerated release verification.',
+              'Co-built a standalone AI-powered QA tool using Mastra to automate test verification across product releases.',
             ]}
           />
           <ExperienceItem
