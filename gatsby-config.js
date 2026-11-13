@@ -4,7 +4,7 @@ module.exports = {
     author: 'Kostas Bariotis',
     title: `Kostas Bariotis' Blog`,
     siteUrl: `https://kostasbariotis.com`,
-    description: `Staff Software Engineer <a href="https://pblworks.org">@PBLWorks</a>, co-organizer of <a href="https://devitconf.org">@devitconf</a> & <a href="https://www.meetup.com/Thessaloniki-Node-js-Meetup/">@skgnodejs</a>, host of <a href="http://devastation.tv">Devastation Podcast</a>.`,
+    description: `Senior Software Engineer <a href="https://naturalint.com/">@Natural Intelligence</a>, co-organizer of <a href="https://devitconf.org">@devitconf</a> & <a href="https://www.meetup.com/Thessaloniki-Node-js-Meetup/">@skgnodejs</a>, host of <a href="http://devastation.tv">Devastation Podcast</a>.`,
   },
   plugins: [
     'gatsby-plugin-catch-links',
