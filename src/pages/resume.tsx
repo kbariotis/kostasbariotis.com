@@ -80,8 +80,20 @@ const Resume: FC<GatsbyPageProps<ResumePageData>> = () => {
         </Section>
         <Section title="Experience">
           <ExperienceItem
+            title="Senior Software Engineer @ Natural Intelligence"
+            duration="January 2026 - Present"
+            description="Part of the Funnels team, partnering with Product to build high-converting acquisition flows and internal engineering tools."
+            skills="TypeScript, Node.js, Next.js, React.js, Storybook, MongoDB, Biome, AWS, GCP"
+            bullets={[
+              'Shipped multiple conversion-focused funnel features in direct partnership with the Product team.',
+              'Resolved systemic production bugs by diagnosing ambiguous logs during on-call rotations.',
+              'Architected the foundational release notification system adopted across the entire engineering department.',
+              'Built internal QA tooling enhancements that accelerated release verification and reduced manual testing.',
+            ]}
+          />
+          <ExperienceItem
             title="Senior Software Engineer @ PBLWorks"
-            duration="December 2023 - Present"
+            duration="December 2023 - November 2025"
             description="Second engineer hired to build the next generation of PBLWorks' product suite."
             skills="TypeScript, Node.js, Next.js, React Query, Storybook, Prisma, Jest, Cypress, Vercel, PostgreSQL, Redis, TestContainers"
             bullets={[
