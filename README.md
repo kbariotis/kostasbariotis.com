@@ -6,7 +6,7 @@ This is my [personal blog](https://kostasbariotis.com).
 
 ## Setup
 
-* Built with [Gatsby](http://gatsbyjs.org) and [React](https://facebook.github.io/react/).
+* Built with [Gatsby](https://www.gatsbyjs.com) and [React](https://react.dev).
 
 ## License
 
